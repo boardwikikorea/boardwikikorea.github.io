@@ -50,12 +50,95 @@
             font-size: 18px;
         }
     </style>
+
+    <style>
+        body {
+            font-family: 'SF Pro Display', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #002244;
+            color: white;
+        }
+        .slider-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .slide {
+            position: absolute;
+            width: 80%;
+            max-width: 800px;
+            text-align: center;
+            font-size: 2rem;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .active {
+            opacity: 1;
+        }
+        .nav-buttons {
+            position: absolute;
+            bottom: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        .nav-button {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: white;
+            opacity: 0.5;
+            cursor: pointer;
+        }
+        .nav-button.active {
+            opacity: 1;
+        }
+    </style>
+
 </head>
 
 <body>
-    <h1>보드위키 - 스케이트·롱보드 커뮤니티</h1>
-    <p>스케이트와 롱보드, 그리고 보드 문화를 공유하는 공간입니다.</p>
-
+    <div class="slider-container">
+        <div class="slide active">롱보드대축제</div>
+        <div class="slide">보드위키 인스타</div>
+        <div class="slide">보드위키 유튜브</div>
+        <div class="slide">보드위키 카카오톡채널</div>
+        <div class="slide">오보타</div>
+        <div class="nav-buttons"></div>
+    </div>
+    
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const navContainer = document.querySelector('.nav-buttons');
+        let currentIndex = 0;
+        
+        slides.forEach((_, index) => {
+            const navButton = document.createElement('div');
+            navButton.classList.add('nav-button');
+            if (index === 0) navButton.classList.add('active');
+            navButton.addEventListener('click', () => showSlide(index));
+            navContainer.appendChild(navButton);
+        });
+        
+        function showSlide(index) {
+            slides[currentIndex].classList.remove('active');
+            navContainer.children[currentIndex].classList.remove('active');
+            currentIndex = index;
+            slides[currentIndex].classList.add('active');
+            navContainer.children[currentIndex].classList.add('active');
+        }
+        
+        function nextSlide() {
+            showSlide((currentIndex + 1) % slides.length);
+        }
+        
+        setInterval(nextSlide, 4000); // 4초마다 자동 슬라이드
+    </script>
+    
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             // Firebase 설정
