@@ -1,37 +1,80 @@
 <!DOCTYPE html>
 <html lang="kr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>보드위키</title>
+    <title>보드위키 - 스케이트·롱보드 커뮤니티</title>
 
-    <meta name="naver-site-verification" content="e74dc3e49d0527046508b26ee9860c52a501b8f4" />
-    <meta name="description" content="보드위키에서 최신 스케이트, 롱보드, 카버보드 정보와 롱보드댄싱, 보드대회 소식을 만나보세요. 롱스케이트와 그라운드보드 트릭 팁도 확인할 수 있습니다.">
+    <!-- SEO 최적화 -->
+    <meta name="description" content="보드위키에서 최신 스케이트, 롱보드 정보와 롱보드댄싱, 보드대회 소식을 확인하세요.">
+    <meta name="keywords" content="스케이트, 롱보드, 카버보드, 롱보드댄싱, 보드대회, longboarding">
+    <meta name="naver-site-verification" content="e74dc3e49d0527046508b26ee9860c52a501b8f4">
 
-    <!-- 검색엔진 최적화를 위한 키워드 -->
-    <meta name="keywords" content="스케이트, 롱보드, 카버보드, 롱보드댄싱, 보드대회, 그라운드보드, 트릭, 롱스케이트, 롱보드대축제, 롱보드페스티벌, skateboarding, longboarding, carver boards, longboard dancing, board competitions, groundboard tricks, longskate, longboard festival">
-
-    <!-- 사이트 이름 -->
+    <!-- Open Graph (OG) - SNS 공유 최적화 -->
     <meta property="og:site_name" content="BoardWiki">
-    
-    <!-- 소셜 미디어 공유를 위한 Open Graph 태그 -->
-    <meta property="og:title" content="보드위키 - 스케이트, 롱보드, 카버보드, 롱보드댄싱, 보드대회 정보">
-    <meta property="og:description" content="보드위키에서 최신 스케이트, 롱보드, 카버보드 정보와 롱보드댄싱, 보드대회 소식을 만나보세요. 롱스케이트와 그라운드보드 트릭 팁도 확인할 수 있습니다.">
+    <meta property="og:title" content="보드위키 - 스케이트·롱보드 커뮤니티">
+    <meta property="og:description" content="스케이트·롱보드 최신 정보를 확인하세요.">
     <meta property="og:url" content="https://boardwiki.kr">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://boardwiki.kr/images/og-image.jpg"> <!-- 이미지 URL은 실제 이미지 경로로 변경 필요 -->
+    <meta property="og:image" content="https://boardwiki.kr/images/og-image.jpg">
 
-    <!-- 트위터 카드 태그 -->
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="보드위키 - 스케이트, 롱보드, 카버보드, 롱보드댄싱, 보드대회 정보">
-    <meta name="twitter:description" content="보드위키에서 최신 스케이트, 롱보드, 카버보드 정보와 롱보드댄싱, 보드대회 소식을 만나보세요. 롱스케이트와 그라운드보드 트릭 팁도 확인할 수 있습니다.">
-    <meta name="twitter:image" content="https://boardwiki.kr/images/twitter-image.jpg"> <!-- 이미지 URL은 실제 이미지 경로로 변경 필요 -->
-    
+    <meta name="twitter:title" content="보드위키 - 스케이트·롱보드 커뮤니티">
+    <meta name="twitter:description" content="보드위키에서 최신 스케이트, 롱보드 정보를 만나보세요.">
+    <meta name="twitter:image" content="https://boardwiki.kr/images/twitter-image.jpg">
+
     <!-- Canonical URL -->
     <link rel="canonical" href="https://boardwiki.kr/">
 
-</head>
-<body>
+    <!-- Firebase SDK -->
+    <script defer src="https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/11.3.1/firebase-analytics.js"></script>
 
+    <!-- Google Font (애플 스타일 폰트) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;700&display=swap">
+
+    <style>
+        body {
+            font-family: 'SF Pro Display', sans-serif;
+            background-color: #f0f4f8;
+            color: #1a1a1a;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #007aff;
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>보드위키 - 스케이트·롱보드 커뮤니티</h1>
+    <p>스케이트와 롱보드, 그리고 보드 문화를 공유하는 공간입니다.</p>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Firebase 설정
+            const firebaseConfig = {
+                apiKey: "AIzaSyDDkghHYAD581-N3u8zUUsinS1F49P5xi0",
+                authDomain: "boardwiki-e070e.firebaseapp.com",
+                projectId: "boardwiki-e070e",
+                storageBucket: "boardwiki-e070e.appspot.com",
+                messagingSenderId: "301441212066",
+                appId: "1:301441212066:web:1ffff5d8eccaaff11781fb",
+                measurementId: "G-DZ52LV9MMG"
+            };
+
+            // Firebase 초기화
+            firebase.initializeApp(firebaseConfig);
+            firebase.analytics();
+
+            console.log("Firebase Initialized");
+        });
+    </script>
 </body>
 </html>
