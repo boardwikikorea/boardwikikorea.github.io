@@ -70,7 +70,7 @@ button {
 #wiki-main{
     height: 100%;
     width: 100%;
-    overflow: hidden;
+    overflow: auto;
 }
 
 #wiki-main .content{
@@ -86,7 +86,6 @@ button {
 #wiki-main .wrap{
     height: 100%;
     width: 100%;
-    overflow: auto;
     min-width: 1080px;
 }
 
