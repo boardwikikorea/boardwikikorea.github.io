@@ -1,0 +1,131 @@
+body {
+    font-family: 'SF Pro Display', sans-serif;
+}
+
+/* Reset CSS */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: 'SF Pro Display', -apple-system, 'Noto Sans KR', BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 14px;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+input, button, textarea, select {
+    font: inherit;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+button {
+    cursor: pointer;
+}
+
+:root {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+.sound_only{
+    position: absolute;
+    width:0;
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+    left: -9999;
+    top: 0;
+}
+
+#wiki-main{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#wiki-main .content{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: calc(100% );
+}
+
+#wiki-main .wrap{
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    min-width: 1080px;
+}
+
+#wiki-main .content > article {
+    width: calc(100% / 3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#wiki-main .content > article h3{
+    font-size: 1.6em;
+    margin-bottom: 15px;
+}
+#wiki-main .content > article p{
+    font-size: 1em;
+    margin-bottom: 35px;
+}
+
+#wiki-main .btn_wrap{
+    width:100%;
+}
+
+#wiki-main .content > article:nth-child(odd){
+    background-color: #c9c9c9;
+}
+
+#wiki-main .btn01{
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin:  10px auto;
+    background: #f9f9f9;
+    border-radius: 30px;
+    height: 45px;
+    font-weight: 500;
+    line-height: 45px;
+    text-align: center;
+    font-size: 1.2em;
+}

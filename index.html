@@ -34,111 +34,55 @@
 
     <!-- Google Font (애플 스타일 폰트) -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <style>
-        body {
-            font-family: 'SF Pro Display', sans-serif;
-            background-color: #f0f4f8;
-            color: #1a1a1a;
-            text-align: center;
-            padding: 20px;
-        }
-        h1 {
-            color: #007aff;
-        }
-        p {
-            font-size: 18px;
-        }
-    </style>
+    <!-- css -->
+    <link rel="stylesheet" href="./css/common.css"; />
 
-    <style>
-        body {
-            font-family: 'SF Pro Display', sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: #002244;
-            color: white;
-        }
-        .slider-container {
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-        .slide {
-            position: absolute;
-            width: 80%;
-            max-width: 800px;
-            text-align: center;
-            font-size: 2rem;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-        .active {
-            opacity: 1;
-        }
-        .nav-buttons {
-            position: absolute;
-            bottom: 20px;
-            display: flex;
-            gap: 10px;
-        }
-        .nav-button {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: white;
-            opacity: 0.5;
-            cursor: pointer;
-        }
-        .nav-button.active {
-            opacity: 1;
-        }
-    </style>
+    <!-- js -->
+    <script src="./js/common.js"></script>
 
 </head>
 
-<body>
-    <div class="slider-container">
-        <div class="slide active">롱보드대축제</div>
-        <div class="slide">보드위키 인스타</div>
-        <div class="slide">보드위키 유튜브</div>
-        <div class="slide">보드위키 카카오톡채널</div>
-        <div class="slide">오보타</div>
-        <div class="nav-buttons"></div>
+<body id="wiki-main">
+
+    <h1 class="sound_only">보드위키</h1>
+
+    <div class="wrap">
+        <article class="content">
+            <h2 class="sound_only">
+                <strong>보드위키 컨텐츠</strong>
+            </h2>
+            <article>
+                <h3>보드위키란?</h3>
+                <p>다양한 보드컨텐츠를 제공하는 팀입니다!</p>
+                <div class="btn_wrap">
+                    <a href="https://www.instagram.com/board.wiki/"  target="_blank" class="btn01">instagram</a>
+                    <a href="https://pf.kakao.com/_iGCjn" target="_blank"  class="btn01">kakao</a>
+                </div>
+            </article>
+    
+            <article>
+                <h3>롱보드 대축제</h3>
+                <p></p>
+                <div class="btn_wrap">
+                    <a href="./festival.html" class="read_link btn01" target="_blank" >상세보기</a>
+                    <a href="https://www.instagram.com/longboardkoreacom/" target="_blank"  class="btn01">인스타그램</a>
+                </div>
+            </article>
+            
+            <article>
+                <h3>오보타</h3>
+                <p></p>
+                <div class="btn_wrap">
+                    <a href="#" class="read_link btn01">AppStore</a>
+                    <a href="#" class="read_link btn01">GoogleStore</a>
+                </div>
+            </article>
+    
+        </article>
     </div>
-    
-    <script>
-        const slides = document.querySelectorAll('.slide');
-        const navContainer = document.querySelector('.nav-buttons');
-        let currentIndex = 0;
-        
-        slides.forEach((_, index) => {
-            const navButton = document.createElement('div');
-            navButton.classList.add('nav-button');
-            if (index === 0) navButton.classList.add('active');
-            navButton.addEventListener('click', () => showSlide(index));
-            navContainer.appendChild(navButton);
-        });
-        
-        function showSlide(index) {
-            slides[currentIndex].classList.remove('active');
-            navContainer.children[currentIndex].classList.remove('active');
-            currentIndex = index;
-            slides[currentIndex].classList.add('active');
-            navContainer.children[currentIndex].classList.add('active');
-        }
-        
-        function nextSlide() {
-            showSlide((currentIndex + 1) % slides.length);
-        }
-        
-        setInterval(nextSlide, 4000); // 4초마다 자동 슬라이드
-    </script>
-    
+
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             // Firebase 설정
