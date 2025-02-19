@@ -8,8 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     readLinks.forEach(link => {
         link.addEventListener("click", (e) => {
-            e.preventDefault(); // 링크의 기본 동작 방지
+            e.preventDefault(); 
             alert("준비중입니다.");
         });
     });
+
+    setTimeout(() => {
+        document.body.classList.add('load');
+    }, 500);
 });
