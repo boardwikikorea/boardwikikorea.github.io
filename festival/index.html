@@ -135,83 +135,69 @@
     </div>
 
     <script type="module">
-        // ✅ Firebase SDK import
         import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
-      
-        // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-analytics.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
 
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
         const firebaseConfig = {
             apiKey: "AIzaSyDDkghHYAD581-N3u8zUUsinS1F49P5xi0",
             authDomain: "boardwiki-e070e.firebaseapp.com",
             databaseURL: "https://boardwiki-e070e-default-rtdb.asia-southeast1.firebasedatabase.app",
             projectId: "boardwiki-e070e",
-            storageBucket: "boardwiki-e070e.firebasestorage.app",
+            storageBucket: "boardwiki-e070e.appspot.com",
             messagingSenderId: "301441212066",
             appId: "1:301441212066:web:1ffff5d8eccaaff11781fb",
             measurementId: "G-DZ52LV9MMG"
         };
 
-        // Initialize Firebase
         const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
+        getAnalytics(app);
         const db = getFirestore(app);
-      
-        // ✅ 폼 제출 처리
-        const form = document.getElementById('applicationForm');
-      
-        form.addEventListener('submit', async (e) => {
-          e.preventDefault();
-      
-          // 📥 입력값 가져오기
-          const name = document.getElementById('name').value.trim();
-          const contact = document.getElementById('contact').value.trim();
-          const gender = form.querySelector('input[name="gender"]:checked')?.value ?? "";
-          const stance = form.querySelector('input[name="stance"]:checked')?.value ?? "";
-          const team = document.getElementById('team').value.trim();
-      
-          const freestyle = form.querySelector('input[name="freestyle"]:checked')?.value ?? null;
-          const best_trick = form.querySelector('input[name="best_trick"]:checked')?.value ?? null;
-          const best_gturn = form.querySelector('input[name="best_gturn"]:checked')?.checked ?? false;
-          const hippy_jump = form.querySelector('input[name="hippy_jump"]:checked')?.checked ?? false;
-      
-          // ✅ 필수 항목 확인
-          if (!name || !contact || !gender || !stance) {
-            alert('모든 필수 항목을 입력해주세요.');
-            return;
-          }
-          
-          /*
-          try {
-            // ✅ Firestore에 데이터 추가
-            await addDoc(collection(db, "festivalApplications"), {
-              name,
-              contact,
-              gender,
-              stance,
-              team: team || null,
-              freestyle,
-              best_trick,
-              best_gturn,
-              hippy_jump,
-              createdAt: serverTimestamp()
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('applicationForm');
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                const name = document.getElementById('name').value.trim();
+                const contact = document.getElementById('contact').value.trim();
+                const gender = form.querySelector('input[name="gender"]:checked')?.value;
+                const stance = form.querySelector('input[name="stance"]:checked')?.value;
+                const team = document.getElementById('team').value.trim();
+                const freestyle = form.querySelector('input[name="freestyle"]:checked')?.value ?? null;
+                const best_trick = form.querySelector('input[name="best_trick"]:checked')?.value ?? null;
+                const best_gturn = form.querySelector('input[name="best_gturn"]')?.checked ?? false;
+                const hippy_jump = form.querySelector('input[name="hippy_jump"]')?.checked ?? false;
+
+                if (!name || !contact || !gender || !stance) {
+                    alert('모든 필수 항목을 입력해주세요.');
+                    return;
+                }
+
+                try {
+                    await addDoc(collection(db, "festivalApplications"), {
+                        name,
+                        contact,
+                        gender,
+                        stance,
+                        team: team || null,
+                        freestyle,
+                        best_trick,
+                        best_gturn,
+                        hippy_jump,
+                        createdAt: serverTimestamp()
+                    });
+
+                    alert('신청이 완료되었습니다!');
+                    form.reset();
+                } catch (error) {
+                    console.error("Error submitting application:", error);
+                    alert(`신청 중 오류 발생: ${error.message}`);
+                }
             });
-      
-            alert('신청이 완료되었습니다!');
-            form.reset(); // 폼 초기화
-          } catch (error) {
-            console.error("Error submitting application:", error);
-            alert(`신청 중 오류 발생: ${error.message}`);
-          }
-          */
         });
-      </script>
-      
+    </script>
 </body>
 
 </html>
