@@ -8,10 +8,10 @@
 
     <!-- SEO 최적화 -->
     <meta name="description" content="보드위키에서 최신 스케이트, 롱보드 정보와 롱보드댄싱, 보드대회 소식을 확인하세요.">
-    <meta name="keywords" content="스케이트, 롱보드, 카버보드, 롱보드댄싱, 보드대회, longboarding, 롱보드 대축제, 롱보드 페스티벌 , longboard festival">
+    <meta name="keywords" content="스케이트, 롱보드, 카버보드, 롱보드댄싱, 보드대회, longboarding, 롱보드 대축제, 롱보드 페스티벌, longboard festival">
     <meta name="naver-site-verification" content="e74dc3e49d0527046508b26ee9860c52a501b8f4">
 
-    <!-- Open Graph (OG) - SNS 공유 최적화 -->
+    <!-- Open Graph (OG) -->
     <meta property="og:site_name" content="BoardWiki">
     <meta property="og:title" content="롱보드 대축제">
     <meta property="og:description" content="스케이트·롱보드 최신 정보를 확인하세요.">
@@ -77,63 +77,61 @@
             <section class="application">
                 <h3>대회 신청</h3>
 
-                <ul class="user_info">
-                    <li>
-                        <label for="">이름 (name)</label>
-                        <input type="text">
-                    </li>
+                <form id="applicationForm">
+                    <ul class="user_info">
+                        <li>
+                            <label for="name">이름 (name)</label>
+                            <input type="text" id="name" required>
+                        </li>
 
-                    <li>
-                        <label for="">연락처 (phone) or 메일 (email)</label>
-                        <input type="text">
-                    </li>
+                        <li>
+                            <label for="contact">연락처 (phone) 또는 메일 (email)</label>
+                            <input type="text" id="contact" required>
+                        </li>
 
-                    <li>
-                        <strong>성별</strong>
-                        <label for="">남자(male)</label>
-                        <input type="radio" name="" id="">, 
-                        <label for="">여자(female)</label>
-                        <input type="radio" name="" id="">
-                    </li>
+                        <li>
+                            <strong>성별</strong>
+                            <label><input type="radio" name="gender" value="male" required> 남자(male)</label>
+                            <label><input type="radio" name="gender" value="female" required> 여자(female)</label>
+                        </li>
 
-                    <li>
-                        <strong>스탠스 (stance)</strong>
-                        <label for="">regular(male)</label>
-                        <input type="radio" name="" id="">, 
-                        <label for="">goofy(female)</label>
-                        <input type="radio" name="" id="">
-                    </li>
+                        <li>
+                            <strong>스탠스 (stance)</strong>
+                            <label><input type="radio" name="stance" value="regular" required> regular</label>
+                            <label><input type="radio" name="stance" value="goofy" required> goofy</label>
+                        </li>
 
-                    <li>
-                        <label for=""><strong>소속</strong></label>
-                        <input type="text">
-                    </li>
-                </ul>
+                        <li>
+                            <label for="team"><strong>소속</strong></label>
+                            <input type="text" id="team">
+                        </li>
+                    </ul>
 
-                <ul class="user_pick">
-                    <li>
-                        <strong>프리스타일</strong>
-                        <ul>
-                            <li><strong>마스터부</strong> <span>(역대 오픈부 입상자)</span><input type="checkbox"></li>
-                            <li><strong>오픈부</strong> <span>(조건 없음, 역대 오픈부 1위 참가 불가)</span><input type="checkbox"></li>
-                            <li><strong>아마추어부</strong> <span>(보드관련 스폰 라이더 참가 불가)</span><input type="checkbox"></li>
-                            <li><strong>뉴비부</strong> <span>(입문자 전용)</span><input type="checkbox"></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>베스트트릭</strong>
-                        <ul>
-                            <li><strong>오픈부</strong><input type="checkbox"></li>
-                            <li><strong>아마추어부</strong><input type="checkbox"></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>베스트G턴</strong><input type="checkbox">
-                    </li>
-                    <li>
-                        <strong>히피점프</strong><input type="checkbox">
-                    </li>
-                </ul>
+                    <ul class="user_pick">
+                        <li>
+                            <strong>프리스타일</strong>
+                            <ul>
+                                <li><label><input type="radio" name="freestyle" value="master"> 마스터부 <span>(역대 오픈부 입상자)</span></label></li>
+                                <li><label><input type="radio" name="freestyle" value="open"> 오픈부 <span>(조건 없음)</span></label></li>
+                                <li><label><input type="radio" name="freestyle" value="amateur"> 아마추어부 <span>(스폰 라이더 참가 불가)</span></label></li>
+                                <li><label><input type="radio" name="freestyle" value="newbie"> 뉴비부 <span>(입문자 전용)</span></label></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <strong>베스트트릭</strong>
+                            <ul>
+                                <li><label><input type="radio" name="best_trick" value="open"> 오픈부</label></li>
+                                <li><label><input type="radio" name="best_trick" value="amateur"> 아마추어부</label></li>
+                            </ul>
+                        </li>
+
+                        <li><label><input type="checkbox" name="best_gturn" value="yes"> <strong>베스트G턴</strong></label></li>
+                        <li><label><input type="checkbox" name="hippy_jump" value="yes"> <strong>히피점프</strong></label></li>
+                    </ul>
+
+                    <button type="submit" class="btn submit">신청하기</button>
+                </form>
             </section>
         </article>
 
@@ -144,20 +142,50 @@
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-analytics.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore.js";
 
         const firebaseConfig = {
             apiKey: "AIzaSyDDkghHYAD581-N3u8zUUsinS1F49P5xi0",
             authDomain: "boardwiki-e070e.firebaseapp.com",
             projectId: "boardwiki-e070e",
-            storageBucket: "boardwiki-e070e.firebasestorage.app",
+            storageBucket: "boardwiki-e070e.appspot.com",
             messagingSenderId: "301441212066",
             appId: "1:301441212066:web:1ffff5d8eccaaff11781fb",
             measurementId: "G-DZ52LV9MMG"
         };
 
         const app = initializeApp(firebaseConfig);
-        getAnalytics(app);
+        const db = getFirestore(app);
+
+        const form = document.getElementById('applicationForm');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const contact = document.getElementById('contact').value.trim();
+            const gender = form.querySelector('input[name="gender"]:checked')?.value;
+            const stance = form.querySelector('input[name="stance"]:checked')?.value;
+            const team = document.getElementById('team').value.trim();
+
+            const freestyle = Array.from(form.querySelectorAll('input[name="freestyle"]:checked')).map(el => el.value);
+            const best_trick = Array.from(form.querySelectorAll('input[name="best_trick"]:checked')).map(el => el.value);
+            const best_gturn = form.querySelector('input[name="best_gturn"]:checked') ? true : false;
+            const hippy_jump = form.querySelector('input[name="hippy_jump"]:checked') ? true : false;
+
+            try {
+                await addDoc(collection(db, "festivalApplications"), {
+                    name, contact, gender, stance, team,
+                    freestyle, best_trick, best_gturn, hippy_jump,
+                    createdAt: new Date()
+                });
+
+                alert('신청이 완료되었습니다!');
+                form.reset();
+            } catch (error) {
+                console.error("Error submitting application:", error);
+                alert('신청 중 오류가 발생했습니다. 다시 시도해주세요.');
+            }
+        });
     </script>
 </body>
 
