@@ -77,15 +77,15 @@
             <section class="application">
                 <h3>대회 신청</h3>
 
-                <form id="applicationForm" name="applicationForm" method="get">
+                <form id="applicationForm" name="applicationForm" method="post">
                     <ul class="user_info">
                         <li>
                             <label for="name">이름 (name)</label>
-                            <input type="text" id="name" required>
+                            <input type="text" id="name" name="name" required>
                         </li>
                         <li>
                             <label for="contact">연락처 (phone) 또는 메일 (email)</label>
-                            <input type="text" id="contact" required>
+                            <input type="text" id="contact" name="contact" required>
                         </li>
                         <li>
                             <strong>성별</strong>
@@ -99,7 +99,7 @@
                         </li>
                         <li>
                             <label for="team"><strong>소속</strong></label>
-                            <input type="text" id="team">
+                            <input type="text" id="team" name="team">
                         </li>
                     </ul>
 
@@ -154,51 +154,36 @@
         getAnalytics(app);
         const db = getFirestore(app);
 
-        window.addEventListener('load', () => {
-            const form = document.getElementById('applicationForm');
+        document.getElementById('applicationForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
 
-            form.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                console.log('???');
-                alert('???');
-                /*
-                const name = document.getElementById('name').value.trim();
-                const contact = document.getElementById('contact').value.trim();
-                const gender = form.querySelector('input[name="gender"]:checked')?.value;
-                const stance = form.querySelector('input[name="stance"]:checked')?.value;
-                const team = document.getElementById('team').value.trim();
-                const freestyle = form.querySelector('input[name="freestyle"]:checked')?.value ?? null;
-                const best_trick = form.querySelector('input[name="best_trick"]:checked')?.value ?? null;
-                const best_gturn = form.querySelector('input[name="best_gturn"]')?.checked ?? false;
-                const hippy_jump = form.querySelector('input[name="hippy_jump"]')?.checked ?? false;
+            const form = e.target;
+            const data = {
+                name: form.name.value.trim(),
+                contact: form.contact.value.trim(),
+                gender: form.gender.value,
+                stance: form.stance.value,
+                team: form.team.value.trim() || null,
+                freestyle: form.freestyle?.value ?? null,
+                best_trick: form.best_trick?.value ?? null,
+                best_gturn: form.best_gturn?.checked ?? false,
+                hippy_jump: form.hippy_jump?.checked ?? false,
+                createdAt: serverTimestamp()
+            };
 
-                if (!name || !contact || !gender || !stance) {
-                    alert('모든 필수 항목을 입력해주세요.');
-                    return;
-                }
+            if (!data.name || !data.contact || !data.gender || !data.stance) {
+                alert('모든 필수 항목을 입력해주세요.');
+                return;
+            }
 
-                try {
-                    await addDoc(collection(db, "festivalApplications"), {
-                        name,
-                        contact,
-                        gender,
-                        stance,
-                        team: team || null,
-                        freestyle,
-                        best_trick,
-                        best_gturn,
-                        hippy_jump,
-                        createdAt: serverTimestamp()
-                    });
-
-                    alert('신청이 완료되었습니다!');
-                    form.reset();
-                } catch (error) {
-                    console.error("Error submitting application:", error);
-                    alert(`신청 중 오류 발생: ${error.message}`);
-                }
-                    */
-            });
+            try {
+                await addDoc(collection(db, "festivalApplications"), data);
+                alert('신청이 완료되었습니다!');
+                form.reset();
+            } catch (error) {
+                console.error("Error submitting application:", error);
+                alert(`신청 중 오류 발생: ${error.message}`);
+            }
         });
     </script>
 </body>
