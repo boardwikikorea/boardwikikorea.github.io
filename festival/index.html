@@ -136,23 +136,28 @@
 
     <script type="module">
         // ✅ Firebase SDK import
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-analytics.js";
         import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
       
-        // ✅ Firebase 구성
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
         const firebaseConfig = {
-          apiKey: "AIzaSyDDkghHYAD581-N3u8zUUsinS1F49P5xi0",
-          authDomain: "boardwiki-e070e.firebaseapp.com",
-          databaseURL: "https://boardwiki-e070e-default-rtdb.asia-southeast1.firebasedatabase.app",
-          projectId: "boardwiki-e070e",
-          storageBucket: "boardwiki-e070e.appspot.com", // ✅ 올바른 형식으로 수정
-          messagingSenderId: "301441212066",
-          appId: "1:301441212066:web:1ffff5d8eccaaff11781fb",
-          measurementId: "G-DZ52LV9MMG"
+            apiKey: "AIzaSyDDkghHYAD581-N3u8zUUsinS1F49P5xi0",
+            authDomain: "boardwiki-e070e.firebaseapp.com",
+            databaseURL: "https://boardwiki-e070e-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "boardwiki-e070e",
+            storageBucket: "boardwiki-e070e.firebasestorage.app",
+            messagingSenderId: "301441212066",
+            appId: "1:301441212066:web:1ffff5d8eccaaff11781fb",
+            measurementId: "G-DZ52LV9MMG"
         };
-      
-        // ✅ Firebase 초기화
+
+        // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const analytics = getAnalytics(app);
         const db = getFirestore(app);
