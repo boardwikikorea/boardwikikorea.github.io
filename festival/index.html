@@ -13,7 +13,7 @@
 
     <!-- Open Graph (OG) - SNS 공유 최적화 -->
     <meta property="og:site_name" content="BoardWiki">
-    <meta property="og:title" content="">
+    <meta property="og:title" content="롱보드 대축제">
     <meta property="og:description" content="스케이트·롱보드 최신 정보를 확인하세요.">
     <meta property="og:url" content="https://boardwiki.kr">
     <meta property="og:type" content="website">
@@ -28,20 +28,16 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://boardwiki.kr/">
 
-    <!-- Firebase SDK -->
-    <script defer src="https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/11.3.1/firebase-analytics.js"></script>
-
-    <!-- Google Font (애플 스타일 폰트) -->
+    <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
 
-    <!-- css -->
-    <link rel="stylesheet" href="../css/common.css"; />
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/festival.css">
 
-    <!-- js -->
+    <!-- JS -->
     <script src="../js/common.js"></script>
-
 </head>
 
 <body id="festival">
@@ -49,148 +45,120 @@
 
     <div class="wrap main">
         <article class="content">
-            <h2>
-                <strong>롱보드 대축제란</strong>
-            </h2>
-            <p>
-                롱보드 대축제에 대한 설명
-            </p>
+            <section class="intro">
+                <h2><strong>롱보드 대축제란?</strong></h2>
+                <p>함께 즐기고, 함께 성장하는 롱보드인들의 축제입니다!</p>
+            </section>
 
-            <article>
-                <h3>대회정보</h3>
-                <div>
-                    장소 :
-                </div>
-                <div>
-                    일시 :
-                </div>
-                <div>
-                    참가조건 : 헬멧, 참가비, 규정에 맞는 보드
-                </div>
-                <div>
-                    <a href="">규정문서 다운로드</a>
-                    <a href="">심사문서 다운로드</a>
-                </div>
-            </article>
-
-            <article>
-                <h3>대회일정</h3>
-            </article>
-
-            <article class="application">
-                <h3>대회신청</h3>
+            <section class="info">
+                <h3>대회 정보</h3>
                 <ul>
+                    <li><strong>장소:</strong> 미정</li>
+                    <li><strong>일시:</strong> 2025년 5월 18일 (일요일) 오전 10시 - 오후 5시</li>
+                    <li><strong>참가 조건:</strong> 헬멧 착용 필수, 참가비 3만원, 규정에 맞는 보드</li>
+                    <li class="downloads">
+                        <a href="#" class="btn">규정문서 다운로드</a>
+                        <a href="#" class="btn">심사문서 다운로드</a>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="schedule">
+                <h3>대회 일정</h3>
+                <ul>
+                    <li>10:00 - 개회식 & 참가자 등록</li>
+                    <li>11:00 - 프리스타일 예선</li>
+                    <li>13:00 - 점심시간</li>
+                    <li>14:00 - 베스트트릭 & 히피점프</li>
+                    <li>16:00 - 결승전 및 시상식</li>
+                </ul>
+            </section>
+
+            <section class="application">
+                <h3>대회 신청</h3>
+
+                <ul class="user_info">
+                    <li>
+                        <label for="">이름 (name)</label>
+                        <input type="text">
+                    </li>
+
+                    <li>
+                        <label for="">연락처 (phone) or 메일 (email)</label>
+                        <input type="text">
+                    </li>
+
+                    <li>
+                        <strong>성별</strong>
+                        <label for="">남자(male)</label>
+                        <input type="radio" name="" id="">, 
+                        <label for="">여자(female)</label>
+                        <input type="radio" name="" id="">
+                    </li>
+
+                    <li>
+                        <strong>스탠스 (stance)</strong>
+                        <label for="">regular(male)</label>
+                        <input type="radio" name="" id="">, 
+                        <label for="">goofy(female)</label>
+                        <input type="radio" name="" id="">
+                    </li>
+
+                    <li>
+                        <label for=""><strong>소속</strong></label>
+                        <input type="text">
+                    </li>
+                </ul>
+
+                <ul class="user_pick">
                     <li>
                         <strong>프리스타일</strong>
                         <ul>
-                            <li>
-                                <strong>마스터부</strong>
-                                <span>참가조건 : 역대 오픈부 입상자</span>
-                                <input type="checkbox" name="" id="">
-                            </li>
-
-                            <li>
-                                <strong>오픈부</strong>
-                                <span>참가조건 : 조건 없음, 역대 오픈부 1위 참가 불가능</span>
-                                <input type="checkbox" name="" id="">
-                            </li>
-
-                            <li>
-                                <strong>아마추어부</strong>
-                                <span>참가조건 : 조건 없음, 역대 아마추어부 1위, 보드관련 스폰 라이더 참가 불가능</span>
-                                <input type="checkbox" name="" id="">
-                            </li>
-                            
-                            <li>
-                                <strong>뉴비부</strong>
-                                <span>참가조건 : 조건 없음, 역대 아마추어부 1위, 보드관련 스폰 라이더 참가 불가능</span>
-                                <input type="checkbox" name="" id="">
-                            </li>
-
+                            <li><strong>마스터부</strong> <span>(역대 오픈부 입상자)</span><input type="checkbox"></li>
+                            <li><strong>오픈부</strong> <span>(조건 없음, 역대 오픈부 1위 참가 불가)</span><input type="checkbox"></li>
+                            <li><strong>아마추어부</strong> <span>(보드관련 스폰 라이더 참가 불가)</span><input type="checkbox"></li>
+                            <li><strong>뉴비부</strong> <span>(입문자 전용)</span><input type="checkbox"></li>
                         </ul>
                     </li>
-
                     <li>
                         <strong>베스트트릭</strong>
                         <ul>
-                            <li>
-                                <strong>오픈부</strong>
-                                <p></p>
-                                <input type="checkbox" name="" id="">
-                            </li>
-                            <li>
-                                <strong>아마추어부</strong>
-                                <p></p>
-                                <input type="checkbox" name="" id="">
-                            </li>
+                            <li><strong>오픈부</strong><input type="checkbox"></li>
+                            <li><strong>아마추어부</strong><input type="checkbox"></li>
                         </ul>
                     </li>
-
                     <li>
-                        <strong>베스트트릭</strong>
-                        <ul>
-                            <li>
-                                <strong>오픈부</strong>
-                                <p></p>
-                                <input type="checkbox" name="" id="">
-                            </li>
-                            <li>
-                                <strong>아마추어부</strong>
-                                <p></p>
-                                <input type="checkbox" name="" id="">
-                            </li>
-                        </ul>
+                        <strong>베스트G턴</strong><input type="checkbox">
                     </li>
-
-
                     <li>
-                        <strong>베스트G턴</strong>
-
+                        <strong>히피점프</strong><input type="checkbox">
                     </li>
-
-                    
-                    <li>
-                        <strong>히피점프</strong>
-
-                    </li>
-
                 </ul>
-
-            </article>
-
+            </section>
         </article>
 
         <footer>
-            서비스 제공 
-            <a href="../index.html">@boardwiki</a>
+            서비스 제공 <a href="../index.html">@boardwiki</a>
         </footer>
-
     </div>
 
-
-
     <script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-analytics.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-analytics.js";
 
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {
-        apiKey: "AIzaSyDDkghHYAD581-N3u8zUUsinS1F49P5xi0",
-        authDomain: "boardwiki-e070e.firebaseapp.com",
-        projectId: "boardwiki-e070e",
-        storageBucket: "boardwiki-e070e.firebasestorage.app",
-        messagingSenderId: "301441212066",
-        appId: "1:301441212066:web:1ffff5d8eccaaff11781fb",
-        measurementId: "G-DZ52LV9MMG"
-    };
+        const firebaseConfig = {
+            apiKey: "AIzaSyDDkghHYAD581-N3u8zUUsinS1F49P5xi0",
+            authDomain: "boardwiki-e070e.firebaseapp.com",
+            projectId: "boardwiki-e070e",
+            storageBucket: "boardwiki-e070e.firebasestorage.app",
+            messagingSenderId: "301441212066",
+            appId: "1:301441212066:web:1ffff5d8eccaaff11781fb",
+            measurementId: "G-DZ52LV9MMG"
+        };
 
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
+        const app = initializeApp(firebaseConfig);
+        getAnalytics(app);
     </script>
 </body>
+
 </html>
