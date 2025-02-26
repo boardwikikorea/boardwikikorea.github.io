@@ -77,7 +77,7 @@
             <section class="application">
                 <h3>대회 신청</h3>
 
-                <form id="applicationForm">
+                <form id="applicationForm" name="applicationForm" method="get">
                     <ul class="user_info">
                         <li>
                             <label for="name">이름 (name)</label>
@@ -159,7 +159,7 @@
 
             form.addEventListener('submit', async (e) => {
                 e.preventDefault();
-
+                console.log('???');
                 alert('???');
                 /*
                 const name = document.getElementById('name').value.trim();
