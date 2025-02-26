@@ -17,7 +17,6 @@
 #wiki-main .wrap{
     height: 100%;
     width: 100%;
-    min-width: 1080px;
 }
 
 #wiki-main .content > article {
@@ -27,6 +26,7 @@
     align-items: center;
     justify-content: center;
     height: 100%;
+    padding: 30px 0;
 }
 
 #wiki-main .content > article:nth-child(odd) {
