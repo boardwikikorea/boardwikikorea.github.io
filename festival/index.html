@@ -154,7 +154,7 @@
         getAnalytics(app);
         const db = getFirestore(app);
 
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('load', () => {
             const form = document.getElementById('applicationForm');
 
             form.addEventListener('submit', async (e) => {
