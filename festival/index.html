@@ -135,14 +135,17 @@
     </div>
 
     <script type="module">
+
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-analytics.js";
         import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore.js";
 
         const firebaseConfig = {
             apiKey: "AIzaSyDDkghHYAD581-N3u8zUUsinS1F49P5xi0",
             authDomain: "boardwiki-e070e.firebaseapp.com",
+            databaseURL: "https://boardwiki-e070e-default-rtdb.asia-southeast1.firebasedatabase.app",
             projectId: "boardwiki-e070e",
-            storageBucket: "boardwiki-e070e.appspot.com",
+            storageBucket: "boardwiki-e070e.firebasestorage.app",
             messagingSenderId: "301441212066",
             appId: "1:301441212066:web:1ffff5d8eccaaff11781fb",
             measurementId: "G-DZ52LV9MMG"
