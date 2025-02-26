@@ -17,6 +17,7 @@
 #wiki-main .wrap{
     height: 100%;
     width: 100%;
+    min-width: 1080px;
 }
 
 #wiki-main .content > article {
@@ -99,5 +100,8 @@
     #wiki-main .btn01 {
         font-size: 1em;
         height: 40px;
+    }
+    #wiki-main .wrap{
+        min-width: auto;
     }
 }
