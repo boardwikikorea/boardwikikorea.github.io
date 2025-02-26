@@ -37,7 +37,7 @@
     <link rel="stylesheet" href="../css/festival.css">
 
     <!-- JS -->
-    <script src="../js/common.js"></script>
+    <script src="../js/common.js" defer></script>
 </head>
 
 <body id="festival">
@@ -83,24 +83,20 @@
                             <label for="name">이름 (name)</label>
                             <input type="text" id="name" required>
                         </li>
-
                         <li>
                             <label for="contact">연락처 (phone) 또는 메일 (email)</label>
                             <input type="text" id="contact" required>
                         </li>
-
                         <li>
                             <strong>성별</strong>
                             <label><input type="radio" name="gender" value="male" required> 남자(male)</label>
                             <label><input type="radio" name="gender" value="female" required> 여자(female)</label>
                         </li>
-
                         <li>
                             <strong>스탠스 (stance)</strong>
                             <label><input type="radio" name="stance" value="regular" required> regular</label>
                             <label><input type="radio" name="stance" value="goofy" required> goofy</label>
                         </li>
-
                         <li>
                             <label for="team"><strong>소속</strong></label>
                             <input type="text" id="team">
@@ -111,13 +107,12 @@
                         <li>
                             <strong>프리스타일</strong>
                             <ul>
-                                <li><label><input type="radio" name="freestyle" value="master"> 마스터부 <span>(역대 오픈부 입상자)</span></label></li>
-                                <li><label><input type="radio" name="freestyle" value="open"> 오픈부 <span>(조건 없음)</span></label></li>
-                                <li><label><input type="radio" name="freestyle" value="amateur"> 아마추어부 <span>(스폰 라이더 참가 불가)</span></label></li>
-                                <li><label><input type="radio" name="freestyle" value="newbie"> 뉴비부 <span>(입문자 전용)</span></label></li>
+                                <li><label><input type="radio" name="freestyle" value="master"> 마스터부</label></li>
+                                <li><label><input type="radio" name="freestyle" value="open"> 오픈부</label></li>
+                                <li><label><input type="radio" name="freestyle" value="amateur"> 아마추어부</label></li>
+                                <li><label><input type="radio" name="freestyle" value="newbie"> 뉴비부</label></li>
                             </ul>
                         </li>
-
                         <li>
                             <strong>베스트트릭</strong>
                             <ul>
@@ -125,9 +120,8 @@
                                 <li><label><input type="radio" name="best_trick" value="amateur"> 아마추어부</label></li>
                             </ul>
                         </li>
-
-                        <li><label><input type="checkbox" name="best_gturn" value="yes"> <strong>베스트G턴</strong></label></li>
-                        <li><label><input type="checkbox" name="hippy_jump" value="yes"> <strong>히피점프</strong></label></li>
+                        <li><label><input type="checkbox" name="best_gturn"> <strong>베스트G턴</strong></label></li>
+                        <li><label><input type="checkbox" name="hippy_jump"> <strong>히피점프</strong></label></li>
                     </ul>
 
                     <button type="submit" class="btn submit">신청하기</button>
@@ -142,7 +136,7 @@
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
-        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore.js";
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore.js";
 
         const firebaseConfig = {
             apiKey: "AIzaSyDDkghHYAD581-N3u8zUUsinS1F49P5xi0",
@@ -158,6 +152,7 @@
         const db = getFirestore(app);
 
         const form = document.getElementById('applicationForm');
+
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
 
@@ -167,16 +162,28 @@
             const stance = form.querySelector('input[name="stance"]:checked')?.value;
             const team = document.getElementById('team').value.trim();
 
-            const freestyle = Array.from(form.querySelectorAll('input[name="freestyle"]:checked')).map(el => el.value);
-            const best_trick = Array.from(form.querySelectorAll('input[name="best_trick"]:checked')).map(el => el.value);
-            const best_gturn = form.querySelector('input[name="best_gturn"]:checked') ? true : false;
-            const hippy_jump = form.querySelector('input[name="hippy_jump"]:checked') ? true : false;
+            const freestyle = form.querySelector('input[name="freestyle"]:checked')?.value || null;
+            const best_trick = form.querySelector('input[name="best_trick"]:checked')?.value || null;
+            const best_gturn = form.querySelector('input[name="best_gturn"]:checked') !== null;
+            const hippy_jump = form.querySelector('input[name="hippy_jump"]:checked') !== null;
+
+            if (!name || !contact || !gender || !stance) {
+                alert('모든 필수 항목을 입력해주세요.');
+                return;
+            }
 
             try {
                 await addDoc(collection(db, "festivalApplications"), {
-                    name, contact, gender, stance, team,
-                    freestyle, best_trick, best_gturn, hippy_jump,
-                    createdAt: new Date()
+                    name,
+                    contact,
+                    gender,
+                    stance,
+                    team: team || null,
+                    freestyle,
+                    best_trick,
+                    best_gturn,
+                    hippy_jump,
+                    createdAt: serverTimestamp()
                 });
 
                 alert('신청이 완료되었습니다!');
