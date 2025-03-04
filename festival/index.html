@@ -120,15 +120,15 @@
                 <section class="schedule">
                     <h3>Event Schedule (Day 1 - Freestyle Preliminaries)</h3>
                     <ul>
-                        <li><strong>10:00</strong> - Freestyle - General Women's Division</li>
-                        <li><strong>11:00</strong> - Freestyle - General Men's Division</li>
+                        <li><strong>10:00</strong> - Freestyle - Non-Sponsored Women's Division</li>
+                        <li><strong>11:00</strong> - Freestyle - Non-Sponsored Men's Division</li>
                         <li><strong>13:00</strong> - Freestyle - Newbie Division</li>
                         <li><strong>13:30</strong> - Hippie Jump</li>
                         <li><strong>14:00</strong> - Freestyle - Open Women's Division</li>
                         <li><strong>15:00</strong> - Freestyle - Open Men's Division</li>
                         <li><strong>17:00</strong> - Best G-Turn</li>
                         <li><strong>17:30</strong> - Best Hand Trick</li>
-                        <li><strong>18:00</strong> - Best Trick - General & Open (Men & Women)</li>
+                        <li><strong>18:00</strong> - Best Trick - Non-Sponsored & Open (Men & Women)</li>
                     </ul>
                     <br/>
                     <br/>
@@ -136,8 +136,8 @@
                     <ul>
                         <li><strong>11:00</strong> - Best Pair</li>
                         <li><strong>12:00</strong> - Freestyle - Master Division</li>
-                        <li><strong>13:00</strong> - Best Dancing - General Division (Women, Men)</li>
-                        <li><strong>14:00</strong> - Freestyle - General Division (Women, Men)</li>
+                        <li><strong>13:00</strong> - Best Dancing - Non-Sponsored Division (Women, Men)</li>
+                        <li><strong>14:00</strong> - Freestyle - Non-Sponsored Division (Women, Men)</li>
                         <li><strong>15:00</strong> - Best Dancing - Open Division (Women, Men)</li>
                         <li><strong>16:00</strong> - Freestyle - Open Division (Women, Men)</li>
                         <li><strong>18:00</strong> - Awards Ceremony</li>
@@ -163,25 +163,34 @@
             const btnEn = document.getElementById("btn-en");
             const krElements = document.querySelectorAll(".lang_kr");
             const enElements = document.querySelectorAll(".lang_en");
-        
+
             function showKorean() {
                 krElements.forEach(el => el.style.display = "block");
                 enElements.forEach(el => el.style.display = "none");
                 btnKr.classList.add("active");
                 btnEn.classList.remove("active");
             }
-        
+
             function showEnglish() {
                 krElements.forEach(el => el.style.display = "none");
                 enElements.forEach(el => el.style.display = "block");
                 btnEn.classList.add("active");
                 btnKr.classList.remove("active");
             }
-        
+
+            // 초기 상태 설정: 브라우저 언어 감지
+            const userLang = navigator.language || navigator.userLanguage; // 사용자의 브라우저 언어 감지
+            if (userLang.startsWith("ko")) {
+                showKorean(); // 한국어이면 한국어 노출
+            } else {
+                showEnglish(); // 그 외에는 영어 노출
+            }
+
+            // 버튼 클릭 이벤트 설정
             btnKr.addEventListener("click", showKorean);
             btnEn.addEventListener("click", showEnglish);
         });
-        </script>
+    </script>
 
 </body>
 
