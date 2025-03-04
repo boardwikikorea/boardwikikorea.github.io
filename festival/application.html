@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>롱보드 대축제</title>
+
+    <!-- SEO 최적화 -->
+    <meta name="description" content="보드위키에서 최신 스케이트, 롱보드 정보와 롱보드댄싱, 보드대회 소식을 확인하세요.">
+    <meta name="keywords" content="스케이트, 롱보드, 카버보드, 롱보드댄싱, 보드대회, longboarding, 롱보드 대축제, 롱보드 페스티벌, longboard festival">
+    <meta name="naver-site-verification" content="e74dc3e49d0527046508b26ee9860c52a501b8f4">
+
+    <!-- Open Graph (OG) -->
+    <meta property="og:site_name" content="BoardWiki">
+    <meta property="og:title" content="롱보드 대축제">
+    <meta property="og:description" content="스케이트·롱보드 최신 정보를 확인하세요.">
+    <meta property="og:url" content="https://boardwiki.kr">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://boardwiki.kr/images/og-image.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="보드위키 - 스케이트·롱보드 커뮤니티">
+    <meta name="twitter:description" content="보드위키에서 최신 스케이트, 롱보드 정보를 만나보세요.">
+    <meta name="twitter:image" content="https://boardwiki.kr/images/twitter-image.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://boardwiki.kr/">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/festival.css">
+
+    <!-- JS -->
+    <script src="../js/common.js" defer></script>
+</head>
+
+<body id="festival">
+    <h1 class="sound_only">롱보드 대축제</h1>
+
+    <div class="wrap main">
+        <article class="content">
+            <section class="intro">
+                <h2><strong>롱보드 대축제란?</strong></h2>
+                <p>함께 즐기고, 함께 성장하는 롱보드인들의 축제입니다!</p>
+            </section>
+
+            <section class="info">
+                <h3>대회 정보</h3>
+                <ul>
+                    <li><strong>장소:</strong> 오금교 인라인스케이트장 <a href="https://maps.app.goo.gl/HTuJaPZ9CCvyhX5f8" class="map_btn" target="_blank">지도</a></li>
+                    <li><strong>일시:</strong> 2025년 5월 18일 (일요일) 오전 10시 - 오후 5시</li>
+                    <li><strong>참가 조건:</strong> 헬멧 착용 필수, 참가비 3만원, 규정에 맞는 보드</li>
+                    <li class="downloads">
+                        <a href="#" class="btn">규정문서 다운로드</a>
+                        <a href="#" class="btn">심사문서 다운로드</a>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="schedule">
+                <h3>대회 일정 (1일차 - 프리스타일 예선)</h3>
+                <ul>
+                    <li><strong>10:00</strong> - 프리스타일 - 일반부 여자</li>
+                    <li><strong>11:00</strong> - 프리스타일 - 일반부 남자</li>
+                    <li><strong>13:00</strong> - 프리스타일 - 뉴비부</li>
+                    <li><strong>13:30</strong> - 히피점프</li>
+                    <li><strong>14:00</strong> - 프리스타일 - 오픈부 여자</li>
+                    <li><strong>15:00</strong> - 프리스타일 - 오픈부 남자</li>
+                    <li><strong>17:00</strong> - 베스트 지턴</li>
+                    <li><strong>17:30</strong> - 베스트 핸트</li>
+                    <li><strong>18:00</strong> - 베스트 트릭 - 일반,오픈- 남여 </li>
+                </ul>
+                <br/>
+                <br/>
+                <h3>대회 일정 (2일차 - 프리스타일 결승)</h3>
+                <ul>
+                    <li><strong>11:00</strong> - 베스트 페어</li>
+                    <li><strong>12:00</strong> - 프리스타일 - 마스터부</li>
+                    <li><strong>13:00</strong> - 베스트댄싱 - 일반부 (여,남)</li>
+                    <li><strong>14:00</strong> - 프리스타일 - 일반부 (여,남)</li>
+                    <li><strong>15:00</strong> - 베스트댄싱 - 오픈부 (여,남)</li>
+                    <li><strong>16:00</strong> - 프리스타일 - 오픈부 (여,남)</li>
+                    <li><strong>18:00</strong> - 시상식 (1시간)</li>
+                </ul>
+            </section>
+
+            <section class="application">
+                <h3>대회 신청</h3>
+
+                <form id="applicationForm" name="applicationForm" method="post">
+                    <ul class="user_info">
+                        <li>
+                            <label for="name">이름 (name)</label>
+                            <input type="text" id="name" name="name" required>
+                        </li>
+                        <li>
+                            <label for="contact">연락처 (phone) 또는 메일 (email)</label>
+                            <input type="text" id="contact" name="contact" required>
+                        </li>
+                        <li>
+                            <strong>성별</strong>
+                            <label><input type="radio" name="gender" value="male" required> 남자(male)</label>
+                            <label><input type="radio" name="gender" value="female" required> 여자(female)</label>
+                        </li>
+                        <li>
+                            <strong>스탠스 (stance)</strong>
+                            <label><input type="radio" name="stance" value="regular" required> regular</label>
+                            <label><input type="radio" name="stance" value="goofy" required> goofy</label>
+                        </li>
+                        <li>
+                            <label for="team"><strong>소속</strong></label>
+                            <input type="text" id="team" name="team">
+                        </li>
+                    </ul>
+
+                    <ul class="user_pick">
+                        <li>
+                            <strong>프리스타일</strong>
+                            <ul>
+                                <li><label><input type="radio" name="freestyle" value="master"> 마스터부</label></li>
+                                <li><label><input type="radio" name="freestyle" value="open"> 오픈부</label></li>
+                                <li><label><input type="radio" name="freestyle" value="amateur"> 아마추어부</label></li>
+                                <li><label><input type="radio" name="freestyle" value="newbie"> 뉴비부</label></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>베스트트릭</strong>
+                            <ul>
+                                <li><label><input type="radio" name="best_trick" value="open"> 오픈부</label></li>
+                                <li><label><input type="radio" name="best_trick" value="amateur"> 아마추어부</label></li>
+                            </ul>
+                        </li>
+                        <li><label><input type="checkbox" name="best_gturn"> <strong>베스트G턴</strong></label></li>
+                        <li><label><input type="checkbox" name="hippy_jump"> <strong>히피점프</strong></label></li>
+                    </ul>
+
+                    <button type="submit" class="btn submit">신청하기</button>
+                </form>
+            </section>
+        </article>
+
+        <footer>
+            서비스 제공 <a href="../index.html">@boardwiki</a>
+        </footer>
+    </div>
+
+    <script type="module">
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore.js";
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyDDkghHYAD581-N3u8zUUsinS1F49P5xi0",
+            authDomain: "boardwiki-e070e.firebaseapp.com",
+            databaseURL: "https://boardwiki-e070e-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "boardwiki-e070e",
+            storageBucket: "boardwiki-e070e.firebasestorage.app",
+            messagingSenderId: "301441212066",
+            appId: "1:301441212066:web:1ffff5d8eccaaff11781fb",
+            measurementId: "G-DZ52LV9MMG"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const db = getFirestore(app);
+
+        document.getElementById('applicationForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const form = e.target;
+            const data = {
+                name: form.name.value.trim(),
+                contact: form.contact.value.trim(),
+                gender: form.gender.value,
+                stance: form.stance.value,
+                team: form.team.value.trim() || null,
+                freestyle: form.freestyle?.value ?? null,
+                best_trick: form.best_trick?.value ?? null,
+                best_gturn: form.best_gturn?.checked ?? false,
+                hippy_jump: form.hippy_jump?.checked ?? false,
+                createdAt: serverTimestamp()
+            };
+
+            if (!data.name || !data.contact || !data.gender || !data.stance) {
+                alert('모든 필수 항목을 입력해주세요.');
+                return;
+            }
+
+            try {
+                await addDoc(collection(db, "festivalApplications"), data);
+                alert('신청이 완료되었습니다!');
+                form.reset();
+            } catch (error) {
+                console.error("Error submitting application:", error);
+                alert(`신청 중 오류 발생: ${error.message}`);
+            }
+        });
+    </script>
+</body>
+
+</html>

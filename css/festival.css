@@ -15,8 +15,8 @@
     overflow: hidden;
 }
 
-#festival .main {
-    padding: 20px;
+#festival .main .content{
+    padding: 20px 20px 100px 20px;
 }
 
 #festival .main h2 {
@@ -46,7 +46,6 @@
 
 #festival .main h3 {
     font-size: 1.4em;
-    padding-bottom: 12px;
     font-weight: 600;
     color: #333;
 }
@@ -157,6 +156,15 @@ footer a:hover {
     display: flex;
     gap: 1rem;
     margin-top: 1rem;
+}
+
+.map_btn{
+    background-color: #27ae60;
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
 }
 
 .downloads .btn {
@@ -321,4 +329,38 @@ footer a:hover {
     text-align: center;
     font-size: 1.2em;
     margin-bottom: 50px;
+}
+
+ /* 모달 스타일 */
+ .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 60%;
+    max-height: 70%;
+    overflow-y: auto;
+}
+
+.close {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
