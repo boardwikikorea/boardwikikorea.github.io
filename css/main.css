@@ -27,7 +27,6 @@
     align-items: center;
     justify-content: center;
     height: 100%;
-    padding: 100px 0;
 }
 
 #wiki-main .content > article:nth-child(odd) {
@@ -96,6 +95,7 @@
     }
     #wiki-main .content > article {
         width: 100%;
+        min-height: 100%;
     }
     #wiki-main .btn01 {
         font-size: 1em;
@@ -105,3 +105,50 @@
         min-width: auto;
     }
 }
+
+
+/* 스크롤 안내 표시 */
+.scroll-indicator {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 8px 12px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    animation: fadeInOut 1.5s infinite;
+}
+
+/* 아래 방향 화살표 */
+.scroll-indicator::after {
+    content: "↓";
+    font-size: 16px;
+    animation: bounce 1s infinite alternate;
+}
+
+/* 깜빡이는 애니메이션 */
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
+/* 화살표 위아래 움직이는 애니메이션 */
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(5px); }
+}
+
+/* 768px 이하에서만 표시 */
+@media (min-width: 769px) {
+    .scroll-indicator {
+        display: none;
+    }
+}
+
