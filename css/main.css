@@ -29,10 +29,6 @@
     height: 100%;
 }
 
-#wiki-main .content > article:nth-child(odd) {
-    background-color: #f5f5f5;
-}
-
 
 #wiki-main .content > article h3{
     font-size: 1.6em;
@@ -51,30 +47,26 @@
     position: relative;
 }
 
-#wiki-main .content > article:nth-child(odd){
-    background-color: #ac9c69;
+#wiki-main .content > article:nth-child(2){
+    background: #181818;
 }
 
-/*
+#wiki-main .content > article:nth-child(2) h3,
+#wiki-main .content > article:nth-child(2) p,
+#wiki-main .content > article:nth-child(4) h3,
+#wiki-main .content > article:nth-child(4) p{
+
+    color: #fff
+}
+
+
 #wiki-main .content > article:nth-child(3){
-    color:#fff
+    background: #b5a167;
+}
+#wiki-main .content > article:nth-child(4){
+    background: #2F3DDA;
 }
 
-#wiki-main .content > article:nth-child(3) .btn01{
-    background: #ac9c69;
-}
-#wiki-main .content > article:nth-child(3)::after{
-    background: url("../festival/main.jpg") no-repeat center;
-    content: '';
-    position: absolute;
-    z-index: -1;
-    inset: 0;
-    opacity: 0.4;
-    width: 100%;
-    height: 100%;
-    background-size: auto 100%;
-}
-*/
 
 #wiki-main .btn01{
     display: block;
@@ -111,6 +103,56 @@
 }
 #wiki-main .btn01:hover {
     background: #c4c4c4;
+    transform: scale(1.05);
+}
+
+/* Instagram 버튼 */
+#wiki-main .btn-instagram {
+    background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af);
+    color: #fff;
+}
+#wiki-main .btn-instagram:hover {
+    background: #c13584;
+    transform: scale(1.05);
+}
+
+/* Kakao 버튼 */
+#wiki-main .btn-kakao {
+    background: #fee500;
+    color: #3c1e1e;
+}
+#wiki-main .btn-kakao:hover {
+    background: #fdd835;
+    transform: scale(1.05);
+}
+
+/* App Store 버튼 */
+#wiki-main .btn-appstore {
+    background: #000;
+    color: #fff;
+}
+#wiki-main .btn-appstore:hover {
+    background: #333;
+    transform: scale(1.05);
+}
+
+/* Google Play Store 버튼 */
+#wiki-main .btn-googlestore {
+    color: #fff;
+    background: #000;
+}
+#wiki-main .btn-googlestore:hover {
+    background: #333;
+    transform: scale(1.05);
+}
+
+/* View Details 버튼 */
+#wiki-main .btn-viewdetails {
+    background: linear-gradient(135deg, #e6e6e6, #bdbdbd); /* 부드러운 회색 계열 */
+    color: #333;
+}
+#wiki-main .btn-viewdetails:hover {
+    background: linear-gradient(135deg, #d6d6d6, #a8a8a8); /* 조금 더 진한 회색 */
     transform: scale(1.05);
 }
 
