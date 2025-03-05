@@ -47,9 +47,34 @@
     width:100%;
 }
 
-#wiki-main .content > article:nth-child(odd){
-    background-color: #c9c9c9;
+#wiki-main .content > article{
+    position: relative;
 }
+
+#wiki-main .content > article:nth-child(odd){
+    background-color: #ac9c69;
+}
+
+/*
+#wiki-main .content > article:nth-child(3){
+    color:#fff
+}
+
+#wiki-main .content > article:nth-child(3) .btn01{
+    background: #ac9c69;
+}
+#wiki-main .content > article:nth-child(3)::after{
+    background: url("../festival/main.jpg") no-repeat center;
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    opacity: 0.4;
+    width: 100%;
+    height: 100%;
+    background-size: auto 100%;
+}
+*/
 
 #wiki-main .btn01{
     display: block;
