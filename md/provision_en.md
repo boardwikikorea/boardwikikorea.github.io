@@ -48,6 +48,8 @@
 ---
 ### Open Division  
 **Eligibility:** Previous winners of this division are not eligible.  
+"Until the official event of the Master’s Division starts, previous winners are also eligible to participate."
+
 
 **Categories:**  
 * (Men, Women) Freestyle  
