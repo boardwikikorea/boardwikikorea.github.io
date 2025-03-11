@@ -43,60 +43,23 @@
 <body id="festival">
     <h1 class="sound_only">롱보드 대축제</h1>
 
+    <div class="language-switcher">
+        <button type="button" class="active" id="btn-kr">KR</button>
+        <button type="button" id="btn-en">EN</button>
+    </div>
+
     <div class="wrap main">
-        <article class="content">
-            <section class="intro">
-                <h2><strong>롱보드 대축제란?</strong></h2>
-                <p>함께 즐기고, 함께 성장하는 롱보드인들의 축제입니다!</p>
-            </section>
+        <article class="content lang_kr">
+                <h2 class="sound_only">롱보드 대축제란?</h2>
 
-            <section class="info">
-                <h3>대회 정보</h3>
-                <ul>
-                    <li><strong>장소:</strong> 오금교 인라인스케이트장 <a href="https://maps.app.goo.gl/HTuJaPZ9CCvyhX5f8" class="map_btn" target="_blank">지도</a></li>
-                    <li><strong>일시:</strong> 2025년 5월 18일 (일요일) 오전 10시 - 오후 5시</li>
-                    <li><strong>참가 조건:</strong> 헬멧 착용 필수, 참가비 3만원, 규정에 맞는 보드</li>
-                    <li class="downloads">
-                        <a href="#" class="btn">규정문서 다운로드</a>
-                        <a href="#" class="btn">심사문서 다운로드</a>
-                    </li>
-                </ul>
-            </section>
-
-            <section class="schedule">
-                <h3>대회 일정 (1일차 - 프리스타일 예선)</h3>
-                <ul>
-                    <li><strong>10:00</strong> - 프리스타일 - 일반부 여자</li>
-                    <li><strong>11:00</strong> - 프리스타일 - 일반부 남자</li>
-                    <li><strong>13:00</strong> - 프리스타일 - 뉴비부</li>
-                    <li><strong>13:30</strong> - 히피점프</li>
-                    <li><strong>14:00</strong> - 프리스타일 - 오픈부 여자</li>
-                    <li><strong>15:00</strong> - 프리스타일 - 오픈부 남자</li>
-                    <li><strong>17:00</strong> - 베스트 지턴</li>
-                    <li><strong>17:30</strong> - 베스트 핸트</li>
-                    <li><strong>18:00</strong> - 베스트 트릭 - 일반,오픈- 남여 </li>
-                </ul>
-                <br/>
-                <br/>
-                <h3>대회 일정 (2일차 - 프리스타일 결승)</h3>
-                <ul>
-                    <li><strong>11:00</strong> - 베스트 페어</li>
-                    <li><strong>12:00</strong> - 프리스타일 - 마스터부</li>
-                    <li><strong>13:00</strong> - 베스트댄싱 - 일반부 (여,남)</li>
-                    <li><strong>14:00</strong> - 프리스타일 - 일반부 (여,남)</li>
-                    <li><strong>15:00</strong> - 베스트댄싱 - 오픈부 (여,남)</li>
-                    <li><strong>16:00</strong> - 프리스타일 - 오픈부 (여,남)</li>
-                    <li><strong>18:00</strong> - 시상식 (1시간)</li>
-                </ul>
-            </section>
-
-            <section class="application">
+                <section class="application">
                 <h3>대회 신청</h3>
+                <br/>
 
                 <form id="applicationForm" name="applicationForm" method="post">
                     <ul class="user_info">
                         <li>
-                            <label for="name">이름 (name)</label>
+                            <label for="name">이름 (name or nickname)</label>
                             <input type="text" id="name" name="name" required>
                         </li>
                         <li>
@@ -120,29 +83,64 @@
                     </ul>
 
                     <ul class="user_pick">
-                        <li>
-                            <strong>프리스타일</strong>
+                        <li class="line-bottom">
+                            <strong>프리스타일(Freestyle)</strong>
                             <ul>
-                                <li><label><input type="radio" name="freestyle" value="master"> 마스터부</label></li>
-                                <li><label><input type="radio" name="freestyle" value="open"> 오픈부</label></li>
-                                <li><label><input type="radio" name="freestyle" value="amateur"> 아마추어부</label></li>
-                                <li><label><input type="radio" name="freestyle" value="newbie"> 뉴비부</label></li>
+                                <li class="flex_none">
+                                    <label><input type="radio" name="freestyle" value="open"> 오픈부 (Open Division)</label>
+                                    
+                                </li>
+                                <li class="flex_none">
+                                    <label><input type="radio" name="freestyle" value="amateur"> 일반부 (Non-Sponsored Division)</label>
+                                    <p class="tip">
+                                        * 보드 관련 및 엠버서더나 공식 상품 후원을 받는 경우 참가 불가, 이전 페스티벌, 대축제 우승자 참가불가능
+                                    </p>
+                                </li>
+                                <li class="flex_none">
+                                    <label><input type="radio" name="freestyle" value="newbie"> 뉴비부 (Newbie Division)</label>
+                                    <p class="tip">
+                                        * 보드를 탄 경력이 2년이하 남녀노소 참여가능
+                                    </p>
+                                </li>
                             </ul>
                         </li>
                         <li>
-                            <strong>베스트트릭</strong>
+                            <strong>베스트댄싱(Best Dancing)</strong>
+                            <p></p>
                             <ul>
-                                <li><label><input type="radio" name="best_trick" value="open"> 오픈부</label></li>
-                                <li><label><input type="radio" name="best_trick" value="amateur"> 아마추어부</label></li>
+                                <li class="flex_none">
+                                    <label><input type="radio" name="best_dancing" value="open"> 오픈부 (Open Division)</label>   
+                                </li>
+                                <li class="flex_none">
+                                    <label><input type="radio" name="best_dancing" value="amateur"> 일반부 (Non-Sponsored Division)</label>
+                                    <p class="tip">
+                                        * 보드 관련 및 엠버서더나 공식 상품 후원을 받는 경우 참가 불가, 이전 페스티벌, 대축제 우승자 참가불가능
+                                    </p>
+                                </li>
                             </ul>
                         </li>
-                        <li><label><input type="checkbox" name="best_gturn"> <strong>베스트G턴</strong></label></li>
-                        <li><label><input type="checkbox" name="hippy_jump"> <strong>히피점프</strong></label></li>
+                        <li>
+                            <strong>베스트트릭(Best Trick)</strong>
+                            <ul>
+                                <li><label><input type="radio" name="best_trick" value="open"> 오픈부 (Open Division)</label></li>
+                                <li class="flex_none">
+                                    <label><input type="radio" name="best_trick" value="amateur"> 일반부 (Non-Sponsored Division)</label>
+                                    <p class="tip">
+                                        * 보드 관련 및 엠버서더나 공식 상품 후원을 받는 경우 참가 불가, 이전 페스티벌, 대축제 우승자 참가불가능
+                                    </p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="line-bottom"><label><input type="checkbox" name="best_gturn"> <strong>베스트G턴(Best G-trun)</strong></label></li>
+                        <li><label><input type="checkbox" name="best_gturn"> <strong>베스트페어 (Best Pair)</strong></label></li>
+                        <li><label><input type="checkbox" name="best_gturn"> <strong>베스트핸드트릭 (Best Hand Trick)</strong></label></li>
+                        <li><label><input type="checkbox" name="hippy_jump"> <strong>히피점프 (Hippie Jump)</strong></label></li>
                     </ul>
 
                     <button type="submit" class="btn submit">신청하기</button>
                 </form>
             </section>
+
         </article>
 
         <footer>
@@ -207,6 +205,40 @@
                 alert(`신청 중 오류 발생: ${error.message}`);
             }
         });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const btnKr = document.getElementById("btn-kr");
+            const btnEn = document.getElementById("btn-en");
+            const krElements = document.querySelectorAll(".lang_kr");
+            const enElements = document.querySelectorAll(".lang_en");
+
+            function showKorean() {
+                krElements.forEach(el => el.style.display = "block");
+                enElements.forEach(el => el.style.display = "none");
+                btnKr.classList.add("active");
+                btnEn.classList.remove("active");
+            }
+
+            function showEnglish() {
+                krElements.forEach(el => el.style.display = "none");
+                enElements.forEach(el => el.style.display = "block");
+                btnEn.classList.add("active");
+                btnKr.classList.remove("active");
+            }
+
+            // 초기 상태 설정: 브라우저 언어 감지
+            const userLang = navigator.language || navigator.userLanguage; // 사용자의 브라우저 언어 감지
+            if (userLang.startsWith("ko")) {
+                showKorean(); // 한국어이면 한국어 노출
+            } else {
+                showEnglish(); // 그 외에는 영어 노출
+            }
+
+            // 버튼 클릭 이벤트 설정
+            btnKr.addEventListener("click", showKorean);
+            btnEn.addEventListener("click", showEnglish);
+        });
+        
     </script>
 </body>
 
