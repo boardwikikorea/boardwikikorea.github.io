@@ -319,8 +319,6 @@ footer a:hover {
 
 .user_info li:nth-child(3) strong,
 .user_info li:nth-child(4) strong {
-    width: 80px;
-    min-width: 80px;
 }
 
 .user_info li:nth-child(3) label,
@@ -340,6 +338,12 @@ footer a:hover {
 
 .user_pick li {
     margin: 10px 0 ;
+}
+
+.tip2{
+    background: #f9f9f9;
+    padding: 10px;
+    color:#222;
 }
 
 .submit{
