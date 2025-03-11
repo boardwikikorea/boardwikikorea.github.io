@@ -95,7 +95,7 @@
                                     <p class="tip">
                                         <span class="lang_kr">
                                         * 보드 관련 및 엠버서더나 공식 상품 후원을 받는 경우 참가 불가, 이전 페스티벌, 대축제 우승자 참가불가능
-                                        </span>
+                                        </span> `
                                         <span class="lang_en">
                                         Participants who receive sponsorships related to boards, including as ambassadors or for official products, are not eligible to participate. Previous winners of the festival or grand festival are also not eligible to participate.
                                         </span>
@@ -114,6 +114,16 @@
 
                                 </li>
                             </ul>
+                        </li>
+                        <li>
+                            <p class="tip2">
+                                <span class="lang_kr">
+                                    3 종목중 1종목 선택이 가능합니다.
+                                </span>
+                                <span class="lang_en">
+                                    You can choose one event out of the three.
+                                </span>
+                            </p>
                         </li>
                         <li>
                             <strong>베스트댄싱(Best Dancing)</strong>
@@ -152,10 +162,24 @@
                                 </li>
                             </ul>
                         </li>
+
+                        
                         <li class="line-bottom"><label><input type="checkbox" name="best_gturn"> <strong>베스트G턴(Best G-trun)</strong></label></li>
+
+                        <li>
+                            <p class="tip2">
+                                <span class="lang_kr">
+                                    이벤트 종목은 선택 제한 없이 자유롭게 선택가능합니다.
+                                </span>
+                                <span class="lang_en">
+                                    Event categories can be freely selected without any restrictions.
+                                </span>
+                            </p>
+                        </li>
+
                         <li><label><input type="checkbox" name="best_gturn"> <strong>베스트페어 (Best Pair)</strong></label></li>
                         <li><label><input type="checkbox" name="best_gturn"> <strong>베스트핸드트릭 (Best Hand Trick)</strong></label></li>
-                        <li><label><input type="checkbox" name="hippy_jump"> <strong>히피점프 (Hippie Jump)</strong></label></li>
+                        <li class="line-bottom"><label><input type="checkbox" name="hippy_jump"> <strong>히피점프 (Hippie Jump)</strong></label></li>
                     </ul>
 
                     <p class="tip2">
@@ -276,6 +300,22 @@
             // 버튼 클릭 이벤트 설정
             btnKr.addEventListener("click", showKorean);
             btnEn.addEventListener("click", showEnglish);
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const categoryCheckboxes = document.querySelectorAll('input[name="best_dancing"], input[name="best_trick"], input[name="best_gturn"]');
+
+            categoryCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener("change", function () {
+                    if (this.checked) {
+                        categoryCheckboxes.forEach(otherCheckbox => {
+                            if (otherCheckbox !== this) {
+                                otherCheckbox.checked = false;
+                            }
+                        });
+                    }
+                });
+            });
         });
         
     </script>
