@@ -66,3 +66,35 @@ button {
     left: -9999;
     top: 0;
 }
+
+
+
+.kakao-button {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fee500;
+    color: #000;
+    font-size: 16px;
+    z-index:99;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    bottom:20px;
+    right:150px;
+}
+
+.kakao-button:hover {
+    background-color: #ffd900;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.kakao-button img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}

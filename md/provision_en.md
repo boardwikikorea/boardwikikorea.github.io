@@ -31,7 +31,10 @@
 ---
 
 ### Newbie Division  
-**Eligibility:** Riders with less than two years of experience  
+**Eligibility:** 
+* Riders with less than two years of experience  
+* Participants receiving board-related sponsorships, ambassador roles, or official product support are not eligible.
+
 **Category:** Freestyle (1 to 1.5-minute run, no preliminaries)  
 
 ---

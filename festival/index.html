@@ -48,6 +48,12 @@
         <button type="button" id="btn-en">EN</button>
     </div>
 
+
+    <a href="http://pf.kakao.com/_iGCjn" class="kakao-button" target="_blank">
+        <img src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png" alt="카카오톡 로고">
+        문의하기
+    </a>
+
     <div class="wrap main">
         <img src="./main.jpg" alt="메인 포스터입니다." style="width: 100%;height: auto;">
 
@@ -67,11 +73,37 @@
                     <li><strong>참가 조건:</strong> 헬멧 착용 필수, 참가비 3만원, 규정에 맞는 보드</li>
                     <li><strong>접수 예정일 :</strong> 2025년 3월 17일(월요일) ~ 4월 13일(토)</li>
                     <li><strong>후원 및 협업 문의 : </strong> <a href="https://www.instagram.com/longboardkoreacom/" target="_blank" class="map_btn">Instagram DM</a></li>
-                    <li class="downloads">
-                        <a href="./pdf/provision.pdf" target="_blank" class="btn">규정문서 다운로드</a>
-                        <a href="./pdf/audit.pdf" target="_blank" class="btn">심사문서 다운로드</a>
+                    <li><strong>지출내역 : </strong>
+                        <button id="toggle-expenses">지출내역 보기</button>
+                        <table id="expenses-table" border="1" style="margin-top: 10px;width:100%; border-collapse: collapse; text-align: left; display: none;">
+                            <thead>
+                                <tr>
+                                    <th style="padding: 10px; background-color: #f2f2f2;">항목</th>
+                                    <th style="padding: 10px; background-color: #f2f2f2;">비용 (KRW)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 10px;">부스 및 현장 셋팅 비용</td>
+                                    <td style="padding: 10px;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px;">상품 및 상금 비용</td>
+                                    <td style="padding: 10px;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px;">기타 소품 및 도시락 비용</td>
+                                    <td style="padding: 10px;"></td>
+                                </tr>
+                                <tr>
+                                    <th style="padding: 10px;">총지출내역</th>
+                                    <td style="padding: 10px;"></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </li>
                 </ul>
+                
             </section>
 
             <section class="schedule">
@@ -100,6 +132,8 @@
                     <li><strong>18:00</strong> - 시상식</li>
                 </ul>
             </section>
+
+
         </article>
 
         <article class="content lang_en">
@@ -149,8 +183,9 @@
                     <li><strong>18:00</strong> - Awards Ceremony</li>
                 </ul>
             </section>
+
         </article>
-        
+
 
         <footer>
             <div class="lang_kr">
@@ -196,6 +231,18 @@
             btnKr.addEventListener("click", showKorean);
             btnEn.addEventListener("click", showEnglish);
         });
+
+        document.getElementById('toggle-expenses').addEventListener('click', function() {
+            var table = document.getElementById('expenses-table');
+            if (table.style.display === 'none') {
+                table.style.display = 'table';
+                this.textContent = '지출내역 숨기기';
+            } else {
+                table.style.display = 'none';
+                this.textContent = '지출내역 보기';
+            }
+        });
+        
     </script>
 
 </body>
