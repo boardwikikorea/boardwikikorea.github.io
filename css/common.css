@@ -85,7 +85,7 @@ button {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: 0.3s;
     bottom:20px;
-    right:150px;
+    left:20px;
 }
 
 .kakao-button:hover {
