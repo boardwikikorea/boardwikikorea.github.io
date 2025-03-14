@@ -476,8 +476,6 @@ pre {
     border: 1px solid #d9d9d9;
     border-radius: 8px;
     background-color: #f9f9f9;
-    display: flex;
-    gap: 10px;
     justify-content: space-between;
     align-items: center;
     margin: 20px auto;
@@ -487,6 +485,8 @@ pre {
     font-size: 14px;
     font-weight: bold;
     color: #333;
+    display: block;
+    margin-bottom: 5px;
 }
 
 .find_my_app input {
@@ -496,6 +496,7 @@ pre {
     border-radius: 6px;
     font-size: 14px;
     outline: none;
+    width: calc(100% - 60px);
 }
 
 .find_my_app input:focus {
