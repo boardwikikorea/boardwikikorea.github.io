@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="kr">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
@@ -97,7 +97,7 @@
                         </li>
                         <li>
                             <label for="team"><strong>신청곡 (Song request)</strong></label>
-                            <input type="text" id="team" name="music">
+                            <input type="text" id="team" name="song">
                         </li>
 
                     </ul>
@@ -234,13 +234,11 @@
     <script type="module">
         import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore.js";
         // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-analytics.js";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-analytics.js";
         // TODO: Add SDKs for Firebase products that you want to use
         // https://firebase.google.com/docs/web/setup#available-libraries
 
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
         const firebaseConfig = {
             apiKey: "AIzaSyDDkghHYAD581-N3u8zUUsinS1F49P5xi0",
             authDomain: "boardwiki-e070e.firebaseapp.com",
@@ -251,7 +249,6 @@
             appId: "1:301441212066:web:1ffff5d8eccaaff11781fb",
             measurementId: "G-DZ52LV9MMG"
         };
-
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const analytics = getAnalytics(app);
@@ -266,11 +263,14 @@
                 contact: form.contact.value.trim(),
                 gender: form.gender.value,
                 stance: form.stance.value,
+                song: form.song.value,
                 team: form.team.value.trim() || null,
                 freestyle: form.freestyle?.value ?? null,
                 best_trick: form.best_trick?.value ?? null,
                 best_gturn: form.best_gturn?.checked ?? false,
                 hippy_jump: form.hippy_jump?.checked ?? false,
+                best_hand: form.best_hand?.checked ?? false,
+                best_pair: form.best_pair?.checked ?? false,
                 createdAt: serverTimestamp()
             };
 
