@@ -20,6 +20,8 @@
     min-width: 1080px;
 }
 
+
+
 #wiki-main .content > article {
     width: calc(100% / 3);
     display: flex;

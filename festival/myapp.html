@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>롱보드 대축제</title>
+
+    <!-- SEO 최적화 -->
+    <meta name="description" content="보드위키에서 최신 스케이트, 롱보드 정보와 롱보드댄싱, 보드대회 소식을 확인하세요.">
+    <meta name="keywords" content="스케이트, 롱보드, 카버보드, 롱보드댄싱, 보드대회, longboarding, 롱보드 대축제, 롱보드 페스티벌, longboard festival">
+    <meta name="naver-site-verification" content="e74dc3e49d0527046508b26ee9860c52a501b8f4">
+
+    <!-- Open Graph (OG) -->
+    <meta property="og:site_name" content="BoardWiki">
+    <meta property="og:title" content="롱보드 대축제">
+    <meta property="og:description" content="스케이트·롱보드 최신 정보를 확인하세요.">
+    <meta property="og:url" content="https://boardwiki.kr">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://boardwiki.kr/images/og-image.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="보드위키 - 스케이트·롱보드 커뮤니티">
+    <meta name="twitter:description" content="보드위키에서 최신 스케이트, 롱보드 정보를 만나보세요.">
+    <meta name="twitter:image" content="https://boardwiki.kr/images/twitter-image.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://boardwiki.kr/">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/festival.css">
+
+    <!-- JS -->
+    <script src="../js/common.js" defer></script>
+</head>
+
+<body id="festival">
+    <h1 class="sound_only">롱보드 대축제</h1>
+
+    <a href="http://pf.kakao.com/_iGCjn" class="kakao-button" target="_blank">
+        <img src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png" alt="카카오톡 로고">
+        문의하기
+    </a>
+
+
+    <div class="wrap main">
+        <article class="content ">
+                <h2 class="sound_only">롱보드 대축제란?</h2>
+
+                <div class="find_my_app">
+                    <label for="reservation-id">예약번호 입력 (Application ID):</label>
+                    <input type="text" id="reservation-id" placeholder="예약번호를 입력하세요">
+                    <button id="fetch-reservation">조회</button>
+                </div>
+                
+                <div id="result">데이터를 불러오는 중...</div>
+        </article>
+
+        <footer>
+            서비스 제공 <a href="../index.html">@boardwiki</a>
+        </footer>
+    </div>
+
+    <script type="module">
+        import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDDkghHYAD581-N3u8zUUsinS1F49P5xi0",
+            authDomain: "boardwiki-e070e.firebaseapp.com",
+            projectId: "boardwiki-e070e",
+            storageBucket: "boardwiki-e070e.firebasestorage.app",
+            messagingSenderId: "301441212066",
+            appId: "1:301441212066:web:1ffff5d8eccaaff11781fb",
+            measurementId: "G-DZ52LV9MMG"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        async function fetchApplication() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id');
+            if (!id) {
+                document.getElementById('result').innerText = "예약 ID가 없습니다.";
+                return;
+            }
+
+            try {
+                const docRef = doc(db, "festivalApplications", id);
+                const docSnap = await getDoc(docRef);
+
+                const divisionMap = {
+                    open: "오픈부 (Open Division)",
+                    amateur: "일반부 (Non-Sponsored Division)",
+                    newbie: "뉴비부 (Newbie Division)"
+                };
+
+                if (docSnap.exists()) {
+                    const data = docSnap.data();
+                    document.getElementById('result').innerHTML = `
+                        <ul class="app_info">
+                            <li>
+                                <p class="tip2">Application ID : <strong>${id}</strong>
+                                <br/>
+                                 <span style="color:red;font-size:0.8rem">예약번호를 기억해 주세요. 다시 신청 내역을 조회할 때 필요합니다.</span> <br/>
+                                 <span style="color:red;font-size:0.8rem">Please remember your reservation number, as you will need it to look up your application again.</span>
+                                </p>
+                            </li>
+                            <li><p><strong>이름(name or nickname):</strong> ${data.name}</p></li>
+                            <li><p><strong>입금상태</strong> ${data.pay ? "✅" : "❌"}</p></li>
+                            <li><p><strong>연락처 (phone) OR 메일 (email) OR instagram ID (phone) OR 메일 (email) OR instagram ID</strong> <br/>${data.contact}</p></li>
+                            <li><p><strong>성별 (gender):</strong> ${data.gender}</p></li>
+                            <li><p><strong>스탠스 (stance):</strong> ${data.stance}</p></li>
+                            <li><p><strong>신청곡 (Team or Group):</strong> ${data.song}</p></li>
+                            <li><p><strong>소속 팀 (Team or Group):</strong> ${data.team ?? "없음"}</p></li>
+                            <li><p><strong>애프터 파티 참석 (After Party Join):</strong> ${data.after_party ? "✅" : "❌"}</p></li>
+                            <li><p><strong>신청 날짜 (Application Date):</strong> ${data.createdAt?.toDate().toLocaleString() ?? "알 수 없음"}</p></li>
+
+                            <li><ul>
+                                <strong>참가종목 (Competition Category)</strong>
+                                    <li><p><strong>프리스타일 (Free Style):</strong>  ${divisionMap[data.freestyle] ?? "❌"}</p></li>
+                                    <li><p><strong>베스트 트릭 (Best Trick):</strong>  ${divisionMap[data.best_trick]  ?? "❌"}</p></li>
+                                    <li><p><strong>베스트 댄싱 (Best Dancing):</strong> ${divisionMap[data.best_dancing] ?? "❌"}</p></li>
+                                    <li><p><strong>베스트 G턴 (Best G-trun):</strong> ${data.best_gturn ? "✅" : "❌"}</p></li>
+                                    <li><p><strong>하이피 점프 (Hippy Jump):</strong> ${data.hippy_jump ? "✅" : "❌"}</p></li>
+                                    <li><p><strong>베스트 핸드 (Best Hand):</strong> ${data.best_hand ? "✅" : "❌"}</p></li>
+                                    <li><p><strong>베스트 페어 (Best Pair):</strong> ${data.best_pair ? "✅" : "❌"}</p></li>
+                            </ul></li>
+                        </ul>
+                    `;
+                } else {
+                    document.getElementById('result').innerText = "예약 내역을 찾을 수 없습니다.";
+                }
+            } catch (error) {
+                console.error("Error fetching application:", error);
+                document.getElementById('result').innerText = "데이터를 불러오는 중 오류가 발생했습니다.";
+            }
+        }
+        
+
+        window.onload = function () {
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id');
+
+            if (id) {
+                document.getElementById("reservation-id").value = id;
+                fetchApplication(id);
+            } else {
+                document.getElementById('result').innerText = "예약 ID를 입력해 주세요.";
+            }
+        };
+
+        // 조회 버튼 클릭 이벤트
+        document.getElementById("fetch-reservation").addEventListener("click", () => {
+            const inputId = document.getElementById("reservation-id").value.trim();
+
+            if (inputId) {
+                history.pushState(null, "", `?id=${inputId}`); // URL 업데이트
+                fetchApplication(inputId);
+            } else {
+                alert("예약번호를 입력하세요.");
+            }
+        });
+        
+    </script>
+
+</body>
+
+</html>

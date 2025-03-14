@@ -62,13 +62,15 @@
 
                 <section class="application">
                 <h3>대회 신청</h3>
-
-                <p class="tip2" style="margin-top: 20px;">
-                    <span class="lang_kr">프리스타일, 베스트 댄싱, 베스트 트릭, 베스트 G턴 중 최대 2개까지 선택할 수 있으며, 그 외 이벤트 종목은 자유롭게 신청 가능합니다.</span>
-                    <span class="lang_en">You can select up to 2 events from Freestyle, Best Dancing, Best Trick, and Best G-Turn. Other event categories can be chosen freely.</span>
+                <br/>               
+                <p class="tip2">
+                    <span class="lang_kr">
+                        * 외국인 참가자의 경우, 참가비 30,000원은 현장에서 지불 가능하며, 접수 또한 현장에서 가능합니다.
+                    </span>
+                    <span class="lang_en">
+                        * For foreign participants, the participation fee of 30,000 KRW can be paid on-site, and registration is also available on-site.
+                    </span>
                 </p>
-
-
                 <br/>
 
                 <form id="applicationForm" name="applicationForm" method="post">
@@ -76,9 +78,15 @@
                         <li>
                             <label for="name">이름 (name or nickname)</label>
                             <input type="text" id="name" name="name" required>
+                            <p class="tip">
+                                <span class="lang_kr">
+                                    * 입금자 명으로 적어주세요! <br/>
+                                    계좌번호 : 30,000원 우리은행 1005-603-527745.  신재식(롱보드코리아)
+                                </span>
+                            </p>
                         </li>
                         <li>
-                            <label for="contact">연락처 (phone) 또는 메일 (email)</label>
+                            <label for="contact">연락처 (phone) OR 메일 (email) OR instagram ID</label>
                             <input type="text" id="contact" name="contact" required>
                         </li>
                         <li>
@@ -95,14 +103,34 @@
                             <label for="team"><strong>소속 (Team or Group)</strong></label>
                             <input type="text" id="team" name="team">
                         </li>
-                        <li>
-                            <label for="team"><strong>신청곡 (Song request)</strong></label>
-                            <input type="text" id="team" name="song">
+                        <li class="line-bottom">
+                            <label for="song"><strong>신청곡 (Song request)</strong></label>
+                            <input type="text" id="song" name="song">
+                            <p class="tip">
+                                <span class="lang_kr">
+                                    ※ 본인이 출전하는 부분에 자유롭게 음악을 적어주세요 ex. freestyle: a,b
+                                 </span>
+                                <span class="lang_en">
+                                    ※ ※ Please freely specify the music for the category you are competing in.
+                                    Example: Freestyle - A, B
+                                </span>
+                            </p>
                         </li>
-
                     </ul>
 
                     <ul class="user_pick">
+                        <li>
+                            <p class="tip2">
+                                <span class="lang_kr">
+                                    ※ 프리스타일, Best Dancing, Best Trick, Best G-turn 중 두 개를 선택할 수 있습니다.그 외의 종목은 자유롭게 선택할 수 있습니다.
+                                </span>
+                                <span class="lang_en">
+                                    ※ You can choose two out of Freestyle, Best Dancing, Best Trick, and Best G-turn.Other categories can be chosen freely.
+                                </span>
+                            </p>
+                        </li>
+
+
                         <li class="line-bottom">
                             <strong>프리스타일(Freestyle)</strong>
                             <ul>
@@ -115,7 +143,7 @@
                                     <p class="tip">
                                         <span class="lang_kr">
                                         * 보드 관련 및 엠버서더나 공식 상품 후원을 받는 경우 참가 불가, 이전 페스티벌, 대축제 우승자 참가불가능
-                                        </span> `
+                                        </span>
                                         <span class="lang_en">
                                         Participants who receive sponsorships related to boards, including as ambassadors or for official products, are not eligible to participate. Previous winners of the festival or grand festival are also not eligible to participate.
                                         </span>
@@ -134,16 +162,6 @@
 
                                 </li>
                             </ul>
-                        </li>
-                        <li>
-                            <p class="tip2">
-                                <span class="lang_kr">
-                                    3 종목중 1종목 선택이 가능합니다.
-                                </span>
-                                <span class="lang_en">
-                                    You can choose one event out of the three.
-                                </span>
-                            </p>
                         </li>
                         <li>
                             <strong>베스트댄싱(Best Dancing)</strong>
@@ -180,6 +198,18 @@
                                         </span>
                                     </p>
                                 </li>
+                                <li class="flex_none">
+                                    <label>기술이름</label>
+                                    <input type="text" name="best_trick_name" value="" class="input_txt">
+                                    <p class="tip">
+                                        <span class="lang_kr">
+                                            * 시도할 기술을 두 가지 적어주세요. 하나만 적을 경우, 두 번의 시도 모두 동일한 기술로 진행됩니다.
+                                        </span>
+                                        <span class="lang_en">
+                                            * Please write down two tricks you will attempt. If you write only one, both attempts must use the same trick.
+                                        </span>
+                                    </p>
+                                </li>
                             </ul>
                         </li>
 
@@ -202,13 +232,32 @@
                         <li class="line-bottom"><label><input type="checkbox" name="hippy_jump"> <strong>히피점프 (Hippie Jump)</strong></label></li>
                     </ul>
 
-                    <p class="tip2">
-                        <span class="lang_kr">
-                            * 외국인 참가자의 경우, 참가비 30,000원은 현장에서 지불 가능하며, 접수 또한 현장에서 가능합니다.
-                        </span>
-                        <span class="lang_en">
-                            * For foreign participants, the participation fee of 30,000 KRW can be paid on-site, and registration is also available on-site.
-                        </span>
+
+                    <ul style="border-bottom: 1px dashed #d9d9d9;padding-bottom: 20px;">
+                        <li class="flex_none">
+                            <p class="tip2">
+                                <span class="lang_kr">
+                                    * 에프터 파티를 기획 중입니다.
+                                    신청 인원에 따라 가게, 파티룸 등을 고려하고 있습니다!
+                                    참가를 희망하시는 분은 체크해주세요!
+                                </span>
+                                <span class="lang_en">
+                                    * We are planning an after-party.
+                                    Depending on the number of applicants, we are considering a restaurant, a party room, and other venues!
+                                    If you wish to participate, please check the box!
+                                </span>
+                            </p>
+                            <div style="text-align: center;margin-top:10px;width:100%;">
+                                <label><input type="checkbox" name="after_party"> <strong> (After Party Join)</strong></label>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <br/>
+
+                    <p class="tip2" style="margin-top: 20px;">
+                        <span class="lang_kr">참가 규정서를 확인하고 동의한 것으로 간주되며, 신청이 완료됩니다.즐겁고 안전한 롱보드 대축제가 되기를 기원합니다.</span>
+                        <span class="lang_en">By submitting your application, you are considered to have read and agreed to the participation rules.We wish you a fun and safe Longboard Festival!</span>
                     </p>
 
                     <br/>
@@ -264,12 +313,14 @@
                 stance: form.stance.value,
                 song: form.song.value,
                 team: form.team.value.trim() || null,
+                best_trick_name: form.best_trick_name.value.trim() || null,
                 freestyle: form.freestyle?.value ?? null,
                 best_trick: form.best_trick?.value ?? null,
                 best_gturn: form.best_gturn?.checked ?? false,
                 hippy_jump: form.hippy_jump?.checked ?? false,
                 best_hand: form.best_hand?.checked ?? false,
                 best_pair: form.best_pair?.checked ?? false,
+                after_party: form.after_party?.checked ?? false,
                 createdAt: serverTimestamp()
             };
 
@@ -279,9 +330,12 @@
             }
 
             try {
-                await addDoc(collection(db, "festivalApplications"), data);
-                alert('신청이 완료되었습니다!');
-                form.reset();
+                const docRef = await addDoc(collection(db, "festivalApplications"), data);
+                alert(`신청이 완료되었습니다! \nsuccessfully submitted!`);
+
+                window.location.href = `./myapp.html?id=${docRef.id}`;
+
+                //form.reset();
             } catch (error) {
                 console.error("Error submitting application:", error);
                 alert(`신청 중 오류 발생: ${error.message}`);

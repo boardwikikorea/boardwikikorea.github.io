@@ -131,6 +131,19 @@ footer a {
     transition: color 0.2s ease;
 }
 
+
+.input_txt{
+    padding: 10px 0 ;
+    background: #fff;;
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+    height: 40px;
+    width: 100%;
+    margin-top:5px;
+    background: #fff;
+
+}
+
 footer a:hover {
     color: #e35a50;
 }
@@ -435,6 +448,7 @@ pre {
     transition: 0.3s;
 }
 
+.user_info li.line-bottom,
 .user_pick li.line-bottom{
     border-bottom: 1px dashed #d9d9d9;
     padding-bottom: 25px;
@@ -446,3 +460,64 @@ pre {
     color: white;
 }
 
+.app_info > li{
+    margin: 5px 0;
+    padding: 10px;
+    border-bottom: 1px dashed #d9d9d9;
+    
+}
+
+.app_info ul li{
+    padding: 10px 0;
+}
+
+.find_my_app {
+    padding: 15px;
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px auto;
+}
+
+.find_my_app label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+.find_my_app input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+}
+
+.find_my_app input:focus {
+    border-color: #f4a261;
+    box-shadow: 0 0 5px rgba(0, 122, 255, 0.3);
+}
+
+.find_my_app button {
+    padding: 10px 15px;
+    background-color: #f4a261;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.find_my_app button:hover {
+    background-color: #db8844;
+}
+
+.find_my_app button:active {
+    background-color: #db8844;
+}
