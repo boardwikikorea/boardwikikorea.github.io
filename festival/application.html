@@ -59,8 +59,16 @@
         <article class="content ">
                 <h2 class="sound_only">롱보드 대축제란?</h2>
 
+
                 <section class="application">
                 <h3>대회 신청</h3>
+
+                <p class="tip2" style="margin-top: 20px;">
+                    <span class="lang_kr">프리스타일, 베스트 댄싱, 베스트 트릭, 베스트 G턴 중 최대 2개까지 선택할 수 있으며, 그 외 이벤트 종목은 자유롭게 신청 가능합니다.</span>
+                    <span class="lang_en">You can select up to 2 events from Freestyle, Best Dancing, Best Trick, and Best G-Turn. Other event categories can be chosen freely.</span>
+                </p>
+
+
                 <br/>
 
                 <form id="applicationForm" name="applicationForm" method="post">
@@ -87,6 +95,11 @@
                             <label for="team"><strong>소속 (Team or Group)</strong></label>
                             <input type="text" id="team" name="team">
                         </li>
+                        <li>
+                            <label for="team"><strong>신청곡 (Song request)</strong></label>
+                            <input type="text" id="team" name="music">
+                        </li>
+
                     </ul>
 
                     <ul class="user_pick">
@@ -184,8 +197,8 @@
                             </p>
                         </li>
 
-                        <li><label><input type="checkbox" name="best_gturn"> <strong>베스트페어 (Best Pair)</strong></label></li>
-                        <li><label><input type="checkbox" name="best_gturn"> <strong>베스트핸드트릭 (Best Hand Trick)</strong></label></li>
+                        <li><label><input type="checkbox" name="best_pair"> <strong>베스트페어 (Best Pair)</strong></label></li>
+                        <li><label><input type="checkbox" name="best_hand"> <strong>베스트핸드트릭 (Best Hand Trick)</strong></label></li>
                         <li class="line-bottom"><label><input type="checkbox" name="hippy_jump"> <strong>히피점프 (Hippie Jump)</strong></label></li>
                     </ul>
 
@@ -310,16 +323,22 @@
         });
 
         document.addEventListener("DOMContentLoaded", function () {
-            const categoryCheckboxes = document.querySelectorAll('input[name="best_dancing"], input[name="best_trick"], input[name="best_gturn"]');
+            const restrictedCheckboxes = document.querySelectorAll('input[name="best_trick"], input[name="freestyle"], input[name="best_dancing"], input[name="best_gturn"]');
 
-            categoryCheckboxes.forEach(checkbox => {
+            let checkedOrder = []; // 체크된 순서를 저장하는 배열
+
+            restrictedCheckboxes.forEach(checkbox => {
                 checkbox.addEventListener("change", function () {
                     if (this.checked) {
-                        categoryCheckboxes.forEach(otherCheckbox => {
-                            if (otherCheckbox !== this) {
-                                otherCheckbox.checked = false;
-                            }
-                        });
+                        checkedOrder.push(this); // 체크 순서 추가
+
+                        if (checkedOrder.length > 2) {
+                            let firstChecked = checkedOrder.shift(); // 가장 먼저 체크된 박스를 해제
+                            firstChecked.checked = false;
+                        }
+                    } else {
+                        // 체크 해제 시 배열에서 제거
+                        checkedOrder = checkedOrder.filter(cb => cb !== this);
                     }
                 });
             });
