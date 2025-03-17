@@ -37,22 +37,6 @@
 }
 
 
-#festival .main h2 {
-    font-size: 1.8em;
-    text-align: center;
-    padding: 24px 0;
-    font-weight: 700;
-    color: #2c2c2c;
-    border-bottom: 2px solid #eaeaea;
-}
-
-#festival .main h2 + p {
-    text-align: center;
-    font-weight: 500;
-    font-size: 1.2em;
-    padding: 16px 0 32px;
-    color: #555;
-}
 
 #festival .main .content article {
     padding: 32px 0;
@@ -101,6 +85,7 @@
     cursor: pointer;
 }
 
+/*
 #festival .application a {
     display: inline-block;
     margin: 8px 10px 0 0;
@@ -114,6 +99,91 @@
 
 #festival .application a:hover {
     background: #e35a50;
+}
+*/
+#festival .application a {
+    color:#e35a50
+}
+
+.intro {
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 12px;
+}
+
+.intro h2 {
+    font-size: 2em;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 16px;
+}
+
+.intro p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 24px;
+}
+
+
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.form-header h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    color: #ff6b6b;
+}
+
+
+
+.btns {
+    display: flex;
+}
+
+.btns a {
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    width:50%;
+    color:#ac9c69;
+    background: #fff;
+    height:45px;
+    line-height: 41px;
+    border: 2px solid #ac9c69;
+
+}
+.btns a:nth-child(1){
+    border-right: 0;
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.btns a:nth-child(2){
+    border-radius: 0 0.5rem 0.5rem 0;
+
+}
+
+
+.btns a:hover {
+    background: #8a7a50;
+    color: #fff;
+    transform: translateY(-2px);
 }
 
 footer {
@@ -226,6 +296,8 @@ footer a:hover {
 #festival .main .downloads .btn {
     font-weight: 500;
     font-size: 1rem;
+    min-width: 40%;
+    text-align: center;
 }
 
 #festival .main article p {
