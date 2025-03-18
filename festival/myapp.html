@@ -121,6 +121,7 @@
 
                 if (docSnap.exists()) {
                     const data = docSnap.data();
+                    console.log(data);
                     document.getElementById('result').innerHTML = `
                         <ul class="app_info">
                             <li>
@@ -139,11 +140,10 @@
                             <li><p><strong>소속 팀 (Team or Group):</strong> ${data.team ?? "없음"}</p></li>
                             <li><p><strong>애프터 파티 참석 (After Party Join):</strong> ${data.after_party ? "✅" : "❌"}</p></li>
                             <li><p><strong>신청 날짜 (Application Date):</strong> ${data.createdAt?.toDate().toLocaleString() ?? "알 수 없음"}</p></li>
-
                             <li><ul>
                                 <strong>참가종목 (Competition Category)</strong>
                                     <li><p><strong>프리스타일 (Free Style):</strong>  ${divisionMap[data.freestyle] ?? "❌"}</p></li>
-                                    <li><p><strong>베스트 트릭 (Best Trick):</strong>  ${divisionMap[data.best_trick]+' : '+divisionMap[data.best_trick_name]  ?? "❌"}</p></li>
+                                    <li><p><strong>베스트 트릭 (Best Trick):</strong>  ${divisionMap[data.best_trick]+' : '+data.best_trick_name  ?? "❌"}</p></li>
                                     <li><p><strong>베스트 댄싱 (Best Dancing):</strong> ${divisionMap[data.best_dancing] ?? "❌"}</p></li>
                                     <li><p><strong>베스트 G턴 (Best G-trun):</strong> ${data.best_gturn ? "✅" : "❌"}</p></li>
                                     <li><p><strong>하이피 점프 (Hippy Jump):</strong> ${data.hippy_jump ? "✅" : "❌"}</p></li>
