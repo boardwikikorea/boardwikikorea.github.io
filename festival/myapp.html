@@ -143,7 +143,7 @@
                             <li><ul>
                                 <strong>참가종목 (Competition Category)</strong>
                                     <li><p><strong>프리스타일 (Free Style):</strong>  ${divisionMap[data.freestyle] ?? "❌"}</p></li>
-                                    <li><p><strong>베스트 트릭 (Best Trick):</strong>  ${divisionMap[data.best_trick]  ?? "❌"}</p></li>
+                                    <li><p><strong>베스트 트릭 (Best Trick):</strong>  ${divisionMap[data.best_trick]+' : '+divisionMap[data.best_trick_name]  ?? "❌"}</p></li>
                                     <li><p><strong>베스트 댄싱 (Best Dancing):</strong> ${divisionMap[data.best_dancing] ?? "❌"}</p></li>
                                     <li><p><strong>베스트 G턴 (Best G-trun):</strong> ${data.best_gturn ? "✅" : "❌"}</p></li>
                                     <li><p><strong>하이피 점프 (Hippy Jump):</strong> ${data.hippy_jump ? "✅" : "❌"}</p></li>
