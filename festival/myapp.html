@@ -58,8 +58,8 @@
                 </div>
 
                 <div class="find_my_app">
-                    <label for="reservation-id">예약번호 입력 (Application ID):</label>
-                    <input type="text" id="reservation-id" placeholder="예약번호를 입력하세요">
+                    <label for="reservation-id">접수번호 입력 (Application ID):</label>
+                    <input type="text" id="reservation-id" placeholder="접수번호를 입력하세요">
                     <button id="fetch-reservation">조회</button>
 
                     <p class="tip2" style="color:red;font-size:0.85rem">
@@ -126,7 +126,7 @@
                             <li>
                                 <p class="tip2">Application ID : <strong>${id}</strong> <button style="color:#333" type="button" id="copy-btn">[복사:copy]</button>
                                 <br/>
-                                 <span style="color:red;font-size:0.8rem">예약번호를 기억해 주세요. 다시 신청 내역을 조회할 때 필요합니다.</span> <br/>
+                                 <span style="color:red;font-size:0.8rem">접수번호를 기억해 주세요. 다시 신청 내역을 조회할 때 필요합니다.</span> <br/>
                                  <span style="color:red;font-size:0.8rem">Please remember your reservation number, as you will need it to look up your application again.</span>
                                 </p>
                             </li>
@@ -184,7 +184,7 @@
                 history.pushState(null, "", `?id=${inputId}`); // URL 업데이트
                 fetchApplication(inputId);
             } else {
-                alert("예약번호를 입력하세요.");
+                alert("접수번호를 입력하세요.");
             }
         });
         
