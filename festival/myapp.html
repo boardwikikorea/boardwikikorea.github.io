@@ -7,22 +7,22 @@
     <title>롱보드 대축제</title>
 
     <!-- SEO 최적화 -->
-    <meta name="description" content="보드위키에서 최신 스케이트, 롱보드 정보와 롱보드댄싱, 보드대회 소식을 확인하세요.">
-    <meta name="keywords" content="스케이트, 롱보드, 카버보드, 롱보드댄싱, 보드대회, longboarding, 롱보드 대축제, 롱보드 페스티벌, longboard festival">
+    <meta name="description" content="보드위키에서 최신 스케이트보드 및 롱보드 정보, 롱보드댄싱과 대회 소식을 만나보세요.">
     <meta name="naver-site-verification" content="e74dc3e49d0527046508b26ee9860c52a501b8f4">
 
     <!-- Open Graph (OG) -->
     <meta property="og:site_name" content="BoardWiki">
-    <meta property="og:title" content="롱보드 대축제">
-    <meta property="og:description" content="스케이트·롱보드 최신 정보를 확인하세요.">
+    <meta property="og:title" content="보드 커뮤니티">
+    <meta property="og:description" content="최신 보드 소식을 확인하세요.">
     <meta property="og:url" content="https://boardwiki.kr">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://boardwiki.kr/images/og-image.jpg">
 
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="보드위키 - 스케이트·롱보드 커뮤니티">
-    <meta name="twitter:description" content="보드위키에서 최신 스케이트, 롱보드 정보를 만나보세요.">
+    <meta name="twitter:title" content="보드위키 - 보드 커뮤니티">
+    <meta name="twitter:description" content="최신 보드 소식을 확인하세요.">
     <meta name="twitter:image" content="https://boardwiki.kr/images/twitter-image.jpg">
 
     <!-- Canonical URL -->
@@ -124,7 +124,7 @@
                     document.getElementById('result').innerHTML = `
                         <ul class="app_info">
                             <li>
-                                <p class="tip2">Application ID : <strong>${id}</strong>
+                                <p class="tip2">Application ID : <strong>${id}</strong> <button style="color:#333" type="button" id="copy-btn">[복사:copy]</button>
                                 <br/>
                                  <span style="color:red;font-size:0.8rem">예약번호를 기억해 주세요. 다시 신청 내역을 조회할 때 필요합니다.</span> <br/>
                                  <span style="color:red;font-size:0.8rem">Please remember your reservation number, as you will need it to look up your application again.</span>
@@ -152,6 +152,7 @@
                             </ul></li>
                         </ul>
                     `;
+                    
                 } else {
                     document.getElementById('result').innerText = "예약 내역을 찾을 수 없습니다.";
                 }
@@ -187,6 +188,18 @@
             }
         });
         
+        document.addEventListener("click", (event) => {
+            if (event.target.id === "copy-btn") {
+                const applicationId = event.target.closest(".app_info").querySelector("strong").innerText;
+                navigator.clipboard.writeText(applicationId).then(() => {
+                    alert("Copy OK. : " + applicationId);
+                }).catch(err => {
+                    console.error("복사 실패:", err);
+                });
+            }
+        });
+
+
     </script>
 
 </body>

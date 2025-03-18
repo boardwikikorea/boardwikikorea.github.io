@@ -322,42 +322,46 @@
 
         document.getElementById('applicationForm').addEventListener('submit', async (e) => {
             e.preventDefault();
+            if(confirm('제출하겠습니까?\nDo you want to submit?')){
+                const form = e.target;
+                const data = {
+                    name: form.name.value.trim(),
+                    contact: form.contact.value.trim(),
+                    gender: form.gender.value,
+                    stance: form.stance.value,
+                    song: form.song.value,
+                    team: form.team.value.trim() || null,
+                    best_trick_name: form.best_trick_name.value.trim() || null,
+                    freestyle: form.freestyle?.value ?? null,
+                    best_trick: form.best_trick?.value ?? null,
+                    best_gturn: form.best_gturn?.checked ?? false,
+                    hippy_jump: form.hippy_jump?.checked ?? false,
+                    best_hand: form.best_hand?.checked ?? false,
+                    best_pair: form.best_pair?.checked ?? false,
+                    after_party: form.after_party?.checked ?? false,
+                    createdAt: serverTimestamp()
+                };
 
-            const form = e.target;
-            const data = {
-                name: form.name.value.trim(),
-                contact: form.contact.value.trim(),
-                gender: form.gender.value,
-                stance: form.stance.value,
-                song: form.song.value,
-                team: form.team.value.trim() || null,
-                best_trick_name: form.best_trick_name.value.trim() || null,
-                freestyle: form.freestyle?.value ?? null,
-                best_trick: form.best_trick?.value ?? null,
-                best_gturn: form.best_gturn?.checked ?? false,
-                hippy_jump: form.hippy_jump?.checked ?? false,
-                best_hand: form.best_hand?.checked ?? false,
-                best_pair: form.best_pair?.checked ?? false,
-                after_party: form.after_party?.checked ?? false,
-                createdAt: serverTimestamp()
-            };
+                if (!data.name || !data.contact || !data.gender || !data.stance) {
+                    alert('모든 필수 항목을 입력해주세요.');
+                    return;
+                }
 
-            if (!data.name || !data.contact || !data.gender || !data.stance) {
-                alert('모든 필수 항목을 입력해주세요.');
-                return;
+                try {
+                    const docRef = await addDoc(collection(db, "festivalApplications"), data);
+                    alert(`신청이 완료되었습니다! \nsuccessfully submitted!`);
+
+                    window.location.href = `./myapp.html?id=${docRef.id}`;
+
+                    //form.reset();
+                } catch (error) {
+                    console.error("Error submitting application:", error);
+                    alert(`신청 중 오류 발생: ${error.message}`);
+                }
+            }else{
+                return false;
             }
-
-            try {
-                const docRef = await addDoc(collection(db, "festivalApplications"), data);
-                alert(`신청이 완료되었습니다! \nsuccessfully submitted!`);
-
-                window.location.href = `./myapp.html?id=${docRef.id}`;
-
-                //form.reset();
-            } catch (error) {
-                console.error("Error submitting application:", error);
-                alert(`신청 중 오류 발생: ${error.message}`);
-            }
+            
         });
 
     </script>
@@ -365,6 +369,7 @@
     <script>
         
         document.addEventListener("DOMContentLoaded", function() {
+
             const btnKr = document.getElementById("btn-kr");
             const btnEn = document.getElementById("btn-en");
             const krElements = document.querySelectorAll(".lang_kr");
