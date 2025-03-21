@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>롱보드 대축제</title>
+
+    <!-- SEO 최적화 -->
+    <meta name="description" content="보드위키에서 최신 스케이트보드 및 롱보드 정보, 롱보드댄싱과 대회 소식을 만나보세요.">
+    <meta name="naver-site-verification" content="e74dc3e49d0527046508b26ee9860c52a501b8f4">
+
+    <!-- Open Graph (OG) -->
+    <meta property="og:site_name" content="BoardWiki">
+    <meta property="og:title" content="보드 커뮤니티">
+    <meta property="og:description" content="최신 보드 소식을 확인하세요.">
+    <meta property="og:url" content="https://boardwiki.kr">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://boardwiki.kr/images/og-image.jpg">
+
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="보드위키 - 보드 커뮤니티">
+    <meta name="twitter:description" content="최신 보드 소식을 확인하세요.">
+    <meta name="twitter:image" content="https://boardwiki.kr/images/twitter-image.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://boardwiki.kr/">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/common.css?ver250314">
+    <link rel="stylesheet" href="../css/festival.css?ver=250317">
+
+    <!-- JS -->
+    <script src="../js/common.js" defer></script>
+</head>
+
+<body id="festival">
+    <h1 class="sound_only">롱보드 대축제</h1>
+
+    <div class="wrap main">
+        <article class="content">
+            <!-- 전체 조회 버튼 추가 -->
+            <button id="fetch-all-reservations">전체 조회</button>
+
+            <div style="overflow-x: auto;">
+
+                <table id="applicationsTable">
+                    <thead>
+                        <tr>
+                            <th>이름</th>
+                            <th>입금</th>
+                            <th>연락처</th>
+                            <th>파티</th>
+                            <th>참가 종목</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            
+            <script type="module">
+                import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
+                import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+            
+                const firebaseConfig = {
+                    apiKey: "AIzaSyDDkghHY...",
+                    authDomain: "boardwiki-e070e.firebaseapp.com",
+                    projectId: "boardwiki-e070e",
+                    storageBucket: "boardwiki-e070e.firebaseapp.com",
+                    messagingSenderId: "301441212066",
+                    appId: "1:301441212066:web:1ffff5d8eccaaff11781fb",
+                    measurementId: "G-DZ52LV9MMG"
+                };
+            
+                const app = initializeApp(firebaseConfig);
+                const db = getFirestore(app);
+            
+                async function fetchAllApplications() {
+                    const querySnapshot = await getDocs(collection(db, "festivalApplications"));
+                    const tableBody = document.querySelector("#applicationsTable tbody");
+
+                    querySnapshot.forEach((doc) => {
+                        const data = doc.data();
+                        const row = document.createElement("tr");
+                        
+                        const eventMap = {
+                            best_dancing: "댄싱",
+                            best_gturn: "쥐턴",
+                            best_hand: "핸트",
+                            best_pair: "페어",
+                            best_trick: "트릭",
+                            hippy_jump: "히피",
+                            freestyle: "프리"
+                        };
+
+                        // 참가한 종목만 필터링
+                        const events = Object.entries(eventMap)
+                            .filter(([key]) => data[key] === true || data[key] === "open")  // true 또는 "open"이면 참가
+                            .map(([, value]) => value)
+                            .join(", ") || "없음";  // 없으면 "없음" 출력
+
+                        row.innerHTML = `
+                            <td>${data.name}</td>
+                            <td>${data.pay ? "✅" : "❌"}</td>
+                            <td>${data.contact}</td>
+                            <td>${data.after_party ? "✅" : "❌"}</td>
+                            <td>${events}</td> 
+                        `;
+            
+                        tableBody.appendChild(row);
+                    });
+                }
+
+                window.onload = function () {
+                    const btn = document.getElementById('fetch-all-reservations');
+                    if (btn) {
+                        btn.addEventListener('click',function(){
+                            const password = prompt("암호를 입력하세요:");
+                            if (password === "10") { 
+                                fetchAllApplications();
+                            } else {
+                                alert("잘못된 암호입니다.");
+                            }
+                        });
+                        
+                    } else {
+                        console.error("버튼을 찾을 수 없습니다.");
+                    }
+                };
+            
+                //window.onload = fetchAllApplications;
+            </script>
+
+
+        </article>
+
+        <footer>
+            서비스 제공 <a href="../index.html">@boardwiki</a>
+        </footer>
+    </div>
+
+</body>
+
+</html>

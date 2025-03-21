@@ -595,3 +595,20 @@ pre {
 .find_my_app button:active {
     background-color: #db8844;
 }
+
+#applicationsTable{
+    width:100%;
+}
+
+#applicationsTable th{
+    background: #f9f9f9;
+    padding:15px;
+    border:1px solid #d9d9d9;
+    font-size:13px;
+}
+
+#applicationsTable td{
+    padding: 5px;
+    border:1px solid #d9d9d9;
+    font-size:11px;
+}
