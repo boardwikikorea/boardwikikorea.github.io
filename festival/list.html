@@ -101,7 +101,7 @@
 
                         // 참가한 종목만 필터링
                         const events = Object.entries(eventMap)
-                            .filter(([key]) => data[key] === true || data[key] === "open")  // true 또는 "open"이면 참가
+                            .filter(([key]) => data[key] === true || data[key] === "open" || data[key] === "amateur"  || data[key] === "newbie")  // true 또는 "open"이면 참가
                             .map(([, value]) => value)
                             .join(", ") || "없음";  // 없으면 "없음" 출력
 
