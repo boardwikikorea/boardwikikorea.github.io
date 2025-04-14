@@ -253,24 +253,38 @@
 
                     <ul style="border-bottom: 1px dashed #d9d9d9;padding-bottom: 20px;">
                         <li class="flex_none">
+                            <img src="../images/party.jpg" style="width: 100%;height: auto;display: none;" alt="">
                             <p class="tip2">
                                 <span class="lang_kr">
-                                    * 에프터 파티를 기획 중입니다.
-                                    신청 인원에 따라 가게, 파티룸 등을 고려하고 있습니다!
-                                    참가를 희망하시는 분은 체크해주세요!
+                                    <!-- 참가 금액 : xxxxx원 (xxxx-xxx-xxxx xx은행 / 예금주 xxx )<br/>-->
+                                    금액 (1만원 예상) 및 입금 방법은 추후 안내 드립니다. <br/>
+                                    5월 17일 저녁 7시부터 <br/>
+                                    선유도역 5번출구에서 도보 5분 (서울특별시 영등포구 선유로 259 건물 3층) <br/>
+                                    <a href="https://place.map.kakao.com/781530253?code=302" target="_blank" style="margin-right: 5px;" rel="noopener noreferrer">지도보기</a> 
                                 </span>
                                 <span class="lang_en">
-                                    * We are planning an after-party.
-                                    Depending on the number of applicants, we are considering a restaurant, a party room, and other venues!
-                                    If you wish to participate, please check the box!
+                                    From 7:00 PM on May 17 <br/>
+                                    Participation fee (approx. 10,000 KRW) and payment details will be announced later.<br/>
+                                    5-minute walk from Exit 5 of Seonyudo Station <br/>
+                                    3rd Floor, 259 Seonyu-ro, Yeongdeungpo-gu, Seoul <br/>
+                                    <a href="https://maps.app.goo.gl/tDkpd6tcM8NFYXYB6" target="_blank" style="margin-right: 5px;" rel="noopener noreferrer">Map INFO</a> 
                                 </span>
                             </p>
                             <div style="text-align: center;margin-top:10px;width:100%;">
-                                <label><input type="checkbox" name="after_party"> <strong> (After Party Join)</strong></label>
+                                <label>
+                                    <input type="checkbox" name="after_party" id="after_party_checkbox">
+                                    <strong>(After Party Join)</strong>
+                                </label>
+                            </div>
+                            <div id="after_party_num_wrapper" style="text-align: center; margin-top:10px; display:none;">
+                                <label>
+                                    <span class="lang_kr">참가 인원 수:</span>
+                                    <span class="lang_en">Number of participants:</span>
+                                    <input type="number" name="after_party_num" min="1" max="10" style="width: 60px; border:1px solid #d9d9d9;border-radius: 5px;margin-left: 5px;padding: 0 5px;">
+                                </label>
                             </div>
                         </li>
                     </ul>
-
                     <br/>
 
                     <p class="tip2" style="margin-top: 20px;">
@@ -320,6 +334,12 @@
         //const analytics = getAnalytics(app);
         const db = getFirestore(app);
 
+
+        document.getElementById('after_party_checkbox').addEventListener('change', function () {
+            const wrapper = document.getElementById('after_party_num_wrapper');
+            wrapper.style.display = this.checked ? 'block' : 'none';
+        });
+        
         document.getElementById('applicationForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             if(confirm('제출하겠습니까?\nDo you want to submit?')){
@@ -340,6 +360,7 @@
                     best_hand: form.best_hand?.checked ?? false,
                     best_pair: form.best_pair?.checked ?? false,
                     after_party: form.after_party?.checked ?? false,
+                    after_party_num: form.after_party_num.value?? 0,
                     createdAt: serverTimestamp()
                 };
 
