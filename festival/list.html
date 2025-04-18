@@ -109,7 +109,7 @@
                             <td>${data.name}</td>
                             <td>${data.pay ? "✅" : "❌"}</td>
                             <td>${data.contact}</td>
-                            <td>${data.after_party ? "✅" : "❌"}  ${data.after_party_num? data.after_party_num : 0}</td>
+                            <td>${data.after_party ? "✅" : "❌"}  ${data.after_party ? data.after_party_num? data.after_party_num : 1 : ''}</td>
                             <td>${events}</td> 
                         `;
             
