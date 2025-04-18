@@ -43,6 +43,11 @@
 <body id="festival">
     <h1 class="sound_only">롱보드 대축제</h1>
 
+    <div class="language-switcher">
+        <button type="button" class="active" id="btn-kr">KR</button>
+        <button type="button" id="btn-en">EN</button>
+    </div>
+
     <div class="lang_kr">
         <a href="http://pf.kakao.com/_iGCjn" class="kakao-button" target="_blank">
             <img src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png" alt="카카오톡 로고">
@@ -208,6 +213,40 @@
         });
 
 
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const btnKr = document.getElementById("btn-kr");
+            const btnEn = document.getElementById("btn-en");
+            const krElements = document.querySelectorAll(".lang_kr");
+            const enElements = document.querySelectorAll(".lang_en");
+
+            function showKorean() {
+                krElements.forEach(el => el.style.display = "block");
+                enElements.forEach(el => el.style.display = "none");
+                btnKr.classList.add("active");
+                btnEn.classList.remove("active");
+            }
+
+            function showEnglish() {
+                krElements.forEach(el => el.style.display = "none");
+                enElements.forEach(el => el.style.display = "block");
+                btnEn.classList.add("active");
+                btnKr.classList.remove("active");
+            }
+
+            // 초기 상태 설정: 브라우저 언어 감지
+            const userLang = navigator.language || navigator.userLanguage; // 사용자의 브라우저 언어 감지
+            if (userLang.startsWith("ko")) {
+                showKorean(); // 한국어이면 한국어 노출
+            } else {
+                showEnglish(); // 그 외에는 영어 노출
+            }
+
+            // 버튼 클릭 이벤트 설정
+            btnKr.addEventListener("click", showKorean);
+            btnEn.addEventListener("click", showEnglish);
+        });
+        
     </script>
 
 </body>
