@@ -59,6 +59,7 @@
           contact: data.contact || "",
           pay: data.pay || false,
           after_party: data.after_party || false,
+          song : data.song,
           after_party_num: data.after_party_num || "1"
         };
 
@@ -119,14 +120,18 @@
 
         const section = document.createElement("section");
         section.classList.add("category-section");
+        //<th>노래</th>
+        //<td style="font-size: 0.7rem;">${p.song}</td></tr>
+        //<th>전화번호</th>
+        //<td>${p.contact}</td>
         section.innerHTML = `
           <h2>${title} - ${participants.length}명</h2>
           <table>
             <thead>
-              <tr><th>ID</th><th>이름</th><th>전화번호</th></tr>
+              <tr><th>이름</th></tr>
             </thead>
             <tbody>
-              ${participants.map(p => `<tr><td>${p.id}</td><td>${p.name}</td><td>${p.contact}</td></tr>`).join("")}
+              ${participants.map(p => `<tr><td data-id="${p.id}">${p.name}</td>`).join("")}
             </tbody>
           </table>
         `;

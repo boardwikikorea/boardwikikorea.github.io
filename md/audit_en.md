@@ -1,22 +1,43 @@
 # Event Regulations and Judging Criteria
 
+# Category-Specific Rules and Judging Criteria
+
 ## Freestyle
 
-* The preliminaries are held with two participants, and the finals are held with one participant.<br/>
-  Added March 2025 > It is possible that the preliminaries will also be held with a single participant.
-* Each participant is given 2 minutes for both the preliminaries and finals. (The time may vary depending on the number of participants.)
-  Added March 2025 > In the Master and Newbie categories, only one run will be held without preliminaries.
-* Duplicate tricks within the 2 minutes will not be counted towards the score.<br/>
-* Approximately 10 finalists will be selected, with adjustments made based on circumstances.<br/>
-* Only the final scores will be announced, with the distribution of points as follows: Dancing (30), Trick (30), Flow (30), and Style (15).
+> While rankings are part of competitions, true skateboarding is about style. The competition format requires objective scoring based on overall performance, but this does not define the essence of boarding.
 
-### Evaluation Criteria
+- Scores are based only on tricks performed within the allotted time. Practice level or progression is not considered.
+- Preliminary rounds are generally done in pairs, but solo runs are allowed. Finals are always solo runs.
+- Standard run time is 2 minutes for both prelims and finals. This may be adjusted based on the number of participants.
+- In the Master and Newbie divisions, only one run will be held without a preliminary round.
+- Repeating the same trick or dancing line during the 2-minute run will only count once.
+- Approximately 10 participants advance to the finals (subject to change based on event circumstances).
 
-> The evaluation will consider difficulty, variety, flow, and additionally style.
-* Difficulty (speed of the tricks, landings, and the connection between tricks)<br/>
-* Variety (variety of tricks such as dancing steps, spin tricks, flip tricks, manual tricks, slides, etc.)<br/>
-* Flow (consistency without failure, connection between tricks)<br/>
-* Style (originality, signature tricks)
+### Judging Criteria
+
+> Only final round scores will be announced. Judging is based on **difficulty**, **variety**, **flow**, and **style**. Score distribution is as follows:
+
+| Category  | Score | Description |
+|-----------|-------|-------------|
+| Dancing   | 30 pts | Evaluates variety and difficulty |
+| Tricks    | 30 pts | Evaluates variety and difficulty |
+| Flow      | 30 pts | Measures consistency and smooth transitions. <br/>Failed tricks are deducted unless recovered swiftly. <br/>Emphasis on fluid, well-composed overall performance. |
+| Style     | 15 pts | Focus on individuality, creativity, and originality.<br/>Signature moves, unique combos, or personal expression are rated highly. |
+
+#### Scoring Details
+
+**Difficulty**
+- Only successfully landed tricks are evaluated.
+- Trick speed, clean landings, and complexity of combos are all considered.
+
+**Variety**
+- A well-rounded run includes multiple trick categories:
+  - Dancing steps (basic steps, chop-style, fakie, pirouettes, etc.)
+  - Rolling tricks (shuvit, no-comply, slides, etc.)
+  - Flip tricks (handflip, kickflip, etc.)
+  - Stationary tricks (nose spins, truck stands, casper, etc.)
+  - Manual tricks (nose/tail manuals, etc.)
+- Runs showcasing multiple categories are rated higher than those focusing only on one or two.
 
 ## Best Trick
 * Two opportunities will be given. However, if there is an issue with the landing during a round, a video review will provide one additional chance for reattempting. (No additional reattempt opportunities are available)<br/>
