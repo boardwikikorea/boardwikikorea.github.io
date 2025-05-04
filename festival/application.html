@@ -355,6 +355,8 @@
         
         document.getElementById('applicationForm').addEventListener('submit', async (e) => {
             e.preventDefault();
+            alert("신청 마감됐습니다.");
+            return false;
             if(confirm('제출하겠습니까?\nDo you want to submit?')){
                 const form = e.target;
                 const data = {
