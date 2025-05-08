@@ -55,7 +55,7 @@
     async function fetchAllApplications() {
       const querySnapshot = await getDocs(collection(db, "festivalApplications"));
 
-      const seed = 20250517; // 원하는 고정 시드 (날짜나 대회 ID 등)
+      const seed = 1; // 원하는 고정 시드 (날짜나 대회 ID 등)
       const shuffledDocs = shuffleWithSeed(querySnapshot.docs, seed);
 
 
