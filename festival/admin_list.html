@@ -60,6 +60,8 @@
                             <th>파티</th>
                             <th>성별</th>
                             <th>참가 종목</th>
+                            <th>스탠스</th>
+                            <th>트릭</th>
                             <th>신청곡</th>
                         </tr>
                     </thead>
@@ -125,6 +127,8 @@
                             <td>${data.after_party ? "✅" : "❌"}  ${data.after_party ? data.after_party_num? data.after_party_num : 1 : ''}</td>
                             <td>${data.gender == 'male' ? '남' : '여'}</td>
                             <td>${events}</td> 
+                            <td>${data.stance}</td>
+                            <td>${data.best_trick_name}</td>
                             <td>${data.song}</td>
                         `;
             
