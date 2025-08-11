@@ -23,7 +23,7 @@
 
 
 #wiki-main .content > article {
-    width: calc(100% / 3);
+    width: calc(100% / 2);
     display: flex;
     flex-direction: column;
     align-items: center;
