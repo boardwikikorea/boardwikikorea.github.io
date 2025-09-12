@@ -16,10 +16,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     console.log(osType);
+    /*
     // OS별 스토어 링크 설정
     if (osType === "android" || osType === "windows") {
         appStoreBtn.style.display = "none"; // 앱스토어 버튼 숨김
     } else if (osType === "mac") {
         googlePlayBtn.style.display = "none"; // 구글 플레이 버튼 숨김
     }
+    */
 });
