@@ -153,6 +153,13 @@
 
 .btns {
     display: flex;
+    margin-bottom: 10px;
+}
+
+.btns a.full{
+    border:2px solid #ac9c69!important;
+    width:100%;
+    border-radius: 0.5rem!important;
 }
 
 .btns a {
@@ -183,7 +190,6 @@
 .btns a:hover {
     background: #8a7a50;
     color: #fff;
-    transform: translateY(-2px);
 }
 
 footer {
