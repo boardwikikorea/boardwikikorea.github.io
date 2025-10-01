@@ -79,6 +79,7 @@ h2::after {
 =============================== */
 .s2 {
   text-align: center;
+  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
 }
 
 .s2 .swiper {
@@ -241,6 +242,44 @@ h2::after {
 .s3 ul li ul::-webkit-scrollbar-track {
     background: #222;
 }
+
+
+/* ===============================
+   Section s4
+=============================== */
+.s4 {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(180deg, #111, #000);
+  border-top: 1px solid #222;
+}
+
+.s4 h2 {
+  font-size: 1.6rem;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+/* ===============================
+   Instagram Button
+=============================== */
+.btn-instagram {
+  display: inline-block;
+  padding: 14px 28px;
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-instagram:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(220, 39, 67, 0.5);
+}
+
 
 
 /* ===============================
