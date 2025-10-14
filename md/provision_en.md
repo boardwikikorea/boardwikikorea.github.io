@@ -1,84 +1,108 @@
-# Competition Rules
+# Event Regulations  
 
-## Minimum Track Requirements
-* Length: 50m / 3 lanes, approximately 9m (Preliminary round for 1-2 participants)
-* If there are venue issues, the competition may proceed upon agreement between the organizer and the judges.
+## Notes  
 
-## Equipment Regulations
-### Mandatory Helmet Use
-* Riding without a helmet within the competition venue is strictly prohibited.
+#### Alcohol and Smoking Restrictions  
+* Excessive drinking or smoking outside designated areas may result in a warning or disqualification from the competition.  
 
-### Deck | Trucks | Wheels
-| Deck | Trucks | Wheels |
-|---|---|---|
-| Deck of 35 inches or longer | Hanger length of at least 150mm, regardless of RKP or TKP | Longboard brand products (hardness unrestricted) |
-
-※ The truck and wheel regulations will be applied from 2025.
+#### Restricted Access to the Headquarters and Information Leakage  
+* Access to the headquarters area is limited to staff and judges only.  
+* Any external sharing or verbal communication of internal documents or information is strictly prohibited.  
 
 ---
 
-## Eligible Divisions
+## Minimum Competition Area  
+* Course length: 50m / Width: approx. 9m (3 lanes, based on 1–2 participants per heat)  
+* If the venue does not meet standard requirements, the competition may proceed upon agreement between the organizer and judges.  
 
-### Single, Event, and Demonstration Categories
-**Eligibility:** Open to all  
+---
+
+## Equipment Regulations  
+
+### Helmet (Mandatory)  
+* Helmets must be worn at all times in the competition area.  
+* Riding without a helmet is strictly prohibited.  
+
+### Deck | Truck | Wheel  
+
+| Deck | Truck | Wheel |
+|------|--------|--------|
+| Decks must be 35 inches or longer | Either RKP or TKP, hanger width 150mm or more | Must be a longboard brand product (durometer unrestricted) |
+
+※ Truck and wheel regulations will be applied starting from 2025.  
+
+---
+
+## Eligible Divisions  
+
+### Single, Event & Exhibition Divisions  
+**Entry Requirement:** None  
 **Categories:** Best G-Turn, Hippie Jump, Best Hand Trick, Best Pair  
 
 ---
 
 ### Junior Division  
-※ The Junior Division will be discontinued starting in 2025.  
+※ The Junior Division is discontinued as of 2025.  
+※ Winners of the Junior Open Division will move to the adult division by gender.  
+※ Winners of the Junior General Division may participate in both the General and Open Divisions.  
 
 ---
 
 ### Newbie Division  
-**Eligibility:** 
-* Riders with less than two years of experience  
-* Participants receiving board-related sponsorships, ambassador roles, or official product support are not eligible.
+> * Operation of this division may vary by festival or event.  
 
-**Category:** Freestyle (1 to 1.5-minute run, no preliminaries)  
+**Entry Requirements:**  
+* Must have less than 2 years of longboarding experience.  
+* Riders who receive sponsorship, ambassadorship, or official brand support are **not eligible**.  
+
+**Category:**  
+* Freestyle (no preliminaries; one run of 1–1.5 minutes)  
 
 ---
+
 ### Non-Sponsored Division  
-**Eligibility:**  
-* Participants receiving board-related sponsorships, ambassador roles, or official product support are not eligible.
-* Previous winners of this division are not eligible.
+**Entry Requirements:**  
+* Riders with sponsorship, ambassadorship, or official brand support are **not eligible**.  
+* Previous winners of this division cannot participate again.  
 
 **Categories:**  
-* (Men, Women) Freestyle  
-* (Men, Women) Best Trick  
-* (Men, Women) Best Dancing  
+* (Male/Female) Freestyle  
+* (Male/Female) Best Trick  
+* (Male/Female) Best Dancing  
 
 ---
+
 ### Open Division  
-**Eligibility:** Previous winners of this division are not eligible.  
-"Until the official event of the Master’s Division starts, previous winners are also eligible to participate."
-
+**Entry Requirements:**  
+* Previous winners of the same category cannot participate again.  
+* Until the Master Division becomes an official category, previous winners may still enter.  
 
 **Categories:**  
-* (Men, Women) Freestyle  
-* (Men, Women) Best Trick  
-* (Men, Women) Best Dancing  
+* (Male/Female) Freestyle  
+* (Male/Female) Best Trick  
+* (Male/Female) Best Dancing  
 
 ---
 
-### Master Division (Trial Category)
+### Master Division  
+> * Operation of this division may vary by festival or event.  
 
-※ This category is operated as a trial and may proceed without registration. However, the final implementation is not yet confirmed.  
-**Eligibility:** Open Division prize winners, international competition winners  
-**Category:** Freestyle (2-minute run, no preliminaries)  
+**Entry Requirements:**  
+* Open Division winners or international competition finalists.  
+
+**Category:**  
+* Freestyle (no preliminaries; one run of 2 minutes)  
 
 ---
 
 ## Entry Fee  
-* The entry fee is 30,000 KRW (as of 2025).  
-* All sponsorship and participation fees will be used for event operations.  
-* Please ensure that the deposit name matches the applicant's name.  
-* Failure to pay the entry fee will result in disqualification, and no refunds will be issued for no-shows.  
+* Entry fee: **30,000 KRW** (as of 2025).  
+* All sponsorships and participation fees will be used for event operations.  
+* Please transfer the participation fee under the **same name** as your registration name.  
+* Participants who fail to pay the entry fee cannot compete.  
+* No refunds will be issued for no-shows on the event day.  
 
 ---
 
-## On-Site Registration  
-* On-site registration is only available for international participants.  
-
----
-
+## On-site Registration  
+* On-site registration is available **for international participants only**.  
