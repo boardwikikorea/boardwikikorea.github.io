@@ -101,7 +101,7 @@
                     </p>
                     <br/>
 
-                <form id="applicationForm" name="applicationForm" method="post">
+                <form id="applicationForm" name="applicationForm" >
                     <ul class="user_info">
                         <li>
                             <label for="name">이름 (name or nickname)</label>
@@ -253,8 +253,14 @@
     </div>
 
     <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
-    import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
+    // Firebase 앱 초기화
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js';
+
+    // Firestore 관련 기능
+    import { getFirestore, collection, addDoc, serverTimestamp } from 'https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js';
+
+    // Analytics 기능 (선택)
+    import { getAnalytics } from 'https://www.gstatic.com/firebasejs/12.4.0/firebase-analytics.js';
 
     const firebaseConfig = {
         apiKey: "AIzaSyDDkghHYAD581-N3u8zUUsinS1F49P5xi0",
@@ -266,9 +272,9 @@
         measurementId: "G-DZ52LV9MMG"
     };
 
-    // Firebase 초기화
     const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
+    const db = getFirestore(app); // Firestore 인스턴스
+    const analytics = getAnalytics(app); // Analytics 인스턴스 (선택)
 
     document.getElementById('applicationForm').addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -279,7 +285,8 @@
         const stance = document.querySelector('input[name="stance"]:checked').value;
         const team = document.getElementById('team').value;
         const song = document.getElementById('song').value;
-        const freestyle = document.querySelector('input[name="freestyle"]:checked').value;
+        const freestyleInput = document.querySelector('input[name="freestyle"]:checked');
+        const freestyle = freestyleInput ? freestyleInput.value : 'none';
         const hippyJump = document.querySelector('input[name="hippy_jump"]').checked;
         const bestPair = document.querySelector('input[name="best_pair"]').checked;
         const race = document.querySelector('input[name="race"]').checked;
@@ -299,6 +306,7 @@
                 createdAt: serverTimestamp()
             });
             alert("신청 완료! 🎉");
+            location.href = "/festival";
             e.target.reset();
         } catch (error) {
             console.error("Error adding document: ", error);
