@@ -252,14 +252,10 @@
         </footer>
     </div>
 
-    <script type="module">
+<script type="module">
     // Firebase 앱 초기화
     import { initializeApp } from 'https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js';
-
-    // Firestore 관련 기능
     import { getFirestore, collection, addDoc, serverTimestamp } from 'https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js';
-
-    // Analytics 기능 (선택)
     import { getAnalytics } from 'https://www.gstatic.com/firebasejs/12.4.0/firebase-analytics.js';
 
     const firebaseConfig = {
@@ -273,8 +269,8 @@
     };
 
     const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app); // Firestore 인스턴스
-    const analytics = getAnalytics(app); // Analytics 인스턴스 (선택)
+    const db = getFirestore(app);
+    const analytics = getAnalytics(app);
 
     document.getElementById('applicationForm').addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -285,35 +281,42 @@
         const stance = document.querySelector('input[name="stance"]:checked').value;
         const team = document.getElementById('team').value;
         const song = document.getElementById('song').value;
+
         const freestyleInput = document.querySelector('input[name="freestyle"]:checked');
         const freestyle = freestyleInput ? freestyleInput.value : 'none';
+
         const hippyJump = document.querySelector('input[name="hippy_jump"]').checked;
         const bestPair = document.querySelector('input[name="best_pair"]').checked;
         const race = document.querySelector('input[name="race"]').checked;
 
+        const data = {
+            name,
+            contact,
+            gender,
+            stance,
+            team,
+            song,
+            freestyle,
+            hippyJump,
+            bestPair,
+            race,
+            createdAt: serverTimestamp()
+        };
+
         try {
-            await addDoc(collection(db, "festivalApplications"), {
-                name,
-                contact,
-                gender,
-                stance,
-                team,
-                song,
-                freestyle,
-                hippyJump,
-                bestPair,
-                race,
-                createdAt: serverTimestamp()
-            });
-            alert("신청 완료! 🎉");
-            location.href = "/festival";
-            e.target.reset();
+            // 문서 추가하고 docRef 반환
+            const docRef = await addDoc(collection(db, "festivalApplications"), data);
+
+            alert(`신청이 완료되었습니다! \nsuccessfully submitted!`);
+
+            // myapp.html로 이동, docRef.id 전달
+            window.location.href = `./myapp.html?id=${docRef.id}`;
         } catch (error) {
             console.error("Error adding document: ", error);
             alert("신청 중 오류가 발생했습니다. 콘솔 확인 요망.");
         }
     });
-    </script>
+</script>
 
 
     <script>
