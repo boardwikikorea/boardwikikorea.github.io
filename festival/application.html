@@ -253,38 +253,60 @@
     </div>
 
     <script type="module">
-        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-analytics.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
 
-        const firebaseConfig = {
-            apiKey: "AIzaSyDDkghHYAD581-N3u8zUUsinS1F49P5xi0",
-            authDomain: "boardwiki-e070e.firebaseapp.com",
-            databaseURL: "https://boardwiki-e070e-default-rtdb.asia-southeast1.firebasedatabase.app",
-            projectId: "boardwiki-e070e",
-            storageBucket: "boardwiki-e070e.firebasestorage.app",
-            messagingSenderId: "301441212066",
-            appId: "1:301441212066:web:1ffff5d8eccaaff11781fb",
-            measurementId: "G-DZ52LV9MMG"
-        };
+    const firebaseConfig = {
+        apiKey: "AIzaSyDDkghHYAD581-N3u8zUUsinS1F49P5xi0",
+        authDomain: "boardwiki-e070e.firebaseapp.com",
+        projectId: "boardwiki-e070e",
+        storageBucket: "boardwiki-e070e.appspot.com",
+        messagingSenderId: "301441212066",
+        appId: "1:301441212066:web:1ffff5d8eccaaff11781fb",
+        measurementId: "G-DZ52LV9MMG"
+    };
 
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-        const db = getFirestore(app);
+    // Firebase 초기화
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
 
+    document.getElementById('applicationForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
 
-        document.getElementById('after_party_checkbox').addEventListener('change', function () {
-            const wrapper = document.getElementById('after_party_num_wrapper');
-            wrapper.style.display = this.checked ? 'block' : 'none';
-        });
-        
-        document.getElementById('applicationForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-        });
+        const name = document.getElementById('name').value;
+        const contact = document.getElementById('contact').value;
+        const gender = document.querySelector('input[name="gender"]:checked').value;
+        const stance = document.querySelector('input[name="stance"]:checked').value;
+        const team = document.getElementById('team').value;
+        const song = document.getElementById('song').value;
+        const freestyle = document.querySelector('input[name="freestyle"]:checked').value;
+        const hippyJump = document.querySelector('input[name="hippy_jump"]').checked;
+        const bestPair = document.querySelector('input[name="best_pair"]').checked;
+        const race = document.querySelector('input[name="race"]').checked;
 
+        try {
+            await addDoc(collection(db, "festivalApplications"), {
+                name,
+                contact,
+                gender,
+                stance,
+                team,
+                song,
+                freestyle,
+                hippyJump,
+                bestPair,
+                race,
+                createdAt: serverTimestamp()
+            });
+            alert("신청 완료! 🎉");
+            e.target.reset();
+        } catch (error) {
+            console.error("Error adding document: ", error);
+            alert("신청 중 오류가 발생했습니다. 콘솔 확인 요망.");
+        }
+    });
     </script>
+
 
     <script>
         
