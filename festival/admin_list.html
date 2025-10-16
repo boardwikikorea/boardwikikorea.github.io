@@ -50,111 +50,93 @@
 
             <div style="overflow-x: auto;">
 
-                <table id="applicationsTable" style="width: 1200px;">
-                    <thead>
-                        <tr>
-                            <th>이름</th>
-                            <th>입금</th>
-                            <th>연락처</th>
-                            <th>소속</th>
-                            <th>파티</th>
-                            <th>성별</th>
-                            <th>참가 종목</th>
-                            <th>스탠스</th>
-                            <th>트릭</th>
-                            <th>신청곡</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
+            <table id="applicationsTable" style="max-width: 1200px;">
+                <thead>
+                    <tr>
+                    <th>이름</th>
+                    <th>연락처</th>
+                    <th>성별</th>
+                    <th>스탠스</th>
+                    <th>소속</th>
+                    <th>프리스타일</th>
+                    <th>히피점프</th>
+                    <th>베스트페어</th>
+                    <th>레이스</th>
+                    <th>신청곡</th>
+                    <th>신청일</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+                </table>
                 </table>
             </div>
             
-            <script type="module">
-                import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
-                import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
-            
-                const firebaseConfig = {
-                    apiKey: "AIzaSyDDkghHY...",
-                    authDomain: "boardwiki-e070e.firebaseapp.com",
-                    projectId: "boardwiki-e070e",
-                    storageBucket: "boardwiki-e070e.firebaseapp.com",
-                    messagingSenderId: "301441212066",
-                    appId: "1:301441212066:web:1ffff5d8eccaaff11781fb",
-                    measurementId: "G-DZ52LV9MMG"
-                };
-            
-                const app = initializeApp(firebaseConfig);
-                const db = getFirestore(app);
-            
-                async function fetchAllApplications() {
-                    const querySnapshot = await getDocs(collection(db, "festivalApplications"));
-                    const tableBody = document.querySelector("#applicationsTable tbody");
+        <script type="module">
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
+            import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
 
-                    querySnapshot.forEach((doc) => {
-                        const data = doc.data();
-                        const row = document.createElement("tr");
-                        
-                        const eventMap = {
-                            best_dancing: "댄싱",
-                            best_gturn: "쥐턴",
-                            best_hand: "핸트",
-                            best_pair: "페어",
-                            best_trick: "트릭",
-                            hippy_jump: "히피",
-                            freestyle: "프리"
-                        };
+            const firebaseConfig = {
+            apiKey: "AIzaSyDDkghHYAD581-N3u8zUUsinS1F49P5xi0",
+            authDomain: "boardwiki-e070e.firebaseapp.com",
+            projectId: "boardwiki-e070e",
+            storageBucket: "boardwiki-e070e.appspot.com",
+            messagingSenderId: "301441212066",
+            appId: "1:301441212066:web:1ffff5d8eccaaff11781fb",
+            measurementId: "G-DZ52LV9MMG"
+            };
 
-                        const levelMap = {
-                            "open": "오픈",
-                            "amateur": "일반",
-                            "newbie": "뉴비",
-                            true: "",  // 단순 참가 표시만 있을 경우
-                        };
+            const app = initializeApp(firebaseConfig);
+            const db = getFirestore(app);
 
-                        const events = Object.entries(eventMap)
-                        .filter(([key]) => data[key])  // 값이 존재하면 참가로 간주
-                        .map(([key, label]) => {
-                            const level = levelMap[data[key]] || "";  // unknown 값 방지
-                            return level ? `${label}(${level})` : label;
-                        })
-                        .join(", ") || "없음";
+            async function fetchAllApplications() {
+            const querySnapshot = await getDocs(collection(db, "festivalApplications"));
+            const tableBody = document.querySelector("#applicationsTable tbody");
+            tableBody.innerHTML = "";
 
-                        row.innerHTML = `
-                            <td>${data.name}</td>
-                            <td>${data.pay ? "✅" : "❌"}</td>
-                            <td>${data.contact}</td>
-                            <td>${data.team}</td>
-                            <td>${data.after_party ? "✅" : "❌"}  ${data.after_party ? data.after_party_num? data.after_party_num : 1 : ''}</td>
-                            <td>${data.gender == 'male' ? '남' : '여'}</td>
-                            <td>${events}</td> 
-                            <td>${data.stance}</td>
-                            <td>${data.best_trick_name}</td>
-                            <td>${data.song}</td>
-                        `;
-            
-                        tableBody.appendChild(row);
-                    });
+            querySnapshot.forEach((doc) => {
+                const data = doc.data();
+
+                const freestyleLabel = {
+                amateur: "일반부",
+                open: "오픈부",
+                master: "마스터부",
+                none: "없음"
+                }[data.freestyle] || "없음";
+
+                const createdAt = data.createdAt?.toDate
+                ? data.createdAt.toDate().toLocaleString("ko-KR")
+                : "-";
+
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                <td>${data.name || "-"}</td>
+                <td>${data.contact || "-"}</td>
+                <td>${data.gender === "male" ? "남" : "여"}</td>
+                <td>${data.stance}</td>
+                <td>${data.team || "-"}</td>
+                <td>${freestyleLabel}</td>
+                <td>${data.hippyJump ? "✅" : "❌"}</td>
+                <td>${data.bestPair ? "✅" : "❌"}</td>
+                <td>${data.race ? "✅" : "❌"}</td>
+                <td>${data.song || "-"}</td>
+                <td>${createdAt}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+            }
+
+            window.onload = () => {
+            const btn = document.getElementById("fetch-all-reservations");
+            btn.addEventListener("click", () => {
+                const password = prompt("관리자 암호를 입력하세요:");
+                if (password === "202511") {
+                fetchAllApplications();
+                } else {
+                alert("잘못된 암호입니다.");
                 }
-
-                window.onload = function () {
-                    const btn = document.getElementById('fetch-all-reservations');
-                    if (btn) {
-                        btn.addEventListener('click',function(){
-                            const password = prompt("암호를 입력하세요:");
-                            if (password === "10") { 
-                                fetchAllApplications();
-                            } else {
-                                alert("잘못된 암호입니다.");
-                            }
-                        });
-                        
-                    } else {
-                        console.error("버튼을 찾을 수 없습니다.");
-                    }
-                };
-            
-                //window.onload = fetchAllApplications;
-            </script>
+            });
+            };
+        </script>
 
 
         </article>
