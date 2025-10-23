@@ -24,4 +24,34 @@ document.addEventListener("DOMContentLoaded", () => {
         googlePlayBtn.style.display = "none"; // 구글 플레이 버튼 숨김
     }
     */
+
+        // 팝업 표시 조건
+    const popup = document.getElementById("festivalPopup");
+    const hideUntil = localStorage.getItem("hidePopupUntil");
+    const now = new Date();
+
+    if (!hideUntil || new Date(hideUntil) < now) {
+      popup.style.display = "flex";
+    }
+
+    function goFestival() {
+      window.open("https://boardwiki.kr/festival/", "_blank");
+      popup.style.display = "none";
+    }
+
+    function closeToday() {
+      const tomorrow = new Date();
+      tomorrow.setHours(24, 0, 0, 0); // 오늘 자정까지 유효
+      localStorage.setItem("hidePopupUntil", tomorrow.toISOString());
+      popup.style.display = "none";
+    }
+
+      // 버튼 요소 찾기
+    const goLinkBtn = popup.querySelector(".go-link");
+    const closeTodayBtn = popup.querySelector(".close-today");
+
+    if (goLinkBtn) goLinkBtn.addEventListener("click", goFestival);
+    if (closeTodayBtn) closeTodayBtn.addEventListener("click", closeToday);
+
+
 });

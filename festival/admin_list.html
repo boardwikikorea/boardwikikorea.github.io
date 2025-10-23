@@ -1,177 +1,203 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>롱보드 페스티벌</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>롱보드 대축제</title>
 
-    <!-- SEO 최적화 -->
-    <meta name="description" content="보드위키에서 최신 스케이트보드 및 롱보드 정보, 롱보드댄싱과 대회 소식을 만나보세요.">
-    <meta name="naver-site-verification" content="e74dc3e49d0527046508b26ee9860c52a501b8f4">
+  <!-- SEO 최적화 -->
+  <meta name="description" content="보드위키에서 최신 스케이트, 롱보드 정보와 롱보드댄싱, 보드대회 소식을 확인하세요.">
+  <meta name="keywords" content="스케이트, 롱보드, 카버보드, 롱보드댄싱, 보드대회, longboarding, 롱보드 대축제, 롱보드 페스티벌, longboard festival">
+  <meta name="naver-site-verification" content="e74dc3e49d0527046508b26ee9860c52a501b8f4">
 
-    <!-- Open Graph (OG) -->
-    <meta property="og:site_name" content="BoardWiki">
-    <meta property="og:title" content="보드 커뮤니티">
-    <meta property="og:description" content="최신 보드 소식을 확인하세요.">
-    <meta property="og:url" content="https://boardwiki.kr">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://boardwiki.kr/images/og-image.jpg?ver=20250930">
+  <!-- Open Graph (OG) -->
+  <meta property="og:site_name" content="BoardWiki">
+  <meta property="og:title" content="롱보드 대축제">
+  <meta property="og:description" content="스케이트·롱보드 최신 정보를 확인하세요.">
+  <meta property="og:url" content="https://boardwiki.kr">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://boardwiki.kr/images/og-image.jpg?ver=20250930">
 
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="보드위키 - 스케이트·롱보드 커뮤니티">
+  <meta name="twitter:description" content="보드위키에서 최신 스케이트, 롱보드 정보를 만나보세요.">
+  <meta name="twitter:image" content="https://boardwiki.kr/images/twitter-image.jpg">
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="보드위키 - 보드 커뮤니티">
-    <meta name="twitter:description" content="최신 보드 소식을 확인하세요.">
-    <meta name="twitter:image" content="https://boardwiki.kr/images/twitter-image.jpg">
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://boardwiki.kr/">
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://boardwiki.kr/">
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
 
-    <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;700&display=swap">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/common.css?ver250314">
+  <link rel="stylesheet" href="../css/festival.css?ver=250317">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="../css/common.css?ver250314">
-    <link rel="stylesheet" href="../css/festival.css?ver=250317">
+  <!-- JS -->
+  <script src="../js/common.js" defer></script>
 
-    <!-- JS -->
-    <script src="../js/common.js" defer></script>
-</head>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
+    import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
 
-<body id="festival">
-    <h1 class="sound_only">롱보드 페스티벌</h1>
+    const firebaseConfig = {
+      apiKey: "AIzaSyDDkghHYAD581-N3u8zUUsinS1F49P5xi0",
+      authDomain: "boardwiki-e070e.firebaseapp.com",
+      projectId: "boardwiki-e070e",
+      storageBucket: "boardwiki-e070e.appspot.com",
+      messagingSenderId: "301441212066",
+      appId: "1:301441212066:web:1ffff5d8eccaaff11781fb",
+      measurementId: "G-DZ52LV9MMG"
+    };
 
-    <div class="wrap main">
-        <article class="content">
-            <!-- 전체 조회 버튼 추가 -->
-            <button id="fetch-all-reservations">전체 조회</button>
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
 
-            <div style="overflow-x: auto;">
+    async function fetchAllApplications() {
+      const querySnapshot = await getDocs(collection(db, "festivalApplications"));
+      const allData = [];
 
-            <table id="applicationsTable" style="max-width: 1200px;">
-                <thead>
-                    <tr>
-                    <th>이름</th>
-                    <th>연락처</th>
-                    <th>성별</th>
-                    <th>스탠스</th>
-                    <th>소속</th>
-                    <th>프리스타일</th>
-                    <th>히피점프</th>
-                    <th>베스트페어</th>
-                    <th>레이스</th>
-                    <th>신청곡</th>
-                    <th>신청일</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-                </table>
-                </table>
-            </div>
-        </article>
+      querySnapshot.forEach((doc) => {
+        const data = doc.data();
+        allData.push({ id: doc.id, ...data });
+      });
 
-        <footer>
-            서비스 제공 <a href="../index.html">@boardwiki</a>
-        </footer>
-    </div>
+      // 1️⃣ createdAt 기준으로 최신순 정렬
+      allData.sort((a, b) => {
+        const timeA = a.createdAt?.toDate ? a.createdAt.toDate().getTime() : 0;
+        const timeB = b.createdAt?.toDate ? b.createdAt.toDate().getTime() : 0;
+        return timeB - timeA;
+      });
 
+      // 2️⃣ name + contact 기준으로 중복 제거 (가장 최신만 유지)
+      const uniqueData = [];
+      const seenKeys = new Set();
 
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
-  import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
+      for (const entry of allData) {
+        const name = entry.name?.trim() || "";
+        const contact = entry.contact?.trim() || "";
+        const key = `${name}_${contact}`;
 
-  const firebaseConfig = {
-    apiKey: "AIzaSyDDkghHYAD581-N3u8zUUsinS1F49P5xi0",
-    authDomain: "boardwiki-e070e.firebaseapp.com",
-    projectId: "boardwiki-e070e",
-    storageBucket: "boardwiki-e070e.appspot.com",
-    messagingSenderId: "301441212066",
-    appId: "1:301441212066:web:1ffff5d8eccaaff11781fb",
-    measurementId: "G-DZ52LV9MMG"
-  };
+        if (name && contact && !seenKeys.has(key)) {
+          uniqueData.push(entry);
+          seenKeys.add(key);
+        }
+      }
 
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
+      // 3️⃣ 카테고리별 분류
+      const categories = {
+        "프리스타일 (Freestyle) No Sponsor_(남, Male)": [],
+        "프리스타일 (Freestyle) No Sponsor_(여, Female)": [],
+        "프리스타일 (Freestyle) 오픈 (Open)_(남, Male)": [],
+        "프리스타일 (Freestyle) 오픈 (Open)_(여, Female)": [],
+        "프리스타일 (Freestyle) 마스터 (Master)": [],
+        "페어 Pair": [],
+        "히피점프 Hippy Jump": [],
+        "레이스 Race": []
+      };
 
-  async function fetchAllApplications() {
-    const querySnapshot = await getDocs(collection(db, "festivalApplications"));
-    const allData = [];
+      uniqueData.forEach((d) => {
+        const gender = d.gender === "male" ? "남, Male" : "여, Female";
 
-    querySnapshot.forEach((doc) => {
-      const data = doc.data();
-      allData.push({ id: doc.id, ...data });
-    });
+        if (d.freestyle === "none") return;
 
-    // 1️⃣ createdAt 기준으로 최신순 정렬
-    allData.sort((a, b) => {
-      const timeA = a.createdAt?.toDate ? a.createdAt.toDate().getTime() : 0;
-      const timeB = b.createdAt?.toDate ? b.createdAt.toDate().getTime() : 0;
-      return timeB - timeA; // 최신순
-    });
+        if (d.freestyle === "amateur")
+          categories[`프리스타일 (Freestyle) No Sponsor_(${gender})`]?.push(d.name);
+        if (d.freestyle === "open")
+          categories[`프리스타일 (Freestyle) 오픈 (Open)_(${gender})`]?.push(d.name);
+        if (d.freestyle === "master")
+          categories["프리스타일 (Freestyle) 마스터 (Master)"]?.push(d.name);
 
-    // 2️⃣ 이름 기준으로 중복 제거 (가장 최신만 유지)
-    const uniqueData = [];
-    const seenNames = new Set();
+        if (d.bestPair) categories["페어 Pair"].push(d.name);
+        if (d.hippyJump) categories["히피점프 Hippy Jump"].push(d.name);
+        if (d.race) categories["레이스 Race"].push(d.name);
+      });
 
-    for (const entry of allData) {
-      const name = entry.name?.trim();
-      if (name && !seenNames.has(name)) {
-        uniqueData.push(entry);
-        seenNames.add(name);
+      // 4️⃣ 화면 렌더링
+      const container = document.querySelector(".category-list");
+      container.innerHTML = "";
+
+      for (const [category, names] of Object.entries(categories)) {
+        const section = document.createElement("section");
+        section.innerHTML = `
+          <h3 style="margin-top: 1.5rem;">${category} - ${names.length}명</h3>
+          <ul style="padding-left: 1rem;">
+            ${names.map(name => `<li>${name}</li>`).join("")}
+          </ul>
+        `;
+        container.appendChild(section);
       }
     }
 
-    // 3️⃣ 테이블 렌더링
-    const tableBody = document.querySelector("#applicationsTable tbody");
-    tableBody.innerHTML = "";
+    // 🔒 페이지 로드시 실행
+    window.onload = () => {
+      fetchAllApplications();
+    };
+  </script>
 
-    uniqueData.forEach((data) => {
-      const freestyleLabel = {
-        amateur: "일반부",
-        open: "오픈부",
-        master: "마스터부",
-        none: "없음"
-      }[data.freestyle] || "없음";
+  <style>
+    .category-list { margin-bottom: 3rem; }
+    .category-list h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0.5rem;
+    }
 
-      const createdAt = data.createdAt?.toDate
-        ? data.createdAt.toDate().toLocaleString("ko-KR")
-        : "-";
+    .category-list ul {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1rem;
+      border-top: 1px solid #ddd;
+    }
 
-      const row = document.createElement("tr");
-      row.innerHTML = `
-        <td id="${data.id}">${data.name || "-"}</td>
-        <td>${data.contact || "-"}</td>
-        <td>${data.gender === "male" ? "남" : "여"}</td>
-        <td>${data.stance}</td>
-        <td>${data.team || "-"}</td>
-        <td>${freestyleLabel}</td>
-        <td>${data.hippyJump ? "✅" : "❌"}</td>
-        <td>${data.bestPair ? "✅" : "❌"}</td>
-        <td>${data.race ? "✅" : "❌"}</td>
-        <td>${data.song || "-"}</td>
-        <td>${createdAt}</td>
-      `;
-      tableBody.appendChild(row);
-    });
-  }
+    .category-list li {
+      border: 1px solid #ddd;
+      border-top: 0;
+      padding: 0.75rem;
+      text-align: center;
+    }
 
-  window.onload = () => {
-    const btn = document.getElementById("fetch-all-reservations");
-    btn.addEventListener("click", () => {
-      const password = prompt("관리자 암호를 입력하세요:");
-      if (password === "202511") {
-        fetchAllApplications();
-      } else {
-        alert("잘못된 암호입니다.");
-      }
-    });
-  };
-</script>
+    .category-list li:nth-child(even) {
+      background-color: #fafafa;
+    }
 
+    button#fetch-all-reservations {
+      background-color: #333;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
 
+    button#fetch-all-reservations:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
 
+<body id="festival">
+  <h1 class="sound_only">롱보드 대축제</h1>
+
+  <div class="language-switcher">
+    <button type="button" class="active" id="btn-kr">KR</button>
+    <button type="button" id="btn-en">EN</button>
+  </div>
+
+  <div class="wrap main">
+    <article class="content">
+      <div class="form-header">
+        <h2>참가자 목록 (Participant List)</h2>
+        <a href="./index.html" class="close-btn">✖</a>
+      </div>
+      
+      <div class="category-list" style="margin-top: 2rem;"></div>
+    </article>
+    <footer>서비스 제공 <a href="../index.html">@boardwiki</a></footer>
+  </div>
 </body>
-
 </html>
