@@ -38,95 +38,99 @@
     <!-- JS -->
     <script src="../js/common.js" defer></script>
 
-  <!-- Firebase SDK -->
-  <script type="module">
-    document.addEventListener("DOMContentLoaded", function() {
-    const btnKr = document.getElementById("btn-kr");
-    const btnEn = document.getElementById("btn-en");
-    const krElements = document.querySelectorAll(".lang_kr");
-    const enElements = document.querySelectorAll(".lang_en");
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
+  import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
 
-    function showKorean() {
-        krElements.forEach(el => el.style.display = "block");
-        enElements.forEach(el => el.style.display = "none");
-        btnKr.classList.add("active");
-        btnEn.classList.remove("active");
-    }
+  const firebaseConfig = {
+    apiKey: "AIzaSyDDkghHYAD581-N3u8zUUsinS1F49P5xi0",
+    authDomain: "boardwiki-e070e.firebaseapp.com",
+    projectId: "boardwiki-e070e",
+    storageBucket: "boardwiki-e070e.appspot.com",
+    messagingSenderId: "301441212066",
+    appId: "1:301441212066:web:1ffff5d8eccaaff11781fb",
+    measurementId: "G-DZ52LV9MMG"
+  };
 
-    function showEnglish() {
-        krElements.forEach(el => el.style.display = "none");
-        enElements.forEach(el => el.style.display = "block");
-        btnEn.classList.add("active");
-        btnKr.classList.remove("active");
-    }
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
 
-    // 초기 상태 설정: 브라우저 언어 감지
-    const userLang = navigator.language || navigator.userLanguage; // 사용자의 브라우저 언어 감지
-    if (userLang.startsWith("ko")) {
-        showKorean(); // 한국어이면 한국어 노출
-    } else {
-        showEnglish(); // 그 외에는 영어 노출
-    }
+  async function fetchAllApplications() {
+    const querySnapshot = await getDocs(collection(db, "festivalApplications"));
+    const allData = [];
 
-    // 버튼 클릭 이벤트 설정
-    btnKr.addEventListener("click", showKorean);
-    btnEn.addEventListener("click", showEnglish);
+    querySnapshot.forEach((doc) => {
+      const data = doc.data();
+      allData.push({ id: doc.id, ...data });
+    });
 
-    window.onload = () => {
-      const participants = {
-        /*
-        "트릭 (Trick) 오픈 (Open)_(남, Male)": [
-        ],
-        "트릭 (Trick) 오픈 (Open)_(여, Female)" : [
-        ],
-        "트릭 (Trick) No Sponsor_(남, Male)" : [
-        ],
-        "트릭 (Trick) No Sponsor_(여, Female)" : [
-        ],
-        "댄싱 (Dancing) 오픈 (Open)_(남, Male)" : [
-        ],
-        "댄싱 (Dancing) 오픈 (Open)_(여, Female)" : [
-        ],
-        "댄싱 (Dancing) No Sponsor_(남, Male)" : [
-        ],
-        "댄싱 (Dancing) No Sponsor_(여, Female)" : [
-        ],
-        */
-        "프리스타일 (Freestyle) No Sponsor_(남, Male)" : [
-        ],
-        "프리스타일 (Freestyle) No Sponsor_(여, Female)" : [
-        ],
-        "프리스타일 (Freestyle) 오픈 (Open)_(남, Male)" : [
-        ],
-        "프리스타일 (Freestyle) 오픈 (Open)_(여, Female)" : [
-        ],
-        "프리스타일 (Freestyle) 마스터 (Master)" : [
-        ],
-        "페어 Pair" : [
-        ],
-        "히피점프 Hippy jump " : [
-        ],
-        "레이스 Race" : [
-        ],
-      };
+    // 1️⃣ createdAt 기준으로 최신순 정렬
+    allData.sort((a, b) => {
+      const timeA = a.createdAt?.toDate ? a.createdAt.toDate().getTime() : 0;
+      const timeB = b.createdAt?.toDate ? b.createdAt.toDate().getTime() : 0;
+      return timeB - timeA;
+    });
 
-      const container = document.querySelector('.category-list');
+    // 2️⃣ 이름 기준으로 중복 제거
+    const uniqueData = [];
+    const seenNames = new Set();
 
-      for (const [category, names] of Object.entries(participants)) {
-        const section = document.createElement('section');
-        section.innerHTML = `
-          <h3 style="margin-top: 1.5rem;">${category} - ${names.length}명</h3>
-          <ul style="padding-left: 1rem;">
-            ${names.map(name => `<li>${name}</li>`).join('')}
-          </ul>
-        `;
-        container.appendChild(section);
+    for (const entry of allData) {
+      const name = entry.name?.trim();
+      if (name && !seenNames.has(name)) {
+        uniqueData.push(entry);
+        seenNames.add(name);
       }
-
     }
 
-});
-  </script>
+    // 3️⃣ 카테고리별 분류
+    const categories = {
+      "프리스타일 (Freestyle) No Sponsor_(남, Male)": [],
+      "프리스타일 (Freestyle) No Sponsor_(여, Female)": [],
+      "프리스타일 (Freestyle) 오픈 (Open)_(남, Male)": [],
+      "프리스타일 (Freestyle) 오픈 (Open)_(여, Female)": [],
+      "프리스타일 (Freestyle) 마스터 (Master)": [],
+      "페어 Pair": [],
+      "히피점프 Hippy Jump": [],
+      "레이스 Race": []
+    };
+
+    uniqueData.forEach((d) => {
+      const gender = d.gender === "male" ? "남, Male" : "여, Female";
+
+      if (d.freestyle === "none") return;
+
+      if (d.freestyle === "amateur") categories[`프리스타일 (Freestyle) No Sponsor_(${gender})`]?.push(d.name);
+      if (d.freestyle === "open") categories[`프리스타일 (Freestyle) 오픈 (Open)_(${gender})`]?.push(d.name);
+      if (d.freestyle === "master") categories["프리스타일 (Freestyle) 마스터 (Master)"]?.push(d.name);
+
+      if (d.bestPair) categories["페어 Pair"].push(d.name);
+      if (d.hippyJump) categories["히피점프 Hippy Jump"].push(d.name);
+      if (d.race) categories["레이스 Race"].push(d.name);
+    });
+
+    // 4️⃣ 화면 렌더링
+    const container = document.querySelector(".category-list");
+    container.innerHTML = "";
+
+    for (const [category, names] of Object.entries(categories)) {
+      const section = document.createElement("section");
+      section.innerHTML = `
+        <h3 style="margin-top: 1.5rem;">${category} - ${names.length}명</h3>
+        <ul style="padding-left: 1rem;">
+          ${names.map(name => `<li>${name}</li>`).join("")}
+        </ul>
+      `;
+      container.appendChild(section);
+    }
+  }
+
+  // 🔒 관리자 비밀번호로 접근 제어
+  window.onload = () => {
+    fetchAllApplications();
+  };
+</script>
+
 
   <style>
     .category-list { margin-bottom: 3rem; }
@@ -188,8 +192,7 @@
     <article class="content">
 
       <div class="form-header">
-        <h2 class="lang_kr">참가자 목록</h2>
-        <h2 class="lang_en">Participant List</h2>
+        <h2>참가자 목록 (Participant List)</h2>
         <a href="./index.html" class="close-btn">✖</a>
       </div>
       
