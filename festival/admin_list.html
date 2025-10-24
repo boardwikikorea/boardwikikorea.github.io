@@ -18,7 +18,6 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://boardwiki.kr/images/og-image.jpg?ver=20250930">
 
-
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="보드위키 - 보드 커뮤니티">
@@ -48,31 +47,32 @@
             <!-- 전체 조회 버튼 추가 -->
             <button id="fetch-all-reservations">전체 조회</button>
 
-            <div style="overflow-x: auto;">
+            <div style="overflow-x: auto; margin-top: 1rem;">
 
-            <table id="applicationsTable" style="max-width: 1200px;">
+            <table id="applicationsTable" style="max-width: 1200px; border-collapse: collapse;">
                 <thead>
                     <tr>
-                    <th>이름</th>
-                    <th>연락처</th>
-                    <th>성별</th>
-                    <th>스탠스</th>
-                    <th>소속</th>
-                    <th>프리스타일</th>
-                    <th>히피점프</th>
-                    <th>베스트페어</th>
-                    <th>레이스</th>
-                    <th>신청곡</th>
-                    <th>신청일</th>
+                    <th style="padding:8px; border:1px solid #ddd;">이름</th>
+                    <th style="padding:8px; border:1px solid #ddd;">고유 런 순서</th>
+                    <th style="padding:8px; border:1px solid #ddd;">연락처</th>
+                    <th style="padding:8px; border:1px solid #ddd;">성별</th>
+                    <th style="padding:8px; border:1px solid #ddd;">스탠스</th>
+                    <th style="padding:8px; border:1px solid #ddd;">소속</th>
+                    <th style="padding:8px; border:1px solid #ddd;">프리스타일</th>
+                    <th style="padding:8px; border:1px solid #ddd;">히피점프</th>
+                    <th style="padding:8px; border:1px solid #ddd;">베스트페어</th>
+                    <th style="padding:8px; border:1px solid #ddd;">레이스</th>
+                    <th style="padding:8px; border:1px solid #ddd;">신청곡</th>
+                    <th style="padding:8px; border:1px solid #ddd;">신청일</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
-                </table>
-                </table>
+            </table>
+
             </div>
         </article>
 
-        <footer>
+        <footer style="margin-top:1rem;">
             서비스 제공 <a href="../index.html">@boardwiki</a>
         </footer>
     </div>
@@ -93,6 +93,15 @@
 
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
+
+  // Fisher-Yates 셔플
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
 
   async function fetchAllApplications() {
     const querySnapshot = await getDocs(collection(db, "festivalApplications"));
@@ -115,8 +124,8 @@
     const seenKeys = new Set();
 
     for (const entry of allData) {
-      const name = entry.name?.trim() || "";
-      const contact = entry.contact?.trim() || "";
+      const name = (entry.name || "").toString().trim();
+      const contact = (entry.contact || "").toString().trim();
       const key = `${name}_${contact}`;
 
       if (name && contact && !seenKeys.has(key)) {
@@ -125,7 +134,51 @@
       }
     }
 
-    // 3️⃣ 테이블 렌더링
+    // 3️⃣ 고유 번호(1..N) 할당 — localStorage에 저장해서 새로고침해도 유지
+    const keys = uniqueData.map(d => {
+      const name = (d.name || "").toString().trim();
+      const contact = (d.contact || "").toString().trim();
+      return `${name}_${contact}`;
+    });
+
+    // 불변 키 문자열(정렬된)로 비교하기 위해 정렬된 문자열 사용
+    const keysSignature = keys.slice().sort().join("|");
+
+    // 로컬스토리지에서 저장된 매핑 불러오기
+    let saved = null;
+    try {
+      saved = JSON.parse(localStorage.getItem("randomOrderByKey")) || null;
+    } catch (e) {
+      saved = null;
+    }
+
+    // 저장된 매핑이 현재 키 집합과 동일한지 확인
+    let needRegenerate = true;
+    if (saved && saved.__signature === keysSignature) {
+      needRegenerate = false;
+    }
+
+    let mapping = {};
+    if (!needRegenerate) {
+      mapping = saved.mapping || {};
+    } else {
+      // 새로 생성: 1..N을 섞어서 키에 맵핑
+      const N = keys.length;
+      const numbers = Array.from({ length: N }, (_, i) => i + 1);
+      shuffle(numbers);
+      mapping = {};
+      keys.forEach((k, idx) => {
+        mapping[k] = numbers[idx];
+      });
+      // 저장 (signature 포함)
+      const toSave = {
+        __signature: keysSignature,
+        mapping
+      };
+      localStorage.setItem("randomOrderByKey", JSON.stringify(toSave));
+    }
+
+    // 4️⃣ 테이블 렌더링
     const tableBody = document.querySelector("#applicationsTable tbody");
     tableBody.innerHTML = "";
 
@@ -137,23 +190,30 @@
         none: "없음"
       }[data.freestyle] || "없음";
 
+      const name = (data.name || "").toString().trim();
+      const contact = (data.contact || "").toString().trim();
+      const key = `${name}_${contact}`;
+      const assignedNumber = mapping[key] || "-";
+
       const createdAt = data.createdAt?.toDate
         ? data.createdAt.toDate().toLocaleString("ko-KR")
         : "-";
 
       const row = document.createElement("tr");
+      row.style.borderBottom = "1px solid #eee";
       row.innerHTML = `
-        <td id="${data.id}">${data.name || "-"}</td>
-        <td>${data.contact || "-"}</td>
-        <td>${data.gender === "male" ? "남" : "여"}</td>
-        <td>${data.stance}</td>
-        <td>${data.team || "-"}</td>
-        <td>${freestyleLabel}</td>
-        <td>${data.hippyJump ? "✅" : "❌"}</td>
-        <td>${data.bestPair ? "✅" : "❌"}</td>
-        <td>${data.race ? "✅" : "❌"}</td>
-        <td>${data.song || "-"}</td>
-        <td>${createdAt}</td>
+        <td style="padding:8px; border:1px solid #ddd;" id="${data.id}">${name || "-"}</td>
+        <td style="padding:8px; border:1px solid #ddd;">${assignedNumber}</td>
+        <td style="padding:8px; border:1px solid #ddd;">${contact || "-"}</td>
+        <td style="padding:8px; border:1px solid #ddd;">${data.gender === "male" ? "남" : "여"}</td>
+        <td style="padding:8px; border:1px solid #ddd;">${data.stance || "-"}</td>
+        <td style="padding:8px; border:1px solid #ddd;">${data.team || "-"}</td>
+        <td style="padding:8px; border:1px solid #ddd;">${freestyleLabel}</td>
+        <td style="padding:8px; border:1px solid #ddd;">${data.hippyJump ? "✅" : "❌"}</td>
+        <td style="padding:8px; border:1px solid #ddd;">${data.bestPair ? "✅" : "❌"}</td>
+        <td style="padding:8px; border:1px solid #ddd;">${data.race ? "✅" : "❌"}</td>
+        <td style="padding:8px; border:1px solid #ddd;">${data.song || "-"}</td>
+        <td style="padding:8px; border:1px solid #ddd;">${createdAt}</td>
       `;
       tableBody.appendChild(row);
     });
@@ -161,6 +221,10 @@
 
   window.onload = () => {
     const btn = document.getElementById("fetch-all-reservations");
+
+    // 바로 로드
+    fetchAllApplications();
+
     btn.addEventListener("click", () => {
       const password = prompt("관리자 암호를 입력하세요:");
       if (password === "202511") {
@@ -171,8 +235,6 @@
     });
   };
 </script>
-
-
 
 </body>
 

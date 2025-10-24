@@ -38,7 +38,8 @@
     <!-- JS -->
     <script src="../js/common.js" defer></script>
 
-<script type="module">
+
+    <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
   import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
 
@@ -55,6 +56,15 @@
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
 
+  // Fisher-Yates 셔플
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
   async function fetchAllApplications() {
     const querySnapshot = await getDocs(collection(db, "festivalApplications"));
     const allData = [];
@@ -64,26 +74,52 @@
       allData.push({ id: doc.id, ...data });
     });
 
-    // 1️⃣ createdAt 기준으로 최신순 정렬
+    // 1. 최신순 정렬
     allData.sort((a, b) => {
       const timeA = a.createdAt?.toDate ? a.createdAt.toDate().getTime() : 0;
       const timeB = b.createdAt?.toDate ? b.createdAt.toDate().getTime() : 0;
       return timeB - timeA;
     });
 
-    // 2️⃣ 이름 기준으로 중복 제거
+    // 2. name+contact 기준으로 중복 제거(최신 유지)
     const uniqueData = [];
-    const seenNames = new Set();
-
+    const seenKeys = new Set();
     for (const entry of allData) {
-      const name = entry.name?.trim();
-      if (name && !seenNames.has(name)) {
+      const name = (entry.name || "").toString().trim();
+      const contact = (entry.contact || "").toString().trim();
+      const key = `${name}_${contact}`;
+      if (name && contact && !seenKeys.has(key)) {
         uniqueData.push(entry);
-        seenNames.add(name);
+        seenKeys.add(key);
       }
     }
 
-    // 3️⃣ 카테고리별 분류
+    // 3. 키 목록 생성 및 signature
+    const keys = uniqueData.map(d => {
+      const name = (d.name || "").toString().trim();
+      const contact = (d.contact || "").toString().trim();
+      return `${name}_${contact}`;
+    });
+    const keysSignature = keys.slice().sort().join("|");
+
+    // 4. mapping 불러오기/생성 (localStorage)
+    let saved = null;
+    try { saved = JSON.parse(localStorage.getItem("randomOrderByKey")) || null; } catch(e) { saved = null; }
+
+    let mapping = {};
+    if (saved && saved.__signature === keysSignature) {
+      mapping = saved.mapping || {};
+    } else {
+      const N = keys.length;
+      const numbers = Array.from({ length: N }, (_, i) => i + 1);
+      shuffle(numbers);
+      mapping = {};
+      keys.forEach((k, idx) => mapping[k] = numbers[idx]);
+      const toSave = { __signature: keysSignature, mapping };
+      localStorage.setItem("randomOrderByKey", JSON.stringify(toSave));
+    }
+
+    // 5. 카테고리별로 참가자(객체: {name, key, order}) 수집
     const categories = {
       "프리스타일 (Freestyle) No Sponsor_(남, Male)": [],
       "프리스타일 (Freestyle) No Sponsor_(여, Female)": [],
@@ -96,40 +132,65 @@
     };
 
     uniqueData.forEach((d) => {
-      const gender = d.gender === "male" ? "남, Male" : "여, Female";
+      const name = (d.name || "").toString().trim();
+      const contact = (d.contact || "").toString().trim();
+      const key = `${name}_${contact}`;
+      const order = mapping[key] || 999999; // 안전값
 
-      if (d.freestyle === "none") return;
+      const genderSuffix = d.gender === "male" ? "남, Male" : "여, Female";
 
-      if (d.freestyle === "amateur") categories[`프리스타일 (Freestyle) No Sponsor_(${gender})`]?.push(d.name);
-      if (d.freestyle === "open") categories[`프리스타일 (Freestyle) 오픈 (Open)_(${gender})`]?.push(d.name);
-      if (d.freestyle === "master") categories["프리스타일 (Freestyle) 마스터 (Master)"]?.push(d.name);
+      // freestyle
+      if (d.freestyle && d.freestyle !== "none") {
+        if (d.freestyle === "amateur") categories[`프리스타일 (Freestyle) No Sponsor_(${genderSuffix})`] .push({ name, key, order });
+        if (d.freestyle === "open")    categories[`프리스타일 (Freestyle) 오픈 (Open)_(${genderSuffix})`] .push({ name, key, order });
+        if (d.freestyle === "master")  categories["프리스타일 (Freestyle) 마스터 (Master)"].push({ name, key, order });
+      }
 
-      if (d.bestPair) categories["페어 Pair"].push(d.name);
-      if (d.hippyJump) categories["히피점프 Hippy Jump"].push(d.name);
-      if (d.race) categories["레이스 Race"].push(d.name);
+      if (d.bestPair) categories["페어 Pair"].push({ name, key, order });
+      if (d.hippyJump) categories["히피점프 Hippy Jump"].push({ name, key, order });
+      if (d.race) categories["레이스 Race"].push({ name, key, order });
     });
 
-    // 4️⃣ 화면 렌더링
+    // 6. 카테고리별로 order 오름차순 정렬 후 렌더링
     const container = document.querySelector(".category-list");
     container.innerHTML = "";
 
-    for (const [category, names] of Object.entries(categories)) {
+    for (const [category, entries] of Object.entries(categories)) {
+      // 정렬 (order 오름차순)
+      entries.sort((a, b) => a.order - b.order);
+
       const section = document.createElement("section");
       section.innerHTML = `
-        <h3 style="margin-top: 1.5rem;">${category} - ${names.length}명</h3>
-        <ul style="padding-left: 1rem;">
-          ${names.map(name => `<li>${name}</li>`).join("")}
-        </ul>
+        <h3 style="margin-top: 1.5rem;">${category} - ${entries.length}명</h3>
+        <ul style="padding-left: 1rem;"></ul>
       `;
+      const ul = section.querySelector("ul");
+
+      if (entries.length === 0) {
+        ul.innerHTML = `<li style="padding:0.5rem">없음</li>`;
+      } else {
+        // 각 항목: 번호 + 이름 (원하면 더 많은 정보 추가 가능)
+        entries.forEach(e => {
+          const li = document.createElement("li");
+          li.style.listStyle = "none";
+          li.style.border = "1px solid #ddd";
+          li.style.padding = "0.6rem";
+          li.style.textAlign = "center";
+          li.innerHTML = `${String(e.order).padStart(2, '0')} - ${e.name}`;
+          ul.appendChild(li);
+        });
+      }
+
       container.appendChild(section);
     }
   }
 
-  // 🔒 관리자 비밀번호로 접근 제어
+  // 자동 로드
   window.onload = () => {
     fetchAllApplications();
   };
 </script>
+
 
 
   <style>
