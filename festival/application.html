@@ -273,7 +273,6 @@
         const freestyle = freestyleInput ? freestyleInput.value : 'none';
 
         const hippyJump = document.querySelector('input[name="hippy_jump"]').checked;
-        const bestPair = document.querySelector('input[name="best_pair"]').checked;
         const race = document.querySelector('input[name="race"]').checked;
 
         const data = {
@@ -285,7 +284,6 @@
             song,
             freestyle,
             hippyJump,
-            bestPair,
             race,
             createdAt: serverTimestamp()
         };
