@@ -138,15 +138,18 @@
 
       const genderSuffix = d.gender === "male" ? "남, Male" : "여, Female";
 
-    if (d.freestyle === "amateur")
-      categories[`프리스타일 (Freestyle) No Sponsor_(${genderSuffix})`]
-        .push({ name, key, order, song: d.song || "" });
-    if (d.freestyle === "open")
-      categories[`프리스타일 (Freestyle) 오픈 (Open)_(${genderSuffix})`]
-        .push({ name, key, order, song: d.song || "" });
-    if (d.freestyle === "master")
+      if (d.freestyle === "amateur")
+        categories[`프리스타일 (Freestyle) 일반부 None Sponsor_(${genderSuffix})`]
+          .push({ name, key, order, song: d.song || "" });
+
+      if (d.freestyle === "open")
+        categories[`프리스타일 (Freestyle) 오픈부 Sponsor_(${genderSuffix})`]
+          .push({ name, key, order, song: d.song || "" });
+
+      if (d.freestyle === "master")
         categories["프리스타일 (Freestyle) 마스터부 (Master)"]
-        .push({ name, key, order, song: d.song || "" });
+          .push({ name, key, order, song: d.song || "" });
+
 
 
       if (d.hippyJump) categories["히피점프 Hippy Jump"].push({ name, key, order });
