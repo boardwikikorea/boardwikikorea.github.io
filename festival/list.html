@@ -129,7 +129,7 @@
       "히피점프 Hippy Jump": [],
       "레이스 Race": []
     };
-
+    
     uniqueData.forEach((d) => {
       const name = (d.name || "").toString().trim();
       const contact = (d.contact || "").toString().trim();
@@ -138,6 +138,7 @@
 
       const genderSuffix = d.gender === "male" ? "남, Male" : "여, Female";
 
+      /*
       if (d.freestyle === "amateur")
         categories[`프리스타일 (Freestyle) 일반부 None Sponsor_(${genderSuffix})`]
           .push({ name, key, order, song: d.song || "" });
@@ -154,7 +155,8 @@
 
       if (d.hippyJump) categories["히피점프 Hippy Jump"].push({ name, key, order });
       if (d.race) categories["레이스 Race"].push({ name, key, order });
-
+      */ 
+     
     });
 
     // 6. 카테고리별로 order 오름차순 정렬 후 렌더링
