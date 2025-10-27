@@ -1,278 +1,247 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>롱보드 페스티벌</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>롱보드 페스티벌 참가자 목록</title>
 
-    <!-- SEO 최적화 -->
-    <meta name="description" content="보드위키에서 최신 스케이트, 롱보드 정보와 롱보드댄싱, 보드대회 소식을 확인하세요.">
-    <meta name="keywords" content="스케이트, 롱보드, 카버보드, 롱보드댄싱, 보드대회, longboarding, 롱보드 페스티벌, 롱보드 페스티벌, longboard festival">
-    <meta name="naver-site-verification" content="e74dc3e49d0527046508b26ee9860c52a501b8f4">
+  <meta name="description" content="보드위키 롱보드 페스티벌 참가자 명단">
+  <meta property="og:title" content="롱보드 페스티벌 참가자 목록">
+  <meta property="og:description" content="보드위키 롱보드 페스티벌 참가자 전체 명단을 확인하세요.">
 
-    <!-- Open Graph (OG) -->
-    <meta property="og:site_name" content="BoardWiki">
-    <meta property="og:title" content="롱보드 페스티벌">
-    <meta property="og:description" content="스케이트·롱보드 최신 정보를 확인하세요.">
-    <meta property="og:url" content="https://boardwiki.kr">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://boardwiki.kr/images/og-image.jpg?ver=20250930">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="보드위키 - 스케이트·롱보드 커뮤니티">
-    <meta name="twitter:description" content="보드위키에서 최신 스케이트, 롱보드 정보를 만나보세요.">
-    <meta name="twitter:image" content="https://boardwiki.kr/images/twitter-image.jpg">
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://boardwiki.kr/">
-
-    <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;700&display=swap">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="../css/common.css?ver250314">
-    <link rel="stylesheet" href="../css/festival.css?ver=250317">
-
-    <!-- JS -->
-    <script src="../js/common.js" defer></script>
-
-
-    <script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
-  import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyDDkghHYAD581-N3u8zUUsinS1F49P5xi0",
-    authDomain: "boardwiki-e070e.firebaseapp.com",
-    projectId: "boardwiki-e070e",
-    storageBucket: "boardwiki-e070e.appspot.com",
-    messagingSenderId: "301441212066",
-    appId: "1:301441212066:web:1ffff5d8eccaaff11781fb",
-    measurementId: "G-DZ52LV9MMG"
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-
-  // Fisher-Yates 셔플
-  function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-  }
-
-  async function fetchAllApplications() {
-    const querySnapshot = await getDocs(collection(db, "festivalApplications"));
-    const allData = [];
-
-    querySnapshot.forEach((doc) => {
-      const data = doc.data();
-      allData.push({ id: doc.id, ...data });
-    });
-
-    // 1. 최신순 정렬
-    allData.sort((a, b) => {
-      const timeA = a.createdAt?.toDate ? a.createdAt.toDate().getTime() : 0;
-      const timeB = b.createdAt?.toDate ? b.createdAt.toDate().getTime() : 0;
-      return timeB - timeA;
-    });
-
-    // 2. name+contact 기준으로 중복 제거(최신 유지)
-    const uniqueData = [];
-    const seenKeys = new Set();
-    for (const entry of allData) {
-      const name = (entry.name || "").toString().trim();
-      const contact = (entry.contact || "").toString().trim();
-      const key = `${name}_${contact}`;
-      if (name && contact && !seenKeys.has(key)) {
-        uniqueData.push(entry);
-        seenKeys.add(key);
-      }
-    }
-
-    // 3. 키 목록 생성 및 signature
-    const keys = uniqueData.map(d => {
-      const name = (d.name || "").toString().trim();
-      const contact = (d.contact || "").toString().trim();
-      return `${name}_${contact}`;
-    });
-    const keysSignature = keys.slice().sort().join("|");
-
-    // 4. mapping 불러오기/생성 (localStorage)
-    let saved = null;
-    try { saved = JSON.parse(localStorage.getItem("randomOrderByKey")) || null; } catch(e) { saved = null; }
-
-    let mapping = {};
-    if (saved && saved.__signature === keysSignature) {
-      mapping = saved.mapping || {};
-    } else {
-      const N = keys.length;
-      const numbers = Array.from({ length: N }, (_, i) => i + 1);
-      shuffle(numbers);
-      mapping = {};
-      keys.forEach((k, idx) => mapping[k] = numbers[idx]);
-      const toSave = { __signature: keysSignature, mapping };
-      localStorage.setItem("randomOrderByKey", JSON.stringify(toSave));
-    }
-
-    // 5. 카테고리별로 참가자(객체: {name, key, order}) 수집
-    const categories = {
-      "프리스타일 (Freestyle) 일반부 None Sponsor_(남, Male)": [],
-      "프리스타일 (Freestyle) 일반부 None Sponsor_(여, Female)": [],
-      "프리스타일 (Freestyle) 오픈부 Sponsor_(남, Male)": [],
-      "프리스타일 (Freestyle) 오픈부 Sponsor_(여, Female)": [],
-      "프리스타일 (Freestyle) 마스터부 (Master)": [],
-      "히피점프 Hippy Jump": [],
-      "레이스 Race": []
-    };
-    
-    uniqueData.forEach((d) => {
-      const name = (d.name || "").toString().trim();
-      const contact = (d.contact || "").toString().trim();
-      const key = `${name}_${contact}`;
-      const order = mapping[key] || 999999; // 안전값
-
-      const genderSuffix = d.gender === "male" ? "남, Male" : "여, Female";
-
-      /*
-      if (d.freestyle === "amateur")
-        categories[`프리스타일 (Freestyle) 일반부 None Sponsor_(${genderSuffix})`]
-          .push({ name, key, order, song: d.song || "" });
-
-      if (d.freestyle === "open")
-        categories[`프리스타일 (Freestyle) 오픈부 Sponsor_(${genderSuffix})`]
-          .push({ name, key, order, song: d.song || "" });
-
-      if (d.freestyle === "master")
-        categories["프리스타일 (Freestyle) 마스터부 (Master)"]
-          .push({ name, key, order, song: d.song || "" });
-
-
-
-      if (d.hippyJump) categories["히피점프 Hippy Jump"].push({ name, key, order });
-      if (d.race) categories["레이스 Race"].push({ name, key, order });
-      */ 
-     
-    });
-
-    // 6. 카테고리별로 order 오름차순 정렬 후 렌더링
-    const container = document.querySelector(".category-list");
-    container.innerHTML = "";
-
-    for (const [category, entries] of Object.entries(categories)) {
-      // 정렬 (order 오름차순)
-      entries.sort((a, b) => a.order - b.order);
-
-      const section = document.createElement("section");
-      section.innerHTML = `
-        <h3 style="margin-top: 1.5rem;">${category} - ${entries.length}명</h3>
-        <ul></ul>
-      `;
-      const ul = section.querySelector("ul");
-
-      if (entries.length === 0) {
-        ul.innerHTML = `<li style="padding:0.5rem">없음</li>`;
-      } else {
-        // 각 항목: 번호 + 이름 (원하면 더 많은 정보 추가 가능)
-        entries.forEach(e => {
-          console.log(e);
-          const li = document.createElement("li");
-          li.style.listStyle = "none";
-          li.style.border = "1px solid #ddd";
-          li.style.padding = "0.6rem";
-          li.style.textAlign = "left";
-          li.style.paddingLeft ="20px";
-          li.innerHTML = `[${String(e.order).padStart(2, '0')}] ${e.name} ${e.song ? '- ('+e.song+')' : ''}`;
-          ul.appendChild(li);
-        });
-      }
-
-      container.appendChild(section);
-    }
-  }
-
-  // 자동 로드
-  window.onload = () => {
-    fetchAllApplications();
-  };
-</script>
-
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
 
   <style>
-    .category-list { margin-bottom: 3rem; }
-    .category-list h3 {
-      font-size: 1.5rem;
+    body {
+      font-family: "Pretendard", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    .wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
       margin-bottom: 1rem;
+      text-align: center;
+    }
+    h2 {
+      font-size: 1.5rem;
       border-bottom: 2px solid #ccc;
       padding-bottom: 0.5rem;
-    }
-
-    .category-list ul {
-      width: 100%;
-      border-collapse: collapse;
+      margin-top: 2rem;
       margin-bottom: 1rem;
-      border-top:1px solid #ddd;
     }
-
-    .category-list li{
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border-top: 1px solid #ddd;
+    }
+    li {
       border: 1px solid #ddd;
-      border-top:0;
-      padding: 0.75rem;
-      text-align: left;
+      border-top: 0;
+      padding: 0.75rem 1rem;
+      background: #fff;
     }
-
-
-    .category-list li:nth-child(even){
-      background-color: #fafafa;
+    li:nth-child(even) {
+      background: #fafafa;
     }
-
-    button#fetch-all-reservations {
-      background-color: #333;
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    button#fetch-all-reservations:hover {
-      background-color: #555;
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      color: #777;
+      font-size: 0.9rem;
     }
   </style>
 </head>
+<body>
+  <div class="wrap">
+    <h1>롱보드 페스티벌 참가자 목록</h1>
 
-<body id="festival">
-  <h1 class="sound_only">롱보드 페스티벌</h1>
+    <section>
+      <h2>프리스타일 (Freestyle) 일반부 None Sponsor_(남, Male) - 24명</h2>
+      <ul>
+        <li>[02] 유채우 - (Alan Walker-Avalon)</li>
+        <li>[04] 이영규 (공룡덕후영규) - (The bosshoss - word up)</li>
+        <li>[08] 박정후</li>
+        <li>[24] 문담이 - (don’t look back in anger 오아시스)</li>
+        <li>[26] 성민 - (DPR Live - Jasmine)</li>
+        <li>[31] 김민규 - (없음)</li>
+        <li>[32] 박현철 - ("247 365"(DEMO)-planetshakers)</li>
+        <li>[39] 이종민 - (lucy-개화)</li>
+        <li>[40] 안영진</li>
+        <li>[45] 안희철 - (Edamame bbono$)</li>
+        <li>[47] 서지훈 - (QWER-Discord)</li>
+        <li>[48] 한겨울</li>
+        <li>[52] 홍현식 - (원펀맨 ost the hero)</li>
+        <li>[53] Seung Hoon HA - (Why - TAEYEON)</li>
+        <li>[55] 김광배 - (Maroon5_Lucky strike)</li>
+        <li>[58] 천현수</li>
+        <li>[64] 오주성</li>
+        <li>[65] 범다원 - (everything 트레져)</li>
+        <li>[68] 박준서</li>
+        <li>[74] 한용수 - (RIIZE Love119)</li>
+        <li>[78] 이재창 - (뉴진스 - how sweet)</li>
+        <li>[83] Benjamin Bok - (两难- 加木)</li>
+        <li>[85] 김민기</li>
+        <li>[92] 박신혁 - (하하-키 작은 꼬마 이야기)</li>
+      </ul>
+    </section>
 
-    <div class="language-switcher">
-        <button type="button" class="active" id="btn-kr">KR</button>
-        <button type="button" id="btn-en">EN</button>
-    </div>
+    <section>
+      <h2>프리스타일 (Freestyle) 일반부 None Sponsor_(여, Female) - 21명</h2>
+      <ul>
+        <li>[05] 김미나 - (한로로-나침반)</li>
+        <li>[09] shinchan - (what you want（cortis）)</li>
+        <li>[11] 김지현</li>
+        <li>[17] 써니 - (빌려온 고양이 (아일릿))</li>
+        <li>[22] 노우정 - (피프티피프티-push your love)</li>
+        <li>[23] 김민영 - (Number one rockstar 다영)</li>
+        <li>[25] 루씨 - (Opening-고추잠자리)</li>
+        <li>[28] 조승희 - (I really like you - Carly Rae Jepsen)</li>
+        <li>[29] 이세윤</li>
+        <li>[33] KaYan - (MON7A-oyasumi Taxi )</li>
+        <li>[36] 최연서</li>
+        <li>[37] HOA(화) - (Just give me a reason - P!NK)</li>
+        <li>[38] 송수현 - (가을밤에 든 생각 ( 잔나비 ))</li>
+        <li>[49] 262 - (Soft Spot - Keshi)</li>
+        <li>[59] 채원 - (Until I found you -Stephen Sanchez)</li>
+        <li>[62] 김예진</li>
+        <li>[69] 미화 - (IVE-Rebel heart)</li>
+        <li>[70] 최연아</li>
+        <li>[76] 강유하</li>
+        <li>[81] 이아민 - (코요테 - 우리의 꿈)</li>
+        <li>[88] 박주희</li>
+      </ul>
+    </section>
 
-    
-  <div class="wrap main">
+    <section>
+      <h2>프리스타일 (Freestyle) 오픈부 Sponsor_(남, Male) - 27명</h2>
+      <ul>
+        <li>[03] 정다훈 - (실라카겔 - No Pain)</li>
+        <li>[12] 이덕훈</li>
+        <li>[15] 상자보드 - (WOODZ Drowning)</li>
+        <li>[16] 다니엘</li>
+        <li>[18] 작동 - (멸종위기사랑)</li>
+        <li>[19] 김형철(김까치) - (Cooped Up(post malone))</li>
+        <li>[20] Evan pan - (Wi Ing Wi Ing - hyokoh)</li>
+        <li>[21] 정승연 - (Sun rai - San Francisco street)</li>
+        <li>[27] 허태한 - (Could have been me - Harsey)</li>
+        <li>[41] 핑게 - (없음)</li>
+        <li>[42] 정지원 - (bluetokyo - 87dance)</li>
+        <li>[43] 이재원 - (Stole - 칠린호미)</li>
+        <li>[51] 손영기 - (Take on me)</li>
+        <li>[60] 황성훈 - (볼빨간사춘기-Dancing Cartoon)</li>
+        <li>[61] 태오 - (한로로 - 해초)</li>
+        <li>[63] 황국진 - (아모고나)</li>
+        <li>[66] 손상민 - (60‘s cardin - 글렌체크)</li>
+        <li>[67] Taiho - (tritnal-little by little)</li>
+        <li>[71] Takuma - (『SPECIALZ』 (King Gnu))</li>
+        <li>[72] 장석환 seokhwan.95 - (Closer)</li>
+        <li>[73] 송철현 - (Earth, Wind & fire - Let’s groove)</li>
+        <li>[77] 정효빈 - (어린왕자)</li>
+        <li>[82] 카오(이정혁) - (No one likes us)</li>
+        <li>[84] 신재홍 - (in to the battlefield)</li>
+        <li>[87] 현승 - (헤비 - 지금부터)</li>
+        <li>[89] 배건태 - (Feel it still)</li>
+        <li>[91] 이주용 - (김뜻돌 속세탈출)</li>
+      </ul>
+    </section>
 
+    <section>
+      <h2>프리스타일 (Freestyle) 오픈부 Sponsor_(여, Female) - 8명</h2>
+      <ul>
+        <li>[06] 원희현 Luna won - (블랙핑크 ’뛰어‘)</li>
+        <li>[13] 유나 - (travel / bol4)</li>
+        <li>[46] Misaki - (BIGBANG SUNSET GLOW)</li>
+        <li>[50] 김시윤</li>
+        <li>[57] 한지영</li>
+        <li>[75] 김경진 - (숲 최유리)</li>
+        <li>[86] 김현아 - (samurai heart(spyair))</li>
+        <li>[93] 차수연 - (alok-deep down)</li>
+      </ul>
+    </section>
 
-  
-    <article class="content">
+    <section>
+      <h2>프리스타일 (Freestyle) 마스터부 (Master) - 13명</h2>
+      <ul>
+        <li>[01] 심희생 - (Metalingus - Alter Bridge)</li>
+        <li>[07] ZHOU，XUEDUAN</li>
+        <li>[10] 왜즐겨 - (무)</li>
+        <li>[14] 전인우 - (HandClap (Fitz and The Tantrums))</li>
+        <li>[30] 박다율</li>
+        <li>[34] ZIO (성지오) - (블락비 - HER)</li>
+        <li>[35] 이채원 - (Like Jennie- 제니)</li>
+        <li>[44] 김라임 - (고민중독)</li>
+        <li>[54] BO ZI XUAN - (BABY)</li>
+        <li>[56] 박주혁 - (Bruno Mars - Runaway Baby)</li>
+        <li>[79] 이기섭 - (Sax fifth avenue - masego)</li>
+        <li>[80] Isamu Yamamoto - (Ado "Rock star")</li>
+        <li>[90] 이재민 - (Waka Flocka Flame - Hard in Da Paint)</li>
+      </ul>
+    </section>
 
-      <div class="form-header">
-        <h2>참가자 목록 (Participant List)</h2>
-        <a href="./index.html" class="close-btn">✖</a>
-      </div>
-      
-      <div class="category-list" style="margin-top: 2rem;">
+    <section>
+      <h2>히피점프 Hippy Jump - 16명</h2>
+      <ul>
+        <li>[09] shinchan</li>
+        <li>[16] 다니엘</li>
+        <li>[18] 작동</li>
+        <li>[20] Evan pan</li>
+        <li>[40] 안영진</li>
+        <li>[45] 안희철</li>
+        <li>[51] 손영기</li>
+        <li>[54] BO ZI XUAN</li>
+        <li>[60] 황성훈</li>
+        <li>[61] 태오</li>
+        <li>[68] 박준서</li>
+        <li>[71] Takuma</li>
+        <li>[72] 장석환 seokhwan.95</li>
+        <li>[77] 정효빈</li>
+        <li>[80] Isamu Yamamoto</li>
+        <li>[83] Benjamin Bok</li>
+      </ul>
+    </section>
 
-      </div>
+    <section>
+      <h2>레이스 Race - 26명</h2>
+      <ul>
+        <li>[03] 정다훈</li>
+        <li>[10] 왜즐겨</li>
+        <li>[11] 김지현</li>
+        <li>[13] 유나</li>
+        <li>[16] 다니엘</li>
+        <li>[19] 김형철(김까치)</li>
+        <li>[27] 허태한</li>
+        <li>[30] 박다율</li>
+        <li>[34] ZIO (성지오)</li>
+        <li>[35] 이채원</li>
+        <li>[42] 정지원</li>
+        <li>[44] 김라임</li>
+        <li>[47] 서지훈</li>
+        <li>[56] 박주혁</li>
+        <li>[60] 황성훈</li>
+        <li>[61] 태오</li>
+        <li>[66] 손상민</li>
+        <li>[67] Taiho</li>
+        <li>[68] 박준서</li>
+        <li>[71] Takuma</li>
+        <li>[72] 장석환 seokhwan.95</li>
+        <li>[74] 한용수</li>
+        <li>[78] 이재창</li>
+        <li>[87] 현승</li>
+        <li>[91] 이주용</li>
+        <li>[93] 차수연</li>
+      </ul>
+    </section>
 
-    </article>
-    <footer>서비스 제공 <a href="../index.html">@boardwiki</a></footer>
+    <footer>서비스 제공 <a href="https://boardwiki.kr" target="_blank">@boardwiki</a></footer>
   </div>
 </body>
 </html>
