@@ -126,7 +126,6 @@
       "프리스타일 (Freestyle) 오픈 (Open)_(남, Male)": [],
       "프리스타일 (Freestyle) 오픈 (Open)_(여, Female)": [],
       "프리스타일 (Freestyle) 마스터 (Master)": [],
-      "페어 Pair": [],
       "히피점프 Hippy Jump": [],
       "레이스 Race": []
     };
@@ -140,15 +139,19 @@
       const genderSuffix = d.gender === "male" ? "남, Male" : "여, Female";
 
       // freestyle
-      if (d.freestyle && d.freestyle !== "none") {
-        if (d.freestyle === "amateur") categories[`프리스타일 (Freestyle) No Sponsor_(${genderSuffix})`] .push({ name, key, order });
-        if (d.freestyle === "open")    categories[`프리스타일 (Freestyle) 오픈 (Open)_(${genderSuffix})`] .push({ name, key, order });
-        if (d.freestyle === "master")  categories["프리스타일 (Freestyle) 마스터 (Master)"].push({ name, key, order });
-      }
+      if (d.freestyle === "amateur")
+        categories[`프리스타일 (Freestyle) No Sponsor_(${genderSuffix})`]
+          .push({ name, key, order, song: d.song || "" });
+      if (d.freestyle === "open")
+        categories[`프리스타일 (Freestyle) 오픈 (Open)_(${genderSuffix})`]
+          .push({ name, key, order, song: d.song || "" });
+      if (d.freestyle === "master")
+        categories["프리스타일 (Freestyle) 마스터 (Master)"]
+          .push({ name, key, order, song: d.song || "" });
 
-      if (d.bestPair) categories["페어 Pair"].push({ name, key, order });
       if (d.hippyJump) categories["히피점프 Hippy Jump"].push({ name, key, order });
       if (d.race) categories["레이스 Race"].push({ name, key, order });
+
     });
 
     // 6. 카테고리별로 order 오름차순 정렬 후 렌더링
@@ -162,7 +165,7 @@
       const section = document.createElement("section");
       section.innerHTML = `
         <h3 style="margin-top: 1.5rem;">${category} - ${entries.length}명</h3>
-        <ul style="padding-left: 1rem;"></ul>
+        <ul></ul>
       `;
       const ul = section.querySelector("ul");
 
@@ -171,12 +174,14 @@
       } else {
         // 각 항목: 번호 + 이름 (원하면 더 많은 정보 추가 가능)
         entries.forEach(e => {
+          console.log(e);
           const li = document.createElement("li");
           li.style.listStyle = "none";
           li.style.border = "1px solid #ddd";
           li.style.padding = "0.6rem";
-          li.style.textAlign = "center";
-          li.innerHTML = `${String(e.order).padStart(2, '0')} - ${e.name}`;
+          li.style.textAlign = "left";
+          li.style.paddingLeft ="20px";
+          li.innerHTML = `[${String(e.order).padStart(2, '0')}] ${e.name} ${e.song ? '- ('+e.song+')' : ''}`;
           ul.appendChild(li);
         });
       }
@@ -213,7 +218,7 @@
       border: 1px solid #ddd;
       border-top:0;
       padding: 0.75rem;
-      text-align: center;
+      text-align: left;
     }
 
 
