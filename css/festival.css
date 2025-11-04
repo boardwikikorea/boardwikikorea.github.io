@@ -618,3 +618,65 @@ pre {
     border:1px solid #d9d9d9;
     font-size:11px;
 }
+:root {
+  --gap: 12px;
+}
+
+/* 슬라이더 컨테이너 필수 속성 */
+#slider {
+  position: relative;
+  width: 100%;
+  max-width: 720px;      /* 래퍼와 맞춤 */
+  aspect-ratio: 3 / 4;   /* 세로형. 가로형이면 16/9로 바꿔 */
+  max-height: 70vh;      /* 필요 시 제한 */
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  user-select: none;
+  box-shadow: 0 8px 20px rgba(0,0,0,.3);
+}
+
+/* 내부 요소들 (이미 써둔 것 유지 + 보강) */
+#slider .track{
+  display:flex; height:100%;
+  transition:transform .45s cubic-bezier(.22,.61,.36,1);
+  will-change: transform;
+}
+#slider .slide{
+  flex:0 0 100%; height:100%;
+  display:grid; place-items:center; background:#fff;
+}
+#slider .slide picture, #slider .slide img{
+  width:100%; height:100%; object-fit:contain; background:#000;
+}
+
+/* 네비/점/배지 (네가 쓴 것 그대로 OK) */
+#slider .nav{
+  position:absolute; inset:0; pointer-events:none;
+  display:flex; justify-content:space-between; align-items:center;
+  padding:0 var(--gap);
+}
+#slider .btn{
+  pointer-events:auto; width:44px; height:44px; border-radius:999px;
+  display:grid; place-items:center; background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.12); backdrop-filter: blur(6px);
+  cursor:pointer; transition:transform .1s ease, background .2s ease;
+}
+#slider .btn:hover{ background:rgba(255,255,255,.16) }
+#slider .btn:active{ transform:scale(.95) }
+#slider .btn svg{ width:22px; height:22px; fill:none; stroke:#fff; stroke-width:2; }
+
+#slider .dots{
+  position:absolute; left:50%; bottom:10px; transform:translateX(-50%);
+  display:flex; gap:8px; padding:8px 10px; border-radius:20px;
+  background:rgba(0,0,0,.35); backdrop-filter: blur(6px);
+}
+#slider .dot{ width:9px; height:9px; border-radius:50%; background:#777;
+  border:1px solid #9995; cursor:pointer; transition:transform .15s ease, background .3s ease; }
+#slider .dot.active{ background:#fff; transform:scale(1.15) }
+
+#slider .autoplay-badge{
+  position:absolute; top:10px; right:10px; font-size:12px;
+  background:rgba(255,255,255,.45); padding:6px 10px; border-radius:999px; border:1px solid #ffffff22;
+}

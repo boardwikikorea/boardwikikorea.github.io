@@ -38,6 +38,7 @@
 
     <!-- JS -->
     <script src="../js/common.js" defer></script>
+    <script src="../js/festival.js" defer></script>
 </head>
 
 <body id="festival">
@@ -69,6 +70,43 @@
 
         <img src="./main_2025_2.png" alt="">
 
+        <article class="content">
+            <section class="intro">
+                <h2><strong>입상자 목록 (winner list)</strong></h2>
+                <span style="display: block;font-size: 1em;margin-bottom: 20px;">
+                    from . <a href="https://www.instagram.com/gorillaboard_shop/" style="text-decoration: underline;">@722</a>
+                </span>
+                <div class="slider" id="slider" aria-roledescription="carousel">
+                    <div class="track" id="track" role="group"></div>
+
+                    <div class="nav">
+                        <button class="btn" id="prev" aria-label="이전">
+                        <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+                        </button>
+                        <button class="btn" id="next" aria-label="다음">
+                        <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="dots" id="dots" aria-label="슬라이드 위치 표시"></div>
+                    <div class="autoplay-badge" id="badge">자동재생: <strong>ON</strong> (탭/호버 시 일시정지)</div>
+                </div>
+            </section>
+
+            <section class="intro">
+                <h2><strong>Video Drivce (영상 다운)</strong></h2>
+                <p>
+                    11월 30일 까지 다운로드 가능합니다.
+                    from 
+                    <a href="https://www.instagram.com/44_sasa/" target="_blank">@44_sasa</a>
+                </p>
+                <div class="downloads">
+                    <a href="https://drive.google.com/drive/folders/1lpz6DCBQGOws2FmRg9pWfgpMUFBNr9GT?usp=drive_link" target="_blank" class="btn">다운로드 (Download)</a>
+                </div>    
+            </section>
+
+        </article>
+     
         <article class="content lang_kr">
             <section class="intro">
                 <h2><strong>롱보드 페스티벌 이란?</strong></h2>
@@ -84,10 +122,12 @@
                     <a href="./application.html" class="full">신청하기</a>
                 </div>
                 -->
+                <!--
                 <div class="btns">
                     <a href="./list.html" >신청자명단</a>
                     <a href="./myapp.html" >나의신청내역</a>
                 </div>
+                -->
             </section>
 
             <section class="info">
@@ -319,8 +359,8 @@
             </li>
 
             <li class="downloads">
-                <a href="./pdf/provision.pdf" target="_blank" class="btn">Competition Rules</a>
-                <a href="./pdf/audit.pdf" target="_blank" class="btn">Judging Criteria</a>
+                <a href="./pdf/provision_en.pdf" target="_blank" class="btn">Competition Rules</a>
+                <a href="./pdf/audit_en.pdf" target="_blank" class="btn">Judging Criteria</a>
             </li>
         </ul>
     </section>
