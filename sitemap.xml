@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- 🟢 한국어 (기본) -->
+  <url>
+    <loc>https://boardwiki.kr/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://boardwiki.kr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://boardwiki.kr/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://boardwiki.kr/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://boardwiki.kr/zh/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://boardwiki.kr/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boardwiki.kr/"/>
+    <lastmod>2025-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- 🔵 English -->
+  <url>
+    <loc>https://boardwiki.kr/en/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://boardwiki.kr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://boardwiki.kr/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://boardwiki.kr/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://boardwiki.kr/zh/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://boardwiki.kr/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boardwiki.kr/en/"/>
+    <lastmod>2025-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 🔴 日本語 -->
+  <url>
+    <loc>https://boardwiki.kr/ja/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://boardwiki.kr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://boardwiki.kr/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://boardwiki.kr/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://boardwiki.kr/zh/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://boardwiki.kr/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boardwiki.kr/ja/"/>
+    <lastmod>2025-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 🟣 中文(简体) -->
+  <url>
+    <loc>https://boardwiki.kr/zh/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://boardwiki.kr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://boardwiki.kr/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://boardwiki.kr/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://boardwiki.kr/zh/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://boardwiki.kr/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boardwiki.kr/zh/"/>
+    <lastmod>2025-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 🟠 Français -->
+  <url>
+    <loc>https://boardwiki.kr/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://boardwiki.kr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://boardwiki.kr/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://boardwiki.kr/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://boardwiki.kr/zh/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://boardwiki.kr/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boardwiki.kr/fr/"/>
+    <lastmod>2025-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+</urlset>

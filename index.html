@@ -1,105 +1,86 @@
 <!DOCTYPE html>
-<html lang="kr">
-
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>보드위키 - 보드 커뮤니티</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>보드위키 - 보드 커뮤니티</title>
 
-    <!-- SEO 최적화 -->
-    <meta name="description" content="보드위키에서 최신 스케이트, 롱보드 정보와 롱보드댄싱, 보드대회 소식을 확인하세요.">
-    <meta name="keywords" content="스케이트, 롱보드, 카버보드, 롱보드댄싱, 보드대회, longboarding, 롱보드 대축제, 롱보드 페스티벌 , longboard festival">
-    <meta name="naver-site-verification" content="e74dc3e49d0527046508b26ee9860c52a501b8f4">
+  <!-- SEO -->
+  <meta name="description" content="보드위키에서 최신 스케이트, 롱보드 정보와 롱보드댄싱, 보드대회 소식을 확인하세요.">
+  <meta name="keywords" content="스케이트, 롱보드, 카버보드, 롱보드댄싱, 보드대회, longboarding, 롱보드 대축제, 롱보드 페스티벌, longboard festival">
+  <meta name="naver-site-verification" content="e74dc3e49d0527046508b26ee9860c52a501b8f4">
 
-    <!-- Open Graph (OG) - SNS 공유 최적화 -->
-    <meta property="og:site_name" content="BoardWiki">
-    <meta property="og:title" content="보드위키 보드 커뮤니티">
-    <meta property="og:description" content="보드 최신 정보를 확인하세요.">
-    <meta property="og:url" content="https://boardwiki.kr">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://boardwiki.kr/images/og-image.jpg?ver=20250930">
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="BoardWiki">
+  <meta property="og:title" content="보드위키 - 보드 커뮤니티">
+  <meta property="og:description" content="보드 최신 정보를 확인하세요.">
+  <meta property="og:url" content="https://boardwiki.kr/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://boardwiki.kr/images/og-image.jpg">
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="보드위키 - 보드 커뮤니티">
-    <meta name="twitter:description" content="보드위키에서 최신 스케이트, 롱보드 정보를 만나보세요.">
-    <meta name="twitter:image" content="https://boardwiki.kr/images/twitter-image.jpg">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="보드위키 - 보드 커뮤니티">
+  <meta name="twitter:description" content="보드위키에서 최신 스케이트, 롱보드 정보를 만나보세요.">
+  <meta name="twitter:image" content="https://boardwiki.kr/images/twitter-image.jpg">
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://boardwiki.kr/">
+  <!-- Canonical -->
+  <link rel="canonical" href="https://boardwiki.kr/">
 
-    <!-- Google Font (애플 스타일 폰트) -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;700&display=swap">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
 
-    <!-- css -->
-    <link rel="stylesheet" href="./css/common.css"; />
-    <link rel="stylesheet" href="../css/main.css"; />
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/main.css">
 
-    <!-- js -->
-    <script src="./js/common.js"></script>
-    <script src="./js/main.js"></script>
+  <!-- 공통 언어 스위처(JS로 주입) -->
+  <!-- 프로젝트 페이지(예: /boardwiki)면 data-base="/boardwiki/" 로 변경 -->
+  <script defer src="/js/lang-switch.js" data-base="/" data-langs='["ko","en","ja","zh","fr"]'></script>
 
+  <!-- JS -->
+  <script defer src="/js/common.js"></script>
+  <script defer src="/js/main.js"></script>
 </head>
-
 <body id="wiki-main">
 
-    <h1 class="sound_only">보드위키</h1>
+  <h1 class="sound_only">보드위키</h1>
 
-    <div class="wrap">
-        <article class="content">
-            <h2 class="sound_only">
-                <strong>보드위키 컨텐츠</strong>
-            </h2>
-            
-            <article>
-                <img src="./images/main_baordwiki.png" alt="" class="wiki_logo">
-                <h3>보드위키란?</h3>
-                <p>다양한 보드컨텐츠를 제공하는 팀입니다!</p>
-                <div class="btn_wrap">
-                    <a href="https://www.instagram.com/board.wiki/"  target="_blank" class="btn01 btn-instagram">Instagram</a>
-                    <a href="https://pf.kakao.com/_iGCjn" target="_blank"  class="btn01 btn-kakao">kakao</a>
-                </div>
-            </article>
-            <!--
-            <article>
-                <h3>롱보드 대축제</h3>
-                <p>매년 봄에 열리는 롱보드코리아 대회 입니다.</p>
-                <div class="btn_wrap">
-                    <a href="./festival/" class="btn01 btn-viewdetails" target="_blank" >View Details</a>
-                    <a href="https://www.instagram.com/longboardkoreacom/" target="_blank"  class="btn01 btn-instagram">Instagram</a>
-                </div>
-            </article>
-            -->
-            
-            <article>
-                <img src="./images/main_obota1.png" alt="" class="obota_logo">
-                <h3>오보타</h3>
-                <p>보드가 처음일때, 함께 보드타고 싶을때!</p>
-                <div class="btn_wrap obota_btn">
-                    <a href="https://apps.apple.com/kr/app/obota/id6744083753" target="_blank" class=" btn01 btn-appstore">AppStore</a>
-                    <a href="https://play.google.com/store/apps/details?id=kr.obota.app" target="_blank"  class=" btn01 btn-googlestore">GoogleStore</a>
-                </div>
-            </article>
-    
-        </article>
-    </div>
+  <!-- 언어 스위처가 여기로 주입됨 -->
+  <div id="lang-switch"></div>
 
-    <div class="scroll-indicator">스크롤하여 더 보기</div>
+  <div class="wrap">
+    <article class="content">
+      <h2 class="sound_only"><strong>보드위키 콘텐츠</strong></h2>
 
-
-    <!-- ✅ 롱보드 코리아 페스티벌 팝업 -->
-    <div id="festivalPopup" class="popup-overlay" style="display:none;">
-    <div class="popup-box">
-        <h3>🎉 Longboardkorea Festival!</h3>
-        <p>롱보드 페스티벌 페이지로 이동하시겠습니까?</p>
-        <div class="popup-buttons">
-        <button class="go-link">바로가기</button>
-        <button class="close-today">오늘 하루 보지 않기</button>
+      <article>
+        <!-- 파일명이 실제로 main_baordwiki.png 인지 확인(오타 의심: boardwiki) -->
+        <img src="/images/main_baordwiki.png" alt="" class="wiki_logo">
+        <h3>보드위키란?</h3>
+        <p>
+          다양한 보드 콘텐츠를 기획·제작하는 팀입니다.<br>
+          국내외 보드 행사와 콘텐츠 제작 관련 협업 문의를 받고 있습니다.
+        </p>
+        <div class="btn_wrap">
+          <a href="https://www.instagram.com/board.wiki/" target="_blank" class="btn01 btn-instagram">Instagram</a>
+          <a href="https://pf.kakao.com/_iGCjn" target="_blank" class="btn01 btn-kakao">Kakao</a>
         </div>
-    </div>
-    </div>
+      </article>
 
+      <article>
+        <img src="/images/main_obota1.png" alt="" class="obota_logo">
+        <h3>오보타</h3>
+        <p>보드가 처음일 때, 함께 보드 타고 싶을 때!</p>
+        <div class="btn_wrap obota_btn">
+          <a href="https://apps.apple.com/kr/app/obota/id6744083753" target="_blank" class="btn01 btn-appstore">App Store</a>
+          <a href="https://play.google.com/store/apps/details?id=kr.obota.app" target="_blank" class="btn01 btn-googlestore">Google Play</a>
+        </div>
+      </article>
 
+    </article>
+  </div>
+
+  <div class="scroll-indicator">스크롤하여 더 보기</div>
 </body>
 </html>
