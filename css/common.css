@@ -162,21 +162,18 @@ button {
 
 /* 오버레이 네비 */
 #gnb{
-  position: fixed;
-  inset: 0;               /* top/right/bottom/left:0 */
-  z-index: 100;
-  /* 물처럼 퍼지는 효과 핵심: 원형 clip-path (우상단에서 확장) */
-  clip-path: circle(0 at 100% 0);
-  background: rgba(0,0,0,0.88);
-  color: #fff;
-  transition: clip-path .55s ease-in-out;
-  /* 내용 정렬 */
-  display: grid;
-  align-items: center;
-  justify-items: center;
-  padding: 40px 20px;
-  /* 초기에 포커스/클릭 막기 */
-  pointer-events: none;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    clip-path: circle(0 at 100% 0);
+    background: rgba(0, 0, 0, 0.88);
+    color: #fff;
+    transition: clip-path .55s ease-in-out;
+    display: grid;
+    align-items: start;
+    padding: 100px 40px;
+    pointer-events: none;
+    justify-items: end;
 }
 #gnb.open{
   clip-path: circle(150% at 100% 0); /* 화면을 덮을 만큼 크게 */
