@@ -128,3 +128,86 @@ button {
     height: 24px;
     margin-right: 10px;
 }
+
+/* 햄버거 버튼 */
+.hamburger{
+  position: fixed;
+  top: 16px;
+  right: 20px;
+  z-index: 110; /* gnb(100)보다 위 */
+  width: 44px; height: 44px;
+  display: grid; place-items: center;
+  border: none; border-radius: 999px;
+  background: rgba(255,255,255,.9);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  padding: 10px 0;
+}
+.hamburger .bar{
+  display:block;
+  width: 22px; height: 2px;
+  background:#111;
+  margin: 1px 0;
+  transition: transform .28s ease, opacity .2s ease;
+}
+.hamburger[aria-expanded="true"] .bar:nth-child(1){
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger[aria-expanded="true"] .bar:nth-child(2){
+  opacity: 0;
+}
+.hamburger[aria-expanded="true"] .bar:nth-child(3){
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* 오버레이 네비 */
+#gnb{
+  position: fixed;
+  inset: 0;               /* top/right/bottom/left:0 */
+  z-index: 100;
+  /* 물처럼 퍼지는 효과 핵심: 원형 clip-path (우상단에서 확장) */
+  clip-path: circle(0 at 100% 0);
+  background: rgba(0,0,0,0.88);
+  color: #fff;
+  transition: clip-path .55s ease-in-out;
+  /* 내용 정렬 */
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  padding: 40px 20px;
+  /* 초기에 포커스/클릭 막기 */
+  pointer-events: none;
+}
+#gnb.open{
+  clip-path: circle(150% at 100% 0); /* 화면을 덮을 만큼 크게 */
+  pointer-events: auto;
+}
+#gnb ul{
+  list-style: none;
+  padding: 0; margin: 0;
+  display: grid;
+  gap: 18px;
+  text-align: center;
+}
+#gnb a, #gnb button{
+  font: 600 18px/1.2 system-ui, -apple-system, "SF Pro", Pretendard, sans-serif;
+  color:#fff; text-decoration: none;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 12px 18px;
+  border-radius: 12px;
+}
+#gnb a:hover, #gnb button:hover{
+  background: rgba(255,255,255,0.16);
+}
+
+/* 모션 민감 사용자를 위한 배려 */
+@media (prefers-reduced-motion: reduce){
+  #gnb{ transition:none; }
+  .hamburger .bar{ transition:none; }
+}
+
+/* 오버레이가 열렸을 때 바디 스크롤 잠금 */
+body.menu-open{
+  overflow: hidden;
+}

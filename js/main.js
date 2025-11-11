@@ -25,7 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     */
 
-        // 팝업 표시 조건
+    // 팝업 표시 조건
+
+    /*
     const popup = document.getElementById("festivalPopup");
     const hideUntil = localStorage.getItem("hidePopupUntil");
     const now = new Date();
@@ -52,6 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (goLinkBtn) goLinkBtn.addEventListener("click", goFestival);
     if (closeTodayBtn) closeTodayBtn.addEventListener("click", closeToday);
-
+    */
 
 });

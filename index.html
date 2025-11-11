@@ -42,10 +42,40 @@
   <!-- JS -->
   <script defer src="/js/common.js"></script>
   <script defer src="/js/main.js"></script>
+  <script type="module" src="/js/google.js" ></script>
+  <script src="/js/nav.js" ></script>
 </head>
 <body id="wiki-main">
 
   <h1 class="sound_only">보드위키</h1>
+
+  <!-- 네비게이션 버튼 -->
+  <!-- 햄버거 버튼 (헤더 오른쪽 위 등 원하는 곳) -->
+  <button id="menuToggle"
+          class="hamburger"
+          aria-label="메뉴 열기"
+          aria-controls="gnb"
+          aria-expanded="false">
+    <span class="bar" aria-hidden="true"></span>
+    <span class="bar" aria-hidden="true"></span>
+    <span class="bar" aria-hidden="true"></span>
+  </button>
+
+  <!-- 전체 오버레이 내비게이션 -->
+  <nav id="gnb" role="dialog" aria-modal="true">
+    <ul>
+      <li>
+        <button id="btnLogin">Google로 로그인</button>
+        <button id="btnLogout" style="display:none;">로그아웃</button>
+        <div id="me" style="display:none;">
+          <img id="mePhoto" alt="" width="40" height="40">
+          <span id="meName"></span> (<span id="meEmail"></span>)
+        </div>
+      </li>
+      <!-- 원하면 여기에 대회 링크 등 추가 -->
+      <!-- <li><a href="/competition/">대회 보기</a></li> -->
+    </ul>
+  </nav>
 
   <!-- 언어 스위처가 여기로 주입됨 -->
   <div id="lang-switch"></div>

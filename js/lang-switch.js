@@ -26,10 +26,18 @@
   const style = document.createElement('style');
   style.textContent = `
     .bw-lang {
-      position: fixed; right: 16px; top: 16px; z-index: 9999;
-      background: rgba(255,255,255,.9); backdrop-filter: blur(6px);
-      border: 1px solid #eee; border-radius: 999px; padding: 6px 10px;
-      font: 14px/1.2 system-ui, -apple-system, "SF Pro", Pretendard, sans-serif;
+      display: flex;
+      height: 44px;
+      position: fixed;
+      right: 80px;
+      top: 16px;
+      z-index: 9999;
+      background: rgba(255, 255, 255, .9);
+      backdrop-filter: blur(6px);
+      border: 1px solid #eee;
+      border-radius: 999px;
+      padding: 6px 10px;
+      align-items: center;
     }
     .bw-lang a { text-decoration: none; padding: 6px 10px; border-radius: 999px; display: inline-block; color: inherit; }
     .bw-lang a[aria-current="true"] { font-weight: 700; border: 1px solid #ddd; }
