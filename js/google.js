@@ -6,10 +6,13 @@
 
   // ① 콘솔에서 복사한 config로 교체
   const firebaseConfig = {
-    apiKey: "YOUR_KEY",
-    authDomain: "YOUR_PROJECT.firebaseapp.com",
-    projectId: "YOUR_PROJECT_ID",
-    appId: "YOUR_APP_ID"
+        apiKey: "AIzaSyDDkghHYAD581-N3u8zUUsinS1F49P5xi0",
+        authDomain: "boardwiki-e070e.firebaseapp.com",
+        projectId: "boardwiki-e070e",
+        storageBucket: "boardwiki-e070e.appspot.com",
+        messagingSenderId: "301441212066",
+        appId: "1:301441212066:web:1ffff5d8eccaaff11781fb",
+        measurementId: "G-DZ52LV9MMG"
   };
 
   const app = initializeApp(firebaseConfig);
