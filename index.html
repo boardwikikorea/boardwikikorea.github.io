@@ -1,121 +1,50 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>보드위키 - 보드 커뮤니티</title>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board wiki</title>
 
-  <!-- SEO -->
-  <meta name="description" content="보드위키에서 최신 스케이트, 롱보드 정보와 롱보드댄싱, 보드대회 소식을 확인하세요.">
-  <meta name="keywords" content="스케이트, 롱보드, 카버보드, 롱보드댄싱, 보드대회, longboarding, 롱보드 대축제, 롱보드 페스티벌, longboard festival">
-  <meta name="naver-site-verification" content="e74dc3e49d0527046508b26ee9860c52a501b8f4">
+    <!--favicon-->
+    <!-- 기본 파비콘 -->
+    <link rel="icon" href="/favicon.ico">
 
-  <!-- Open Graph -->
-  <meta property="og:site_name" content="BoardWiki">
-  <meta property="og:title" content="보드위키 - 보드 커뮤니티">
-  <meta property="og:description" content="보드 최신 정보를 확인하세요.">
-  <meta property="og:url" content="https://boardwiki.kr/">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://boardwiki.kr/images/og-image.jpg">
+    <!-- 고해상도 단일 아이콘 -->
+    <link rel="icon" type="image/png" sizes="180x180" href="/icon-180.png">
+    <link rel="apple-touch-icon" href="/icon-180.png">
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="보드위키 - 보드 커뮤니티">
-  <meta name="twitter:description" content="보드위키에서 최신 스케이트, 롱보드 정보를 만나보세요.">
-  <meta name="twitter:image" content="https://boardwiki.kr/images/twitter-image.jpg">
+    <!-- PWA / 안드로이드 대응 -->
+    <link rel="manifest" href="/manifest.json">
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://boardwiki.kr/">
+    <meta name="theme-color" content="#ffffff">
 
-  <!-- Fonts -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;700&display=swap">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="/css/common.css">
-  <link rel="stylesheet" href="/css/main.css">
+    <!-- SEO -->
+    <meta name="description" content="보드위키에서 최신 스케이트, 롱보드 정보와 롱보드댄싱, 보드대회 소식을 확인하세요.">
+    <meta name="keywords" content="스케이트, 롱보드, 카버보드, 롱보드댄싱, 보드대회, longboarding, 롱보드 대축제, 롱보드 페스티벌, longboard festival">
+    <meta name="naver-site-verification" content="e74dc3e49d0527046508b26ee9860c52a501b8f4">
 
-  <!-- 공통 언어 스위처(JS로 주입) -->
-  <!-- 프로젝트 페이지(예: /boardwiki)면 data-base="/boardwiki/" 로 변경 -->
-  <script defer src="/js/lang-switch.js" data-base="/" data-langs='["ko","en","ja","zh","fr"]'></script>
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="BoardWiki">
+    <meta property="og:title" content="보드위키 - 보드 커뮤니티">
+    <meta property="og:description" content="보드 최신 정보를 확인하세요.">
+    <meta property="og:url" content="https://boardwiki.kr/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://boardwiki.kr/images/og-image.jpg">
 
-  <!-- JS -->
-  <script defer src="/js/common.js"></script>
-  <script defer src="/js/main.js"></script>
-  <script type="module" src="/js/google.js" ></script>
-  <script src="/js/nav.js" ></script>
-</head>
-<body id="wiki-main">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="보드위키 - 보드 커뮤니티">
+    <meta name="twitter:description" content="보드위키에서 최신 스케이트, 롱보드 정보를 만나보세요.">
+    <meta name="twitter:image" content="https://boardwiki.kr/images/twitter-image.jpg">
 
-  <h1 class="sound_only">보드위키</h1>
+    <!-- Canonical -->
+    <link rel="canonical" href="https://boardwiki.kr/">
 
-  <!-- 네비게이션 버튼 -->
-  <!-- 햄버거 버튼 (헤더 오른쪽 위 등 원하는 곳) -->
-  <button id="menuToggle"
-          class="hamburger"
-          aria-label="메뉴 열기"
-          aria-controls="gnb"
-          aria-expanded="false">
-    <span class="bar" aria-hidden="true"></span>
-    <span class="bar" aria-hidden="true"></span>
-    <span class="bar" aria-hidden="true"></span>
-  </button>
-
-  <!-- 전체 오버레이 내비게이션 -->
-  <nav id="gnb" role="dialog" aria-modal="true">
-    <ul>
-      <li class="login">
-        <button id="btnLogin">Google로 로그인</button>
-        <button id="btnLogout" style="display:none;">로그아웃</button>
-        <div id="me" style="display:none;">
-          <img id="mePhoto" alt="" width="40" height="40">
-          <span id="meName"></span> (<span id="meEmail"></span>)
-        </div>
-      </li>
-
-      <li></li>
-      
-    </ul>
-  </nav>
-
-  <!-- 언어 스위처가 여기로 주입됨 -->
-  <div id="lang-switch"></div>
-
-  <div class="wrap">
-    <article class="content">
-      <h2 class="sound_only"><strong>보드위키 콘텐츠</strong></h2>
-
-      <article>
-        <!-- 파일명이 실제로 main_baordwiki.png 인지 확인(오타 의심: boardwiki) -->
-        <img src="/images/main_baordwiki.png" alt="" class="wiki_logo">
-        <h3>보드위키란?</h3>
-        <p>
-          다양한 보드 콘텐츠를 기획·제작하는 팀입니다.<br>
-          국내외 보드 행사와 콘텐츠 제작 관련 협업 문의를 받고 있습니다.
-        </p>
-        <div class="btn_wrap">
-          <a href="https://www.instagram.com/board.wiki/" target="_blank" class="btn01 btn-instagram">Instagram</a>
-          <a href="https://pf.kakao.com/_iGCjn" target="_blank" class="btn01 btn-kakao">Kakao</a>
-        </div>
-      </article>
-
-      <article>
-        <img src="/images/main_obota1.png" alt="" class="obota_logo">
-        <h3>오보타</h3>
-        <p>
-        보드가 처음일 때, 함께 보드 타고 싶을 때!<br>
-        오늘 어떤 스팟에서 누가 보드를 타고 있는지 확인할 수 있는 오보타 앱입니다.<br>
-        현재는 한국에서 서비스 중입니다.
-        </p>
-        <div class="btn_wrap obota_btn">
-          <a href="https://apps.apple.com/kr/app/obota/id6744083753" target="_blank" class="btn01 btn-appstore">App Store</a>
-          <a href="https://play.google.com/store/apps/details?id=kr.obota.app" target="_blank" class="btn01 btn-googlestore">Google Play</a>
-        </div>
-      </article>
-
-    </article>
-  </div>
-
-  <div class="scroll-indicator">스크롤하여 더 보기</div>
-</body>
+    <script type="module" crossorigin src="/assets/index-ByKmm5o-.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DszwuuCh.css">
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
 </html>
