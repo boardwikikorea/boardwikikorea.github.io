@@ -6,19 +6,29 @@
   <meta name="robots" content="noindex, nofollow" />
 </head>
 <body>
-<script>
-  console.log("OAuth callback reached")
-  console.log("URL:", location.href)
+<script type="module">
+  import { createClient } from "https://esm.sh/@supabase/supabase-js@2"
 
-  // Supabase는 이미 hash(#access_token)를 처리함
-  // 우리는 SPA로 돌려보내기만 하면 됨
+  const supabase = createClient(
+    "https://jmgdpmemnchutvcvnvvs.supabase.co",
+    "sb_publishable_xxxxx"
+  )
 
-  const lang = localStorage.getItem("pre_login_lang")
+  // ⏳ Supabase가 hash 처리 + storage write 끝낼 시간
+  await new Promise((r) => setTimeout(r, 0))
 
-  // 🔥 반드시 hash 제거 (중요)
-  history.replaceState(null, "", location.pathname)
+  // 🔍 세션이 실제로 생겼는지 확인
+  const { data } = await supabase.auth.getSession()
 
-  location.replace(lang ? `/${lang}/` : "/")
+  console.log("[oauth-callback] session:", data.session)
+
+  // ✅ 세션이 있으면 SPA 진입
+  if (data.session) {
+    location.replace("/")
+  } else {
+    // 안전망 (거의 안 탐)
+    setTimeout(() => location.replace("/"), 300)
+  }
 </script>
 </body>
 </html>
