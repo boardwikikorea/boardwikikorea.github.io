@@ -1,0 +1,1 @@
+import{d as t,u as s,c as o,t as a,a as n,o as r}from"./index-DNfbYGHV.js";const c={class:"p-6 text-center"},l=t({__name:"DetailView",setup(i){const e=s().params.id;return(u,_)=>(r(),o("div",c,a(n(e)),1))}});export{l as default};
