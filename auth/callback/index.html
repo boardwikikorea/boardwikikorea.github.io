@@ -2,93 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>OAuth Callback Debug</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Signing in…</title>
   <meta name="robots" content="noindex, nofollow" />
-  <style>
-    body {
-      font-family: monospace;
-      background: #0f172a;
-      color: #e5e7eb;
-      padding: 16px;
-    }
-    h1 { font-size: 16px; }
-    pre {
-      background: #020617;
-      padding: 12px;
-      overflow-x: auto;
-      border-radius: 6px;
-      margin-top: 12px;
-      font-size: 12px;
-    }
-    .ok { color: #22c55e; }
-    .err { color: #ef4444; }
-  </style>
 </head>
 <body>
-  <h1>OAuth Callback Debug</h1>
-  <div id="status">Loading…</div>
+<script>
+  console.log("OAuth callback reached")
+  console.log("URL:", location.href)
 
-  <pre id="info"></pre>
+  // Supabase는 이미 hash(#access_token)를 처리함
+  // 우리는 SPA로 돌려보내기만 하면 됨
 
-  <script type="module">
-    import { createClient } from "https://esm.sh/@supabase/supabase-js@2"
+  const lang = localStorage.getItem("pre_login_lang")
 
-    const statusEl = document.getElementById("status")
-    const infoEl = document.getElementById("info")
+  // 🔥 반드시 hash 제거 (중요)
+  history.replaceState(null, "", location.pathname)
 
-    function log(obj) {
-      infoEl.textContent += JSON.stringify(obj, null, 2) + "\n\n"
-      console.log(obj)
-    }
-
-    // 1️⃣ 현재 URL 상태
-    const params = new URLSearchParams(location.search)
-    log({
-      step: "url",
-      href: location.href,
-      hasCode: params.has("code"),
-      error: params.get("error"),
-    })
-
-    // 2️⃣ localStorage 상태 확인
-    const lsKeys = Object.keys(localStorage)
-    log({
-      step: "localStorage",
-      keys: lsKeys,
-    })
-
-    // 3️⃣ Supabase client 생성
-    const supabase = createClient(
-      "https://jmgdpmemnchutvcvnvvs.supabase.co",
-      "sb_publishable_5Cms66C4XZurUozmhb0Wuw_mlPuEzXD"
-    )
-
-    // 4️⃣ exchange 시도
-    statusEl.textContent = "Trying exchangeCodeForSession…"
-
-    const { data, error } =
-      await supabase.auth.exchangeCodeForSession(location.href)
-
-    if (error) {
-      statusEl.innerHTML = '<span class="err">❌ Exchange Failed</span>'
-      log({
-        step: "exchange",
-        success: false,
-        error: error.message,
-        fullError: error,
-      })
-    } else {
-      statusEl.innerHTML = '<span class="ok">✅ Exchange Success</span>'
-      log({
-        step: "exchange",
-        success: true,
-        session: data?.session ?? null,
-      })
-    }
-
-    // ❌ 지금은 redirect 절대 하지 않음
-    // location.href = "/"
-  </script>
+  location.replace(lang ? `/${lang}/` : "/")
+</script>
 </body>
 </html>
