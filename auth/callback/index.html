@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Signing in…</title>
+</head>
+<body>
+<script type="module">
+  import { createClient } from "https://esm.sh/@supabase/supabase-js@2"
+
+  const supabase = createClient(
+    "https://jmgdpmemnchutvcvnvvs.supabase.co",
+    "sb_publishable_5Cms66C4XZurUozmhb0Wuw_mlPuEzXD"
+  )
+
+  const { error } = await supabase.auth.exchangeCodeForSession(
+    window.location.href
+  )
+
+  const lang = localStorage.getItem("pre_login_lang")
+
+  if (error) {
+    console.error(error)
+    location.href = "/login?oauth=failed"
+  } else {
+    location.href = lang ? `/${lang}/` : "/"
+  }
+</script>
+</body>
+</html>
