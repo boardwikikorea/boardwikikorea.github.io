@@ -3,28 +3,102 @@
 <head>
   <meta charset="utf-8" />
   <title>Signing in…</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                   "Segoe UI", Roboto, "Apple SD Gothic Neo", "Noto Sans KR",
+                   Arial, sans-serif;
+      background: #ffffff;
+      color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .wrap {
+      text-align: center;
+    }
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid #ddd;
+      border-top-color: #2563eb;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 16px;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    .msg {
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
-<script type="module">
-  import { createClient } from "https://esm.sh/@supabase/supabase-js@2"
+  <div class="wrap">
+    <div class="spinner"></div>
+    <div class="msg">Signing you in…</div>
+  </div>
 
-  const supabase = createClient(
-    "https://jmgdpmemnchutvcvnvvs.supabase.co",
-    "sb_publishable_5Cms66C4XZurUozmhb0Wuw_mlPuEzXD"
-  )
+  <script type="module">
+    import { createClient } from "https://esm.sh/@supabase/supabase-js@2"
 
-  const { error } = await supabase.auth.exchangeCodeForSession(
-    window.location.href
-  )
+    /**
+     * 1️⃣ Supabase 프로젝트 정보
+     * (공개용 anon key만 사용해야 함)
+     */
+    const SUPABASE_URL = "https://jmgdpmemnchutvcvnvvs.supabase.co"
+    const SUPABASE_ANON_KEY = "sb_publishable_5Cms66C4XZurUozmhb0Wuw_mlPuEzXD"
 
-  const lang = localStorage.getItem("pre_login_lang")
+    /**
+     * 2️⃣ OAuth provider가 이미 error로 리턴한 경우
+     *    (이 경우 exchange 시도하면 100% 실패)
+     */
+    const params = new URLSearchParams(window.location.search)
+    if (params.get("error")) {
+      console.error("OAuth provider error:", Object.fromEntries(params))
+      window.location.replace("/login?oauth=failed")
+      throw new Error("OAuth provider error")
+    }
 
-  if (error) {
-    console.error(error)
-    location.href = "/login?oauth=failed"
-  } else {
-    location.href = lang ? `/${lang}/` : "/"
-  }
-</script>
+    /**
+     * 3️⃣ Supabase client 생성
+     */
+    const supabase = createClient(
+      SUPABASE_URL,
+      SUPABASE_ANON_KEY
+    )
+
+    /**
+     * 4️⃣ PKCE code → session 교환 (핵심)
+     */
+
+    /*
+    const { error } = await supabase.auth.exchangeCodeForSession(
+      window.location.href
+    )
+    */
+
+    /**
+     * 5️⃣ 로그인 전 언어 복구
+     * (없으면 기본 루트)
+     */
+    const lang = localStorage.getItem("pre_login_lang")
+
+    /*
+    if (error) {
+      console.error("OAuth exchange error:", error)
+      window.location.replace("/login?oauth=failed")
+    } else {
+      window.location.replace(lang ? `/${lang}/` : "/")
+    }
+    */
+  </script>
 </body>
 </html>
