@@ -1,0 +1,1 @@
+import{d as e,c as o,t as n,o as s}from"./index-ublk6XVv.js";const c={class:"font-bold text-[32px]"},l=e({__name:"SectionTitle",props:{title:{}},setup(t){return(a,i)=>(s(),o("h2",c,n(t.title),1))}});export{l as _};
