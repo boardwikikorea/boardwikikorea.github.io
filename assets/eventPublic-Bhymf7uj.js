@@ -1,0 +1,40 @@
+import{n,s as a}from"./index-Bd0HrmgB.js";import{f as i}from"./formatDate-35rBJ5M5.js";function _(t){return{id:t.id,title:t.name,periodText:i(t.start_date,t.end_date),applyPeriodText:i(t.registration_start_at,t.registration_end_at),contentHtml:t.content?t.content.replace(/\r\n|\n/g,"<br/>"):null,countryCode:t.country_code,registration_use:t.registration_use,thumbnailUrl:t.thumbnail_url,mapUrl:t.map_url,links:t.links??[]}}async function o(){return n(async()=>{const{data:t,error:e}=await a.from("event_public_upcoming_view").select(`
+        id,
+        name,
+        name_en,
+        country_code,
+        start_date,
+        end_date,
+        registration_use,
+        registration_start_at,
+        registration_end_at,
+        event_cate,
+        thumbnail_url
+      `);if(e)throw e;return t??[]})}async function u(){return n(async()=>{const{data:t,error:e}=await a.from("event_public_past_view").select(`
+        id,
+        name,
+        name_en,
+        country_code,
+        start_date,
+        end_date,
+        registration_use,
+        registration_start_at,
+        registration_end_at,
+        event_cate,
+        thumbnail_url
+      `);if(e)throw e;return t??[]})}async function l(t){return n(async()=>{const{data:e,error:r}=await a.from("event_public_detail_view").select(`
+        id,
+        name,
+        name_en,
+        event_cate,
+        country_code,
+        start_date,
+        end_date,
+        registration_start_at,
+        registration_end_at,
+        registration_use,
+        content,
+        thumbnail_url,
+        map_url,
+        links
+      `).eq("name_en",t).maybeSingle();if(r)throw r;return e?_(e):null})}export{u as a,l as b,o as f};
