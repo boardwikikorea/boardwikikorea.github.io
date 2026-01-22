@@ -1,0 +1,18 @@
+{
+  "section": "intro",
+  "layout": "hero-centered",
+  "container": "max-w-3xl",
+  "title": {
+    "text": "살곶이팀 이란?",
+    "class": "text-3xl md:text-5xl font-bold tracking-tight"
+  },
+  "description": {
+    "text": "다양한 샵과 브랜드에서 스폰을 받으며 대외활동 중인 전국에서 모인 남성팀으로,\n롱보드의 문화와 기술 발전을 위해 함께하고 있습니다.",
+    "class": "mt-6 text-neutral-400 leading-relaxed"
+  },
+  "image": {
+    "src": "./img/salgot.png",
+    "alt": "살곶이팀 로고",
+    "class": "mx-auto mt-10 w-64 md:w-80"
+  }
+}
