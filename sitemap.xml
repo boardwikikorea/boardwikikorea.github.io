@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-    <!-- 홈페이지 -->
-    <url>
-        <loc>https://boardwiki.kr/</loc>
-    </url>
+  <url>
+    <loc>https://boardwiki.kr/</loc>
+    <priority>1.0</priority>
+  </url>
 
-    <!-- 메인 콘텐츠 섹션들 (예: 보드위키란?, 오보타 등) -->
-    <url>
-        <loc>https://boardwiki.kr/</loc>
-        <changefreq>monthly</changefreq>
-    </url>
+  <url>
+    <loc>https://boardwiki.kr/salgot/</loc>
+    <priority>0.6</priority>
+  </url>
 
-    <!-- 현재 확인된 별도 하위 페이지는 없음 — 섹션은 모두 메인 페이지 내 anchor/스크롤 섹션 형태 -->
-    <url>
-        <loc>https://boardwiki.kr/salgot/</loc>
-    </url>
 </urlset>
