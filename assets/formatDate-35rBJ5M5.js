@@ -1,1 +1,0 @@
-const n=t=>t?t.substring(0,10).replace(/-/g,"."):"",a=t=>t?n(t).substring(5):"",c=(t,e)=>!t||!e?"":`${n(t)} ~ ${a(e)}`,u=t=>{if(!t)return 0;const e=t.substring(0,10).replace(/\./g,"-"),r=new Date(e),o=new Date;r.setHours(0,0,0,0),o.setHours(0,0,0,0);const s=r.getTime()-o.getTime();return Math.ceil(s/864e5)};export{u as c,c as f};
