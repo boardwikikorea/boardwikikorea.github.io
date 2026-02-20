@@ -1,7 +1,12 @@
 self.__BUILD_MANIFEST = {
   "__rewrites": {
     "afterFiles": [],
-    "beforeFiles": [],
+    "beforeFiles": [
+      {
+        "source": "/salgot//_next/:path+",
+        "destination": "/salgot/_next/:path+"
+      }
+    ],
     "fallback": []
   },
   "sortedPages": [
