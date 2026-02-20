@@ -1,0 +1,31 @@
+{
+  "section": "activities",
+  "title": {
+    "text": "살곶이팀 활동",
+    "class": "text-2xl md:text-3xl font-bold text-center mb-10"
+  },
+  "layout": "swiper-gallery",
+  "slides": [
+    {
+      "caption": "23년 11월 11일: 반포 달빛광장 살곶이 이벤트 (프리스타일 / 미니게임)",
+      "image": "./img/salgot_s2_1.jpg"
+    },
+    {
+      "caption": "24년 4월 27일: 오금교 인라인장 살곶이 프리 토너먼트",
+      "image": "./img/salgot_s2_2.jpg"
+    },
+    {
+      "caption": "24년 9월 28일: 오금교 인라인장 롱보더 운동회",
+      "image": "./img/salgot_s2_3.jpg"
+    },
+    {
+      "caption": "25년 4월 일: 반포 달빛광장 살곶이 파이트 클럽",
+      "image": "./img/salgot_s2_4.jpg"
+    },
+  ],
+  "swiper": {
+    "loop": true,
+    "autoplayDelay": 1500,
+    "centered": true
+  }
+}
