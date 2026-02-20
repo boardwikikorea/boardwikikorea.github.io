@@ -1,4 +1,4 @@
-import{w as r,s as n}from"./index-1UsboSlJ.js";async function _(a,e=[]){return r(async()=>{const{data:t,error:i}=await n.rpc("apply_event",{p_event_id:a,p_options:e.map(s=>({option_id:s.optionId,music_text:s.musicText??null}))});if(i)throw i;return{registrationId:t}})}async function d(){return r(async()=>{const{data:a,error:e}=await n.from("view_my_event_registrations").select(`
+import{w as r,s as n}from"./index-CkkheZHq.js";async function _(a,e=[]){return r(async()=>{const{data:t,error:i}=await n.rpc("apply_event",{p_event_id:a,p_options:e.map(s=>({option_id:s.optionId,music_text:s.musicText??null}))});if(i)throw i;return{registrationId:t}})}async function d(){return r(async()=>{const{data:a,error:e}=await n.from("view_my_event_registrations").select(`
         registration_id,
         registration_state,
         registered_at,

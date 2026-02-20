@@ -1,4 +1,4 @@
-import{s as w,w as S,O as B,d as V,u as A,G as F,r as j,x as L,g as D,c as l,b as t,a as h,t as s,e as a,z as N,k as T,v as z,F as y,h as k,o as c,n as E,i as I}from"./index-1UsboSlJ.js";async function M(i){return S(async()=>{const{data:e,error:r}=await w.from("event_registration").select(`
+import{s as w,w as S,O as B,d as V,u as A,G as F,r as j,x as L,g as D,c as l,b as t,a as h,t as s,e as a,z as N,k as T,v as z,F as y,h as k,o as c,n as E,i as I}from"./index-CkkheZHq.js";async function M(i){return S(async()=>{const{data:e,error:r}=await w.from("event_registration").select(`
         id,
         event_id,
         state,
