@@ -1,0 +1,1 @@
+const e={MALE:"male",FEMALE:"female",MIXED:"mixed"},l=[{value:e.MALE,label:"common.gender.male"},{value:e.FEMALE,label:"common.gender.female"},{value:e.MIXED,label:"common.gender.mixed"}];export{l as G};
