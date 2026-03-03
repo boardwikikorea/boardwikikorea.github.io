@@ -1,4 +1,4 @@
-import{w as s,s as r,Q as a}from"./index-CL4p-izR.js";async function o(){return s(async()=>{const{data:t,error:e}=await r.from("event").select(`
+import{w as s,s as r,Q as a}from"./index-IzgdJRNy.js";async function o(){return s(async()=>{const{data:t,error:e}=await r.from("event").select(`
         id,
         name,
         name_en,
