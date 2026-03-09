@@ -64,6 +64,33 @@
       z-index: 2;
     }
 
+    .section-block {
+      position: relative;
+      padding-top: clamp(5.5rem, 10vw, 7.5rem);
+      padding-bottom: clamp(5.5rem, 10vw, 7.5rem);
+    }
+
+    .section-block + .section-block {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .section-activities {
+      background: linear-gradient(180deg, rgba(26, 26, 26, 0.94), rgba(14, 14, 14, 0.97));
+    }
+
+    .section-cta {
+      background: linear-gradient(180deg, rgba(11, 11, 11, 0.95), rgba(6, 6, 6, 0.98));
+    }
+
+    .section-members {
+      background: linear-gradient(180deg, rgba(21, 21, 21, 0.96), rgba(10, 10, 10, 0.98));
+    }
+
+    .section-footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      background: rgba(9, 9, 9, 0.9);
+    }
+
     .mist-wrap {
       position: fixed;
       inset: -12vh -10vw;
@@ -163,6 +190,187 @@
     #activitySlides .swiper-slide.is-current {
       transform: translateY(-4px) scale(1.01);
       opacity: 1;
+    }
+
+    #teamStatsGrid {
+      perspective: 1200px;
+      margin-bottom: clamp(1.15rem, 3vw, 2rem);
+    }
+
+    .team-stat-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 1rem;
+      padding: 1rem 1.1rem;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.04));
+      backdrop-filter: blur(3px);
+      transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .team-stat-card::after {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      background: linear-gradient(120deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    .team-stat-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 255, 255, 0.35);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+    }
+
+    .team-stat-eyebrow {
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      color: rgba(229, 229, 229, 0.72);
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+    }
+
+    .team-stat-number {
+      font-size: clamp(1.7rem, 2.4vw, 2.4rem);
+      font-weight: 800;
+      line-height: 1;
+      color: #fff;
+      margin-bottom: 0.55rem;
+    }
+
+    .team-stat-label {
+      font-size: 0.82rem;
+      color: rgba(229, 229, 229, 0.76);
+      letter-spacing: 0.02em;
+    }
+
+    .section-activities #activityTitle {
+      margin-bottom: clamp(2rem, 4vw, 3rem);
+    }
+
+    .section-cta #ctaTitle {
+      margin-bottom: clamp(1.4rem, 3vw, 2.1rem);
+    }
+
+    .section-members #membersTitle {
+      margin-bottom: clamp(2.2rem, 4vw, 4rem);
+    }
+
+    .mySwiper {
+      overflow: visible;
+      padding-bottom: 3.4rem;
+    }
+
+    #activitySlides .swiper-slide {
+      display: flex;
+      height: auto;
+      opacity: 0.55;
+      transform: translateY(8px) scale(0.94);
+    }
+
+    .activity-card {
+      width: 100%;
+      border-radius: 1rem;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: linear-gradient(150deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.26);
+      transition: transform 0.6s ease, border-color 0.6s ease, box-shadow 0.6s ease;
+    }
+
+    .activity-media {
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .activity-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0));
+      pointer-events: none;
+    }
+
+    .activity-image {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      transform: scale(1.02);
+      transition: transform 0.8s ease;
+    }
+
+    .activity-caption {
+      padding: 0.95rem 1.05rem 1.15rem;
+      font-size: 0.92rem;
+      line-height: 1.55;
+      color: rgb(212, 212, 212);
+      text-align: left;
+    }
+
+    #activitySlides .swiper-slide.is-current {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    #activitySlides .swiper-slide.is-current .activity-card {
+      border-color: rgba(255, 255, 255, 0.34);
+      transform: translateY(-2px);
+      box-shadow: 0 20px 44px rgba(0, 0, 0, 0.42);
+    }
+
+    #activitySlides .swiper-slide.is-current .activity-image {
+      transform: scale(1.07);
+    }
+
+    #activitySlides .swiper-slide:not(.is-current) .activity-card {
+      filter: saturate(0.75);
+    }
+
+    .mySwiper .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+      background: rgba(255, 255, 255, 0.36);
+      opacity: 1;
+      transition: width 0.25s ease, background-color 0.25s ease;
+    }
+
+    .mySwiper .swiper-pagination-bullet-active {
+      width: 28px;
+      border-radius: 999px;
+      background: #fff;
+    }
+
+    .mySwiper .swiper-button-prev,
+    .mySwiper .swiper-button-next {
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      background: rgba(15, 15, 15, 0.65);
+      backdrop-filter: blur(4px);
+      color: #fff;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .mySwiper .swiper-button-prev:hover,
+    .mySwiper .swiper-button-next:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .mySwiper .swiper-button-prev::after,
+    .mySwiper .swiper-button-next::after {
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    @media (max-width: 767px) {
+      .mySwiper .swiper-button-prev,
+      .mySwiper .swiper-button-next {
+        display: none;
+      }
     }
 
     #activitySlides .swiper-slide:not(.is-current) {
@@ -316,7 +524,11 @@
   </div>
 
   <!-- ================= ACTIVITIES ================= -->
-  <section class="py-24 bg-neutral-900">
+  <section class="section-block section-activities">
+    <div class="max-w-6xl mx-auto px-6 mb-10">
+      <ul id="teamStatsGrid" class="grid gap-4 md:grid-cols-3"></ul>
+    </div>
+
     <h2 id="activityTitle" class="text-2xl md:text-3xl font-bold text-center mb-12"></h2>
 
     <div class="max-w-5xl mx-auto px-6">
@@ -330,7 +542,7 @@
   </section>
 
   <!-- ================= CTA ================= -->
-  <section class="py-24 text-center">
+  <section class="section-block section-cta text-center">
     <h2 id="ctaTitle" class="text-2xl md:text-3xl font-bold mb-6"></h2>
     <a
       href="https://www.instagram.com/salgot.longboard/"
@@ -341,7 +553,7 @@
   </section>
 
   <!-- ================= MEMBERS ================= -->
-  <section class="py-24 bg-neutral-900">
+  <section class="section-block section-members">
     <h2 id="membersTitle" class="text-2xl md:text-3xl font-bold text-center mb-16"></h2>
 
     <div class="max-w-7xl mx-auto px-6">
@@ -350,7 +562,7 @@
   </section>
 
   <!-- ================= FOOTER ================= -->
-  <footer class="py-10 text-center text-sm text-neutral-500">
+  <footer class="section-footer py-10 text-center text-sm text-neutral-500">
     <a href="https://www.instagram.com/salgot.longboard/" target="_blank" class="hover:text-white">
       Instagram @salgot.longboard
     </a>
@@ -457,12 +669,67 @@
       });
     }
 
+    function getTeamStatLabels(lang) {
+      if (lang === 'ko') {
+        return {
+          total: '\uCD1D \uD300\uC6D0\uC218',
+          domestic: '\uAD6D\uB0B4 \uD300\uC6D0\uC218',
+          overseas: '\uD574\uC678 \uD300\uC6D0\uC218'
+        };
+      }
+
+      return {
+        total: 'Total Members',
+        domestic: 'Domestic Members',
+        overseas: 'Overseas Members'
+      };
+    }
+
+    function isDomesticMember(member) {
+      const nationality = String(member?.nationality || '').toLowerCase();
+      return nationality.includes('\uB300\uD55C\uBBFC\uAD6D') || nationality.includes('korea');
+    }
+
+    function renderTeamStats(lang, membersData) {
+      const grid = document.getElementById('teamStatsGrid');
+      if (!grid) {
+        return;
+      }
+
+      const labels = getTeamStatLabels(lang);
+      const total = membersData.length;
+      const domestic = membersData.filter(isDomesticMember).length;
+      const overseas = Math.max(0, total - domestic);
+
+      const stats = [
+        { label: labels.total, value: total },
+        { label: labels.domestic, value: domestic },
+        { label: labels.overseas, value: overseas }
+      ];
+
+      grid.innerHTML = stats
+        .map(
+          (stat) => `
+            <li class="team-stat-card">
+              <p class="team-stat-eyebrow">TEAM SALGOT</p>
+              <p class="team-stat-number">${stat.value}</p>
+              <p class="team-stat-label">${stat.label}</p>
+            </li>
+          `
+        )
+        .join('');
+    }
     function setupSectionAnimations() {
-      revealElement(document.getElementById('activityTitle'), 'title', 0);
-      revealElement(document.querySelector('.mySwiper'), 'block', 1);
+      revealElement(document.getElementById('teamStatsGrid'), 'block', 0);
+      revealElement(document.getElementById('activityTitle'), 'title', 1);
+      revealElement(document.querySelector('.mySwiper'), 'block', 2);
       revealElement(document.getElementById('ctaTitle'), 'title', 0);
       revealElement(document.getElementById('ctaButton'), 'cta', 1);
       revealElement(document.getElementById('membersTitle'), 'title', 0);
+
+      document.querySelectorAll('#teamStatsGrid > li').forEach((card, index) => {
+        revealElement(card, 'block', index);
+      });
 
       const ctaButton = document.getElementById('ctaButton');
       if (ctaButton) {
@@ -610,9 +877,13 @@
       wrap.innerHTML = '';
       d.slides.forEach((s) => {
         wrap.innerHTML += `
-          <div class="swiper-slide text-center">
-            <img src="${s.image}" class="mx-auto rounded-xl mb-4" alt="${s.caption}" />
-            <p class="text-sm text-neutral-300">${s.caption}</p>
+          <div class="swiper-slide">
+            <article class="activity-card">
+              <div class="activity-media">
+                <img src="${s.image}" class="activity-image" alt="${s.caption}" />
+              </div>
+              <p class="activity-caption">${s.caption}</p>
+            </article>
           </div>
         `;
       });
@@ -620,13 +891,23 @@
       if (swiperInstance) {
         swiperInstance.destroy(true, true);
       }
-
       swiperInstance = new Swiper('.mySwiper', {
         loop: d.swiper.loop,
         centeredSlides: d.swiper.centered,
+        slidesPerView: 1.15,
+        spaceBetween: 16,
+        speed: 850,
+        grabCursor: true,
+        watchSlidesProgress: true,
         autoplay: {
-          delay: d.swiper.autoplayDelay,
-          disableOnInteraction: false
+          delay: Math.max(d.swiper.autoplayDelay, 2000),
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true
+        },
+        breakpoints: {
+          640: { slidesPerView: 1.35, spaceBetween: 20 },
+          1024: { slidesPerView: 1.75, spaceBetween: 24 },
+          1280: { slidesPerView: 2.05, spaceBetween: 28 }
         },
         pagination: { el: '.swiper-pagination', clickable: true },
         navigation: {
@@ -682,6 +963,7 @@
         renderActivities(lang),
         fetch(t.membersJson).then((r) => r.json())
       ]);
+      renderTeamStats(lang, membersData);
       renderMembers(lang, membersData);
       setupSectionAnimations();
       updateActivitySlideState();

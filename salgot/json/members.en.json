@@ -1,4 +1,4 @@
-﻿[
+[
     {
         "name":  "Jang Seokhwan",
         "note":  "Trevroll brand rider",
@@ -227,10 +227,27 @@
         "nationality":  "KOREA"
     },
     {
+        "name":  "Kim Donghyeon",
+        "instagram":  "https://www.instagram.com/dh0620/",
+        "career":  [
+                       "2018 Longboard Korea Sinchon Longboard Grand Festival Non-sponsored Freestyle, finalist",
+                       "Since 2019, Custom Board Shop rider",
+                       "Since 2023, Deus brand/board shop rider",
+                       "2023 Longboard Korea Ilsan Longboard Grand Festival Hippie Jump - 1st place"
+                   ],
+        "nationality":  "KOREA"
+    },
+    {
         "name":  "Park Jeonghu",
         "instagram":  "https://www.instagram.com/gustngo237/",
         "career":  [
-
+                       "Sep 2014 pennyskateboardkorea team rider",
+                       "Sep 2015 Longboard Festival performance",
+                       "Sep 2016 Longboard Festival performance",
+                       "Mar 2017 Longboard Grand Festival Non-sponsored Freestyle - 3rd place",
+                       "Apr 2017 bustinboardskorea rider",
+                       "Oct 2018 Longboard Festival Non-sponsored Freestyle - 3rd place",
+                       "2025 Longboard Festival Best Trick - winner"
                    ],
         "nationality":  "KOREA"
     },
