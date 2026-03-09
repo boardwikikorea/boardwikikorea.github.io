@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
@@ -54,11 +54,234 @@
     .hero-delay-3 {
       animation-delay: 0.45s;
     }
+    :root {
+      --mist-shift-x: 0px;
+      --mist-shift-y: 0px;
+    }
+
+    .site-shell {
+      position: relative;
+      z-index: 2;
+    }
+
+    .mist-wrap {
+      position: fixed;
+      inset: -12vh -10vw;
+      z-index: 1;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .mist-layer,
+    .mist-cursor {
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(70px);
+      will-change: transform, opacity;
+    }
+
+    .mist-layer-a {
+      width: 52vw;
+      height: 48vh;
+      top: -10vh;
+      left: -8vw;
+      opacity: 0.35;
+      background: radial-gradient(
+        circle at 30% 45%,
+        rgba(217, 227, 240, 0.2),
+        rgba(125, 143, 166, 0.02) 72%
+      );
+      animation: mistDriftA 20s ease-in-out infinite alternate;
+    }
+
+    .mist-layer-b {
+      width: 58vw;
+      height: 52vh;
+      right: -12vw;
+      bottom: -14vh;
+      opacity: 0.28;
+      background: radial-gradient(
+        circle at 60% 35%,
+        rgba(190, 206, 232, 0.15),
+        rgba(117, 129, 149, 0.02) 70%
+      );
+      animation: mistDriftB 24s ease-in-out infinite alternate;
+    }
+
+    .mist-cursor {
+      width: clamp(180px, 20vw, 300px);
+      height: clamp(180px, 20vw, 300px);
+      left: 50%;
+      top: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      opacity: 0.7;
+      background: radial-gradient(
+        circle,
+        rgba(226, 236, 252, 0.18) 0%,
+        rgba(175, 196, 226, 0.06) 42%,
+        rgba(115, 130, 151, 0) 72%
+      );
+      animation: mistPulse 5.4s ease-in-out infinite;
+    }
+
+    .content-reveal {
+      opacity: 0;
+      transform: translate3d(0, 26px, 0) scale(0.98);
+      filter: blur(5px);
+      transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.85s ease, filter 0.9s ease;
+      transition-delay: calc(var(--reveal-delay, 0) * 85ms);
+      will-change: transform, opacity, filter;
+    }
+
+    .content-reveal[data-reveal='title'] {
+      transform: translate3d(0, 20px, 0);
+    }
+
+    .content-reveal[data-reveal='block'] {
+      transform: translate3d(0, 28px, 0) scale(0.985);
+    }
+
+    .content-reveal[data-reveal='cta'] {
+      transform: translate3d(0, 20px, 0) scale(0.98);
+    }
+
+    .content-reveal[data-reveal='member'] {
+      transform: translate3d(0, 34px, 0) scale(0.97);
+    }
+
+    .content-reveal.is-visible {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale(1);
+      filter: blur(0);
+    }
+
+    #activitySlides .swiper-slide {
+      transition: transform 0.55s ease, opacity 0.55s ease;
+    }
+
+    #activitySlides .swiper-slide.is-current {
+      transform: translateY(-4px) scale(1.01);
+      opacity: 1;
+    }
+
+    #activitySlides .swiper-slide:not(.is-current) {
+      opacity: 0.72;
+    }
+
+    .cta-float {
+      animation: ctaFloat 4.8s ease-in-out infinite;
+    }
+
+    @keyframes mistDriftA {
+      0% {
+        transform: translate3d(
+            calc(var(--mist-shift-x) * -0.4),
+            calc(var(--mist-shift-y) * -0.4),
+            0
+          )
+          scale(1);
+      }
+      50% {
+        transform: translate3d(
+            calc(var(--mist-shift-x) * -0.55 + 2vw),
+            calc(var(--mist-shift-y) * -0.5 - 2vh),
+            0
+          )
+          scale(1.08);
+      }
+      100% {
+        transform: translate3d(
+            calc(var(--mist-shift-x) * -0.45 - 1vw),
+            calc(var(--mist-shift-y) * -0.45 + 2vh),
+            0
+          )
+          scale(1.03);
+      }
+    }
+
+    @keyframes mistDriftB {
+      0% {
+        transform: translate3d(
+            calc(var(--mist-shift-x) * 0.35),
+            calc(var(--mist-shift-y) * 0.35),
+            0
+          )
+          scale(1.04);
+      }
+      50% {
+        transform: translate3d(
+            calc(var(--mist-shift-x) * 0.48 - 2vw),
+            calc(var(--mist-shift-y) * 0.42 + 1vh),
+            0
+          )
+          scale(1.12);
+      }
+      100% {
+        transform: translate3d(
+            calc(var(--mist-shift-x) * 0.4 + 1vw),
+            calc(var(--mist-shift-y) * 0.4 - 2vh),
+            0
+          )
+          scale(1.06);
+      }
+    }
+
+    @keyframes mistPulse {
+      0%,
+      100% {
+        opacity: 0.55;
+        filter: blur(62px);
+      }
+      50% {
+        opacity: 0.8;
+        filter: blur(76px);
+      }
+    }
+
+    @keyframes ctaFloat {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-4px);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .mist-layer,
+      .mist-cursor,
+      .cta-float {
+        animation: none !important;
+      }
+
+      .content-reveal {
+        opacity: 1;
+        transform: none;
+        filter: none;
+        transition: none;
+      }
+
+      #activitySlides .swiper-slide,
+      #activitySlides .swiper-slide.is-current,
+      #activitySlides .swiper-slide:not(.is-current) {
+        opacity: 1;
+        transform: none;
+      }
+    }
   </style>
 </head>
 
 <body class="bg-neutral-950 text-neutral-100 font-['Pretendard']">
   <h1 id="pageTitle" class="sr-only">롱보드 팀 살곶이</h1>
+  <div class="mist-wrap" aria-hidden="true">
+    <div class="mist-layer mist-layer-a"></div>
+    <div class="mist-layer mist-layer-b"></div>
+    <div id="mistCursor" class="mist-cursor"></div>
+  </div>
+
+  <div class="site-shell">
 
   <div class="fixed top-4 right-4 z-50">
     <div class="inline-flex rounded-full border border-neutral-700 bg-neutral-900/80 p-1 backdrop-blur">
@@ -134,6 +357,7 @@
     <span class="mx-2">|</span>
     <a href="../" class="hover:text-white" id="footerBoardwiki"></a>
   </footer>
+  </div>
 
   <!-- ================= SCRIPTS ================= -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -175,6 +399,144 @@
     }
 
     let swiperInstance = null;
+    let revealObserver = null;
+    let fogRafId = null;
+
+    function ensureRevealObserver() {
+      if (revealObserver || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return;
+      }
+
+      revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2, rootMargin: '0px 0px -8% 0px' }
+      );
+    }
+
+    function revealElement(el, type = 'block', delay = 0) {
+      if (!el) {
+        return;
+      }
+
+      if (!el.classList.contains('content-reveal')) {
+        el.classList.add('content-reveal');
+      }
+
+      el.dataset.reveal = type;
+      el.style.setProperty('--reveal-delay', String(delay));
+
+      if (el.classList.contains('is-visible')) {
+        return;
+      }
+
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        el.classList.add('is-visible');
+        return;
+      }
+
+      ensureRevealObserver();
+      if (revealObserver) {
+        revealObserver.observe(el);
+      } else {
+        el.classList.add('is-visible');
+      }
+    }
+
+    function updateActivitySlideState() {
+      document.querySelectorAll('#activitySlides .swiper-slide').forEach((slide) => {
+        const isCurrent =
+          slide.classList.contains('swiper-slide-active') || slide.classList.contains('swiper-slide-duplicate-active');
+        slide.classList.toggle('is-current', isCurrent);
+      });
+    }
+
+    function setupSectionAnimations() {
+      revealElement(document.getElementById('activityTitle'), 'title', 0);
+      revealElement(document.querySelector('.mySwiper'), 'block', 1);
+      revealElement(document.getElementById('ctaTitle'), 'title', 0);
+      revealElement(document.getElementById('ctaButton'), 'cta', 1);
+      revealElement(document.getElementById('membersTitle'), 'title', 0);
+
+      const ctaButton = document.getElementById('ctaButton');
+      if (ctaButton) {
+        ctaButton.classList.add('cta-float');
+      }
+
+      document.querySelectorAll('#activitySlides .swiper-slide').forEach((slide, index) => {
+        revealElement(slide, 'block', index % 4);
+      });
+
+      document.querySelectorAll('#memberGrid > li').forEach((card, index) => {
+        revealElement(card, 'member', index % 6);
+      });
+    }
+
+    function setupFogCursor() {
+      const cursor = document.getElementById('mistCursor');
+      if (!cursor) {
+        return;
+      }
+
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        cursor.style.opacity = '0.35';
+        return;
+      }
+
+      let targetX = window.innerWidth / 2;
+      let targetY = window.innerHeight / 2;
+      let currentX = targetX;
+      let currentY = targetY;
+
+      const updateMistShift = (x, y) => {
+        const shiftX = (x / window.innerWidth - 0.5) * 34;
+        const shiftY = (y / window.innerHeight - 0.5) * 28;
+        document.documentElement.style.setProperty('--mist-shift-x', `${shiftX.toFixed(2)}px`);
+        document.documentElement.style.setProperty('--mist-shift-y', `${shiftY.toFixed(2)}px`);
+      };
+
+      const onPointerMove = (event) => {
+        targetX = event.clientX;
+        targetY = event.clientY;
+        updateMistShift(targetX, targetY);
+      };
+
+      const onPointerLeave = () => {
+        targetX = window.innerWidth / 2;
+        targetY = window.innerHeight / 2;
+        document.documentElement.style.setProperty('--mist-shift-x', '0px');
+        document.documentElement.style.setProperty('--mist-shift-y', '0px');
+      };
+
+      const onResize = () => {
+        if (targetX > window.innerWidth || targetY > window.innerHeight) {
+          onPointerLeave();
+        }
+      };
+
+      const animateFog = () => {
+        currentX += (targetX - currentX) * 0.09;
+        currentY += (targetY - currentY) * 0.09;
+        cursor.style.transform = `translate3d(${currentX}px, ${currentY}px, 0) translate(-50%, -50%)`;
+        fogRafId = requestAnimationFrame(animateFog);
+      };
+
+      window.addEventListener('pointermove', onPointerMove, { passive: true });
+      window.addEventListener('pointerleave', onPointerLeave, { passive: true });
+      window.addEventListener('blur', onPointerLeave);
+      window.addEventListener('resize', onResize);
+
+      if (fogRafId) {
+        cancelAnimationFrame(fogRafId);
+      }
+      animateFog();
+    }
 
     function setLanguageButtons(lang) {
       const koBtn = document.getElementById('langKoBtn');
@@ -272,6 +634,9 @@
           prevEl: '.swiper-button-prev'
         }
       });
+
+      swiperInstance.on('slideChangeTransitionEnd', updateActivitySlideState);
+      updateActivitySlideState();
     }
 
     function renderMembers(lang, membersData) {
@@ -318,12 +683,15 @@
         fetch(t.membersJson).then((r) => r.json())
       ]);
       renderMembers(lang, membersData);
+      setupSectionAnimations();
+      updateActivitySlideState();
     }
 
     async function init() {
       document.getElementById('langKoBtn').addEventListener('click', () => switchLanguage('ko'));
       document.getElementById('langEnBtn').addEventListener('click', () => switchLanguage('en'));
 
+      setupFogCursor();
       await switchLanguage(currentLang);
     }
 
