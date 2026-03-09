@@ -1,232 +1,342 @@
-<!DOCTYPE html>
-<html lang="kr">
+﻿<!DOCTYPE html>
+<html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>팀 살곶 (TEAM SALGOT)</title>
+  <title>살곶이팀 (TEAM SALGOT)</title>
 
   <!-- SEO -->
-  <meta name="description" content="살곶이 롱보드 팀, salgotlongboard, teamsalgot">
-  <meta name="keywords" content="스케이트, 롱보드, 카버보드, salgotlongboard, 살곶이롱보드">
-  <meta name="naver-site-verification" content="e74dc3e49d0527046508b26ee9860c52a501b8f4">
+  <meta name="description" content="살곶이팀 롱보드팀, salgotlongboard, teamsalgot" />
+  <meta name="keywords" content="롱보드, 팀 살곶이, salgotlongboard, teamsalgot" />
+  <meta name="naver-site-verification" content="e74dc3e49d0527046508b26ee9860c52a501b8f4" />
 
   <!-- OG -->
-  <meta property="og:site_name" content="TEAM SALGOT">
-  <meta property="og:title" content="팀 살곶이 (TEAM SALGOT)">
-  <meta property="og:description" content="KOREA LONGBOARD TEAM">
-  <meta property="og:url" content="https://boardwiki.kr">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://boardwiki.kr/salgot/img/salgot.png?ver=20260122">
+  <meta property="og:site_name" content="TEAM SALGOT" />
+  <meta property="og:title" content="살곶이팀 (TEAM SALGOT)" />
+  <meta property="og:description" content="KOREA LONGBOARD TEAM" />
+  <meta property="og:url" content="https://boardwiki.kr" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://boardwiki.kr/salgot/img/salgot.png?ver=20260122" />
 
   <!-- Fonts -->
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+  />
 
   <!-- Tailwind v4 -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Swiper -->
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
   <!-- Hero Animations -->
   <style>
     @keyframes heroFadeUp {
-      0% { opacity: 0; transform: translateY(24px) scale(0.96); }
-      100% { opacity: 1; transform: translateY(0) scale(1); }
+      0% {
+        opacity: 0;
+        transform: translateY(24px) scale(0.96);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
     }
     .hero-animate {
       animation: heroFadeUp 1.2s ease-out both;
     }
-    .hero-delay-1 { animation-delay: .15s; }
-    .hero-delay-2 { animation-delay: .3s; }
-    .hero-delay-3 { animation-delay: .45s; }
+    .hero-delay-1 {
+      animation-delay: 0.15s;
+    }
+    .hero-delay-2 {
+      animation-delay: 0.3s;
+    }
+    .hero-delay-3 {
+      animation-delay: 0.45s;
+    }
   </style>
 </head>
 
 <body class="bg-neutral-950 text-neutral-100 font-['Pretendard']">
+  <h1 id="pageTitle" class="sr-only">롱보드 팀 살곶이</h1>
 
-<h1 class="sr-only">롱보드 팀 살곶이</h1>
-
-<!-- ================= HERO ================= -->
-<section id="introSection"
-  class="relative min-h-screen flex items-center justify-center
-         px-6 text-center overflow-hidden">
-</section>
-
-<!-- Scroll Indicator -->
-<div class="absolute bottom-6 left-1/2 -translate-x-1/2
-            text-neutral-500 text-xs tracking-widest">
-  SCROLL
-</div>
-
-<!-- ================= ACTIVITIES ================= -->
-<section class="py-24 bg-neutral-900">
-  <h2 id="activityTitle"
-      class="text-2xl md:text-3xl font-bold text-center mb-12"></h2>
-
-  <div class="max-w-5xl mx-auto px-6">
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper" id="activitySlides"></div>
-      <div class="swiper-pagination"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
+  <div class="fixed top-4 right-4 z-50">
+    <div class="inline-flex rounded-full border border-neutral-700 bg-neutral-900/80 p-1 backdrop-blur">
+      <button
+        id="langKoBtn"
+        type="button"
+        class="rounded-full px-4 py-1.5 text-xs font-semibold transition"
+        aria-pressed="true"
+      >
+        KR
+      </button>
+      <button
+        id="langEnBtn"
+        type="button"
+        class="rounded-full px-4 py-1.5 text-xs font-semibold transition"
+        aria-pressed="false"
+      >
+        EN
+      </button>
     </div>
   </div>
-</section>
 
-<!-- ================= CTA ================= -->
-<section class="py-24 text-center">
-  <h2 class="text-2xl md:text-3xl font-bold mb-6">
-    살곶이팀의 더 다양한 영상과 활동을 보고싶을땐?
-  </h2>
-  <a href="https://www.instagram.com/salgot.longboard/"
-     target="_blank"
-     class="inline-block rounded-full border border-neutral-700
-            px-8 py-3 text-sm
-            hover:bg-white hover:text-black transition">
-    인스타그램 바로가기
-  </a>
-</section>
+  <!-- ================= HERO ================= -->
+  <section
+    id="introSection"
+    class="relative min-h-screen flex items-center justify-center px-6 text-center overflow-hidden"
+  ></section>
 
-<!-- ================= MEMBERS ================= -->
-<section class="py-24 bg-neutral-900">
-  <h2 class="text-2xl md:text-3xl font-bold text-center mb-16">
-    살곶이 팀원
-  </h2>
-
-  <div class="max-w-7xl mx-auto px-6">
-    <ul id="memberGrid"
-        class="grid gap-10 md:grid-cols-2 lg:grid-cols-3"></ul>
+  <!-- Scroll Indicator -->
+  <div id="scrollText" class="absolute bottom-6 left-1/2 -translate-x-1/2 text-neutral-500 text-xs tracking-widest">
+    SCROLL
   </div>
-</section>
 
-<!-- ================= FOOTER ================= -->
-<footer class="py-10 text-center text-sm text-neutral-500">
-  <a href="https://www.instagram.com/salgot.longboard/"
-     target="_blank"
-     class="hover:text-white">
-    Instagram @salgot.longboard
-  </a>
-  <span class="mx-2">|</span>
-  <a href="../" class="hover:text-white">
-    서비스 BOARDWIKI
-  </a>
-</footer>
+  <!-- ================= ACTIVITIES ================= -->
+  <section class="py-24 bg-neutral-900">
+    <h2 id="activityTitle" class="text-2xl md:text-3xl font-bold text-center mb-12"></h2>
 
-<!-- ================= SCRIPTS ================= -->
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-<script>
-/* ---------- INTRO ---------- */
-fetch('./json/intro.json')
-  .then(r => r.json())
-  .then(d => {
-    document.getElementById('introSection').innerHTML = `
-      <div class="absolute inset-0 bg-gradient-to-b
-                  from-neutral-900/70 via-neutral-950 to-neutral-950"></div>
-
-      <div class="relative z-10 max-w-5xl mx-auto">
-        <img src="${d.image.src}"
-             alt="${d.image.alt}"
-             class="hero-animate hero-delay-1
-                    mx-auto mb-10
-                    w-80 sm:w-96 md:w-[28rem]
-                    drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)]">
-
-        <h2 class="hero-animate hero-delay-2
-                   text-4xl sm:text-5xl md:text-6xl
-                   font-extrabold tracking-tight">
-          ${d.title.text}
-        </h2>
-
-        <div class="hero-animate hero-delay-2
-                    mx-auto my-8 h-px w-24 bg-neutral-600"></div>
-
-        <p class="hero-animate hero-delay-3
-                  mx-auto max-w-2xl
-                  text-base sm:text-lg md:text-xl
-                  text-neutral-300 leading-relaxed">
-          ${d.description.text.replace(/\\n/g, '<br>')}
-        </p>
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper" id="activitySlides"></div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
       </div>
-    `;
-  });
+    </div>
+  </section>
 
-/* ---------- ACTIVITIES ---------- */
-fetch('./json/activities.json')
-  .then(r => r.json())
-  .then(d => {
-    document.getElementById('activityTitle').textContent = d.title.text;
+  <!-- ================= CTA ================= -->
+  <section class="py-24 text-center">
+    <h2 id="ctaTitle" class="text-2xl md:text-3xl font-bold mb-6"></h2>
+    <a
+      href="https://www.instagram.com/salgot.longboard/"
+      target="_blank"
+      class="inline-block rounded-full border border-neutral-700 px-8 py-3 text-sm hover:bg-white hover:text-black transition"
+      id="ctaButton"
+    ></a>
+  </section>
 
-    const wrap = document.getElementById('activitySlides');
-    d.slides.forEach(s => {
-      wrap.innerHTML += `
-        <div class="swiper-slide text-center">
-          <img src="${s.image}"
-               class="mx-auto rounded-xl mb-4">
-          <p class="text-sm text-neutral-300">
-            ${s.caption}
+  <!-- ================= MEMBERS ================= -->
+  <section class="py-24 bg-neutral-900">
+    <h2 id="membersTitle" class="text-2xl md:text-3xl font-bold text-center mb-16"></h2>
+
+    <div class="max-w-7xl mx-auto px-6">
+      <ul id="memberGrid" class="grid gap-10 md:grid-cols-2 lg:grid-cols-3"></ul>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="py-10 text-center text-sm text-neutral-500">
+    <a href="https://www.instagram.com/salgot.longboard/" target="_blank" class="hover:text-white">
+      Instagram @salgot.longboard
+    </a>
+    <span class="mx-2">|</span>
+    <a href="../" class="hover:text-white" id="footerBoardwiki"></a>
+  </footer>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script>
+    const LANGUAGE_STORAGE_KEY = 'salgot_lang';
+    const I18N = {
+      ko: {
+        htmlLang: 'ko',
+        pageTitle: '롱보드 팀 살곶이',
+        ctaTitle: '살곶이팀의 다양한 영상과 소식을 보고 싶으신가요?',
+        ctaButton: '인스타그램 바로가기',
+        membersTitle: '살곶이팀 멤버',
+        footerBoardwiki: '서비스 BOARDWIKI',
+        nationalityLabel: '국적',
+        instagramLabel: 'Instagram 바로가기',
+        introJson: './json/intro.json',
+        activitiesJson: './json/activities.json',
+        membersJson: './json/members.json'
+      },
+      en: {
+        htmlLang: 'en',
+        pageTitle: 'TEAM SALGOT Longboard Team',
+        ctaTitle: 'Want to see TEAM SALGOT videos and latest updates?',
+        ctaButton: 'Visit Instagram',
+        membersTitle: 'TEAM SALGOT Members',
+        footerBoardwiki: 'Powered by BOARDWIKI',
+        nationalityLabel: 'Nationality',
+        instagramLabel: 'Visit Instagram',
+        introJson: './json/intro.en.json',
+        activitiesJson: './json/activities.en.json',
+        membersJson: './json/members.en.json'
+      }
+    };
+
+    let currentLang = localStorage.getItem(LANGUAGE_STORAGE_KEY);
+    if (!I18N[currentLang]) {
+      currentLang = 'ko';
+    }
+
+    let swiperInstance = null;
+
+    function setLanguageButtons(lang) {
+      const koBtn = document.getElementById('langKoBtn');
+      const enBtn = document.getElementById('langEnBtn');
+
+      const activeClasses = ['bg-white', 'text-black'];
+      const inactiveClasses = ['text-neutral-300', 'hover:text-white'];
+
+      [koBtn, enBtn].forEach((btn) => {
+        btn.classList.remove(...activeClasses, ...inactiveClasses);
+      });
+
+      if (lang === 'ko') {
+        koBtn.classList.add(...activeClasses);
+        enBtn.classList.add(...inactiveClasses);
+        koBtn.setAttribute('aria-pressed', 'true');
+        enBtn.setAttribute('aria-pressed', 'false');
+      } else {
+        enBtn.classList.add(...activeClasses);
+        koBtn.classList.add(...inactiveClasses);
+        koBtn.setAttribute('aria-pressed', 'false');
+        enBtn.setAttribute('aria-pressed', 'true');
+      }
+    }
+
+    function renderStaticTexts(lang) {
+      const t = I18N[lang];
+      document.documentElement.lang = t.htmlLang;
+      document.getElementById('pageTitle').textContent = t.pageTitle;
+      document.getElementById('ctaTitle').textContent = t.ctaTitle;
+      document.getElementById('ctaButton').textContent = t.ctaButton;
+      document.getElementById('membersTitle').textContent = t.membersTitle;
+      document.getElementById('footerBoardwiki').textContent = t.footerBoardwiki;
+      document.title = lang === 'ko' ? '살곶이팀 (TEAM SALGOT)' : 'TEAM SALGOT';
+    }
+
+    async function renderIntro(lang) {
+      const t = I18N[lang];
+      const d = await fetch(t.introJson).then((r) => r.json());
+
+      document.getElementById('introSection').innerHTML = `
+        <div class="absolute inset-0 bg-gradient-to-b from-neutral-900/70 via-neutral-950 to-neutral-950"></div>
+
+        <div class="relative z-10 max-w-5xl mx-auto">
+          <img
+            src="${d.image.src}"
+            alt="${d.image.alt}"
+            class="hero-animate hero-delay-1 mx-auto mb-10 w-80 sm:w-96 md:w-[28rem] drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)]"
+          />
+
+          <h2 class="hero-animate hero-delay-2 text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight">
+            ${d.title.text}
+          </h2>
+
+          <div class="hero-animate hero-delay-2 mx-auto my-8 h-px w-24 bg-neutral-600"></div>
+
+          <p class="hero-animate hero-delay-3 mx-auto max-w-2xl text-base sm:text-lg md:text-xl text-neutral-300 leading-relaxed">
+            ${d.description.text.replace(/\n/g, '<br>')}
           </p>
         </div>
       `;
-    });
+    }
 
-    new Swiper(".mySwiper", {
-      loop: d.swiper.loop,
-      centeredSlides: d.swiper.centered,
-      autoplay: {
-        delay: d.swiper.autoplayDelay,
-        disableOnInteraction: false
-      },
-      pagination: { el: ".swiper-pagination", clickable: true },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev"
+    async function renderActivities(lang) {
+      const t = I18N[lang];
+      const d = await fetch(t.activitiesJson).then((r) => r.json());
+
+      document.getElementById('activityTitle').textContent = d.title.text;
+
+      const wrap = document.getElementById('activitySlides');
+      wrap.innerHTML = '';
+      d.slides.forEach((s) => {
+        wrap.innerHTML += `
+          <div class="swiper-slide text-center">
+            <img src="${s.image}" class="mx-auto rounded-xl mb-4" alt="${s.caption}" />
+            <p class="text-sm text-neutral-300">${s.caption}</p>
+          </div>
+        `;
+      });
+
+      if (swiperInstance) {
+        swiperInstance.destroy(true, true);
       }
+
+      swiperInstance = new Swiper('.mySwiper', {
+        loop: d.swiper.loop,
+        centeredSlides: d.swiper.centered,
+        autoplay: {
+          delay: d.swiper.autoplayDelay,
+          disableOnInteraction: false
+        },
+        pagination: { el: '.swiper-pagination', clickable: true },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
+      });
+    }
+
+    function renderMembers(lang, membersData) {
+      const t = I18N[lang];
+      const grid = document.getElementById('memberGrid');
+      grid.innerHTML = '';
+
+      membersData.forEach((m) => {
+        grid.innerHTML += `
+          <li class="rounded-2xl border border-neutral-800 p-6 bg-neutral-950/60 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/40 hover:border-neutral-500 transition-all duration-300">
+            <h3 class="text-xl font-bold">${m.name}</h3>
+            <p class="text-sm text-neutral-400 mt-1">${m.note || ''}</p>
+            <p class="text-xs text-neutral-500 mt-2">${t.nationalityLabel}: ${m.nationality || '-'}</p>
+
+            ${
+              m.instagram
+                ? `<a href="${m.instagram}" target="_blank" class="inline-block mt-3 text-sm text-neutral-400 hover:text-white">${t.instagramLabel}</a>`
+                : ''
+            }
+
+            <ul class="mt-4 space-y-1 text-sm text-neutral-300 list-disc list-inside">
+              ${m.career.map((c) => `<li>${c}</li>`).join('')}
+            </ul>
+          </li>
+        `;
+      });
+    }
+
+    async function switchLanguage(lang) {
+      if (!I18N[lang]) {
+        return;
+      }
+
+      currentLang = lang;
+      localStorage.setItem(LANGUAGE_STORAGE_KEY, lang);
+
+      setLanguageButtons(lang);
+      renderStaticTexts(lang);
+
+      const t = I18N[lang];
+      const [, , membersData] = await Promise.all([
+        renderIntro(lang),
+        renderActivities(lang),
+        fetch(t.membersJson).then((r) => r.json())
+      ]);
+      renderMembers(lang, membersData);
+    }
+
+    async function init() {
+      document.getElementById('langKoBtn').addEventListener('click', () => switchLanguage('ko'));
+      document.getElementById('langEnBtn').addEventListener('click', () => switchLanguage('en'));
+
+      await switchLanguage(currentLang);
+    }
+
+    init().catch((err) => {
+      console.error('Failed to initialize salgot page:', err);
     });
-  });
-
-/* ---------- MEMBERS ---------- */
-fetch('./json/members.json')
-  .then(r => r.json())
-  .then(list => {
-    const grid = document.getElementById('memberGrid');
-
-    list.forEach(m => {
-      grid.innerHTML += `
-        <li class="rounded-2xl border border-neutral-800 p-6
-                   bg-neutral-950/60
-                   hover:-translate-y-1
-                   hover:shadow-xl hover:shadow-black/40
-                   hover:border-neutral-500
-                   transition-all duration-300">
-          <h3 class="text-xl font-bold">
-            ${m.name}
-          </h3>
-          <p class="text-sm text-neutral-400 mt-1">
-            ${m.note || ''}
-          </p>
-
-          ${m.instagram ? `
-            <a href="${m.instagram}"
-               target="_blank"
-               class="inline-block mt-3 text-sm
-                      text-neutral-400 hover:text-white">
-              Instagram →
-            </a>` : ''}
-
-          <ul class="mt-4 space-y-1 text-sm
-                     text-neutral-300
-                     list-disc list-inside">
-            ${m.career.map(c => `<li>${c}</li>`).join('')}
-          </ul>
-        </li>
-      `;
-    });
-  });
-</script>
-
+  </script>
 </body>
 </html>
+
+
+
+
+
+
+

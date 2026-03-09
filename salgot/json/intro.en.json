@@ -1,0 +1,18 @@
+﻿{
+  "section": "intro",
+  "layout": "hero-centered",
+  "container": "max-w-3xl",
+  "title": {
+    "text": "What is TEAM SALGOT?",
+    "class": "text-3xl md:text-5xl font-bold tracking-tight"
+  },
+  "description": {
+    "text": "A nationwide men's longboard team active in external events with sponsorships from various shops and brands.\nWe are working together to grow longboard culture and technical progression.",
+    "class": "mt-6 text-neutral-400 leading-relaxed"
+  },
+  "image": {
+    "src": "./img/salgot.png?ver=20260122",
+    "alt": "TEAM SALGOT logo",
+    "class": "mx-auto mt-10 w-64 md:w-80"
+  }
+}
