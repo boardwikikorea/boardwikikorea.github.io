@@ -1,298 +1,346 @@
 [
     {
-        "name":  "Jang Seokhwan",
-        "note":  "Trevroll brand rider",
-        "instagram":  "https://www.instagram.com/bordercollie.95/",
-        "career":  [
-                       "2023 Longboard Korea Festival (Non-sponsored), Best Trick - 1st place",
-                       "2024 Longboard Korea Festival (Non-sponsored), Best Dancing - 1st place",
-                       "2024 Longboard Korea Festival (Non-sponsored), Freestyle - 1st place",
-                       "Leader of the Boardwiki Entertainment Team",
-                       "Operating Team Longboard Salgot",
-                       "JBL XCREW commercial model shoot",
-                       "Interviewed by Go Out magazine",
-                       "2025 Longboard Korea Festival (Open Division), finalist"
-                   ],
-        "nationality":  "KOREA"
+        "name": "Jang Seokhwan",
+        "note": "Trevroll brand rider",
+        "instagram": "https://www.instagram.com/bordercollie.95/",
+        "career": [
+            "2023 Longboard Korea Festival (Non-sponsored), Best Trick - 1st place",
+            "2024 Longboard Korea Festival (Non-sponsored), Best Dancing - 1st place",
+            "2024 Longboard Korea Festival (Non-sponsored), Freestyle - 1st place",
+            "Leader of the Boardwiki Entertainment Team",
+            "Operating Team Longboard Salgot",
+            "JBL XCREW commercial model shoot",
+            "Interviewed by Go Out magazine",
+            "2025 Longboard Korea Festival (Open Division), finalist"
+        ],
+        "nationality": "KOREA",
+        "role": "Captain"
     },
     {
-        "name":  "Jung Dahoon",
-        "note":  "AKA board shop, Timber brand rider",
-        "instagram":  "https://www.instagram.com/longboardahoon_y/",
-        "career":  [
-                       "Former Lubro board shop rider",
-                       "2021 appeared as a one-day longboard instructor for internet broadcaster BJ/Youtuber Ssodaejang",
-                       "2025 Vice Captain of Team Salgot"
-                   ],
-        "nationality":  "KOREA"
+        "name": "Jung Dahoon",
+        "note": "AKA board shop, Timber brand rider",
+        "instagram": "https://www.instagram.com/longboardahoon_y/",
+        "career": [
+            "Former Lubro board shop rider",
+            "2021 appeared as a one-day longboard instructor for internet broadcaster BJ/Youtuber Ssodaejang",
+            "2025 Vice Captain of Team Salgot"
+        ],
+        "nationality": "KOREA",
+        "role": "Vice Captain"
     },
     {
-        "name":  "Seok Yujin",
-        "note":  "One Love board shop, Majutsu brand rider",
-        "instagram":  "https://www.instagram.com/uz_seok/",
-        "career":  [
-                       "Runs the YouTube channel \u0027Yooji Longboard\u0027",
-                       "2017 China SYCLD Sponsored Division, finalist",
-                       "2017 2nd Busan Signature Board Festival, judge",
-                       "2017 8th Longboard Festival Sponsored Division - 1st place",
-                       "2018 Europe SYCLD Sponsored Division, finalist",
-                       "2019 6th Sinchon Longboard Festival, judge",
-                       "2019 Samsung Bixby commercial participation",
-                       "2019 film \u0027Young Adult Matters\u0027 participation",
-                       "Polham commercial participation (year unspecified)",
-                       "Mok commercial participation (year unspecified)",
-                       "Naver Smart Store SME commercial participation (year unspecified)",
-                       "2021 Pearl Abyss new title \u0027DokeV\u0027 motion participation",
-                       "2021 Fujifilm commercial participation",
-                       "2021 KIA All-New Sportage commercial participation",
-                       "2021 Keen Pierce - 25 music video participation",
-                       "2021 Samsung Fire \u0026 Marine Direct commercial participation",
-                       "2021 Samsung Electronics \u0027Make Home Appliances Your Own\u0027 campaign participation",
-                       "2022 Watcha web drama \u0027Semantic Error\u0027 participation",
-                       "2022 7th Sinchon Longboard Festival, judge",
-                       "2022 MBN News \u0027Deogeop Ilchi\u0027 appearance",
-                       "2022 National Contemporary Dance Company performance \u0027Hiphop\u0027 participation",
-                       "2022 Korea Job Broadcasting \u0027Make a Living from Hobbies Season 4\u0027 episode 4 appearance",
-                       "2022 11th Longboard Festival, judge",
-                       "2023 AfreecaTV \u0027BJ Hobby Club\u0027 longboard instructor",
-                       "2023 MBN \u0027Live Info Plaza\u0027 appearance",
-                       "2023 8th Ilsan Longboard Korea Festival, judge",
-                       "2024 9th Seoul Longboard Korea Festival, judge",
-                       "2025 10th Seoul Longboard Korea Festival, judge",
-                       "2025 13th Seoul Longboard Korea Festival, judge"
-                   ],
-        "nationality":  "KOREA"
+        "name": "Seok Yujin",
+        "note": "One Love board shop, Majutsu brand rider",
+        "instagram": "https://www.instagram.com/uz_seok/",
+        "career": [
+            "Runs the YouTube channel 'Yooji Longboard'",
+            "2017 China SYCLD Sponsored Division, finalist",
+            "2017 2nd Busan Signature Board Festival, judge",
+            "2017 8th Longboard Festival Sponsored Division - 1st place",
+            "2018 Europe SYCLD Sponsored Division, finalist",
+            "2019 6th Sinchon Longboard Festival, judge",
+            "2019 Samsung Bixby commercial participation",
+            "2019 film 'Young Adult Matters' participation",
+            "Polham commercial participation (year unspecified)",
+            "Mok commercial participation (year unspecified)",
+            "Naver Smart Store SME commercial participation (year unspecified)",
+            "2021 Pearl Abyss new title 'DokeV' motion participation",
+            "2021 Fujifilm commercial participation",
+            "2021 KIA All-New Sportage commercial participation",
+            "2021 Keen Pierce - 25 music video participation",
+            "2021 Samsung Fire & Marine Direct commercial participation",
+            "2021 Samsung Electronics 'Make Home Appliances Your Own' campaign participation",
+            "2022 Watcha web drama 'Semantic Error' participation",
+            "2022 7th Sinchon Longboard Festival, judge",
+            "2022 MBN News 'Deogeop Ilchi' appearance",
+            "2022 National Contemporary Dance Company performance 'Hiphop' participation",
+            "2022 Korea Job Broadcasting 'Make a Living from Hobbies Season 4' episode 4 appearance",
+            "2022 11th Longboard Festival, judge",
+            "2023 AfreecaTV 'BJ Hobby Club' longboard instructor",
+            "2023 MBN 'Live Info Plaza' appearance",
+            "2023 8th Ilsan Longboard Korea Festival, judge",
+            "2024 9th Seoul Longboard Korea Festival, judge",
+            "2025 10th Seoul Longboard Korea Festival, judge",
+            "2025 13th Seoul Longboard Korea Festival, judge"
+        ],
+        "nationality": "KOREA",
+        "role": "Operations"
     },
     {
-        "name":  "Kim Hyeongcheol",
-        "note":  "Deus brand/board shop rider",
-        "instagram":  "https://www.instagram.com/_kka._.chi/",
-        "career":  [
-                       "Former Heosta board shop rider",
-                       "2023 Korea Longboard Festival Sponsored Division, finalist",
-                       "2023 Korea Longboard Grand Festival Sponsored Division, finalist",
-                       "2024 Taiwan Supernovice Sponsored Division, finalist",
-                       "2024 Korea Longboard Festival Sponsored Division, finalist",
-                       "2025 Osaka LONGBOARD_SI tournament, finalist",
-                       "2025 Taiwan Supernovice Men\u0027s Open Division, finalist",
-                       "2025 13th Longboard Korea Festival Men\u0027s Open Division - 3rd place"
-                   ],
-        "nationality":  "KOREA"
+        "name": "Song Cheolhyeon",
+        "note": "Nishan longboard rider",
+        "instagram": "https://www.instagram.com/song_01_31/",
+        "career": [
+            "Former Abaibros board shop rider",
+            "Appeared in Jay B's 'Go Up' music video",
+            "Appeared in iKON's 'Dumb & Dumber' music video",
+            "Appeared as longboard instructor with Dalsubin on Somssidang",
+            "Appeared as longboard instructor on 'A Stroll Around the Neighborhood'",
+            "2025 Longboard Korea Festival Open Division, finalist"
+        ],
+        "nationality": "KOREA",
+        "role": "Operations"
     },
     {
-        "name":  "Song Cheolhyeon",
-        "note":  "Nishan longboard rider",
-        "instagram":  "https://www.instagram.com/song_01_31/",
-        "career":  [
-                       "Former Abaibros board shop rider",
-                       "Appeared in Jay B\u0027s \u0027Go Up\u0027 music video",
-                       "Appeared in iKON\u0027s \u0027Dumb \u0026 Dumber\u0027 music video",
-                       "Appeared as longboard instructor with Dalsubin on Somssidang",
-                       "Appeared as longboard instructor on \u0027A Stroll Around the Neighborhood\u0027",
-                       "2025 Longboard Korea Festival Open Division, finalist"
-                   ],
-        "nationality":  "KOREA"
+        "name": "Heo Taehan",
+        "note": "Board Factory board shop rider",
+        "instagram": "https://www.instagram.com/august.17_95/",
+        "career": [
+            "2022 Longboard Korea Grand Festival General Division, Best Dancing - 1st place",
+            "2022 Longboard Korea Festival General Division Freestyle - 3rd place",
+            "2023 Longboard Korea Grand Festival, judge",
+            "2023 Longboard Korea Festival, judge",
+            "2024 Longboard Korea Grand Festival, judge",
+            "2024 Longboard Korea Festival Open Division Freestyle, finalist",
+            "Go Out outdoor sports interview shoot",
+            "JBL XCREW commercial model shoot",
+            "Operating Team Flow longboard crew"
+        ],
+        "nationality": "KOREA"
     },
     {
-        "name":  "Heo Taehan",
-        "note":  "Board Factory board shop rider",
-        "instagram":  "https://www.instagram.com/august.17_95/",
-        "career":  [
-                       "2022 Longboard Korea Grand Festival General Division, Best Dancing - 1st place",
-                       "2022 Longboard Korea Festival General Division Freestyle - 3rd place",
-                       "2023 Longboard Korea Grand Festival, judge",
-                       "2023 Longboard Korea Festival, judge",
-                       "2024 Longboard Korea Grand Festival, judge",
-                       "2024 Longboard Korea Festival Open Division Freestyle, finalist",
-                       "Go Out outdoor sports interview shoot",
-                       "JBL XCREW commercial model shoot",
-                       "Operating Team Flow longboard crew"
-                   ],
-        "nationality":  "KOREA"
+        "name": "Kim Hyeongcheol",
+        "note": "Deus brand / board shop rider",
+        "instagram": "https://www.instagram.com/_kka._.chi/",
+        "career": [
+            "Former Heosta board shop rider",
+            "2023 Korea Longboard Festival Sponsored Division, finalist",
+            "2023 Korea Longboard Grand Festival Sponsored Division, finalist",
+            "2024 Taiwan Supernovice Sponsored Division, finalist",
+            "2024 Korea Longboard Festival Sponsored Division, finalist",
+            "2025 Osaka LONGBOARD_SI tournament, finalist",
+            "2025 Taiwan Supernovice Men's Open Division, finalist",
+            "2025 13th Longboard Korea Festival Men's Open Division - 3rd place"
+        ],
+        "nationality": "KOREA"
     },
     {
-        "name":  "Lee Hanbin",
-        "instagram":  "https://www.instagram.com/yj0y/",
-        "career":  [
-                       "2016 Longboard Korea Festival Freestyle Men\u0027s General Division - 2nd place",
-                       "2017 Longboard Korea Festival Freestyle Men\u0027s General Division - 1st place",
-                       "2019 Longboard Korea Grand Festival Men\u0027s General Division Freestyle - 1st place",
-                       "2022 Longboard Korea Grand Festival Men\u0027s Sponsored Division Freestyle - 2nd place",
-                       "2022 Longboard Korea Festival Men\u0027s Sponsored Division Freestyle - 2nd place",
-                       "2024 Taiwan Supernovice Men\u0027s Sponsored Division Freestyle - 1st place",
-                       "Judge at Longboard Korea Grand Festival and Longboard Festival",
-                       "2025 10th Seoul Longboard Korea Grand Festival, judge",
-                       "2025 13th Seoul Longboard Korea Festival, judge",
-                       "2025 13th Seoul Longboard Korea Festival Master Division - 3rd place"
-                   ],
-        "nationality":  "KOREA"
+        "name": "Lee Hanbin",
+        "instagram": "https://www.instagram.com/yj0y/",
+        "career": [
+            "2016 Longboard Korea Festival Freestyle Men's General Division - 2nd place",
+            "2017 Longboard Korea Festival Freestyle Men's General Division - 1st place",
+            "2019 Longboard Korea Grand Festival Men's General Division Freestyle - 1st place",
+            "2022 Longboard Korea Grand Festival Men's Sponsored Division Freestyle - 2nd place",
+            "2022 Longboard Korea Festival Men's Sponsored Division Freestyle - 2nd place",
+            "2024 Taiwan Supernovice Men's Sponsored Division Freestyle - 1st place",
+            "Judge at Longboard Korea Grand Festival and Longboard Festival",
+            "2025 10th Seoul Longboard Korea Grand Festival, judge",
+            "2025 13th Seoul Longboard Korea Festival, judge",
+            "2025 13th Seoul Longboard Korea Festival Master Division - 3rd place"
+        ],
+        "nationality": "KOREA"
     },
     {
-        "name":  "Song Cheonghyeon",
-        "instagram":  "https://www.instagram.com/cyan_0330/",
-        "career":  [
-                       "2016: Ranshaobing Wenquanshan Men\u0027s Freestyle - 1st place",
-                       "2018: Bazhou longboard activity Team Skate - 1st place",
-                       "2018: Tianjin School shop event Team Skate - 1st / Individual Skate - 1st",
-                       "2018: Jinhua Old School Crew Men\u0027s Sponsored Dancing - 2nd place",
-                       "2018: China Flatground Freestyle Challenge Best Line - 1st, No Comply Time Attack - 1st, Men\u0027s Champion \u0027Flatground King\u0027",
-                       "Mar 2, 2019: JSK anniversary event Team Skate - 1st place",
-                       "Beijing EP Longboard Shop regular competition - 1st place",
-                       "Beijing Longboard Committee flat-ground challenge Qingdao qualifier, Sponsored Division - runner-up",
-                       "1st class of China\u0027s first advanced longboard coaches",
-                       "2025 Taiwan Supernovice Men\u0027s Open Division - 2nd place"
-                   ],
-        "nationality":  "KOREA"
+        "name": "Song Cheonghyeon",
+        "instagram": "https://www.instagram.com/cyan_0330/",
+        "career": [
+            "2016: Ranshaobing Wenquanshan Men's Freestyle - 1st place",
+            "2018: Bazhou longboard activity Team Skate - 1st place",
+            "2018: Tianjin School shop event Team Skate - 1st / Individual Skate - 1st",
+            "2018: Jinhua Old School Crew Men's Sponsored Dancing - 2nd place",
+            "2018: China Flatground Freestyle Challenge Best Line - 1st, No Comply Time Attack - 1st, Men's Champion 'Flatground King'",
+            "Mar 2, 2019: JSK anniversary event Team Skate - 1st place",
+            "Beijing EP Longboard Shop regular competition - 1st place",
+            "Beijing Longboard Committee flat-ground challenge Qingdao qualifier, Sponsored Division - runner-up",
+            "1st class of China's first advanced longboard coaches",
+            "2025 Taiwan Supernovice Men's Open Division - 2nd place"
+        ],
+        "nationality": "KOREA"
     },
     {
-        "name":  "Shin Jaehong",
-        "note":  "Gorilla board shop rider",
-        "instagram":  "https://www.instagram.com/jjahong_longboard/",
-        "career":  [
-                       "Operating Gimpo Frog Crew",
-                       "Ansan Youth/Young Adult Longboard Festa Open Division Slalom - 3rd place"
-                   ],
-        "nationality":  "KOREA"
+        "name": "Shin Jaehong",
+        "note": "Gorilla board shop rider",
+        "instagram": "https://www.instagram.com/jjahong_longboard/",
+        "career": [
+            "Operating Gimpo Frog Crew",
+            "Ansan Youth/Young Adult Longboard Festa Open Division Slalom - 3rd place"
+        ],
+        "nationality": "KOREA"
     },
     {
-        "name":  "Na Hyeonggwon",
-        "note":  "Affiliated with Gorilla board shop",
-        "instagram":  "https://www.instagram.com/sang_ja_board/",
-        "career":  [
-                       "Runs longboard YouTube channel \u0027Sangja Board\u0027 (28K)",
-                       "Sports academy / Soomgo / Frip instructor for 4 years",
-                       "2024 Longboard Korea Festival Freestyle Sponsored Division, finalist",
-                       "2025 Longboard Korea Grand Festival Freestyle Sponsored Division, finalist",
-                       "Deputy crew leader of Wheels Crew in Bundang",
-                       "2025 13th Seoul Longboard Korea Festival Open Division Best Trick - winner",
-                       "2025 Longboard Korea Festival Open Division, finalist"
-                   ],
-        "nationality":  "KOREA"
+        "name": "Na Hyeonggwon",
+        "note": "Affiliated with Gorilla board shop",
+        "instagram": "https://www.instagram.com/sang_ja_board/",
+        "career": [
+            "Runs longboard YouTube channel 'Sangja Board' (28K)",
+            "Sports academy / Soomgo / Frip instructor for 4 years",
+            "2024 Longboard Korea Festival Freestyle Sponsored Division, finalist",
+            "2025 Longboard Korea Grand Festival Freestyle Sponsored Division, finalist",
+            "Deputy crew leader of Wheels Crew in Bundang",
+            "2025 13th Seoul Longboard Korea Festival Open Division Best Trick - winner",
+            "2025 Longboard Korea Festival Open Division, finalist"
+        ],
+        "nationality": "KOREA"
     },
     {
-        "name":  "Son Sangmin",
-        "note":  "a.k.a board shop, Trevroll brand rider",
-        "instagram":  "https://www.instagram.com/sang_min_longboard/",
-        "career":  [
-                       "2019 Longboard Korea Grand Festival Sponsored Division Best Trick award",
-                       "2019 Longboard Korea Festival Sponsored Division Best Trick award"
-                   ],
-        "nationality":  "KOREA"
+        "name": "Son Sangmin",
+        "note": "a.k.a board shop, Trevroll brand rider",
+        "instagram": "https://www.instagram.com/sang_min_longboard/",
+        "career": [
+            "2019 Longboard Korea Grand Festival Sponsored Division Best Trick award",
+            "2019 Longboard Korea Festival Sponsored Division Best Trick award"
+        ],
+        "nationality": "KOREA"
     },
     {
-        "name":  "Jung Jiwon",
-        "note":  "Push Off board shop / Airtruck",
-        "instagram":  "https://www.instagram.com/jiwon.board/",
-        "career":  [
-                       "2018 Longboard Korea Grand Festival - 2nd place",
-                       "2019 World SYCLD Non-Sponsored - 1st place",
-                       "2019 Longboard Korea Festival Open Division - 3rd place",
-                       "2019 Ilsan Festival Open - 1st place",
-                       "2019 Suwon The Next Level - Best Hand Trick award",
-                       "2024 Longboard Korea Festival Open Division - 3rd place",
-                       "2025 Longboard Korea Grand Festival Open Division - 3rd place",
-                       "2025 Osaka SL Men\u0027s Open Division - 3rd place",
-                       "2025 Taiwan Supernovice Men\u0027s Open Division - 3rd place",
-                       "2025 Longboard Korea Festival Sponsored Division - 2nd place"
-                   ],
-        "nationality":  "KOREA"
+        "name": "Jung Jiwon",
+        "note": "Push Off board shop / Airtruck",
+        "instagram": "https://www.instagram.com/jiwon.board/",
+        "career": [
+            "2018 Longboard Korea Grand Festival - 2nd place",
+            "2019 World SYCLD Non-Sponsored - 1st place",
+            "2019 Longboard Korea Festival Open Division - 3rd place",
+            "2019 Ilsan Festival Open - 1st place",
+            "2019 Suwon The Next Level - Best Hand Trick award",
+            "2024 Longboard Korea Festival Open Division - 3rd place",
+            "2025 Longboard Korea Grand Festival Open Division - 3rd place",
+            "2025 Osaka SL Men's Open Division - 3rd place",
+            "2025 Taiwan Supernovice Men's Open Division - 3rd place",
+            "2025 Longboard Korea Festival Sponsored Division - 2nd place"
+        ],
+        "nationality": "KOREA"
     },
     {
-        "name":  "Lee Eunseok",
-        "note":  "Deus brand rider",
-        "instagram":  "https://www.instagram.com/eunseok.ii/",
-        "career":  [
-                       "Sangnok Youth Center longboard instructor",
-                       "Manan Youth Center longboard instructor",
-                       "Dongan Youth Center longboard instructor",
-                       "2024 Youth Longboard Festival judge",
-                       "AKA-G x WAY-B Taborangkke Best Trick judge",
-                       "2020 NEXT LEVEL competition - 1st place",
-                       "Longboard Grand Festival 9th Hippie Jump - 1st place",
-                       "AKA-G x WAY-B Taborangkke Best Hand Trick - 1st place",
-                       "Operates Homura Film (extreme filming team)",
-                       "2025 Ansan Youth/Young Adult Longboard Festa Open Division Slalom - 1st place"
-                   ],
-        "nationality":  "KOREA"
+        "name": "Lee Eunseok",
+        "note": "Deus brand rider",
+        "instagram": "https://www.instagram.com/eunseok.ii/",
+        "career": [
+            "Sangnok Youth Center longboard instructor",
+            "Manan Youth Center longboard instructor",
+            "Dongan Youth Center longboard instructor",
+            "2024 Youth Longboard Festival judge",
+            "AKA-G x WAY-B Taborangkke Best Trick judge",
+            "2020 NEXT LEVEL competition - 1st place",
+            "Longboard Grand Festival 9th Hippie Jump - 1st place",
+            "AKA-G x WAY-B Taborangkke Best Hand Trick - 1st place",
+            "Operates Homura Film (extreme filming team)",
+            "2025 Ansan Youth/Young Adult Longboard Festa Open Division Slalom - 1st place"
+        ],
+        "nationality": "KOREA"
     },
     {
-        "name":  "Lee Donghyeon",
-        "instagram":  "https://www.instagram.com/longboard_dh_03/",
-        "career":  [
-                       "2022 Longboard Korea Grand Festival General Division Best Trick - winner",
-                       "2023 Longboard Korea Grand Festival General Division Freestyle - 3rd place",
-                       "2023 Longboard Korea Festival General Division Freestyle - 2nd place",
-                       "2024 Longboard Korea Grand Festival General Division Freestyle - 2nd place"
-                   ],
-        "nationality":  "KOREA"
+        "name": "Lee Donghyeon",
+        "instagram": "https://www.instagram.com/longboard_dh_03/",
+        "career": [
+            "2022 Longboard Korea Grand Festival General Division Best Trick - winner",
+            "2023 Longboard Korea Grand Festival General Division Freestyle - 3rd place",
+            "2023 Longboard Korea Festival General Division Freestyle - 2nd place",
+            "2024 Longboard Korea Grand Festival General Division Freestyle - 2nd place"
+        ],
+        "nationality": "KOREA"
     },
     {
-        "name":  "Kim Donghyeon",
-        "instagram":  "https://www.instagram.com/dh0620/",
-        "career":  [
-                       "2018 Longboard Korea Sinchon Longboard Grand Festival Non-sponsored Freestyle, finalist",
-                       "Since 2019, Custom Board Shop rider",
-                       "Since 2023, Deus brand/board shop rider",
-                       "2023 Longboard Korea Ilsan Longboard Grand Festival Hippie Jump - 1st place"
-                   ],
-        "nationality":  "KOREA"
+        "name": "Kim Donghyeon",
+        "instagram": "https://www.instagram.com/dh0620/",
+        "career": [
+            "2018 Longboard Korea Sinchon Longboard Grand Festival Non-sponsored Freestyle, finalist",
+            "Since 2019, Custom Board Shop rider",
+            "Since 2023, Deus brand/board shop rider",
+            "2023 Longboard Korea Ilsan Longboard Grand Festival Hippie Jump - 1st place"
+        ],
+        "nationality": "KOREA"
     },
     {
-        "name":  "Park Jeonghu",
-        "instagram":  "https://www.instagram.com/gustngo237/",
-        "career":  [
-                       "Sep 2014 pennyskateboardkorea team rider",
-                       "Sep 2015 Longboard Festival performance",
-                       "Sep 2016 Longboard Festival performance",
-                       "Mar 2017 Longboard Grand Festival Non-sponsored Freestyle - 3rd place",
-                       "Apr 2017 bustinboardskorea rider",
-                       "Oct 2018 Longboard Festival Non-sponsored Freestyle - 3rd place",
-                       "2025 Longboard Festival Best Trick - winner"
-                   ],
-        "nationality":  "KOREA"
+        "name": "Park Jeonghu",
+        "instagram": "https://www.instagram.com/gustngo237/",
+        "career": [
+            "Sep 2014 pennyskateboardkorea team rider",
+            "Sep 2015 Longboard Festival performance",
+            "Sep 2016 Longboard Festival performance",
+            "Mar 2017 Longboard Grand Festival Non-sponsored Freestyle - 3rd place",
+            "Apr 2017 bustinboardskorea rider",
+            "Oct 2018 Longboard Festival Non-sponsored Freestyle - 3rd place",
+            "2025 Longboard Festival Best Trick - winner"
+        ],
+        "nationality": "KOREA"
     },
     {
-        "name":  "Lee Jaewon",
-        "note":  "Mind board shop rider",
-        "instagram":  "https://www.instagram.com/jaeweon4100/",
-        "career":  [
-                       "Affiliated with Mind board shop since 2018"
-                   ],
-        "nationality":  "KOREA"
+        "name": "Lee Jaewon",
+        "note": "Mind board shop rider",
+        "instagram": "https://www.instagram.com/jaeweon4100/",
+        "career": [
+            "Affiliated with Mind board shop since 2018"
+        ],
+        "nationality": "KOREA"
     },
     {
-        "name":  "Lee Jaemin",
-        "note":  "Mind board shop rider",
-        "instagram":  "https://www.instagram.com/disp14c3d/",
-        "career":  [
-
-                   ],
-        "nationality":  "KOREA"
+        "name": "Lee Jaemin",
+        "note": "Mind board shop rider",
+        "instagram": "https://www.instagram.com/disp14c3d/",
+        "career": [],
+        "nationality": "KOREA"
     },
     {
-        "name":  "Kim Mingyu",
-        "note":  "Push Off board shop rider",
-        "instagram":  "https://www.instagram.com/min.__.99_/",
-        "career":  [
-                       "Deputy leader of Bundang Wheels Crew",
-                       "Push Off board shop rider",
-                       "2025 Longboard Grand Festival General Division - 3rd place",
-                       "2025 Osaka Streamline - 2nd place",
-                       "2025 Ansan Youth \u0026 Young Adult Longboard Festa - 2nd place",
-                       "2025 Longboard Festival - 1st place"
-                   ],
-        "nationality":  "KOREA"
+        "name": "Kim Mingyu",
+        "note": "Push Off board shop rider",
+        "instagram": "https://www.instagram.com/min.__.99_/",
+        "career": [
+            "Deputy leader of Bundang Wheels Crew",
+            "Push Off board shop rider",
+            "2025 Longboard Grand Festival General Division - 3rd place",
+            "2025 Osaka Streamline - 2nd place",
+            "2025 Ansan Youth & Young Adult Longboard Festa - 2nd place",
+            "2025 Longboard Festival - 1st place"
+        ],
+        "nationality": "KOREA"
     },
     {
-        "name":  "Lee Jongmin",
-        "instagram":  "https://www.instagram.com/jong_miny_/",
-        "career":  [
-                       "2023 operations member of Daejeon Gulleogayu Crew",
-                       "2023 operations member of Hanbat University Push Off club",
-                       "2023 competed in Longboard Korea Festival",
-                       "2024 competed in Longboard Korea Festival",
-                       "2025 competed in Longboard Korea Festival"
-                   ],
-        "nationality":  "KOREA"
+        "name": "Lee Jongmin",
+        "instagram": "https://www.instagram.com/jong_miny_/",
+        "career": [
+            "2023 operations member of Daejeon Gulleogayu Crew",
+            "2023 operations member of Hanbat University Push Off club",
+            "2023 competed in Longboard Korea Festival",
+            "2024 competed in Longboard Korea Festival",
+            "2025 competed in Longboard Korea Festival"
+        ],
+        "nationality": "KOREA"
+    },
+    {
+        "name": "Benjanmin Kitson Bok",
+        "instagram": "https://www.instagram.com/imbokster",
+        "career": [
+            "Started longboarding in Fall 2022",
+            "2024 Last Dance Kaohsiung Longboard Competition - 2nd place",
+            "2024 Super Novice Competition Open Division - 2nd place",
+            "May 2025 Longboard Korea Festival Respect Award"
+        ],
+        "nationality": "SINGAPORE"
+    },
+    {
+        "name": "Evan",
+        "note": "Affiliated with Trevroll, Airtrucks, Lucky (wheel)",
+        "career": [
+            "2022 New York Fall Flow, Advanced Category - 1st place",
+            "2023 New York Fall Flow, Advanced Category - 1st place + Best Trick",
+            "2023 New York Spring Open, Advanced Category - 3rd place",
+            "2023 Toronto Board Meeting, Pro Category - 3rd place",
+            "2024 Washington DC Longboard Competition, Pro Category - 1st place",
+            "2024 So You Can Longboard Dance, Pro Category - finalist",
+            "2024 Toronto Board Meeting - Best G-Turn",
+            "2025 Longboard Korea Festival Fall, Pro Category - 1st place",
+            "2022-2025 Toronto Board Meeting Organizer + Head Judge",
+            "2024 New York Fall Flow, judge",
+            "Community Leader of Yonge Finch Skate since 2021",
+            "Onairlongboard board shop owner since 2023"
+        ],
+        "nationality": "CANADA"
+    },
+    {
+        "name": "Lu Haoxin",
+        "note": "Travelol brand rider",
+        "career": [
+            "2016 4th Taiwan Longboard Festival - finalist",
+            "2017 Taiwan Longboard Festival Qualifier (Taichung Stop) - finalist",
+            "2017 Taiwan Longboard Festival Qualifier (Kaohsiung Stop) - 1st place",
+            "2018 Taiwan Longboard Festival Advanced Division - finalist",
+            "2018 Taiwan Longboard Festival - Best Style Award, Best Team Award",
+            "2018 Joined Travelol Team",
+            "2021 Kaohsiung Skateboard Festival Men's Advanced Division - 1st place",
+            "2025 Taiwan Supernovice Men's Open Plus - finalist",
+            "2025 Longboard Korea Festival (Open Division) - finalist"
+        ],
+        "nationality": "TAIWAN"
     }
 ]
