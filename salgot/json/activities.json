@@ -8,19 +8,23 @@
   "slides": [
     {
       "caption": "2023년 11월 11일: 반포 달빛광장 살곶이 이벤트 (프리스타일 / 미니게임)",
-      "image": ". / img / salgot_s2_1.jpg"
+      "image": "./img/salgot_s2_1.jpg"
     },
     {
       "caption": "2024년 4월 27일: 오금교 인라인장 살곶이 프리 토너먼트",
-      "image": ". / img / salgot_s2_2.jpg"
+      "image": "./img/salgot_s2_2.jpg"
     },
     {
       "caption": "2024년 9월 28일: 오금교 인라인장 롱보더 운동회",
-      "image": ". / img / salgot_s2_3.jpg"
+      "image": "./img/salgot_s2_3.jpg"
     },
     {
       "caption": "2025년 4월 일: 반포 달빛광장 살곶이 파이트 클럽",
-      "image": ". / img / salgot_s2_4.jpg"
+      "image": "./img/salgot_s2_4.jpg"
+    },
+    {
+      "caption": "2026년 9월 일: 대만 타이베이 수파노비스 대회",
+      "image": "./img/salgot_s2_5.jpg"
     }
   ],
   "swiper": {
