@@ -1,4 +1,4 @@
-import{w as c,s as r}from"./index-DASy3-L-.js";async function o(i){return c(async()=>{var e;const{data:n,error:t}=await r.from("profile").select(`
+import{w as c,s as r}from"./index-Ctz4jzdV.js";async function o(i){return c(async()=>{var e;const{data:n,error:t}=await r.from("profile").select(`
         nickname,
         full_name,
         birth_date,
