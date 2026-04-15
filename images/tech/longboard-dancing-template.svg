@@ -1,19 +1,19 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="228.6" height="720" viewBox="0 0 228.6 720">
   <defs>
     <style>
       .grid-line {
         stroke: #64748b;
-        stroke-width: 3;
+        stroke-width: 2.4;
       }
     </style>
   </defs>
 
-  <g id="position-zones" transform="translate(212,212)">
-    <rect x="0" y="0" width="600" height="600" fill="none" class="grid-line"/>
-    <line x1="200" y1="0" x2="200" y2="600" class="grid-line"/>
-    <line x1="400" y1="0" x2="400" y2="600" class="grid-line"/>
-    <line x1="0" y1="200" x2="600" y2="200" class="grid-line"/>
-    <line x1="0" y1="400" x2="600" y2="400" class="grid-line"/>
+  <g id="position-zones">
+    <rect x="0" y="0" width="228.6" height="720" fill="none" class="grid-line"/>
+    <line x1="91.44" y1="0" x2="91.44" y2="720" class="grid-line"/>
+    <line x1="137.16" y1="0" x2="137.16" y2="720" class="grid-line"/>
+    <line x1="0" y1="288" x2="228.6" y2="288" class="grid-line"/>
+    <line x1="0" y1="432" x2="228.6" y2="432" class="grid-line"/>
   </g>
 
   <g id="frame-overlay"></g>
