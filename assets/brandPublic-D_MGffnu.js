@@ -1,0 +1,23 @@
+import{w as a,s as r}from"./index-DTMlD39w.js";import{t as d}from"./imageBucket-DMqi68GT.js";const c=`
+  id,
+  name,
+  country,
+  founded_at,
+  is_use,
+  is_official,
+  sms_link,
+  site_link,
+  product_truck,
+  product_wheel,
+  product_deck,
+  product_bearing,
+  product_hardware,
+  product_bushing,
+  product_fashion,
+  product_etc,
+  image_url,
+  thumbnail_url,
+  product_count,
+  created_at,
+  updated_at
+`;function e(t){return{id:t.id,name:t.name,country:t.country??null,foundedAt:t.founded_at??null,isOperating:t.is_use,isOfficial:t.is_official,smsLink:t.sms_link??null,siteLink:t.site_link??null,productTruck:t.product_truck,productWheel:t.product_wheel,productDeck:t.product_deck,productBearing:t.product_bearing,productHardware:t.product_hardware,productBushing:t.product_bushing,productFashion:t.product_fashion,productEtc:t.product_etc,imageLink:t.image_url?d(t.image_url):null,thumbnailLink:t.thumbnail_url?d(t.thumbnail_url):null,productCount:t.product_count??0,createdAt:t.created_at,updatedAt:t.updated_at??null}}async function s(){return a(async()=>{const{data:t,error:u}=await r.from("brand_public_view").select(c);if(u)throw u;return(t??[]).map(e)})}async function _(t){return a(async()=>{const{data:u,error:n}=await r.from("brand_public_view").select(c).eq("id",t).maybeSingle();if(n)throw n;return u?e(u):null})}async function p(t){return a(async()=>{const{data:u,error:n}=await r.from("brand_public_view").select(c).eq("name",t).limit(1);if(n)throw n;const i=(u??[])[0];return i?e(i):null})}export{_ as a,p as b,s as f};
