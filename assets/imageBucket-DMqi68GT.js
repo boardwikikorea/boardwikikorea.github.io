@@ -1,1 +1,0 @@
-function r(){return"images"}function u(t){if(/^https?:\/\//i.test(t))return t;const c="https://jmgdpmemnchutvcvnvvs.supabase.co".replace(/\/+$/,""),n=r(),e=t.replace(/^\/+/,""),s=`${n}/`,i=e.startsWith(s)?e.slice(s.length):e;return c?`${c}/storage/v1/object/public/${n}/${i}`:i}export{u as t};
