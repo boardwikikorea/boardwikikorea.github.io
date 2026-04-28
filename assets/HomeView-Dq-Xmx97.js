@@ -1,1 +1,0 @@
-import{G as s,c as n,o as c,b as e}from"./index-BO-UtV1S.js";const t={},o={class:"admin-page-shell"};function i(r,a){return c(),n("main",o,[...a[0]||(a[0]=[e("div",{class:"admin-page-card p-6"},[e("h2",{class:"admin-page-title mb-1"},"Admin"),e("p",{class:"admin-page-description mb-0"},"메뉴에서 관리 페이지를 선택해 주세요.")],-1)])])}const m=s(t,[["render",i]]);export{m as default};
