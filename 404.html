@@ -2,23 +2,20 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Board wiki</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BoardWiki | 롱보드, 스케이트보드, 이벤트 커뮤니티</title>
 
-    <!--favicon-->
-    <!-- 기본 파비콘 -->
+    <!-- favicon -->
     <link rel="icon" href="/favicon.ico" />
-
-    <!-- 고해상도 단일 아이콘 -->
     <link rel="icon" type="image/png" sizes="180x180" href="/icon-180.png" />
     <link rel="apple-touch-icon" href="/icon-180.png" />
 
-    <!-- PWA / 안드로이드 대응 -->
+    <!-- PWA -->
     <link rel="manifest" href="/manifest.json" />
 
     <meta name="theme-color" content="#ffffff" />
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+    <meta name="author" content="BoardWiki" />
 
     <!-- hreflang -->
     <link rel="alternate" hreflang="ko" href="https://boardwiki.kr/" />
@@ -31,34 +28,54 @@
     <!-- SEO -->
     <meta
       name="description"
-      content="보드위키에서 최신 스케이트, 롱보드 정보와 롱보드댄싱, 보드대회 소식을 확인하세요." />
+      content="BoardWiki에서 롱보드, 스케이트보드, 브랜드, 크루, 대회와 이벤트 정보를 한곳에서 확인하세요." />
     <meta
       name="keywords"
-      content="스케이트, 롱보드, 카버보드, 롱보드댄싱, 보드대회, Longboard, 롱스케이트, 롱보드행사, 보드행사, 보드위키, boardwiki, board-wiki, longskate" />
-    <meta
-      name="naver-site-verification"
-      content="e74dc3e49d0527046508b26ee9860c52a501b8f4" />
+      content="BoardWiki, 보드위키, 롱보드, 스케이트보드, 댄싱롱보드, 카빙보드, 보드 브랜드, 보드 크루, 보드 이벤트, 대회" />
+    <meta name="naver-site-verification" content="e74dc3e49d0527046508b26ee9860c52a501b8f4" />
 
     <!-- Open Graph -->
     <meta property="og:site_name" content="BoardWiki" />
-    <meta property="og:title" content="보드위키 - 보드 커뮤니티" />
-    <meta property="og:description" content="보드 최신 정보를 확인하세요." />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:title" content="BoardWiki | 롱보드, 스케이트보드, 이벤트 커뮤니티" />
+    <meta
+      property="og:description"
+      content="롱보드와 스케이트보드 커뮤니티 소식, 브랜드 정보, 크루, 이벤트를 BoardWiki에서 만나보세요." />
     <meta property="og:url" content="https://boardwiki.kr/" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://boardwiki.kr/og-image.jpg" />
+    <meta property="og:image:alt" content="BoardWiki 커뮤니티 대표 이미지" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="보드위키 - 보드 커뮤니티" />
+    <meta name="twitter:title" content="BoardWiki | 롱보드, 스케이트보드, 이벤트 커뮤니티" />
     <meta
       name="twitter:description"
-      content="보드위키에서 최신 스케이트, 롱보드 정보를 만나보세요." />
-    <meta
-      name="twitter:image"
-      content="https://boardwiki.kr/images/twitter-image.jpg" />
+      content="롱보드와 스케이트보드 커뮤니티 소식, 브랜드 정보, 이벤트를 BoardWiki에서 확인하세요." />
+    <meta name="twitter:image" content="https://boardwiki.kr/og-image.jpg" />
 
     <!-- Canonical -->
     <link rel="canonical" href="https://boardwiki.kr/" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "BoardWiki",
+        "url": "https://boardwiki.kr/",
+        "inLanguage": "ko-KR",
+        "description": "롱보드, 스케이트보드, 브랜드, 크루, 대회와 이벤트 정보를 제공하는 보드 커뮤니티",
+        "publisher": {
+          "@type": "Organization",
+          "name": "BoardWiki",
+          "url": "https://boardwiki.kr/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://boardwiki.kr/icon-512.png"
+          }
+        }
+      }
+    </script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DZ52LV9MMG"></script>
@@ -70,12 +87,21 @@
       gtag("js", new Date())
       gtag("config", "G-DZ52LV9MMG", { send_page_view: false })
     </script>
-
     <script type="module" crossorigin src="/assets/index-IJAa7TVw.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-D6iSgwTc.css">
   </head>
   <body>
     <div id="app"></div>
-    <div id="dropdown-portal"></div>
+    <div id="dropdown-portal"></div>
+    <noscript>
+      <main>
+        <h1>BoardWiki</h1>
+        <p>롱보드와 스케이트보드 브랜드, 크루, 이벤트 정보를 모아보는 커뮤니티입니다.</p>
+        <p>
+          <a href="https://boardwiki.kr/user/event">이벤트 보기</a>
+          <a href="https://boardwiki.kr/user/brand">브랜드 보기</a>
+        </p>
+      </main>
+    </noscript>
   </body>
 </html>

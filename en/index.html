@@ -2,23 +2,20 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Board wiki</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BoardWiki | Longboard, Skateboard and Event Community</title>
 
-    <!--favicon-->
-    <!-- 기본 파비콘 -->
+    <!-- favicon -->
     <link rel="icon" href="../favicon.ico" />
-
-    <!-- 고해상도 단일 아이콘 -->
     <link rel="icon" type="image/png" sizes="180x180" href="../icon-180.png" />
     <link rel="apple-touch-icon" href="../icon-180.png" />
 
-    <!-- PWA / 안드로이드 대응 -->
+    <!-- PWA -->
     <link rel="manifest" href="../manifest.json" />
 
     <meta name="theme-color" content="#ffffff" />
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+    <meta name="author" content="BoardWiki" />
 
     <!-- hreflang -->
     <link rel="alternate" hreflang="ko" href="https://boardwiki.kr/" />
@@ -29,30 +26,48 @@
     <link rel="alternate" hreflang="x-default" href="https://boardwiki.kr/" />
 
     <!-- SEO -->
-    <meta name="description" content="Check the latest skateboard, longboard and dancing news on BoardWiki.">
-    <meta name="keywords" content="skateboard, longboard, carving board, dancing board, board competition, longboard festival, boardwiki">
-    <meta
-      name="naver-site-verification"
-      content="e74dc3e49d0527046508b26ee9860c52a501b8f4" />
+    <meta name="description" content="Explore longboard, skateboard, brand, crew, competition and event information in one place on BoardWiki." />
+    <meta name="keywords" content="BoardWiki, longboard, skateboard, dancing longboard, carving board, skateboard brands, board crews, board events, competitions" />
+    <meta name="naver-site-verification" content="e74dc3e49d0527046508b26ee9860c52a501b8f4" />
 
     <!-- Open Graph -->
     <meta property="og:site_name" content="BoardWiki" />
-    <meta property="og:title" content="BoardWiki - Board Community">
-    <meta property="og:description" content="Check the latest skateboard, longboard and dancing news on BoardWiki.">
-    <meta property="og:url" content="https://boardwiki.kr/en/">
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="BoardWiki | Longboard, Skateboard and Event Community" />
+    <meta property="og:description" content="Discover longboard and skateboard community news, brand updates, crews and events on BoardWiki." />
+    <meta property="og:url" content="https://boardwiki.kr/en/" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://boardwiki.kr/og-image.jpg" />
+    <meta property="og:image:alt" content="BoardWiki 커뮤니티 대표 이미지" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="BoardWiki - Board Community">
-    <meta name="twitter:description" content="Explore the latest skateboard and longboard updates on BoardWiki.">
-    <meta
-      name="twitter:image"
-      content="https://boardwiki.kr/images/twitter-image.jpg" />
+    <meta name="twitter:title" content="BoardWiki | Longboard, Skateboard and Event Community" />
+    <meta name="twitter:description" content="Discover longboard and skateboard community news, brand updates and events on BoardWiki." />
+    <meta name="twitter:image" content="https://boardwiki.kr/og-image.jpg" />
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://boardwiki.kr/" />
+    <link rel="canonical" href="https://boardwiki.kr/en/" />
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "BoardWiki",
+  "url": "https://boardwiki.kr/en/",
+  "inLanguage": "en-US",
+  "description": "A board community for longboard, skateboard, brand, crew, competition and event information.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "BoardWiki",
+    "url": "https://boardwiki.kr/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://boardwiki.kr/icon-512.png"
+    }
+  }
+}
+    </script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DZ52LV9MMG"></script>
@@ -64,12 +79,21 @@
       gtag("js", new Date())
       gtag("config", "G-DZ52LV9MMG", { send_page_view: false })
     </script>
-
     <script type="module" crossorigin src="../assets/index-IJAa7TVw.js"></script>
     <link rel="stylesheet" crossorigin href="../assets/index-D6iSgwTc.css">
   </head>
   <body>
     <div id="app"></div>
-    <div id="dropdown-portal"></div>
+    <div id="dropdown-portal"></div>
+    <noscript>
+  <main>
+    <h1>BoardWiki</h1>
+    <p>A community that brings together longboard and skateboard brands, crews and event information.</p>
+    <p>
+      <a href="https://boardwiki.kr/en/user/event">Browse events</a>
+      <a href="https://boardwiki.kr/en/user/brand">Browse brands</a>
+    </p>
+  </main>
+</noscript>
   </body>
 </html>
