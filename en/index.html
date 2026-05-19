@@ -9,6 +9,8 @@
     <link rel="icon" href="../favicon.ico" />
     <link rel="icon" type="image/png" sizes="180x180" href="../icon-180.png" />
     <link rel="apple-touch-icon" href="../icon-180.png" />
+    <link rel="preconnect" href="https://jmgdpmemnchutvcvnvvs.supabase.co" crossorigin />
+    <link rel="dns-prefetch" href="https://jmgdpmemnchutvcvnvvs.supabase.co" />
 
     <!-- PWA -->
     <link rel="manifest" href="../manifest.json" />
@@ -70,20 +72,33 @@
     </script>
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DZ52LV9MMG"></script>
     <script>
       window.dataLayer = window.dataLayer || []
       function gtag() {
         dataLayer.push(arguments)
       }
-      gtag("js", new Date())
-      gtag("config", "G-DZ52LV9MMG", { send_page_view: false })
+
+      const loadGoogleTag = () => {
+        const script = document.createElement("script")
+        script.async = true
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-DZ52LV9MMG"
+        document.head.appendChild(script)
+
+        gtag("js", new Date())
+        gtag("config", "G-DZ52LV9MMG", { send_page_view: false })
+      }
+
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(loadGoogleTag, { timeout: 3000 })
+      } else {
+        window.addEventListener("load", () => window.setTimeout(loadGoogleTag, 1200), { once: true })
+      }
     </script>
-    <script type="module" crossorigin src="../assets/index-DOFtvRV6.js"></script>
+    <script type="module" crossorigin src="../assets/index-B4yepcoZ.js"></script>
     <link rel="modulepreload" crossorigin href="../assets/vendor-vue-rQcEJy7R.js">
     <link rel="modulepreload" crossorigin href="../assets/vendor-supabase-CilmZQi3.js">
     <link rel="modulepreload" crossorigin href="../assets/vendor-icons-XmNRhjeW.js">
-    <link rel="stylesheet" crossorigin href="../assets/index-CXD5EKDr.css">
+    <link rel="stylesheet" crossorigin href="../assets/index-DRAPDlH0.css">
   </head>
   <body>
     <div id="app"></div>
