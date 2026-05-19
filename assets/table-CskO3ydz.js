@@ -1,0 +1,1 @@
+const t="#",n="Event Name",a="Country",e="Open",o="Start Date",s="End Date",c="Manage",m={num:t,name:n,country:a,open:e,startDate:o,endDate:s,manage:c};export{a as country,m as default,s as endDate,c as manage,n as name,t as num,e as open,o as startDate};

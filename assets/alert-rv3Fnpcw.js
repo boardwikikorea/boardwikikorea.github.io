@@ -1,0 +1,1 @@
+const r="已保存。",e="已删除。",o="发生错误。",t="发生网络错误。",n="没有权限。",d={saved:r,deleted:e,error:o,networkError:t,unauthorized:n};export{d as default,e as deleted,o as error,t as networkError,r as saved,n as unauthorized};

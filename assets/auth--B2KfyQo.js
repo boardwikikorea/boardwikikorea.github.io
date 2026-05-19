@@ -1,0 +1,1 @@
+const o="로그인",n="로그아웃",s="관리자 페이지",i="로그인이 필요합니다",t="세션이 만료되었습니다. 다시 로그인해 주세요",e={login:o,logout:n,admin:s,loginRequired:i,sessionExpired:t};export{s as admin,e as default,o as login,i as loginRequired,n as logout,t as sessionExpired};

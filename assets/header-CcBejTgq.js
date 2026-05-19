@@ -1,0 +1,1 @@
+const e={myEvent:"我的活动",crew:"车队聚会",brand:"品牌",login:"登录"},o={suffix:""},n={admin:"管理员",adminPage:"管理页面",profileEdit:"编辑资料",logout:"退出登录"},t={copyright:"© BOARDWIKI. All rights reserved."},r={nav:e,user:o,menu:n,footer:t};export{r as default,t as footer,n as menu,e as nav,o as user};

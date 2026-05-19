@@ -1,0 +1,1 @@
+const e={myEvent:"My Events",crew:"Crew Meetups",brand:"Brands",login:"Login"},n={suffix:""},o={admin:"Admin",adminPage:"Admin Page",profileEdit:"Edit Profile",logout:"Logout"},t={copyright:"© BOARDWIKI. All rights reserved."},r={nav:e,user:n,menu:o,footer:t};export{r as default,t as footer,o as menu,e as nav,n as user};

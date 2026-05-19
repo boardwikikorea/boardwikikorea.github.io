@@ -1,0 +1,1 @@
+const o="홈",t="관리자",n="관리자 설정",c="스텝 프레임 빌더",e="이벤트 관리",s="권한 관리",r="크루 관리",a="스팟 관리",d="샵 관리",m="브랜드 관리",p="상품 관리",h={home:o,admin:t,config:n,techFrame:c,event:e,role:s,crew:r,spot:a,shop:d,brand:m,product:p};export{t as admin,m as brand,n as config,r as crew,h as default,e as event,o as home,p as product,s as role,d as shop,a as spot,c as techFrame};

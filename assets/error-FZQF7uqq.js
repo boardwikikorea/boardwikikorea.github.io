@@ -1,0 +1,1 @@
+const o="에러 404",t={notFound:"페이지를 찾을 수 없습니다"},e={notFound:"요청하신 페이지가 존재하지 않거나 이동되었습니다."},n={home:"홈으로 돌아가기"},s={code:o,title:t,message:e,action:n};export{n as action,o as code,s as default,e as message,t as title};

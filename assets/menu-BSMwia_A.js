@@ -1,0 +1,1 @@
+const o="首页",t="管理员",n="管理员设置",c="舞步帧编辑器",e="活动管理",s="权限管理",r="车队管理",a="地点管理",d="商店管理",m="品牌管理",p="商品管理",h={home:o,admin:t,config:n,techFrame:c,event:e,role:s,crew:r,spot:a,shop:d,brand:m,product:p};export{t as admin,m as brand,n as config,r as crew,h as default,e as event,o as home,p as product,s as role,d as shop,a as spot,c as techFrame};

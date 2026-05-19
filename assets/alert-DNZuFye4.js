@@ -1,0 +1,1 @@
+const e="Saved successfully.",r="Deleted successfully.",o="An error has occurred.",s="A network error has occurred.",t="You do not have permission.",c={saved:e,deleted:r,error:o,networkError:s,unauthorized:t};export{c as default,r as deleted,o as error,s as networkError,e as saved,t as unauthorized};

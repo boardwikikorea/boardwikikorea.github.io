@@ -1,0 +1,1 @@
+const t="썸네일 이미지",o={upload:"이미지 업로드"},n={waitUpload:"업로드가 완료될 때까지 기다려주세요."},a={onlyImage:"이미지 파일만 업로드할 수 있습니다.",uploadRequired:"썸네일 이미지를 업로드해주세요.",uploadFailed:"이미지 업로드에 실패했습니다."},e={title:t,button:o,hint:n,error:a};export{o as button,e as default,a as error,n as hint,t as title};

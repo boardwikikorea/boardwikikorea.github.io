@@ -1,0 +1,1 @@
+const c="저장",t="취소",o="수정",e="추가",n="뒤로",s="확인",a="닫기",d={save:c,cancel:t,delete:"삭제",edit:o,add:e,back:n,confirm:s,close:a};export{e as add,n as back,t as cancel,a as close,s as confirm,d as default,o as edit,c as save};
