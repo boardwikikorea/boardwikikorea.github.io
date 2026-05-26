@@ -1,0 +1,1 @@
+const e={event:"イベント",myEvent:"マイイベント",crew:"クルー集まり",brand:"ブランド",login:"ログイン"},n={suffix:"さん"},o={admin:"管理者",adminPage:"管理者ページ",profileEdit:"プロフィール編集",logout:"ログアウト"},t={copyright:"© BOARDWIKI. All rights reserved."},r={nav:e,user:n,menu:o,footer:t};export{r as default,t as footer,o as menu,e as nav,n as user};
