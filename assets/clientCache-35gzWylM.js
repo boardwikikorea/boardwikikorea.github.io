@@ -1,1 +1,0 @@
-const c=new Map;function i(e,r,s){const n=Date.now(),t=c.get(e);if(t&&t.expiresAt>n)return t.promise;const o=s().catch(a=>{throw c.delete(e),a});return c.set(e,{expiresAt:n+r,promise:o}),o}export{i as c};
