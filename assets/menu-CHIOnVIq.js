@@ -1,1 +1,0 @@
-const o="首頁",t="管理員",n="管理員設定",c="舞步影格編輯器",s="活動管理",e="權限管理",r="車隊管理",p="地點管理",a="商店管理",d="品牌管理",m="商品管理",h="諮詢 / 使用者管理",u={home:o,admin:t,config:n,techFrame:c,event:s,role:e,crew:r,spot:p,shop:a,brand:d,product:m,support:h};export{t as admin,d as brand,n as config,r as crew,u as default,s as event,o as home,m as product,e as role,a as shop,p as spot,h as support,c as techFrame};

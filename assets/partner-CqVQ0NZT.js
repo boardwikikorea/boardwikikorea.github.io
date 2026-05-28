@@ -1,0 +1,1 @@
+const e={back:"ホームへ",loading:"パートナープロフィールを読み込んでいます。",notFound:"パートナープロフィールが見つかりません。",loadError:"パートナープロフィールを読み込めませんでした。",eyebrow:"Partner Profile",brands:"所属ブランド",youtube:"YouTube",careers:"経歴",careerShowAll:"経歴をすべて見る",careerShowLess:"閉じる",videoList:"動画リスト"},r={detail:e};export{r as default,e as detail};
