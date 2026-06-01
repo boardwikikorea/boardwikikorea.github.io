@@ -1,0 +1,23 @@
+import{d as n,w as a,e}from"./index-Bq2y5Aw9.js";import{b as l}from"./imageBucket-DN346FZc.js";const i=`
+  id,
+  name,
+  country,
+  founded_at,
+  is_use,
+  is_official,
+  sms_link,
+  site_link,
+  product_truck,
+  product_wheel,
+  product_deck,
+  product_bearing,
+  product_hardware,
+  product_bushing,
+  product_fashion,
+  product_etc,
+  image_url,
+  thumbnail_url,
+  product_count,
+  created_at,
+  updated_at
+`;function r(t){return{id:t.id,name:t.name,country:t.country??null,foundedAt:t.founded_at??null,isOperating:t.is_use,isOfficial:t.is_official,smsLink:t.sms_link??null,siteLink:t.site_link??null,productTruck:t.product_truck,productWheel:t.product_wheel,productDeck:t.product_deck,productBearing:t.product_bearing,productHardware:t.product_hardware,productBushing:t.product_bushing,productFashion:t.product_fashion,productEtc:t.product_etc,imageLink:t.image_url?l(t.image_url):null,thumbnailLink:t.thumbnail_url?l(t.thumbnail_url):null,productCount:t.product_count??0,createdAt:t.created_at,updatedAt:t.updated_at??null}}async function _(){return n("brandPublic:list",5*6e4,()=>a(async()=>{const{data:t,error:u}=await e.from("brand_public_view").select(i);if(u)throw u;return(t??[]).map(r)}))}async function p(t){return n(`brandPublic:id:${t}`,5*6e4,()=>a(async()=>{const{data:u,error:c}=await e.from("brand_public_view").select(i).eq("id",t).maybeSingle();if(c)throw c;return u?r(u):null}))}async function f(t){return n(`brandPublic:name:${t}`,5*6e4,()=>a(async()=>{const{data:u,error:c}=await e.from("brand_public_view").select(i).eq("name",t).limit(1);if(c)throw c;const d=(u??[])[0];return d?r(d):null}))}export{p as a,f as b,_ as f};
