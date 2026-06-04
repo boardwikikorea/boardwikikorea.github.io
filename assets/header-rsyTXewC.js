@@ -1,1 +1,0 @@
-const e={event:"活動",magazine:"雜誌",myEvent:"我的活動",crew:"車隊聚會",brand:"品牌",login:"登入"},n={suffix:""},o={admin:"管理員",adminPage:"管理頁面",profileEdit:"編輯資料",logout:"登出"},t={copyright:"© BOARDWIKI. All rights reserved."},r={nav:e,user:n,menu:o,footer:t};export{r as default,t as footer,o as menu,e as nav,n as user};
