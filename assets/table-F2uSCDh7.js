@@ -1,1 +1,0 @@
-const t="#",n="이벤트명",a="국가",e="오픈",o="시작일",s="종료일",c="관리",m={num:t,name:n,country:a,open:e,startDate:o,endDate:s,manage:c};export{a as country,m as default,s as endDate,c as manage,n as name,t as num,e as open,o as startDate};
