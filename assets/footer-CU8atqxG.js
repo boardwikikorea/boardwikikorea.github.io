@@ -1,1 +1,0 @@
-const o={title:"보드가 처음일 때, 함께 보드를 타고 싶을 때.",description:"지금 이 순간, 누가 어디에서 보드를 타고 있는지 확인해보세요!"},t={appStore:"App Store Download",googlePlay:"Google Store Download"},a={guide:"국내외 보드 행사 및 콘텐츠 제작과 관련된 협업 문의는 인스타그램 및 구글폼으로 문의해주세요",instagram:"인스타그램",kakao:"카카오톡",google:"문의하기",youtube:"유투브"},n={slogan:o,download:t,contact:a};export{a as contact,n as default,t as download,o as slogan};
