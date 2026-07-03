@@ -1,1 +1,0 @@
-const o="User Page",e="BoardWiki Service",i="All",n="Loading...",c="Coming Soon",t="We are preparing this page to provide a better service.",s={h2Title:o,serviceTitle:e,all:i,loading:n,comingSoon:c,comingSoonDesc:t};export{i as all,c as comingSoon,t as comingSoonDesc,s as default,o as h2Title,n as loading,e as serviceTitle};

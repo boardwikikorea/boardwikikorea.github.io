@@ -1,10 +1,11 @@
-const STATIC_CACHE = "boardwiki-static-v2"
-const IMAGE_CACHE = "boardwiki-images-v1"
+const APP_VERSION = "1.2.0"
+const STATIC_CACHE = `boardwiki-static-v${APP_VERSION}`
+const IMAGE_CACHE = `boardwiki-images-v${APP_VERSION}`
 const STATIC_DESTINATIONS = new Set(["font", "script", "style"])
 const MAX_IMAGE_ENTRIES = 160
 
-self.addEventListener("install", () => {
-  self.skipWaiting()
+self.addEventListener("install", (event) => {
+  event.waitUntil(caches.open(STATIC_CACHE))
 })
 
 self.addEventListener("activate", (event) => {
@@ -20,6 +21,12 @@ self.addEventListener("activate", (event) => {
       )
       .then(() => self.clients.claim())
   )
+})
+
+self.addEventListener("message", (event) => {
+  if (event.data?.type === "SKIP_WAITING") {
+    self.skipWaiting()
+  }
 })
 
 self.addEventListener("fetch", (event) => {

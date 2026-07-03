@@ -1,1 +1,0 @@
-const o="用户页面",n="BoardWiki 服务",c="全部",i="加载中...",e="网站正在准备中",t="为了提供更好的服务，我们正在准备此页面。",s={h2Title:o,serviceTitle:n,all:c,loading:i,comingSoon:e,comingSoonDesc:t};export{c as all,e as comingSoon,t as comingSoonDesc,s as default,o as h2Title,i as loading,n as serviceTitle};

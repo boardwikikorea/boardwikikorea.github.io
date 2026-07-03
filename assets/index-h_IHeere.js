@@ -1,1 +1,0 @@
-const o="사용자페이지",n="보드위키 서비스",c="전체",e="로딩 중...",i="사이트 준비 중입니다",t="더 나은 서비스를 위해 페이지를 준비하고 있습니다.",s={h2Title:o,serviceTitle:n,all:c,loading:e,comingSoon:i,comingSoonDesc:t};export{c as all,i as comingSoon,t as comingSoonDesc,s as default,o as h2Title,e as loading,n as serviceTitle};
