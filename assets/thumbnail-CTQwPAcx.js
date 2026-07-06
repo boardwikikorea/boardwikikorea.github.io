@@ -1,0 +1,1 @@
+const t="縮圖圖片",o={upload:"上傳圖片"},n={waitUpload:"請等待上傳完成。"},a={onlyImage:"僅能上傳圖片檔案。",uploadRequired:"請上傳縮圖圖片。",uploadFailed:"圖片上傳失敗。"},e={title:t,button:o,hint:n,error:a};export{o as button,e as default,a as error,n as hint,t as title};

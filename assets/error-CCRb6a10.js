@@ -1,0 +1,1 @@
+const o="エラー 404",t={notFound:"ページが見つかりません"},e={notFound:"お探しのページは存在しないか、移動されました。"},n={home:"ホームに戻る"},s={code:o,title:t,message:e,action:n};export{n as action,o as code,s as default,e as message,t as title};
