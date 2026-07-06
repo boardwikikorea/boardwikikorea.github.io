@@ -1,1 +1,0 @@
-const e={back:"Back Home",loading:"Loading partner profile.",notFound:"Partner profile was not found.",loadError:"Could not load the partner profile.",eyebrow:"Partner Profile",brands:"Affiliated Brands",careers:"Career",youtube:"YouTube",careerShowAll:"Show all career history",careerShowLess:"Show less",videoList:"Video List"},r={detail:e};export{r as default,e as detail};

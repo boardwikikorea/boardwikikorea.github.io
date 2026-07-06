@@ -1,1 +1,0 @@
-const e="Open",t="Private",n="Draft",o={pending:"Pending",approved:"Application Completed",rejected:"Rejected"},s={open:e,closed:t,draft:n,registration:o};export{t as closed,s as default,n as draft,e as open,o as registration};

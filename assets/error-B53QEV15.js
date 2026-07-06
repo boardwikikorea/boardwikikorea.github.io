@@ -1,1 +1,0 @@
-const o="Error 404",e={notFound:"Page not found"},t={notFound:"The page you requested does not exist or has been moved."},n={home:"Go back to home"},s={code:o,title:e,message:t,action:n};export{n as action,o as code,s as default,t as message,e as title};

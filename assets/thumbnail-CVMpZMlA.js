@@ -1,1 +1,0 @@
-const t="缩略图图片",o={upload:"上传图片"},n={waitUpload:"请等待上传完成。"},a={onlyImage:"只能上传图片文件。",uploadRequired:"请上传缩略图图片。",uploadFailed:"图片上传失败。"},e={title:t,button:o,hint:n,error:a};export{o as button,e as default,a as error,n as hint,t as title};

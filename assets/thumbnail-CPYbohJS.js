@@ -1,1 +1,0 @@
-const t="サムネイル画像",o={upload:"画像アップロード"},n={waitUpload:"アップロードが完了するまでお待ちください。"},a={onlyImage:"画像ファイルのみアップロードできます。",uploadRequired:"サムネイル画像をアップロードしてください。",uploadFailed:"画像のアップロードに失敗しました。"},e={title:t,button:o,hint:n,error:a};export{o as button,e as default,a as error,n as hint,t as title};

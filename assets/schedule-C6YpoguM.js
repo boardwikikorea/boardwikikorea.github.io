@@ -1,1 +1,0 @@
-const e="Schedule",t="Loading schedule...",d="No schedules have been registered.",o={add:"Add Schedule"},n={title:e,loading:t,empty:d,button:o};export{o as button,n as default,d as empty,t as loading,e as title};

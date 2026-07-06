@@ -1,1 +1,0 @@
-const e={back:"홈으로",loading:"파트너 프로필을 불러오는 중입니다.",notFound:"파트너 프로필을 찾을 수 없습니다.",loadError:"파트너 프로필을 불러오지 못했습니다.",eyebrow:"Partner Profile",brands:"소속 브랜드",youtube:"YouTube",careers:"이력",careerShowAll:"이력 전체보기",careerShowLess:"접기",videoList:"영상 목록"},r={detail:e};export{r as default,e as detail};

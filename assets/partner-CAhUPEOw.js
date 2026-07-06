@@ -1,1 +1,0 @@
-const e={back:"返回首頁",loading:"正在載入合作夥伴檔案。",notFound:"找不到合作夥伴檔案。",loadError:"無法載入合作夥伴檔案。",eyebrow:"Partner Profile",brands:"所屬品牌",youtube:"YouTube",careers:"履歷",careerShowAll:"查看全部履歷",careerShowLess:"收合",videoList:"影片列表"},r={detail:e};export{r as default,e as detail};

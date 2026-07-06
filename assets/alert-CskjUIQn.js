@@ -1,1 +1,0 @@
-const r="저장되었습니다.",e="삭제되었습니다.",o="오류가 발생했습니다.",t="네트워크 오류가 발생했습니다.",n="권한이 없습니다.",d={saved:r,deleted:e,error:o,networkError:t,unauthorized:n};export{d as default,e as deleted,o as error,t as networkError,r as saved,n as unauthorized};
