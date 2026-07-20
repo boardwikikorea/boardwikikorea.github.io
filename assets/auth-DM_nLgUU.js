@@ -1,0 +1,1 @@
+const e="Connectez-vous",o="Se déconnecter",n="Page d'administration",s="La connexion est requise.",i="Votre session a expiré. Veuillez vous reconnecter.",t={login:e,logout:o,admin:n,loginRequired:s,sessionExpired:i};export{n as admin,t as default,e as login,s as loginRequired,o as logout,i as sessionExpired};

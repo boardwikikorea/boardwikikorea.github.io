@@ -1,0 +1,1 @@
+const o="Abierto",t="Privado",e="Borrador",a={pending:"Pendiente",approved:"Solicitud completada",rejected:"Rechazado"},d={open:o,closed:t,draft:e,registration:a};export{t as closed,d as default,e as draft,o as open,a as registration};

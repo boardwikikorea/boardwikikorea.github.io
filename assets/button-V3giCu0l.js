@@ -1,0 +1,1 @@
+const c="Сохранить",t="Отмена",o="Редактировать",e="Добавить",n="Назад",s="Подтвердить",a="Закрыть",d={save:c,cancel:t,delete:"Удалить",edit:o,add:e,back:n,confirm:s,close:a};export{e as add,n as back,t as cancel,a as close,s as confirm,d as default,o as edit,c as save};

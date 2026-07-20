@@ -1,0 +1,1 @@
+const t="Расписание",o="График загрузки...",n="Расписания не зарегистрированы.",e={add:"Добавить расписание"},s={title:t,loading:o,empty:n,button:e};export{e as button,s as default,n as empty,o as loading,t as title};

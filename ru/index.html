@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BoardWiki | Сообщество лонгборда, скейтборда и событий</title>
+
+    <!-- favicon -->
+    <link rel="icon" href="../favicon.ico" />
+    <link rel="icon" type="image/png" sizes="180x180" href="../icon-180.png" />
+    <link rel="apple-touch-icon" href="../icon-180.png" />
+    <link rel="preconnect" href="https://jmgdpmemnchutvcvnvvs.supabase.co" crossorigin />
+    <link rel="dns-prefetch" href="https://jmgdpmemnchutvcvnvvs.supabase.co" />
+
+    <!-- PWA -->
+    <link rel="manifest" href="../manifest.json" />
+
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+    <meta name="author" content="BoardWiki" />
+
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="ko" href="https://boardwiki.kr/" />
+    <link rel="alternate" hreflang="en" href="https://boardwiki.kr/en/" />
+    <link rel="alternate" hreflang="ja" href="https://boardwiki.kr/ja/" />
+    <link rel="alternate" hreflang="zh-CN" href="https://boardwiki.kr/zh/" />
+    <link rel="alternate" hreflang="zh-TW" href="https://boardwiki.kr/zh-TW/" />
+    <link rel="alternate" hreflang="fr" href="https://boardwiki.kr/fr/" />
+    <link rel="alternate" hreflang="ru" href="https://boardwiki.kr/ru/" />
+    <link rel="alternate" hreflang="es" href="https://boardwiki.kr/es/" />
+    <link rel="alternate" hreflang="x-default" href="https://boardwiki.kr/" />
+
+    <!-- SEO -->
+    <meta name="description" content="Вся информация о лонгборде, скейтборде, брендах, сообществах, соревнованиях и событиях в одном месте." />
+    <meta name="keywords" content="BoardWiki, лонгборд, скейтборд, лонгборд-дансинг, карвинг, бренды скейтбордов, сообщества, события, соревнования" />
+    <meta name="naver-site-verification" content="e74dc3e49d0527046508b26ee9860c52a501b8f4" />
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="BoardWiki" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:title" content="BoardWiki | Сообщество лонгборда, скейтборда и событий" />
+    <meta property="og:description" content="Новости лонгборда и скейтборда, бренды, сообщества и события на BoardWiki." />
+    <meta property="og:url" content="https://boardwiki.kr/ru/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://boardwiki.kr/og-image.jpg" />
+    <meta property="og:image:alt" content="BoardWiki 커뮤니티 대표 이미지" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="BoardWiki | Сообщество лонгборда, скейтборда и событий" />
+    <meta name="twitter:description" content="Новости лонгборда и скейтборда, бренды и события на BoardWiki." />
+    <meta name="twitter:image" content="https://boardwiki.kr/og-image.jpg" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://boardwiki.kr/ru/" />
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "BoardWiki",
+  "url": "https://boardwiki.kr/ru/",
+  "inLanguage": "ru-RU",
+  "description": "Сообщество с информацией о лонгборде, скейтборде, брендах, командах, соревнованиях и событиях.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "BoardWiki",
+    "url": "https://boardwiki.kr/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://boardwiki.kr/icon-512.png"
+    }
+  }
+}
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+
+      const loadGoogleTag = () => {
+        const script = document.createElement("script")
+        script.async = true
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-DZ52LV9MMG"
+        document.head.appendChild(script)
+
+        gtag("js", new Date())
+        gtag("config", "G-DZ52LV9MMG", { send_page_view: false })
+      }
+
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(loadGoogleTag, { timeout: 3000 })
+      } else {
+        window.addEventListener("load", () => window.setTimeout(loadGoogleTag, 1200), { once: true })
+      }
+    </script>
+    <script type="module" crossorigin src="../assets/index-B8Jcue15.js"></script>
+    <link rel="modulepreload" crossorigin href="../assets/vendor-vue-DW_dOfgh.js">
+    <link rel="modulepreload" crossorigin href="../assets/vendor-supabase-Be25SE7n.js">
+    <link rel="modulepreload" crossorigin href="../assets/vendor-icons-DHIvNRyb.js">
+    <link rel="stylesheet" crossorigin href="../assets/index-Dv2DStvr.css">
+  </head>
+  <body>
+    <div id="app"></div>
+    <div id="dropdown-portal"></div>
+    <noscript>
+  <main>
+    <h1>BoardWiki</h1>
+    <p>Сообщество, объединяющее бренды, команды и события из мира лонгборда и скейтборда.</p>
+    <p>
+      <a href="https://boardwiki.kr/ru/user/event">Смотреть события</a>
+      <a href="https://boardwiki.kr/ru/user/brand">Смотреть бренды</a>
+    </p>
+  </main>
+</noscript>
+  </body>
+</html>

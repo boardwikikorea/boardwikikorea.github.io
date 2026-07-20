@@ -1,0 +1,1 @@
+const o="Ошибка 404",t={notFound:"Страница не найдена"},e={notFound:"Запрошенная вами страница не существует или была перемещена."},n={home:"Вернуться домой"},s={code:o,title:t,message:e,action:n};export{n as action,o as code,s as default,e as message,t as title};

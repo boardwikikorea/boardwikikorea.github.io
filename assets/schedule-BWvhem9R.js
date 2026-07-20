@@ -1,0 +1,1 @@
+const t="Calendrier",e="Calendrier de chargement...",n="Aucun planning n'a été enregistré.",o={add:"Ajouter un horaire"},a={title:t,loading:e,empty:n,button:o};export{o as button,a as default,n as empty,e as loading,t as title};

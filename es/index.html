@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BoardWiki | Comunidad de longboard, skateboard y eventos</title>
+
+    <!-- favicon -->
+    <link rel="icon" href="../favicon.ico" />
+    <link rel="icon" type="image/png" sizes="180x180" href="../icon-180.png" />
+    <link rel="apple-touch-icon" href="../icon-180.png" />
+    <link rel="preconnect" href="https://jmgdpmemnchutvcvnvvs.supabase.co" crossorigin />
+    <link rel="dns-prefetch" href="https://jmgdpmemnchutvcvnvvs.supabase.co" />
+
+    <!-- PWA -->
+    <link rel="manifest" href="../manifest.json" />
+
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+    <meta name="author" content="BoardWiki" />
+
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="ko" href="https://boardwiki.kr/" />
+    <link rel="alternate" hreflang="en" href="https://boardwiki.kr/en/" />
+    <link rel="alternate" hreflang="ja" href="https://boardwiki.kr/ja/" />
+    <link rel="alternate" hreflang="zh-CN" href="https://boardwiki.kr/zh/" />
+    <link rel="alternate" hreflang="zh-TW" href="https://boardwiki.kr/zh-TW/" />
+    <link rel="alternate" hreflang="fr" href="https://boardwiki.kr/fr/" />
+    <link rel="alternate" hreflang="ru" href="https://boardwiki.kr/ru/" />
+    <link rel="alternate" hreflang="es" href="https://boardwiki.kr/es/" />
+    <link rel="alternate" hreflang="x-default" href="https://boardwiki.kr/" />
+
+    <!-- SEO -->
+    <meta name="description" content="Consulta en un solo lugar información sobre longboard, skateboard, marcas, grupos, competiciones y eventos." />
+    <meta name="keywords" content="BoardWiki, longboard, skateboard, dancing longboard, carving, marcas de skateboard, grupos de longboard, eventos, competiciones" />
+    <meta name="naver-site-verification" content="e74dc3e49d0527046508b26ee9860c52a501b8f4" />
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="BoardWiki" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:title" content="BoardWiki | Comunidad de longboard, skateboard y eventos" />
+    <meta property="og:description" content="Descubre noticias de longboard y skateboard, marcas, grupos y eventos en BoardWiki." />
+    <meta property="og:url" content="https://boardwiki.kr/es/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://boardwiki.kr/og-image.jpg" />
+    <meta property="og:image:alt" content="BoardWiki 커뮤니티 대표 이미지" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="BoardWiki | Comunidad de longboard, skateboard y eventos" />
+    <meta name="twitter:description" content="Descubre noticias de longboard y skateboard, marcas y eventos en BoardWiki." />
+    <meta name="twitter:image" content="https://boardwiki.kr/og-image.jpg" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://boardwiki.kr/es/" />
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "BoardWiki",
+  "url": "https://boardwiki.kr/es/",
+  "inLanguage": "es-ES",
+  "description": "Una comunidad con información sobre longboard, skateboard, marcas, grupos, competiciones y eventos.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "BoardWiki",
+    "url": "https://boardwiki.kr/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://boardwiki.kr/icon-512.png"
+    }
+  }
+}
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+
+      const loadGoogleTag = () => {
+        const script = document.createElement("script")
+        script.async = true
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-DZ52LV9MMG"
+        document.head.appendChild(script)
+
+        gtag("js", new Date())
+        gtag("config", "G-DZ52LV9MMG", { send_page_view: false })
+      }
+
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(loadGoogleTag, { timeout: 3000 })
+      } else {
+        window.addEventListener("load", () => window.setTimeout(loadGoogleTag, 1200), { once: true })
+      }
+    </script>
+    <script type="module" crossorigin src="../assets/index-B8Jcue15.js"></script>
+    <link rel="modulepreload" crossorigin href="../assets/vendor-vue-DW_dOfgh.js">
+    <link rel="modulepreload" crossorigin href="../assets/vendor-supabase-Be25SE7n.js">
+    <link rel="modulepreload" crossorigin href="../assets/vendor-icons-DHIvNRyb.js">
+    <link rel="stylesheet" crossorigin href="../assets/index-Dv2DStvr.css">
+  </head>
+  <body>
+    <div id="app"></div>
+    <div id="dropdown-portal"></div>
+    <noscript>
+  <main>
+    <h1>BoardWiki</h1>
+    <p>Una comunidad que reúne marcas, grupos y eventos de longboard y skateboard.</p>
+    <p>
+      <a href="https://boardwiki.kr/es/user/event">Ver eventos</a>
+      <a href="https://boardwiki.kr/es/user/brand">Ver marcas</a>
+    </p>
+  </main>
+</noscript>
+  </body>
+</html>

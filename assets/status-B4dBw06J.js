@@ -1,0 +1,1 @@
+const t="Ouvert",e="Privé",o="Brouillon",n={pending:"En attente",approved:"Demande complétée",rejected:"Rejeté"},r={open:t,closed:e,draft:o,registration:n};export{e as closed,r as default,o as draft,t as open,n as registration};

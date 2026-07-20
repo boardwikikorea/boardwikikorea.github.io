@@ -1,0 +1,1 @@
+const a="Imagen en miniatura",e={upload:"Subir imagen"},t={waitUpload:"Espere hasta que se complete la carga."},n={onlyImage:"Sólo se pueden cargar archivos de imágenes.",uploadRequired:"Cargue una imagen en miniatura.",uploadFailed:"Error al cargar la imagen."},r={title:a,button:e,hint:t,error:n};export{e as button,r as default,n as error,t as hint,a as title};

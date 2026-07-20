@@ -1,0 +1,1 @@
+const i="Iniciar sesión",n="Cerrar sesión",s="Página de administración",e="Es necesario iniciar sesión.",o="Tu sesión ha caducado. Por favor inicie sesión nuevamente.",a={login:i,logout:n,admin:s,loginRequired:e,sessionExpired:o};export{s as admin,a as default,i as login,e as loginRequired,n as logout,o as sessionExpired};

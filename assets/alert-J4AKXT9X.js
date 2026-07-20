@@ -1,0 +1,1 @@
+const r="Сохранено успешно.",e="Удален успешно.",o="Произошла ошибка.",t="Произошла сетевая ошибка.",n="У вас нет разрешения.",d={saved:r,deleted:e,error:o,networkError:t,unauthorized:n};export{d as default,e as deleted,o as error,t as networkError,r as saved,n as unauthorized};

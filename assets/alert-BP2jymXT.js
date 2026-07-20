@@ -1,0 +1,1 @@
+const r="Guardado exitosamente.",e="Eliminado con éxito.",o="Ha ocurrido un error.",t="Se ha producido un error de red.",d="No tienes permiso.",n={saved:r,deleted:e,error:o,networkError:t,unauthorized:d};export{n as default,e as deleted,o as error,t as networkError,r as saved,d as unauthorized};

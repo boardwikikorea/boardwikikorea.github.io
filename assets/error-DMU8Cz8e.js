@@ -1,0 +1,1 @@
+const o="error 404",e={notFound:"Página no encontrada"},t={notFound:"La página que solicitaste no existe o ha sido movida."},a={home:"volver a casa"},n={code:o,title:e,message:t,action:a};export{a as action,o as code,n as default,t as message,e as title};

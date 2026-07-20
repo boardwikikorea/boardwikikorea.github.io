@@ -1,0 +1,1 @@
+const e="Enregistré avec succès.",r="Supprimé avec succès.",s="Une erreur s'est produite.",t="Une erreur réseau s'est produite.",o="Vous n'avez pas l'autorisation.",n={saved:e,deleted:r,error:s,networkError:t,unauthorized:o};export{n as default,r as deleted,s as error,t as networkError,e as saved,o as unauthorized};

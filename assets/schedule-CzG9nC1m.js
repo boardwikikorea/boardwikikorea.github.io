@@ -1,0 +1,1 @@
+const o="Horario",t="Cargando agenda...",a="No se han registrado horarios.",e={add:"Agregar horario"},n={title:o,loading:t,empty:a,button:e};export{e as button,n as default,a as empty,t as loading,o as title};

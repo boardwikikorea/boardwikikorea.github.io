@@ -1,0 +1,1 @@
+const e="Enregistrer",c="Annuler",o="Modifier",t="Ajouter",n="Retour",r="Confirmer",s="Fermer",a={save:e,cancel:c,delete:"Supprimer",edit:o,add:t,back:n,confirm:r,close:s};export{t as add,n as back,c as cancel,s as close,r as confirm,a as default,o as edit,e as save};
