@@ -1,1 +1,0 @@
-const o="Войти",n="Выйти",s="Страница администратора",i="Требуется вход.",t="Срок вашей сессии истек. Пожалуйста, войдите снова.",e={login:o,logout:n,admin:s,loginRequired:i,sessionExpired:t};export{s as admin,e as default,o as login,i as loginRequired,n as logout,t as sessionExpired};

@@ -1,1 +1,0 @@
-const o="Log In",i="Log Out",n="Admin Page",s="Login is required.",e="Your session has expired. Please log in again.",g={login:o,logout:i,admin:n,loginRequired:s,sessionExpired:e};export{n as admin,g as default,o as login,s as loginRequired,i as logout,e as sessionExpired};

@@ -1,1 +1,0 @@
-const o="ログイン",n="ログアウト",s="管理者ページ",i="ログインが必要です。",t="セッションの有効期限が切れました。再度ログインしてください。",e={login:o,logout:n,admin:s,loginRequired:i,sessionExpired:t};export{s as admin,e as default,o as login,i as loginRequired,n as logout,t as sessionExpired};

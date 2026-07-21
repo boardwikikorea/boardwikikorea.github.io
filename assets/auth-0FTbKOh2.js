@@ -1,0 +1,1 @@
+const o="登入",n="登出",e="管理員頁面",s="需要登入。",i="僅限會員使用。即將前往登入頁面。",t="工作階段已過期，請重新登入。",l={login:o,logout:n,admin:e,loginRequired:s,memberOnly:i,sessionExpired:t};export{e as admin,l as default,o as login,s as loginRequired,n as logout,i as memberOnly,t as sessionExpired};

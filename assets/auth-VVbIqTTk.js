@@ -1,0 +1,1 @@
+const o="ログイン",n="ログアウト",e="管理者ページ",s="ログインが必要です。",i="会員のみ利用できます。ログインページへ移動します。",t="セッションの有効期限が切れました。再度ログインしてください。",l={login:o,logout:n,admin:e,loginRequired:s,memberOnly:i,sessionExpired:t};export{e as admin,l as default,o as login,s as loginRequired,n as logout,i as memberOnly,t as sessionExpired};

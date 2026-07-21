@@ -1,0 +1,1 @@
+const o="Log In",e="Log Out",n="Admin Page",i="Login is required.",s="Members only. You'll be moved to the login page.",l="Your session has expired. Please log in again.",t={login:o,logout:e,admin:n,loginRequired:i,memberOnly:s,sessionExpired:l};export{n as admin,t as default,o as login,i as loginRequired,e as logout,s as memberOnly,l as sessionExpired};

@@ -1,0 +1,1 @@
+const o="登录",n="退出登录",e="管理员页面",s="需要登录。",i="仅限会员使用。即将前往登录页面。",t="会话已过期，请重新登录。",l={login:o,logout:n,admin:e,loginRequired:s,memberOnly:i,sessionExpired:t};export{e as admin,l as default,o as login,s as loginRequired,n as logout,i as memberOnly,t as sessionExpired};
