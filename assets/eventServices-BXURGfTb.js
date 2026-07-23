@@ -1,0 +1,1 @@
+const e={registration:"申込可能",crew_link:"クルー連携",cruising_course:"コースあり",competition:"大会運営",judging:"審査"},n="連携クルー",s="クルージングコース",c="公開結果",t="本戦進出",o="トーナメント表",r="勝者",i={module:e,linkedCrew:n,course:s,results:c,advanced:t,bracket:o,winner:r};export{t as advanced,o as bracket,s as course,i as default,n as linkedCrew,e as module,c as results,r as winner};

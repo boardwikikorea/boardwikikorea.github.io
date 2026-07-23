@@ -1,0 +1,1 @@
+const e={registration:"可報名",crew_link:"連結團隊",cruising_course:"提供路線",competition:"賽事營運",judging:"評審"},n="連結團隊",s="巡遊路線",c="公開成績",t="晉級",o="淘汰賽對戰",r="勝者",i={module:e,linkedCrew:n,course:s,results:c,advanced:t,bracket:o,winner:r};export{t as advanced,o as bracket,s as course,i as default,n as linkedCrew,e as module,c as results,r as winner};
