@@ -1,0 +1,1 @@
+import{d as e,b as o,t as n,o as s}from"./vendor-vue-C7GRuHlH.js";const c={class:"event-section-title text-[22px] font-bold text-[var(--user-color-text)] lg:text-[24px]"},l=e({__name:"SectionTitle",props:{title:{}},setup(t){return(r,a)=>(s(),o("h2",c,n(t.title),1))}});export{l as _};
