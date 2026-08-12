@@ -6,12 +6,19 @@
     <meta name="robots" content="noindex" />
     <title>OBOTA</title>
     <style>
-      :root{color-scheme:dark light}body{margin:0;display:grid;min-height:100vh;place-items:center;background:#18181b;color:#fff;font:500 14px system-ui,sans-serif}.status{display:flex;align-items:center;gap:10px}.spinner{width:18px;height:18px;border:2px solid #555;border-top-color:#4545ff;border-radius:50%;animation:spin .8s linear infinite}a{color:#8d8dff}@keyframes spin{to{transform:rotate(360deg)}}
+      :root{color-scheme:dark light}*{box-sizing:border-box}body{margin:0;display:grid;min-height:100vh;place-items:center;padding:24px;background:#18181b;color:#f5f5f7;font:500 15px/1.6 system-ui,sans-serif}.not-found{width:min(100%,420px)}.eyebrow{margin:0 0 12px;color:#ff6b1a;font-size:12px;font-weight:800;letter-spacing:.16em}.not-found h1{margin:0;font-size:clamp(30px,8vw,44px);line-height:1.12;letter-spacing:-.04em}.description{margin:18px 0 28px;color:#a1a1aa}.actions{display:flex;gap:10px;flex-wrap:wrap}.actions a{display:inline-flex;min-height:44px;align-items:center;justify-content:center;padding:0 18px;border:1px solid #3f3f46;border-radius:12px;color:inherit;text-decoration:none}.actions a:first-child{border-color:#4545ff;background:#4545ff;color:#fff}.redirecting .actions{display:none}@media(prefers-color-scheme:light){body{background:#f4f4f5;color:#18181b}.description{color:#62626b}.actions a{border-color:#d4d4d8;background:#fff}}
     </style>
   </head>
   <body>
-    <p class="status"><span class="spinner" aria-hidden="true"></span><span>화면을 불러오고 있어요.</span></p>
-    <noscript>요청한 페이지를 찾지 못했습니다. <a href="/community/">커뮤니티로 이동</a></noscript>
+    <main class="not-found">
+      <p class="eyebrow">OBOTA</p>
+      <h1 data-title>페이지를 찾을 수 없어요</h1>
+      <p class="description" data-description>주소가 잘못되었거나 이동된 페이지입니다.</p>
+      <nav class="actions" aria-label="이동할 화면">
+        <a href="/community/">커뮤니티로 이동</a>
+        <a href="/map/">지도 보기</a>
+      </nav>
+    </main>
     <script>
       (() => {
         const current = new URL(window.location.href);
@@ -22,12 +29,15 @@
           [/^\/crews\/([^/]+)$/, (match) => ["/crews/__static__/", { id: match[1] }]],
           [/^\/spots\/([^/]+)$/, (match) => ["/spots/__static__/", { id: match[1] }]],
           [/^\/my\/events\/([^/]+)$/, (match) => ["/my/events/__static__/", { id: match[1] }]],
-          [/^/admin/support/([^/]+)$/, (match) => ["/admin/support/__static__/", { conversationId: match[1] }]],
+          [/^\/admin\/support\/([^/]+)$/, (match) => ["/admin/support/__static__/", { conversationId: match[1] }]],
         ];
         for (const [pattern, createTarget] of routes) {
           const match = path.match(pattern);
           if (!match || match.includes("__static__")) continue;
           const [pathname, params] = createTarget(match);
+          document.querySelector(".not-found").classList.add("redirecting");
+          document.querySelector("[data-title]").textContent = "화면을 연결하고 있어요";
+          document.querySelector("[data-description]").textContent = "잠시만 기다려 주세요.";
           const destination = new URL(pathname, current.origin);
           for (const [key, value] of current.searchParams) destination.searchParams.set(key, value);
           for (const [key, value] of Object.entries(params)) destination.searchParams.set(key, value);
@@ -35,7 +45,6 @@
           window.location.replace(destination.pathname + destination.search + destination.hash);
           return;
         }
-        document.querySelector(".status").innerHTML = '<span>페이지를 찾지 못했습니다. <a href="/community/">커뮤니티로 이동</a></span>';
       })();
     </script>
   </body>
