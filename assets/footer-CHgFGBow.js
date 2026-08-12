@@ -1,1 +1,0 @@
-const o={title:"当你第一次接触滑板，或想一起滑行的时候。",description:"现在就来看看此刻是谁在什么地方滑板吧！"},a={appStore:"App Store 下载",googlePlay:"Google Play 下载"},t={guide:"如需咨询国内外滑板活动及内容制作相关合作，请通过 Instagram 或联系我们进行咨询。",instagram:"Instagram",kakao:"KakaoTalk",google:"联系我们",youtube:"YouTube"},n={slogan:o,download:a,contact:t};export{t as contact,n as default,a as download,o as slogan};

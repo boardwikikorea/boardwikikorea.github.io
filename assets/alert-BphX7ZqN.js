@@ -1,1 +1,0 @@
-const r="已儲存。",e="已刪除。",o="發生錯誤。",t="發生網路錯誤。",n="沒有權限。",d={saved:r,deleted:e,error:o,networkError:t,unauthorized:n};export{d as default,e as deleted,o as error,t as networkError,r as saved,n as unauthorized};

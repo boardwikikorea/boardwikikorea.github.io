@@ -1,1 +1,0 @@
-const c="保存",t="キャンセル",o="編集",e="追加",n="戻る",s="確認",a="閉じる",d={save:c,cancel:t,delete:"削除",edit:o,add:e,back:n,confirm:s,close:a};export{e as add,n as back,t as cancel,a as close,s as confirm,d as default,o as edit,c as save};

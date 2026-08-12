@@ -1,1 +1,0 @@
-const e={ADMIN:"admin",CREW_LEADER:"crew.leader",EVENT_ORGANIZER:"event.organizer",EVENT_JUDGE:"event.judge",EVENT_OPERATOR:"event.operator",EVENT_HEAD_JUDGE:"event.head_judge",EVENT_SCOREKEEPER:"event.scorekeeper",EVENT_CHECKIN:"event.checkin",EVENT_RESULT_PUBLISHER:"event.result_publisher",SHOP_OWNER:"shop.owner",SPOT_MANAGER:"spot.manager"};export{e as R};

@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://boardwiki.kr/</loc>
-    <priority>1.0</priority>
-  </url>
-
-  <url>
-    <loc>https://boardwiki.kr/salgot/</loc>
-    <priority>0.6</priority>
-  </url>
+  <url><loc>https://boardwiki.kr/</loc></url>
+  <url><loc>https://boardwiki.kr/community/</loc></url>
+  <url><loc>https://boardwiki.kr/map/</loc></url>
+  <url><loc>https://boardwiki.kr/more/</loc></url>
+  <url><loc>https://boardwiki.kr/en/</loc></url>
+  <url><loc>https://boardwiki.kr/ja/</loc></url>
+  <url><loc>https://boardwiki.kr/zh/</loc></url>
+  <url><loc>https://boardwiki.kr/zh-TW/</loc></url>
+  <url><loc>https://boardwiki.kr/es/</loc></url>
+  <url><loc>https://boardwiki.kr/fr/</loc></url>
+  <url><loc>https://boardwiki.kr/ru/</loc></url>
 </urlset>

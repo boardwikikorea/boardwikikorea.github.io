@@ -1,1 +1,0 @@
-const t="Открыть",e="Частный",o="Черновик",s={pending:"Ожидается",approved:"Заявка завершена",rejected:"Отклонено"},n={open:t,closed:e,draft:o,registration:s};export{e as closed,n as default,o as draft,t as open,s as registration};

@@ -1,1 +1,0 @@
-const a="Thumbnail Image",e={upload:"Upload Image"},l={waitUpload:"Please wait until the upload is complete."},t={onlyImage:"Only image files can be uploaded.",uploadRequired:"Please upload a thumbnail image.",uploadFailed:"Image upload failed."},o={title:a,button:e,hint:l,error:t};export{e as button,o as default,t as error,l as hint,a as title};

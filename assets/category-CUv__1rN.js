@@ -1,1 +1,0 @@
-const t="Сессия",s="Круиз",o="Встреча",c="Конкуренция",e="Другое",n={session:t,cruising:s,meetup:o,competition:c,etc:e};export{c as competition,s as cruising,n as default,e as etc,o as meetup,t as session};

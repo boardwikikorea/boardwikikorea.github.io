@@ -1,1 +1,0 @@
-const c="保存",t="取消",o="编辑",e="添加",n="返回",s="确认",a="关闭",d={save:c,cancel:t,delete:"删除",edit:o,add:e,back:n,confirm:s,close:a};export{e as add,n as back,t as cancel,a as close,s as confirm,d as default,o as edit,c as save};

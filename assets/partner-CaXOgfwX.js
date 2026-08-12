@@ -1,1 +1,0 @@
-const e={back:"返回首页",loading:"正在加载合作伙伴资料。",notFound:"找不到合作伙伴资料。",loadError:"无法加载合作伙伴资料。",eyebrow:"Partner Profile",brands:"所属品牌",youtube:"YouTube",careers:"履历",careerShowAll:"查看全部履历",careerShowLess:"收起",videoList:"视频列表"},r={detail:e};export{r as default,e as detail};
