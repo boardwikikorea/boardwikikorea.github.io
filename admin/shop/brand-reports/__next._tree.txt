@@ -1,4 +1,4 @@
 :HL["/_next/static/chunks/0dssft_3ra167.css","style"]
 :HL["/_next/static/chunks/15w74gxmdju_g.css","style"]
 :HL["/_next/static/chunks/2l86lskgh_56i.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"admin","param":null,"prefetchHints":4192,"slots":{"children":{"name":"path","param":{"type":"c","key":"shop/brand-reports","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"_4If2kE6WY4PpQXxctJZ9"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"admin","param":null,"prefetchHints":4192,"slots":{"children":{"name":"path","param":{"type":"c","key":"shop/brand-reports","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"YaeGbyypKzkwLsn3oR_Gm"}
