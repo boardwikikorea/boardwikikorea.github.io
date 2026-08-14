@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ko">
-  <head><meta name="obota-release" content="2026-08-13T09:27:09.649Z" />
+  <head><meta name="obota-release" content="2026-08-14T02:28:21.594Z" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="robots" content="noindex" />
@@ -26,6 +26,8 @@
         const routes = [
           [/^\/crews\/([^/]+)\/meetups\/([^/]+)\/participants$/, (match) => ["/crews/__static__/meetups/__static__/participants/", { crewId: match[1], meetupId: match[2] }]],
           [/^\/events\/([^/]+)$/, (match) => ["/events/__static__/", { id: match[1] }]],
+          [/^\/products\/([^/]+)$/, (match) => ["/products/__static__/", { id: match[1] }]],
+          [/^\/brands\/([^/]+)$/, (match) => ["/brands/__static__/", { id: match[1] }]],
           [/^\/crews\/([^/]+)$/, (match) => ["/crews/__static__/", { id: match[1] }]],
           [/^\/spots\/([^/]+)$/, (match) => ["/spots/__static__/", { id: match[1] }]],
           [/^\/my\/events\/([^/]+)$/, (match) => ["/my/events/__static__/", { id: match[1] }]],
