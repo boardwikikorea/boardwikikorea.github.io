@@ -1,1 +1,0 @@
-self.__SSG_MANIFEST=new Set(["\u002F[section]","\u002Fadmin\u002F[...path]","\u002Fcrews\u002F[id]","\u002Fcrews\u002F[id]\u002Fmeetups\u002F[meetupId]\u002Fparticipants","\u002Fevents\u002F[id]","\u002Fmy\u002Fevents\u002F[id]","\u002Fspots\u002F[id]"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()
