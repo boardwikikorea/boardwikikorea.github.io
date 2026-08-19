@@ -1,1 +1,0 @@
-(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,70456,t=>{"use strict";var i=t.i(43476),a=t.i(18566),e=t.i(86844),u=t.i(65405);t.s(["default",0,function(){let{id:t}=(0,a.useParams)(),o=(0,u.useStaticRouteParam)(t,"id");return o?(0,i.jsx)(e.CatalogBrandPage,{id:o}):null}])}]);
