@@ -1,4 +1,4 @@
 :HL["/_next/static/chunks/0w98wnons0n65.css","style"]
 :HL["/_next/static/chunks/3n5hdh0_fwf1n.css","style"]
 :HC["/",""]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"section","param":{"type":"d","key":"zh","siblings":["admin","auth","brands","community","crew-management","crews","event-management","events","licenses","login","map","more","my","notifications","products","profile-guide","profile-setup","spot-report","spots","support","terms"]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"HAMw94IzzhwbLLbeSM3we"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"section","param":{"type":"d","key":"zh","siblings":["admin","auth","brands","community","crew-management","crews","event-management","events","licenses","login","map","more","my","notifications","products","profile-guide","profile-setup","spot-report","spots","support","terms"]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"TZ0pNT5iBhnWJay_yMB0c"}
