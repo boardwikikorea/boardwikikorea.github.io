@@ -1,4 +1,4 @@
-:HL["/_next/static/chunks/07x1g7j8yzej6.css","style"]
+:HL["/_next/static/chunks/12s20d9klx9ws.css","style"]
 :HL["/_next/static/chunks/2wnsk4w0bf0i5.css","style"]
 :HC["/",""]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"section","param":{"type":"d","key":"ja","siblings":["account-deletion","admin","auth","brands","chats","community","crew-management","crews","event-management","event-report","events","licenses","login","map","more","my","notifications","privacy-settings","products","profile-guide","profile-setup","spot-report","spots","support","terms"]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"5uDAWnhV91UasylCGNlQY"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"section","param":{"type":"d","key":"ja","siblings":["account-deletion","admin","auth","brands","chats","community","crew-management","crews","event-management","event-report","events","licenses","login","map","more","my","notifications","privacy-settings","products","profile-guide","profile-setup","spot-report","spots","support","terms"]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"rlkOwa76F-kFg1FTmmmkk"}
