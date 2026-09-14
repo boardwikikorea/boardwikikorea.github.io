@@ -1,7 +1,7 @@
 :HL["/_next/static/chunks/2210ycboadvez.css","style"]
-:HL["/_next/static/chunks/2d1a_v3n069i8.css","style"]
+:HL["/_next/static/chunks/2oce1_bqcuhft.css","style"]
 :HL["/_next/static/chunks/1sdq6w7dgbc50.css","style"]
 :HL["/_next/static/chunks/09ow634bu-ipy.css","style"]
 :HL["/_next/static/chunks/333yvvv1qo1i0.css","style"]
 :HC["/",""]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"admin","param":null,"prefetchHints":4192,"slots":{"children":{"name":"path","param":{"type":"c","key":"account-deletions","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"34vAnJdruXJEWZ5bPDdHV"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"admin","param":null,"prefetchHints":4192,"slots":{"children":{"name":"path","param":{"type":"c","key":"account-deletions","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"xeAbEPV-dbI4YTAqNskTW"}
