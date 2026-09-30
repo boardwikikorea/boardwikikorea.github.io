@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head><meta name="obota-release" content="2026-09-30T07:20:52.804Z" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex,nofollow">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src https://jmgdpmemnchutvcvnvvs.supabase.co; base-uri 'none'; form-action 'none'">
+  <title>Account deletion · OBOTA</title>
+  <style>
+    /* Static, analytics-free adaptation of packages/design-tokens/src/{tokens,theme}.css. */
+    :root { color-scheme:dark; --bg:#1c1c1e; --text:#f7f7f8; --muted:#a4a4ab; --danger:#ff5c66; --border:#424249; }
+    @media(prefers-color-scheme:light) { :root { color-scheme:light; --bg:#f7f7f9; --text:#17171a; --muted:#62636b; --danger:#d93642; --border:#d8d8de; } }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font:1rem/1.5 system-ui,sans-serif; }
+    main { max-width:36rem; margin:0 auto; padding:calc(2rem + env(safe-area-inset-top)) calc(1.25rem + env(safe-area-inset-right)) calc(2rem + env(safe-area-inset-bottom)) calc(1.25rem + env(safe-area-inset-left)); }
+    h1 { font-size:1.75rem; line-height:1.25; margin:1.5rem 0; }
+    p { margin:1rem 0; } .help { color:var(--muted); }
+    button, a { min-height:3rem; padding:.75rem 1rem; border-radius:.75rem; font:inherit; }
+    button { width:100%; margin:1rem 0; border:1px solid var(--danger); color:var(--danger); background:transparent; cursor:pointer; white-space:normal; }
+    button:disabled { cursor:default; opacity:.6; }
+    a { display:inline-flex; align-items:center; color:var(--text); padding-left:0; }
+    :focus-visible { outline:2px solid var(--text); outline-offset:4px; }
+    [hidden] { display:none!important; }
+  </style>
+</head>
+<body>
+<main>
+  <p>OBOTA</p>
+  <h1 id="title">Account deletion</h1>
+  <p id="description"></p>
+  <p id="help" class="help"></p>
+  <button id="confirm" type="button" disabled hidden>Confirm deletion request</button>
+  <p id="status" role="status" aria-live="polite" tabindex="-1"></p>
+  <a id="account" href="/account-deletion" rel="noreferrer">Account deletion settings</a>
+  <noscript>JavaScript is required. / JavaScript를 활성화해 주세요.</noscript>
+</main>
+<script>
+(() => {
+  'use strict';
+  const params = new URLSearchParams(location.hash.slice(1));
+  let userId = params.get('user_id');
+  let token = params.get('token');
+  // Remove credentials before any request. No analytics, cookies or storage.
+  history.replaceState(null, '', location.pathname);
+  const language = navigator.language.toLowerCase().split('-')[0];
+  const translations = {
+    en: {
+      title:'Account deletion', description:'Confirm a request to delete your OBOTA account. A new request has a 14-day grace period; an existing request keeps its original schedule. This does not delete your account immediately.',
+      help:'You can cancel a pending request in Account deletion settings. Administrators and some Apple accounts require manual review.',
+      confirm:'Confirm deletion request', sending:'Submitting request…', settings:'Account deletion settings',
+      missing:'Open the confirmation link from your email again.', retry:'We could not confirm the result. Please retry, or check Account deletion settings before requesting a new link.',
+      invalid:'This link is invalid, expired or already used. Check Account deletion settings; if no request exists, request a new email.',
+      manual:'Your request was received and requires manual review. Automatic deletion is not scheduled.',
+      scheduled:'Your deletion request was received. Scheduled deletion: ', processing:'An existing deletion request is already being processed.',
+    },
+    ko: {
+      title:'회원 탈퇴', description:'OBOTA 계정 탈퇴를 요청합니다. 새 요청은 14일 유예가 적용되며 기존 요청은 원래 일정을 유지합니다. 지금 즉시 삭제되지 않습니다.',
+      help:'대기 중인 요청은 계정 삭제 설정에서 취소할 수 있습니다. 관리자와 일부 Apple 계정은 수동 검토가 필요합니다.',
+      confirm:'탈퇴 요청 확인', sending:'요청 중…', settings:'계정 삭제 설정', missing:'이메일의 확인 링크를 다시 열어 주세요.',
+      retry:'처리 결과를 확인하지 못했습니다. 다시 시도하거나 새 링크를 요청하기 전에 계정 삭제 설정을 확인해 주세요.',
+      invalid:'유효하지 않거나 만료 또는 사용된 링크입니다. 계정 삭제 설정을 확인하고, 요청이 없다면 이메일을 다시 요청해 주세요.',
+      manual:'요청이 접수되어 수동 검토가 필요합니다. 자동 삭제 일정은 잡히지 않았습니다.',
+      scheduled:'탈퇴 요청이 접수되었습니다. 삭제 예정: ', processing:'기존 탈퇴 요청이 이미 처리 중입니다.',
+    },
+    de: {
+      title:'Konto löschen', description:'Bestätige die Löschung deines OBOTA-Kontos. Für neue Anträge gilt eine Frist von 14 Tagen; bei bestehenden Anträgen bleibt der ursprüngliche Termin erhalten. Dein Konto wird nicht sofort gelöscht.',
+      help:'Einen ausstehenden Antrag kannst du in den Kontolöschungseinstellungen zurücknehmen. Administratorkonten und einige Apple-Konten müssen manuell geprüft werden.',
+      confirm:'Löschantrag bestätigen', sending:'Antrag wird gesendet…', settings:'Kontolöschungseinstellungen', missing:'Öffne den Bestätigungslink aus deiner E-Mail erneut.',
+      retry:'Das Ergebnis konnte nicht bestätigt werden. Versuche es erneut oder prüfe die Kontolöschungseinstellungen, bevor du einen neuen Link anforderst.',
+      invalid:'Dieser Link ist ungültig, abgelaufen oder bereits verwendet. Prüfe die Kontolöschungseinstellungen und fordere bei Bedarf eine neue E-Mail an.',
+      manual:'Dein Antrag wurde empfangen und muss manuell geprüft werden. Es ist keine automatische Löschung geplant.',
+      scheduled:'Dein Löschantrag wurde empfangen. Geplante Löschung: ', processing:'Ein bestehender Löschantrag wird bereits bearbeitet.',
+    },
+  };
+  const c = translations[language] || translations.en;
+  document.documentElement.lang = translations[language] ? language : 'en';
+  document.title = c.title + ' · OBOTA';
+  for (const id of ['title','description','help']) document.getElementById(id).textContent = c[id];
+  const button = document.getElementById('confirm');
+  const status = document.getElementById('status');
+  document.getElementById('account').textContent = c.settings;
+  button.textContent = c.confirm;
+  const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+  if (window.top !== window.self || !uuid.test(userId || '') || !uuid.test(token || '')) { status.textContent = c.missing; return; }
+  button.hidden = false; button.disabled = false;
+  button.addEventListener('click', async () => {
+    if (button.disabled) return;
+    button.disabled = true; button.textContent = c.sending; status.textContent = '';
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 15000);
+    try {
+      const response = await fetch('https://jmgdpmemnchutvcvnvvs.supabase.co/functions/v1/withdraw_confirm', {
+        method:'POST', credentials:'omit', referrerPolicy:'no-referrer', signal:controller.signal,
+        headers:{'Content-Type':'application/json'}, body:JSON.stringify({user_id:userId,token,confirmation:'DELETE'}),
+      });
+      const result = await response.json();
+      if ([401,410].includes(response.status)) { status.textContent = c.invalid; button.hidden = true; userId = token = null; }
+      else if (!response.ok || result.ok !== true || !result.request) throw new Error('unconfirmed');
+      else {
+        const r = result.request;
+        if (r.status === 'processing') status.textContent = c.processing;
+        else if (r.status === 'pending' && r.requires_admin_review === true) status.textContent = c.manual;
+        else if (r.status === 'pending' && r.requires_admin_review === false && r.scheduled_delete_at && Number.isFinite(Date.parse(r.scheduled_delete_at))) {
+          status.textContent = c.scheduled + new Date(r.scheduled_delete_at).toLocaleString(document.documentElement.lang);
+        } else throw new Error('unconfirmed');
+        button.hidden = true; userId = token = null;
+      }
+    } catch { status.textContent = c.retry; button.disabled = false; }
+    finally { clearTimeout(timeout); button.textContent = c.confirm; status.focus(); }
+  });
+})();
+</script>
+</body>
+</html>
