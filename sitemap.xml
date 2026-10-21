@@ -1,14 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://boardwiki.kr/</loc></url>
-  <url><loc>https://boardwiki.kr/community/</loc></url>
-  <url><loc>https://boardwiki.kr/map/</loc></url>
-  <url><loc>https://boardwiki.kr/more/</loc></url>
-  <url><loc>https://boardwiki.kr/en/</loc></url>
-  <url><loc>https://boardwiki.kr/ja/</loc></url>
-  <url><loc>https://boardwiki.kr/zh/</loc></url>
-  <url><loc>https://boardwiki.kr/zh-TW/</loc></url>
-  <url><loc>https://boardwiki.kr/es/</loc></url>
-  <url><loc>https://boardwiki.kr/fr/</loc></url>
-  <url><loc>https://boardwiki.kr/ru/</loc></url>
+<url>
+<loc>https://boardwiki.kr/</loc>
+<changefreq>daily</changefreq>
+<priority>1</priority>
+</url>
+<url>
+<loc>https://boardwiki.kr/en/</loc>
+<changefreq>daily</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://boardwiki.kr/ja/</loc>
+<changefreq>daily</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://boardwiki.kr/zh/</loc>
+<changefreq>daily</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://boardwiki.kr/zh-TW/</loc>
+<changefreq>daily</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://boardwiki.kr/es/</loc>
+<changefreq>daily</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://boardwiki.kr/fr/</loc>
+<changefreq>daily</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://boardwiki.kr/ru/</loc>
+<changefreq>daily</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://boardwiki.kr/community/</loc>
+<changefreq>daily</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://boardwiki.kr/map/</loc>
+<changefreq>daily</changefreq>
+<priority>0.7</priority>
+</url>
 </urlset>
