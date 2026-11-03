@@ -1,0 +1,21 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "42YKN5BFNA.kr.obota.app"
+        ],
+        "components": [
+          {
+            "/": "/mbti",
+            "comment": "QR campaign start"
+          },
+          {
+            "/": "/mbti/*",
+            "comment": "Campaign language, quiz and result routes"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "kr.obota.app",
+      "sha256_cert_fingerprints": [
+        "C7:B0:F5:14:FE:04:42:B3:0E:7A:48:1D:86:BE:A3:89:E1:DE:76:19:EA:E1:83:AB:F8:25:A6:59:FB:37:18:01"
+      ]
+    }
+  }
+]

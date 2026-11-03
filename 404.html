@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ko">
-  <head><meta name="obota-release" content="2026-11-03T05:44:44.060Z" />
+  <head><meta name="obota-release" content="2026-11-03T10:29:06.043Z" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="robots" content="noindex" />
@@ -24,8 +24,9 @@
         const current = new URL(window.location.href);
         const path = current.pathname.replace(/\/+$/, "") || "/";
         // Only invalid campaign result codes recover here; all16 valid results are real exported pages.
-        if (/^\/mbti\/result\/[^/]+$/.test(path)) {
-          window.location.replace("/mbti/");
+        const mbtiInvalid = path.match(/^\/mbti\/(?:(en|ja|zh-CN|zh-TW|es|fr|ru)\/)?result\/[^/]+$/);
+        if (mbtiInvalid) {
+          window.location.replace(mbtiInvalid[1] ? "/mbti/" + mbtiInvalid[1] + "/" : "/mbti/");
           return;
         }
         const routes = [
