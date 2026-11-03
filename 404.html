@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ko">
-  <head><meta name="obota-release" content="2026-11-02T09:27:43.040Z" />
+  <head><meta name="obota-release" content="2026-11-03T05:44:44.060Z" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="robots" content="noindex" />
@@ -23,6 +23,11 @@
       (() => {
         const current = new URL(window.location.href);
         const path = current.pathname.replace(/\/+$/, "") || "/";
+        // Only invalid campaign result codes recover here; all16 valid results are real exported pages.
+        if (/^\/mbti\/result\/[^/]+$/.test(path)) {
+          window.location.replace("/mbti/");
+          return;
+        }
         const routes = [
           [/^\/crews\/([^/]+)\/meetups\/([^/]+)\/participants$/, (match) => ["/crews/__static__/meetups/__static__/participants/", { crewId: match[1], meetupId: match[2] }]],
           [/^\/events\/([^/]+)\/apply$/, (match) => ["/events/__static__/apply/", { id: match[1] }]],
