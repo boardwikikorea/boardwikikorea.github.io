@@ -1,6 +1,6 @@
 :HL["/_next/static/chunks/2ovt70u-x8tlt.css","style"]
 :HL["/_next/static/chunks/2_nl5kc07d__c.css","style"]
-:HL["/_next/static/chunks/21yb2s8jzswir.css","style"]
+:HL["/_next/static/chunks/3bbq2wunhxre7.css","style"]
 :HL["/_next/static/chunks/2ghwkpxsdhdd_.css","style"]
 :HC["/",""]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"section","param":{"type":"d","key":"ja","siblings":["account-deletion","account-restricted","admin","auth","blocked-users","brands","chats","community","community-policy","crew-management","crews","deletion-pending","event-management","event-report","events","licenses","login","map","mbti","meetup-reviews","more","my","notifications","policies","privacy","privacy-settings","products","profile-guide","profile-setup","rider","spot-report","spots","support","terms"]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"-q8QAp_32zrhFHk8vCrG5"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"section","param":{"type":"d","key":"ja","siblings":["account-deletion","account-restricted","admin","auth","blocked-users","brands","chats","community","community-policy","crew-management","crews","deletion-pending","event-management","event-report","events","licenses","login","map","mbti","meetup-reviews","more","my","notifications","policies","privacy","privacy-settings","products","profile-guide","profile-setup","rider","spot-report","spots","support","terms"]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"hqA2uBAk2RKci1bvPkKJT"}
