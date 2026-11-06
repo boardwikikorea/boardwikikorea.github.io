@@ -1,0 +1,1 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,20232,t=>{"use strict";var i=t.i(55958),e=t.i(42212),u=t.i(12021),a=t.i(28966);t.s(["default",0,function(){let{id:t}=(0,e.useParams)(),r=(0,a.useStaticRouteParam)(t,"id");return r?(0,i.jsx)(u.ActivityPlatformPage,{id:r,kind:"crew"}):null}])}]);
