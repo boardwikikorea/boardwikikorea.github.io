@@ -1,6 +1,8 @@
 name: Publish site and renew version policy
 on:
-  push:
+  workflow_run:
+    workflows: ["pages build and deployment"]
+    types: [completed]
     branches: [main]
   schedule:
     - cron: '23 3,15 * * *'
