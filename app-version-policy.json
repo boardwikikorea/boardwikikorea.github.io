@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "expiresAt": "2026-11-19T06:51:10.084Z",
+  "expiresAt": "2026-11-19T07:20:16.511Z",
   "ios": { "enabled": true, "minimumVersion": "2.0.5" },
   "android": { "enabled": true, "minimumVersion": "2.0.5" }
 }
