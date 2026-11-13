@@ -1,0 +1,66 @@
+name: Publish site and renew version policy
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '23 3,15 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pages-production
+  cancel-in-progress: false
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Read latest published tree
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: main
+      - name: Verify renewal contract
+        run: node --test .github/scripts/renew-version-policy.test.mjs
+      - name: Renew expiry without changing version or activation
+        run: |
+          node .github/scripts/renew-version-policy.mjs app-version-policy.json
+          git diff --check
+          if ! git diff --quiet -- app-version-policy.json; then
+            test "$(git diff --name-only)" = app-version-policy.json
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add -- app-version-policy.json
+            git commit -m 'ops: renew existing version policy expiry'
+            git push origin HEAD:main
+          fi
+      - name: Package existing site without rebuilding application
+        run: |
+          mkdir "$RUNNER_TEMP/obota-pages"
+          git archive HEAD | tar -x -C "$RUNNER_TEMP/obota-pages"
+          rm -rf "$RUNNER_TEMP/obota-pages/.github"
+      - name: Upload unchanged site and renewed policy
+        uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
+        with:
+          path: ${{ runner.temp }}/obota-pages
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
+      - name: Verify public policy bytes
+        run: |
+          for attempt in $(seq 1 18); do
+            if curl --fail --silent --show-error --max-time 20 'https://boardwiki.kr/app-version-policy.json' -o "$RUNNER_TEMP/public-policy.json" && cmp app-version-policy.json "$RUNNER_TEMP/public-policy.json"; then
+              echo 'Verified public version policy matches renewed artifact.'
+              exit 0
+            fi
+            sleep 10
+          done
+          echo 'Public policy did not converge to the deployed artifact.' >&2
+          exit 1
