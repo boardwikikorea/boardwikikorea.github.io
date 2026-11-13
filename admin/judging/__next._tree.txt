@@ -6,4 +6,4 @@
 :HL["/_next/static/css/ed7fb57dae3f881f.css","style"]
 :HL["/_next/static/css/8c58acc127c8671d.css","style"]
 :HL["/_next/static/css/abda56d26c623695.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"admin","param":null,"prefetchHints":4192,"slots":{"children":{"name":"path","param":{"type":"c","key":"judging","siblings":["badges"]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"DKdjSPo2zPJ01nL69Pzep"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"admin","param":null,"prefetchHints":4192,"slots":{"children":{"name":"path","param":{"type":"c","key":"judging","siblings":["badges"]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"CKeyc-SKw4WXHEZcTbd0s"}
