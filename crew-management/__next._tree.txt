@@ -5,4 +5,4 @@
 :HL["/_next/static/css/84d418ebb4688333.css","style"]
 :HL["/_next/static/css/2d7dda905b323b0b.css","style"]
 :HL["/_next/static/css/0bf7fd59caf70e01.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"crew-management","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"hsWDYrPCgprxvCAowX9ct"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"crew-management","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"gnP2OWAzQ4nfO4mmbX4Mb"}
