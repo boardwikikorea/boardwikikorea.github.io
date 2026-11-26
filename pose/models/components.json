@@ -1,0 +1,30 @@
+{
+  "experimental": true,
+  "shape": [
+    1,
+    3,
+    288,
+    512
+  ],
+  "opset": 17,
+  "classes": [
+    "visible_wheel_center",
+    "visible_deck_end"
+  ],
+  "components": {
+    "wheel": {
+      "file": "board-wheel-e6beb08c.onnx",
+      "checkpoint_sha256": "e6beb08cb520ad61d433a7fdbffba4a02b9bf61f94893f98db79a99d250a2631",
+      "onnx_sha256": "e00ae97c820b0eb8754fcc2f83fb2cd098e991e22d92a6549c7081f7ec9924ea",
+      "bytes": 12463302
+    },
+    "deck": {
+      "file": "board-deck-c3bdd538.onnx",
+      "checkpoint_sha256": "c3bdd53821677bfa5dc6df337923ded7de463239f57eeb1040c65737631b4ca3",
+      "onnx_sha256": "daec545623aa8ea91a8476c5e8f26b907c17ec14108b0fc9d9ffea9adc019b9c",
+      "bytes": 12463321
+    }
+  },
+  "limits": "Visible candidates only; no physical identity, hidden-wheel position, 3D or trick classification. Training remains local.",
+  "license": "AGPL-3.0; see LICENSE"
+}
